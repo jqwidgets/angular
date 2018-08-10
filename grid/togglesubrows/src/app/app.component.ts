@@ -28,7 +28,7 @@ export class AppComponent {
         root: 'entry',
         record: 'content',
         id: 'm\\:properties>d\\:CustomerID',
-        url: '../sampledata/customers.xml'
+        url: '../assets/customers.txt'
     }
 
 	getWidth() : any {

@@ -18,7 +18,7 @@ export class AppComponent {
             { name: 'ContactName' }
         ],
         id: 'id',
-        url: '../sampledata/customers.txt',
+        url: '../assets/customers.txt',
         async: false
     };
 

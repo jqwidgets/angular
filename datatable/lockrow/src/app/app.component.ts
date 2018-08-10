@@ -26,7 +26,7 @@ export class AppComponent {
         record: 'Order',
         dataType: 'xml',
         id: 'OrderID',
-        url: '../sampledata/orderdetails.xml',
+        url: '../assets/orderdetails.txt',
     };
 
 	getWidth() : any {

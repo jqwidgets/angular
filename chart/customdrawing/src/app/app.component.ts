@@ -16,7 +16,7 @@ export class AppComponent {
             { name: 'eu' }
         ],
         /* EU map definitions in JSON derived from  http://commons.wikimedia.org/wiki/File:116_000_map_of_Europe.svg */
-        url: '../sampledata/europe.txt'
+        url: '../assets/europe.txt'
     };
 
     dataAdapter: any = new jqx.dataAdapter(this.source, { async: false, autoBind: true, loadError: (xhr: any, status: any, error: any) => { alert('Error loading "' + this.source.url + '" : ' + error); } });

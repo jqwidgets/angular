@@ -1,7 +1,9 @@
-<jqxGrid 
-  [theme]="'light'"
-  [width]="850" [source]="dataAdapter" [columns]="columns"
-  [pageable]="true" [autoheight]="true" [sortable]="true"
-  [altrows]="true" [enabletooltips]="true" [editable]="true"
-  [selectionmode]="'multiplecellsadvanced'" [columngroups]="columngroups">
-</jqxGrid>
+﻿<jqxListBox #jqxListBox
+            (onSelect)="select($event)"
+            [source]="source"
+            [height]="300"
+            [width]="300">
+</jqxListBox>
+
+<div style="font-size: 13px; font-family: Verdana;" #selectionlog>
+</div>

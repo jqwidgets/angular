@@ -35,7 +35,7 @@ export class AppComponent {
         this.myGrid.applyfilters();
     };
 
-    url = "../sampledata/discoveries.txt";
+    url = "../assets/discoveries.txt";
     source =
     {
         datatype: "json",

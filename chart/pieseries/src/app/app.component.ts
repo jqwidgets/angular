@@ -13,7 +13,7 @@ export class AppComponent {
             { name: 'Browser' },
             { name: 'Share' }
         ],
-        url: '../sampledata/desktop_browsers_share_dec2011.txt'
+        url: '../assets/desktop_browsers_share_dec2011.txt'
     };
     dataAdapter: any = new jqx.dataAdapter(this.source, { async: false, autoBind: true, loadError: (xhr: any, status: any, error: any) => { alert('Error loading "' + this.source.url + '" : ' + error); } });
 

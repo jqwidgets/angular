@@ -6,7 +6,7 @@
 })
 
 export class AppComponent  {    
-    url: string = '../sampledata/beverages.txt';
+    url: string = '../assets/beverages.txt';
     source: any =
     {
         datatype: 'json',

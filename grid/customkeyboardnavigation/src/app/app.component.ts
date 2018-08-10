@@ -14,7 +14,7 @@ export class AppComponent {
             { name: 'S&P 500', type: 'float' },
             { name: 'NASDAQ', type: 'float' }
         ],
-        url: '../sampledata/nasdaq_vs_sp500.txt'
+        url: '../assets/nasdaq_vs_sp500.txt'
     };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);

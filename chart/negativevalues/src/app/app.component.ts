@@ -14,7 +14,7 @@ export class AppComponent {
             { name: 'min' },
             { name: 'max' },
         ],
-        url: '../sampledata/weather_geneva.txt'
+        url: '../assets/weather_geneva.txt'
     };
 
     dataAdapter: any = new jqx.dataAdapter(this.source, { async: false, autoBind: true, loadError: (xhr: any, status: any, error: any) => { alert('Error loading "' + this.source.url + '" : ' + error); } });

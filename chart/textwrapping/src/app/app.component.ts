@@ -15,7 +15,7 @@ export class AppComponent {
             { name: 'DebtPercent' },
             { name: 'Debt' }
         ],
-        url: '../sampledata/gdp_dept_2010.txt'
+        url: '../assets/gdp_dept_2010.txt'
     };
     dataAdapter: any = new jqx.dataAdapter(this.source, { async: false, autoBind: true, loadError: (xhr: any, status: any, error: any) => { alert('Error loading "' + this.source.url + '" : ' + error); } });
 

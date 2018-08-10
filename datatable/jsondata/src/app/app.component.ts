@@ -17,7 +17,7 @@ export class AppComponent {
             { name: 'protein', type: 'string' }
         ],
         id: 'id',
-        url: '../sampledata/beverages.txt'
+        url: '../assets/beverages.txt'
     };
 
 	getWidth() : any {

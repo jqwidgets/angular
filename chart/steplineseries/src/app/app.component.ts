@@ -18,7 +18,7 @@ export class AppComponent {
             { name: 'Volume' },
             { name: 'AdjClose' }
         ],
-        url: '../sampledata/TSLA_stockprice.csv'
+        url: '../assets/TSLA_stockprice.csv'
     };
 
 	getWidth() : any {

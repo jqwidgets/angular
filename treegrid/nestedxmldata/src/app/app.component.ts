@@ -32,7 +32,7 @@ export class AppComponent {
          id: 'EmployeeID',
          root: 'Employees',
          record: 'Employee',
-         url: '../sampledata/employeesadv.xml'
+         url: '../assets/employeesadv.txt'
     };
 
 	getWidth() : any {

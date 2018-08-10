@@ -18,7 +18,7 @@ export class AppComponent {
             { name: 'CompanyName' },
             { name: 'ContactName' }
         ],
-        url: '../sampledata/customers.txt'
+        url: '../assets/customers.txt'
     };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);

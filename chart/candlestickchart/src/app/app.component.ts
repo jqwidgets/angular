@@ -20,7 +20,7 @@ export class AppComponent {
             { name: 'SPVolume' },
             { name: 'SPAdjClose' }
         ],
-        url: '../sampledata/nasdaq_vs_sp500_detailed.txt'
+        url: '../assets/nasdaq_vs_sp500_detailed.txt'
     };
 
 	getWidth() : any {

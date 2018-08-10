@@ -21,7 +21,7 @@ export class AppComponent {
         root: 'Employees',
         record: 'Employee',
         id: 'EmployeeID',
-        url: '../sampledata/employees.xml',
+        url: '../assets/employees.txt',
         async: false
     };
 
@@ -58,7 +58,7 @@ export class AppComponent {
             // values.source - specifies the foreign source. The expected value is an array.
             // values.value - specifies the field's name in the foreign source. 
             // values.name - specifies the field's value in the foreign source. 
-            // When the ordersAdapter is loaded, each record will have a field called 'EmployeeName'. The 'EmployeeName' for each record comes from the employeesAdapter where the record's 'EmployeeID' from orders.xml matches to the 'EmployeeID' from employees.xml. 
+            // When the ordersAdapter is loaded, each record will have a field called 'EmployeeName'. The 'EmployeeName' for each record comes from the employeesAdapter where the record's 'EmployeeID' from orders.txt matches to the 'EmployeeID' from employees.txt. 
             { name: 'EmployeeName', value: 'EmployeeID', values: { source: this.employeesAdapter.records, value: 'EmployeeID', name: 'EmployeeName' } },
             { name: 'EmployeeID', map: 'm\\:properties>d\\:EmployeeID' },
             { name: 'ShippedDate', map: 'm\\:properties>d\\:ShippedDate', type: 'date' },
@@ -71,7 +71,7 @@ export class AppComponent {
         root: 'entry',
         record: 'content',
         id: 'm\\:properties>d\\:OrderID',
-        url: '../sampledata/orders.xml',
+        url: '../assets/orders.txt',
         pager: (pagenum: any, pagesize: any, oldpagenum: any): void => {
             // callback called when a page or page size is changed.
         }

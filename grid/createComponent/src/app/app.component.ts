@@ -27,7 +27,7 @@ export class AppComponent implements AfterViewInit {
         root: 'Products',
         record: 'Product',
         id: 'ProductID',
-        url: '../sampledata/products.xml'
+        url: '../assets/products.txt'
     };
 
 	getWidth() : any {

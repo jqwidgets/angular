@@ -13,7 +13,7 @@ export class AppComponent {
     source: any =
     {
         dataType: 'ics',
-        url: '../sampledata/icalendar.txt'
+        url: '../assets/icalendar.txt'
     };
 
 	getWidth() : any {

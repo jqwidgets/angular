@@ -20,7 +20,7 @@ export class AppComponent {
             { name: 'ProductName', type: 'string' },
             { name: 'Address', type: 'string' }
         ],
-        url: '../sampledata/orderdetailsextended.xml',
+        url: '../assets/orderdetailsextended.txt',
         root: 'DATA',
         record: 'ROW'
     };

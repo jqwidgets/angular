@@ -34,7 +34,7 @@ export class AppComponent {
         record: 'Employee',
         id: 'EmployeeID',
         dataType: 'xml',
-        url: '../sampledata/employees.xml'
+        url: '../assets/employees.txt'
     };
 
     ordersSource: any =
@@ -50,7 +50,7 @@ export class AppComponent {
         root: 'Orders',
         record: 'Order',
         dataType: 'xml',
-        url: '../sampledata/orderdetails.xml'
+        url: '../assets/orderdetails.txt'
     };
 
     ordersDataAdapter: any = new jqx.dataAdapter(this.ordersSource, { autoBind: true });

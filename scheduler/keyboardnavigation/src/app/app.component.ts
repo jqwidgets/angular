@@ -40,7 +40,7 @@ export class AppComponent implements AfterViewInit {
             { name: 'end', type: 'date', format: 'yyyy-MM-dd HH:mm' }
         ],
         id: 'id',
-        url: '../sampledata/appointments.txt'
+        url: '../assets/appointments.txt'
     };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);

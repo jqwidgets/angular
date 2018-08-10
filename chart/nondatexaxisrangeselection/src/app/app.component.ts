@@ -20,7 +20,7 @@ export class AppComponent {
             { name: 'Volume' },
             { name: 'AdjClose' }
         ],
-        url: '../sampledata/TSLA_stockprice.csv'
+        url: '../assets/TSLA_stockprice.csv'
     };
 
     dataAdapter: any = new jqx.dataAdapter(this.source, { async: false, autoBind: true, loadError: (xhr: any, status: any, error: any) => { alert('Error loading "' + this.source.url + '" : ' + error); } });

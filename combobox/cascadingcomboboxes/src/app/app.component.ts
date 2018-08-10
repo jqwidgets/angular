@@ -17,7 +17,7 @@ export class AppComponent {
             { name: 'CompanyName' },
             { name: 'CustomerID' }
         ],
-        url: '../sampledata/customers.txt'
+        url: '../assets/customers.txt'
     };
 
     customersAdapter: any = new jqx.dataAdapter(this.customersSource);
@@ -34,7 +34,7 @@ export class AppComponent {
             { name: 'ShipCountry' },
             { name: 'ShipAddress' }
         ],
-        url: '../sampledata/orders.txt'
+        url: '../assets/orders.txt'
     };
 
     ordersAdapter: any = new jqx.dataAdapter(this.ordersSource);

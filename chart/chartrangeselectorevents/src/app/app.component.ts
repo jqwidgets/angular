@@ -33,7 +33,7 @@ export class AppComponent {
             { name: 'SPVolume' },
             { name: 'SPAdjClose' }
         ],
-        url: '../sampledata/nasdaq_vs_sp500_detailed.txt'
+        url: '../assets/nasdaq_vs_sp500_detailed.txt'
     };
 
     dataAdapter: any = new jqx.dataAdapter(this.source, { async: false, autoBind: true, loadError: (xhr: any, status: any, error: any) => { alert('Error loading "' + this.source.url + '" : ' + error); } });

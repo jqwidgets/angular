@@ -1,51 +1,146 @@
-import { Component } from '@angular/core';
+﻿import { Component, ViewChild, ElementRef } from '@angular/core';
+
+import { jqxListBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxlistbox.ts';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    templateUrl: './app.component.html'
 })
 
-
 export class AppComponent {
-    source: any =
-    {
-        datatype: 'xml',
-        datafields: [
-            { name: 'ProductName', type: 'string' },
-            { name: 'QuantityPerUnit', type: 'int' },
-            { name: 'UnitPrice', type: 'float' },
-            { name: 'UnitsInStock', type: 'float' },
-            { name: 'Discontinued', type: 'bool' }
-        ],
-        root: 'Products',
-        record: 'Product',
-        id: 'ProductID',
-        url: '../assets/products.xml'
-    };
+    @ViewChild('selectionlog') selectionlog: ElementRef;
 
-    dataAdapter: any = new jqx.dataAdapter(this.source);
+    source: any[] = [{
+        label: "Peppermint Hot Chocolate",
+        value: "Chocolate Beverage",
+        group: "Hot Chocolate"
+    }, {
+        label: "Salted Caramel Hot Chocolate",
+        value: "Chocolate Beverage",
+        group: "Hot Chocolate"
+    }, {
+        label: "White Hot Chocolate",
+        value: "Chocolate Beverage",
+        group: "Hot Chocolate"
+    }, {
+        label: "Caffe Americano",
+        value: "Espresso Beverage",
+        group: "Espresso"
+    }, {
+        label: "Caffe Latte",
+        value: "Espresso Beverage",
+        group: "Espresso"
+    }, {
+        label: "Caffe Mocha",
+        value: "Espresso Beverage",
+        group: "Espresso"
+    }, {
+        label: "Cappuccino",
+        value: "Espresso Beverage",
+        group: "Espresso"
+    }, {
+        label: "Caramel Brulee Latte",
+        value: "Espresso Beverage",
+        group: "Espresso"
+    }, {
+        label: "Caramel Macchiato",
+        value: "Espresso Beverage",
+        group: "Espresso"
+    }, {
+        label: "Peppermint Hot Chocolate",
+        value: "Espresso Beverage",
+        group: "Espresso"
+    }, {
+        label: "Cinnamon Dolce Latte",
+        value: "Espresso Beverage",
+        group: "Espresso"
+    }, {
+        label: "Eggnog Latte",
+        value: "Espresso Beverage",
+        group: "Espresso"
+    }, {
+        label: "Espresso",
+        value: "Espresso Beverage",
+        group: "Espresso"
+    }, {
+        label: "Espresso Con Panna",
+        value: "Espresso Beverage",
+        group: "Espresso"
+    }, {
+        label: "Espresso Macchiato",
+        value: "Espresso Beverage",
+        group: "Espresso"
+    }, {
+        label: "Flavored Latte",
+        value: "Espresso Beverage",
+        group: "Espresso"
+    }, {
+        label: "Gingerbread Latte",
+        value: "Espresso Beverage",
+        group: "Espresso"
+    }, {
+        label: "White Chocolate Mocha",
+        value: "Espresso Beverage",
+        group: "Espresso"
+    }, {
+        label: "Skinny Peppermint Mocha",
+        value: "Espresso Beverage",
+        group: "Espresso"
+    }, {
+        label: "Skinny Flavored Latte",
+        value: "Espresso Beverage",
+        group: "Espresso"
+    }, {
+        label: "Pumpkin Spice Latte",
+        value: "Espresso Beverage",
+        group: "Espresso"
+    }, {
+        label: "Caffe Vanilla Frappuccino",
+        value: "Frappuccino Blended Beverage",
+        group: "Frappuccino"
+    }, {
+        label: "Caffe Vanilla Frappuccino Light",
+        value: "Frappuccino Blended Beverage",
+        group: "Frappuccino"
+    }, {
+        label: "Caramel Brulee Frappuccino",
+        value: "Frappuccino Blended Beverage",
+        group: "Frappuccino"
+    }, {
+        label: "Caramel Brulee Frappuccino Light",
+        value: "Frappuccino Blended Beverage",
+        group: "Frappuccino"
+    }, {
+        label: "Eggnog Frappuccino",
+        value: "Frappuccino Blended Beverage",
+        group: "Frappuccino"
+    }, {
+        label: "Mocha Frappuccino",
+        value: "Frappuccino Blended Beverage",
+        group: "Frappuccino"
+    }, {
+        label: "Tazo Green Tea Creme Frappuccino",
+        value: "Frappuccino Blended Beverage",
+        group: "Frappuccino"
+    }]
 
-    cellsrenderer = (row: number, columnfield: string, value: string | number, defaulthtml: string, columnproperties: any, rowdata: any): string => {
-        if (value < 20) {
-            return `<span style='margin: 4px; float:${columnproperties.cellsalign}; color: #ff0000;'>${value}</span>`;
+    select(event: any): void {
+        if (event.args) {
+            let item = event.args.item;
+            if (item) {
+                let valueElement = document.createElement('div');
+                let labelElement = document.createElement('div');
+
+                valueElement.innerHTML = 'Value: ' + item.value;
+                labelElement.innerHTML = 'Label: ' + item.label;
+
+                let selectionLog = this.selectionlog.nativeElement;
+
+                selectionLog.innerHTML = '';
+
+                selectionLog.appendChild(labelElement);
+                selectionLog.appendChild(valueElement);
+            }
         }
-        else {
-            return `<span style='margin: 4px; float:${columnproperties.cellsalign}; color: #008000;'>${value}</span>`;
-        }
     };
-
-    columns: any[] =
-    [
-        { text: 'Product Name', columngroup: 'ProductDetails', datafield: 'ProductName', width: 250 },
-        { text: 'Quantity per Unit', columngroup: 'ProductDetails', datafield: 'QuantityPerUnit', cellsalign: 'right', align: 'right' },
-        { text: 'Unit Price', columngroup: 'ProductDetails', datafield: 'UnitPrice', align: 'right', cellsalign: 'right', cellsformat: 'c2' },
-        { text: 'Units In Stock', datafield: 'UnitsInStock', cellsalign: 'right', cellsrenderer: this.cellsrenderer, width: 100 },
-        { text: 'Discontinued', columntype: 'checkbox', datafield: 'Discontinued', align: 'center' }
-    ];
-
-    columngroups: any[] =
-    [
-        { text: 'Product Details', align: 'center', name: 'ProductDetails' }
-    ];
 }

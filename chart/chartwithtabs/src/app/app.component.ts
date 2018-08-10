@@ -36,7 +36,7 @@ export class AppComponent {
             { name: 'SPVolume' },
             { name: 'SPAdjClose' }
         ],
-        url: '../sampledata/nasdaq_vs_sp500_detailed.txt'
+        url: '../assets/nasdaq_vs_sp500_detailed.txt'
     };
 
     dataAdapter: any = new jqx.dataAdapter(this.source, { async: false, autoBind: true, loadError: (xhr: any, status: any, error: any) => { alert('Error loading "' + this.source.url + '" : ' + error); } });
@@ -49,7 +49,7 @@ export class AppComponent {
             { name: 'S&P 500' },
             { name: 'NASDAQ' }
         ],
-        url: '../sampledata/nasdaq_vs_sp500.txt'
+        url: '../assets/nasdaq_vs_sp500.txt'
     };
 
     dataAdapter2: any = new jqx.dataAdapter(this.source2, { async: false, autoBind: true, loadError: (xhr: any, status: any, error: any) => { alert('Error loading "' + this.source2.url + '" : ' + error); } });

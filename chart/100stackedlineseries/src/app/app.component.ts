@@ -15,7 +15,7 @@ export class AppComponent {
             { name: 'SearchPaid' },
             { name: 'SearchNonPaid' }
         ],
-        url: '../sampledata/website_analytics.txt'
+        url: '../assets/website_analytics.txt'
     };
 
 	getWidth() : any {

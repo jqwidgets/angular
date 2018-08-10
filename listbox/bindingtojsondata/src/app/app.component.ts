@@ -10,7 +10,7 @@ import { jqxListBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxl
 export class AppComponent {
     @ViewChild('selectionlog') selectionlog: ElementRef;
 
-    url: string = "../sampledata/customers.txt";
+    url: string = "../assets/customers.txt";
     // prepare the data
     source: any = {
         datatype: "json",

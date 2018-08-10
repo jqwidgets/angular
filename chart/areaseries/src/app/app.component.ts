@@ -14,7 +14,7 @@ export class AppComponent {
             { name: 'S&P 500' },
             { name: 'NASDAQ' }
         ],
-        url: '../sampledata/nasdaq_vs_sp500.txt'
+        url: '../assets/nasdaq_vs_sp500.txt'
     };
 
     dataAdapter = new jqx.dataAdapter(this.source, { async: false, autoBind: true, loadError: (xhr: any, status: any, error: any) => { alert('Error loading "' + this.source.url + '" : ' + error); } });

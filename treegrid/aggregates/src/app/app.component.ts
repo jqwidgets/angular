@@ -35,7 +35,7 @@ export class AppComponent {
             parentDataField: { name: 'ParentID' }
         },
         id: 'Id',
-        url: '../sampledata/locations.tsv'
+        url: '../assets/locations.tsv'
     };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);

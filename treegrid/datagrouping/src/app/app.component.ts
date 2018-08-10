@@ -42,7 +42,7 @@ export class AppComponent {
         root: 'entry',
         record: 'content',
         id: { name: 'CustomerID', map: 'm\\:properties>d\\:CustomerID' },
-        url: '../sampledata/customers.xml'
+        url: '../assets/customers.txt'
     };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);

@@ -23,7 +23,7 @@ export class AppComponent {
                     { name: 'S&P 500' },
                     { name: 'NASDAQ' }
                 ],
-                url: '../sampledata/nasdaq_vs_sp500.txt'
+                url: '../assets/nasdaq_vs_sp500.txt'
             };
         let dataAdapter = new jqx.dataAdapter(source, { async: false, loadError: (xhr, status, error) => { alert('Error loading "' + source.url + '" : ' + error); } });
         //let myChart: jqwidgets.jqxChart = jqwidgets.createInstance('#jqxChart', 'jqxChart', settings);
@@ -49,7 +49,7 @@ export class AppComponent {
                     { name: 'S&P 500' },
                     { name: 'NASDAQ' }
                 ],
-                url: '../sampledata/nasdaq_vs_sp500.txt'
+                url: '../assets/nasdaq_vs_sp500.txt'
             };
         let dataAdapter = new jqx.dataAdapter(source, { async: false, autoBind: true, loadError: (xhr, status, error) => { alert('Error loading "' + source.url + '" : ' + error); } });
         let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];

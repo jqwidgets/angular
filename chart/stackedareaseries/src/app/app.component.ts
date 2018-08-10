@@ -15,7 +15,7 @@ export class AppComponent {
             { name: 'SearchPaid' },
             { name: 'SearchNonPaid' }
         ],
-        url: '../sampledata/website_analytics.txt'
+        url: '../assets/website_analytics.txt'
     };
 
     dataAdapter: any = new jqx.dataAdapter(this.source, { async: false, autoBind: true, loadError: (xhr: any, status: any, error: any) => { alert('Error loading "' + this.source.url + '" : ' + error); } });

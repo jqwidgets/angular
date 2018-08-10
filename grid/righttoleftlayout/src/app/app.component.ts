@@ -21,7 +21,7 @@ export class AppComponent {
         root: 'entry',
         record: 'content',
         id: 'm\\:properties>d\\:OrderID',
-        url: '../sampledata/orders.xml'
+        url: '../assets/orders.txt'
     }
 
     dataAdapter: any = new jqx.dataAdapter(this.source);

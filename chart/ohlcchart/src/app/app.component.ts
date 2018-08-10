@@ -26,7 +26,7 @@ export class AppComponent {
             { name: 'NQVolume' },
             { name: 'NQAdjClose' }
         ],
-        url: '../sampledata/nasdaq_vs_sp500_detailed.txt'
+        url: '../assets/nasdaq_vs_sp500_detailed.txt'
     };
 	
 	getWidth() : any {

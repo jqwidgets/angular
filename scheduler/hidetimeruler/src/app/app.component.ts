@@ -34,7 +34,7 @@ export class AppComponent {
             { name: 'end', type: 'date', format: 'yyyy-MM-dd HH:mm' }
         ],
         id: 'id',
-        url: '../sampledata/appointments.txt'
+        url: '../assets/appointments.txt'
     };
 
     adapter: any = new jqx.dataAdapter(this.source);

@@ -15,7 +15,7 @@ export class AppComponent {
             { name: 'Population' },
             { name: 'Rate' }
         ],
-        url: '../sampledata/homeprices.txt'
+        url: '../assets/homeprices.txt'
     };
 
     // create data adapter.

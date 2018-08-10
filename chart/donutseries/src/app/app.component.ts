@@ -13,7 +13,7 @@ export class AppComponent {
             { name: 'Browser' },
             { name: 'Share' }
         ],
-        url: '../sampledata/mobile_browsers_share_dec2011.txt'
+        url: '../assets/mobile_browsers_share_dec2011.txt'
     };
 
 	getWidth() : any {
@@ -33,7 +33,7 @@ export class AppComponent {
             { name: 'Browser' },
             { name: 'Share' }
         ],
-        url: '../sampledata/desktop_browsers_share_dec2011.txt'
+        url: '../assets/desktop_browsers_share_dec2011.txt'
     };
 
     dataAdapter_desktop: any = new jqx.dataAdapter(this.data_source_desktop, { async: false, autoBind: true, loadError: (xhr: any, status: any, error: any) => { alert('Error loading "' + this.data_source_desktop.url + '" : ' + error); } });

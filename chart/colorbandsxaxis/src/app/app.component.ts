@@ -17,7 +17,7 @@ export class AppComponent {
             { name: 'West' },
             { name: 'UnitedStates' }
         ],
-        url: '../sampledata/us_homeownership_rate.csv'
+        url: '../assets/us_homeownership_rate.csv'
     };
 
     dataAdapter = new jqx.dataAdapter(this.source, { async: false, autoBind: true, loadError: (xhr: any, status: any, error: any) => { alert('Error loading "' + this.source.url + '" : ' + error); } });

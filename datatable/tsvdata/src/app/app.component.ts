@@ -16,7 +16,7 @@ export class AppComponent {
             { name: 'Population', type: 'float' },
             { name: 'Rate', type: 'float' }
         ],
-        url: '../sampledata/homeprices.txt'
+        url: '../assets/homeprices.txt'
     };
 
 	getWidth() : any {

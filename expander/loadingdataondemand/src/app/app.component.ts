@@ -14,7 +14,7 @@ export class AppComponent implements AfterViewInit {
     constructor(private http: Http) { }
 
     ngAfterViewInit(): void {
-        this.http.get('../sampledata/jqxexpanderxmldata.xml')
+        this.http.get('../assets/jqxexpanderxmldata.txt')
             .subscribe(data => this.populateExpader(data));
     }
 

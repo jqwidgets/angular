@@ -14,7 +14,7 @@ export class AppComponent {
             { name: 'min' },
             { name: 'max' },
         ],
-        url: '../sampledata/weather_geneva.txt'
+        url: '../assets/weather_geneva.txt'
     };
 
     recordsArray: any[];

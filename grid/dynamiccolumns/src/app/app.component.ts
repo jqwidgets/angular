@@ -13,7 +13,7 @@ export class AppComponent {
     source: any =
     {
         datatype: 'json',
-        url: '../sampledata/rows_and_columns.txt'
+        url: '../assets/rows_and_columns.txt'
     };
 
 	getWidth() : any {

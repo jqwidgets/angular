@@ -6,7 +6,7 @@
 })
 
 export class AppComponent {    
-    url: string = '../sampledata/customers.txt';
+    url: string = '../assets/customers.txt';
 
     source: any =
     {

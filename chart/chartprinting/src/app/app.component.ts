@@ -19,7 +19,7 @@ export class AppComponent {
             { name: 'DebtPercent' },
             { name: 'Debt' }
         ],
-        url: '../sampledata/gdp_dept_2010.txt'
+        url: '../assets/gdp_dept_2010.txt'
     };
 
 	getWidth() : any {

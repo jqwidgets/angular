@@ -17,7 +17,7 @@ export class AppComponent {
         ],
         root: 'channel',
         record: 'item',
-        url: '../sampledata/feed.xml'
+        url: '../assets/feed.txt'
     };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);

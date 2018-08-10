@@ -30,7 +30,7 @@ export class AppComponent {
         root: 'entry',
         record: 'content',
         id: 'm\\:properties>d\\:OrderID',
-        url: '../sampledata/orders.xml'
+        url: '../assets/orders.txt'
     };
 
 	getWidth() : any {

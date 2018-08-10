@@ -16,7 +16,7 @@ export class AppComponent {
             { name: 'Population' },
             { name: 'Rate' }
         ],
-        url: '../sampledata/homeprices.txt'
+        url: '../assets/homeprices.txt'
     };
 
     dataAdapter: any = new jqx.dataAdapter(this.source, { async: false, autoBind: true, loadError: (xhr: any, status: any, error: any) => { alert('Error loading "' + this.source.url + '" : ' + error); } });

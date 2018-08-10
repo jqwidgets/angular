@@ -19,7 +19,7 @@ export class AppComponent {
             { name: 'protein' }
         ],
         id: 'id',
-        url: '../sampledata/beverages.txt'
+        url: '../assets/beverages.txt'
     };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);

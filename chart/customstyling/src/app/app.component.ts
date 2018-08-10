@@ -18,7 +18,7 @@ export class AppComponent {
             { name: 'S&P 500' },
             { name: 'NASDAQ' }
         ],
-        url: '../sampledata/nasdaq_vs_sp500.txt'
+        url: '../assets/nasdaq_vs_sp500.txt'
     };
 
 	getWidth() : any {
