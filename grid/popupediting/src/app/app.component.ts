@@ -5,7 +5,7 @@ import { jqxInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxinp
 import { jqxNumberInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxnumberinput.ts';
 import { jqxWindowComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxwindow.ts';
 
-import { generatedata } from '../../../sampledata/generatedata';
+import { generatedata } from '../assets/generatedata';
 
 @Component({
     selector: 'app-root',

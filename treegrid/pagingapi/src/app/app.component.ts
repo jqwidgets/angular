@@ -4,7 +4,7 @@ import { jqxTreeGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqx
 import { jqxInputComponent }    from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxinput.ts';
 import { jqxPanelComponent }    from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxpanel.ts';
 
-import { generateordersdata } from '../../../sampledata/generatedata';
+import { generateordersdata } from '../assets/generatedata';
 
 @Component({
     selector: 'app-root',

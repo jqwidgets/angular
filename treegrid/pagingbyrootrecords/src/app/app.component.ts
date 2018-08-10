@@ -2,7 +2,7 @@
 
 import { jqxTreeGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtree.tsgrid';
 
-import { generateordersdata } from '../../../sampledata/generatedata';
+import { generateordersdata } from '../assets/generatedata';
 
 @Component({
     selector: 'app-root',

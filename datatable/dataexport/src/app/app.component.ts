@@ -1,6 +1,6 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { generatedata } from '../../../sampledata/generatedata';
+import { generatedata } from '../assets/generatedata';
 
 import { jqxDataTableComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdatatable.ts';
 

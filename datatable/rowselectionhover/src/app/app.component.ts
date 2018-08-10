@@ -1,6 +1,6 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';   import { jqxDataTableComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdatatable.ts';  import { jqxInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxinput.ts';
 
-import { generatedata } from '../../../sampledata/generatedata';
+import { generatedata } from '../assets/generatedata';
 
    @Component({     selector: 'app-root',     templateUrl: './app.component.html'
  })   export class AppComponent {     @ViewChild('myDataTable') myDataTable: jqxDataTableComponent;     @ViewChild('myInput') myInput: jqxInputComponent;     @ViewChild('selectedRows') selectedRows: ElementRef; 

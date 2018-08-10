@@ -2,7 +2,7 @@
 
 import { jqxTagCloudComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtagcloud.ts';
 
-import { generatedata } from '../../../sampledata/generatedata';
+import { generatedata } from '../assets/generatedata';
 
 @Component({
     selector: 'app-root',

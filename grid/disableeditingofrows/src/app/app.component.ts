@@ -1,6 +1,6 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
 
-import { generatedata } from '../../../sampledata/generatedata';
+import { generatedata } from '../assets/generatedata';
 
 @Component({
     selector: 'app-root',

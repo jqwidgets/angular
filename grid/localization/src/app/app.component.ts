@@ -1,7 +1,7 @@
 ﻿import { Component } from '@angular/core';
 
 import { getLocalization } from '../../../scripts/localization';
-import { generatedata } from '../../../sampledata/generatedata';
+import { generatedata } from '../assets/generatedata';
 
 @Component({
     selector: 'app-root',
