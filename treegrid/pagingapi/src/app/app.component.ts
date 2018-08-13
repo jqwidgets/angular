@@ -1,6 +1,6 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxTreeGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtree.tsgrid';
+import { jqxTreeGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtree.ts';
 import { jqxInputComponent }    from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxinput.ts';
 import { jqxPanelComponent }    from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxpanel.ts';
 
