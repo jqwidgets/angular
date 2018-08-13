@@ -1,7 +1,7 @@
 ﻿<div class="main-container">
     <div id="draggable-parent">
 
-        <jqxDragDrop [theme]="'material'" class="draggable"
+        <jqxDragDrop class="draggable"
             (ondragstart)="onDragStart($event)" (ondragend)="onDragEnd($event)"
             (ondroptargetenter)="onDropTargetEnter($event)" (ondroptargetleave)="onDropTargetLeave($event)"
             [restricter]="restricter" [dropTarget]="'.drop-target'">

@@ -1,4 +1,4 @@
-﻿<jqxTagCloud [theme]="'material'" #myTagCloud
+﻿<jqxTagCloud #myTagCloud
     [width]="getWidth()" [height]="200" [source]="dataAdapter" [fontSizeUnit]="'px'"
     [minFontSize]="12" [maxFontSize]="20" [displayMember]="'country'" [valueMember]="'rate'"
     [urlBase]="'http://localhost/'" [minColor]="'#00AA99'" [maxColor]="'#FF0000'">
@@ -12,7 +12,7 @@
             [width]="150" [height]="22">
             <div style="padding: 3px">
 
-                <jqxColorPicker [theme]="'material'" (onColorchange)="myColorPickerOnColorChange($event)"
+                <jqxColorPicker (onColorchange)="myColorPickerOnColorChange($event)"
                     [width]="220" [height]="220" [color]="'00AA99'" [colorMode]="'hue'">
                 </jqxColorPicker>
 
@@ -27,7 +27,7 @@
             [width]="150" [height]="22">
             <div style="padding: 3px">
 
-              <jqxColorPicker [theme]="'material'" (onColorchange)="myColorPicker2OnColorChange($event)"
+              <jqxColorPicker (onColorchange)="myColorPicker2OnColorChange($event)"
                   [width]="220" [height]="220" [color]="'FF0000'" [colorMode]="'hue'">
               </jqxColorPicker>
 
