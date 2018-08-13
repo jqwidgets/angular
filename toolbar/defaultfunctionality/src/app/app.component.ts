@@ -62,7 +62,7 @@ export class AppComponent {
             case 7:
                 let button = document.createElement('div');
                 let img = document.createElement('img');
-                img.src = '../images/administrator.png'
+                img.src = 'https://www.jqwidgets.com/angular/images/administrator.png'
                 img.title = 'Custom tool';
                 button.appendChild(img);
                 tool[0].appendChild(button);

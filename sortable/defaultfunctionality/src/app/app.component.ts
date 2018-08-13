@@ -22,7 +22,7 @@ export class AppComponent implements AfterViewInit {
         let titles = ['Sales Representative', 'Vice President, Sales', 'Sales Representative', 'Sales Representative', 'Sales Manager'];
         for (let i = 0; i < firstNames.length; i++) {
             let element = document.createElement('div');
-            let imgurl = '../images/' + firstNames[i].toLowerCase() + '.png';
+            let imgurl = 'https://www.jqwidgets.com/angular/images/' + firstNames[i].toLowerCase() + '.png';
             let img = '<img height="50" width="40" src="' + imgurl + '"/>';
             element.innerHTML = '<table style="min-width: 130px;"><tr><td style="width: 40px;" rowspan="2">' + img + '</td><td>' + firstNames[i] + ' ' + lastNames[i] + '</td></tr><tr><td>' + titles[i] + '</td></tr></table>';
             this.mySortable.elementRef.nativeElement.firstElementChild.appendChild(element);

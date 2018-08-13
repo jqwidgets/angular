@@ -148,38 +148,38 @@ export class AppComponent {
                     initContent: () => {
                         // initialize a jqxTree inside the Solution Explorer Panel
                         let source = [{
-                            icon: '../images/earth.png',
+                            icon: 'https://www.jqwidgets.com/angular/images/earth.png',
                             label: 'Project',
                             expanded: true,
                             items: [{
-                                icon: '../images/folder.png',
+                                icon: 'https://www.jqwidgets.com/angular/images/folder.png',
                                 label: 'css',
                                 expanded: true,
                                 items: [{
-                                    icon: '../images/nav1.png',
+                                    icon: 'https://www.jqwidgets.com/angular/images/nav1.png',
                                     label: 'jqx.base.css'
                                 }, {
-                                    icon: '../images/nav1.png',
+                                    icon: 'https://www.jqwidgets.com/angular/images/nav1.png',
                                     label: 'jqx.energyblue.css'
                                 }, {
-                                    icon: '../images/nav1.png',
+                                    icon: 'https://www.jqwidgets.com/angular/images/nav1.png',
                                     label: 'jqx.orange.css'
                                 }]
                             }, {
-                                icon: '../images/folder.png',
+                                icon: 'https://www.jqwidgets.com/angular/images/folder.png',
                                 label: 'scripts',
                                 items: [{
-                                    icon: '../images/nav1.png',
+                                    icon: 'https://www.jqwidgets.com/angular/images/nav1.png',
                                     label: 'jqxcore.js'
                                 }, {
-                                    icon: '../images/nav1.png',
+                                    icon: 'https://www.jqwidgets.com/angular/images/nav1.png',
                                     label: 'jqxdata.js'
                                 }, {
-                                    icon: '../images/nav1.png',
+                                    icon: 'https://www.jqwidgets.com/angular/images/nav1.png',
                                     label: 'jqxgrid.js'
                                 }]
                             }, {
-                                icon: '../images/nav1.png',
+                                icon: 'https://www.jqwidgets.com/angular/images/nav1.png',
                                 label: 'index.htm',
                                 selected: true
                             }]
@@ -200,21 +200,21 @@ export class AppComponent {
         this.myDockingLayout.addFloatGroup(300, 200, { x: 500, y: 200 }, 'layoutPanel', 'Server Explorer', '<div id="serverExplorerTree" />',
             (): void => {
                 let source = [{
-                    icon: '../images/dataadapter.png',
+                    icon: 'https://www.jqwidgets.com/angular/images/dataadapter.png',
                     label: 'Data Connections',
                     expanded: true,
                     items: [{
-                        icon: '../images/validator.png',
+                        icon: 'https://www.jqwidgets.com/angular/images/validator.png',
                         label: 'northwinddatabase.mdf'
                     }]
                 }, {
-                    icon: '../images/nav1.png',
+                    icon: 'https://www.jqwidgets.com/angular/images/nav1.png',
                     label: 'Servers',
                     items: [{
-                        icon: '../images/nav1.png',
+                        icon: 'https://www.jqwidgets.com/angular/images/nav1.png',
                         label: 'WorkStation3-PC'
                     }, {
-                        icon: '../images/dragdrop.png',
+                        icon: 'https://www.jqwidgets.com/angular/images/dragdrop.png',
                         label: 'SharePoint Connections'
                     }]
                     }];

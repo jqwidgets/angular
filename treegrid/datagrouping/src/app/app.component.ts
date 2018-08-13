@@ -52,7 +52,7 @@ export class AppComponent {
         if (level == 0) {
             // each group row has a label member that contains the information displayed on the group row.
             let country = rowData.label;
-            return '../images/' + $.trim(country.toLowerCase()) + '.png';
+            return 'https://www.jqwidgets.com/angular/images/' + $.trim(country.toLowerCase()) + '.png';
         }
         return false;
     }

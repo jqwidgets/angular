@@ -35,7 +35,7 @@ export class AppComponent {
                 container.style.border = 'none';
                 htmlElement.appendChild(container);
 
-                const imgurl = '../images/' + value.toLowerCase() + '.png';
+                const imgurl = 'https://www.jqwidgets.com/angular/images/' + value.toLowerCase() + '.png';
 
                 const options = {
                     width: '100%', height: 90, template: 'success',
@@ -53,7 +53,7 @@ export class AppComponent {
                 this.counter++;
             },
             initwidget: (row: number, column: any, value: any, htmlElement: HTMLElement): void => {
-                const imgurl = '../images/' + value.toLowerCase() + '.png';
+                const imgurl = 'https://www.jqwidgets.com/angular/images/' + value.toLowerCase() + '.png';
                 (<HTMLImageElement>htmlElement.children[1].children[0]).src = imgurl;
                 htmlElement.children[1].children[1].innerHTML = value;
             }

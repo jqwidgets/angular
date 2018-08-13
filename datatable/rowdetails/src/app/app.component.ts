@@ -61,7 +61,7 @@
             let img = document.createElement('img');
             img.height = 60;
             img.style.marginLeft = '10px';
-            img.src = '../images/' + row.firstname.toLowerCase() + '.png';
+            img.src = 'https://www.jqwidgets.com/angular/images/' + row.firstname.toLowerCase() + '.png';
 
             image.appendChild(photo);
             image.appendChild(img);

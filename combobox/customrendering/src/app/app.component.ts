@@ -18,7 +18,7 @@ export class AppComponent {
 
     renderer = (index: number, label: string, value: any): string => {
         let datarecord = this.data[index];
-        let imgurl = '../images/' + label.toLowerCase() + '.png';
+        let imgurl = 'https://www.jqwidgets.com/angular/images/' + label.toLowerCase() + '.png';
         let img = '<img height="50" width="45" src="' + imgurl + '"/>';
         let table = '<table style="min-width: 150px;"><tr><td style="width: 55px;" rowspan="2">' + img + '</td><td>' + datarecord.firstname + ' ' + datarecord.lastname + '</td></tr><tr><td>' + datarecord.title + '</td></tr></table>';
         return table;

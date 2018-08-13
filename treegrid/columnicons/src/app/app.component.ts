@@ -50,7 +50,7 @@ export class AppComponent {
     dataAdapter: any = new jqx.dataAdapter(this.source, {
         beforeLoadComplete: (records: any[]): any[] => {
             for (let i = 0; i < records.length; i++) {
-                let imgUrl = '../images/' + records[i].FirstName.toLowerCase() + '.png';
+                let imgUrl = 'https://www.jqwidgets.com/angular/images/' + records[i].FirstName.toLowerCase() + '.png';
                 records[i].icon = imgUrl;
             }
             return records;

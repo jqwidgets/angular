@@ -11,9 +11,9 @@ export class AppComponent {
     staff: any[] =
     [
         { id: 0, name: 'No name', image: '../jqwidgets/styles/images/common.png', common: true },
-        { id: 1, name: 'Andrew Fuller', image: '../images/andrew.png' },
-        { id: 2, name: 'Janet Leverling', image: '../images/janet.png' },
-        { id: 3, name: 'Steven Buchanan', image: '../images/steven.png' }
+        { id: 1, name: 'Andrew Fuller', image: 'https://www.jqwidgets.com/angular/images/andrew.png' },
+        { id: 2, name: 'Janet Leverling', image: 'https://www.jqwidgets.com/angular/images/janet.png' },
+        { id: 3, name: 'Steven Buchanan', image: 'https://www.jqwidgets.com/angular/images/steven.png' }
     ];
 	
 	getWidth() : any {

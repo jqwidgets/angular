@@ -26,7 +26,7 @@ export class AppComponent {
 
     renderer = (index: number, label: string, value: string): any => {
         let datarecord = this.shirtFileNames[index];
-        let imgurl = '../images/t-shirts/' + datarecord.toLowerCase() + '.png';
+        let imgurl = 'https://www.jqwidgets.com/angular/images/t-shirts/' + datarecord.toLowerCase() + '.png';
         let img = '<img height="70" width="70" src="' + imgurl + '"/>';
         let table = '<table style="min-width: 130px;"><tr><td style="width: 80px;">' + img + '</td><td>' + label + '</td></tr></table>';
 

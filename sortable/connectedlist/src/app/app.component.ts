@@ -28,7 +28,7 @@ export class AppComponent implements OnInit, AfterViewInit {
         let sortableList2 = '';
 
         for (let i = 0; i < firstNames.length; i++) {
-            let imgurl = '../images/' + firstNames[i].toLowerCase() + '.png';
+            let imgurl = 'https://www.jqwidgets.com/angular/images/' + firstNames[i].toLowerCase() + '.png';
 
             let img = '<img height="50" width="40" src="' + imgurl + '"/>';
 

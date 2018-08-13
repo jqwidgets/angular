@@ -96,7 +96,7 @@ export class AppComponent  {
         let country = this.countries[Math.floor(Math.random() * this.countries.length)];
         this.myToolBar.addTool('custom', position, false, (type: string, tool: any, menuToolIninitialization: boolean): void => {
             let width;
-            tool.append('<img src="../images/' + country + '.png" style="float: left; clear: both;" />');
+            tool.append('<img src="https://www.jqwidgets.com/angular/images/' + country + '.png" style="float: left; clear: both;" />');
             if (menuToolIninitialization) {
                 // specific setting for minimized tool
                 tool.find('img').css('margin-right', '10px');

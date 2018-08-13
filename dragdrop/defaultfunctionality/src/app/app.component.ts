@@ -121,7 +121,7 @@ export class AppComponent implements AfterViewInit {
                  <div class="jqx-fill-state-normal-${this.theme} draggable-demo-product-price">
                       Price: <strong>$${product.price}</strong>
                  </div>
-                 <img src="../images/t-shirts/${product.pic}" alt=${name} class="jqx-rc-b" />`
+                 <img src="https://www.jqwidgets.com/angular/images/t-shirts/${product.pic}" alt=${name} class="jqx-rc-b" />`
 
             catalog.appendChild(element) 
 

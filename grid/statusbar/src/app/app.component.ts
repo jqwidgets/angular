@@ -101,7 +101,7 @@ export class AppComponent implements AfterViewInit {
     createButtons(): void {
         let addButtonOptions = {
             width: 80, height: 25, value: 'Add',
-            imgSrc: '../images/add.png',
+            imgSrc: 'https://www.jqwidgets.com/angular/images/add.png',
             imgPosition: 'center', textPosition: 'center',
             textImageRelation: 'imageBeforeText'
         }
@@ -109,7 +109,7 @@ export class AppComponent implements AfterViewInit {
 
         let deleteButtonOptions = {
             width: 80, height: 25, value: 'Delete',
-            imgSrc: '../images/close.png',
+            imgSrc: 'https://www.jqwidgets.com/angular/images/close.png',
             imgPosition: 'center', textPosition: 'center',
             textImageRelation: 'imageBeforeText'
         }
@@ -117,7 +117,7 @@ export class AppComponent implements AfterViewInit {
 
         let reloadButtonOptions = {
             width: 80, height: 25, value: 'Reload',
-            imgSrc: '../images/refresh.png',
+            imgSrc: 'https://www.jqwidgets.com/angular/images/refresh.png',
             imgPosition: 'center', textPosition: 'center',
             textImageRelation: 'imageBeforeText'
         }
@@ -125,7 +125,7 @@ export class AppComponent implements AfterViewInit {
 
         let searchButtonOptions = {
             width: 80, height: 25, value: 'Find',
-            imgSrc: '../images/search.png',
+            imgSrc: 'https://www.jqwidgets.com/angular/images/search.png',
             imgPosition: 'center', textPosition: 'center',
             textImageRelation: 'imageBeforeText'
         }
