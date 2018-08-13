@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser'; 
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { jqxPivotGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxpivotgrid.ts';
@@ -9,7 +10,7 @@ import { jqxWindowComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxwi
 
 @NgModule({
     declarations: [AppComponent, jqxPivotGridComponent, jqxDataTableComponent, jqxGridComponent, jqxWindowComponent],
-    imports: [BrowserModule],
+    imports: [BrowserModule, FormsModule],
     providers: [],
     bootstrap: [AppComponent]
 })
