@@ -8,7 +8,7 @@
 export class AppComponent {
     source =
     {
-        datatype: 'csv',
+        datatype: 'tsv',
         datafields: [
             { name: 'Year' },
             { name: 'Northeast' },
