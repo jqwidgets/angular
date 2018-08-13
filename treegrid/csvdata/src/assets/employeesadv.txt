@@ -1,4 +1,4 @@
-﻿1,18,Guy,Gilbert,Production Technician - WC60,2000-07-31,1976-05-15,320-555-0195,M,Production
+1,18,Guy,Gilbert,Production Technician - WC60,2000-07-31,1976-05-15,320-555-0195,M,Production
 2,7,Kevin,Brown,Marketing Assistant,2001-02-26,1981-06-03,150-555-0189,M,Marketing
 3,14,Roberto,Tamburello,Engineering Manager,2001-12-12,1968-12-13,212-555-0187,M,Engineering
 4,3,Rob,Walters,Senior Tool Designer,2002-01-05,1969-01-23,612-555-0100,M,Tool Design

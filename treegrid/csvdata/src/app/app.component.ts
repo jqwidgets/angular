@@ -40,7 +40,7 @@ export class AppComponent {
             parentDataField: { name: 'ParentEmployeeKey' }
         },
         id: 'EmployeeKey',
-        url: '../assets/employeesadv.csv'
+        url: '../assets/employeesadv.txt'
     };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);

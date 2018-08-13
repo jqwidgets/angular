@@ -13,7 +13,7 @@ export class AppComponent {
             { name: 'Quarter' },
             { name: 'Change' }
         ],
-        url: '../assets/us_gdp_2008-2013.csv'
+        url: '../assets/us_gdp_2008-2013.txt'
     };
 
     dataAdapter: any = new jqx.dataAdapter(this.source, { async: false, autoBind: true, loadError: (xhr: any, status: any, error: any) => { alert('Error loading "' + this.source.url + '" : ' + error); } });
