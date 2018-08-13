@@ -7,10 +7,10 @@ import { jqxButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxbu
 import { jqxCheckBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxcheckbox.ts';
 import { jqxDropDownButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdropdownbutton.ts';
 import { jqxRadioButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxradiobutton.ts';
-import { jqxSwitchbuttonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxswitchbutton.ts';
+import { jqxSwitchButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxswitchbutton.ts';
 
 @NgModule({
-    declarations: [AppComponent, jqxButtonComponent, jqxCheckBoxComponent, jqxDropDownButtonComponent, jqxRadioButtonComponent, jqxSwitchbuttonComponent],
+    declarations: [AppComponent, jqxButtonComponent, jqxCheckBoxComponent, jqxDropDownButtonComponent, jqxRadioButtonComponent, jqxSwitchButtonComponent],
     imports: [BrowserModule, FormsModule],
     providers: [],
     bootstrap: [AppComponent]

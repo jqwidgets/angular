@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { jqxSwitchbuttonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxswitchbutton.ts';
+import { jqxSwitchButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxswitchbutton.ts';
 
 @NgModule({
-    declarations: [AppComponent, jqxSwitchbuttonComponent],
+    declarations: [AppComponent, jqxSwitchButtonComponent],
     imports: [BrowserModule, FormsModule],
     providers: [],
     bootstrap: [AppComponent]

@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { jqxScrollbarComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxscrollbar.ts';
+import { jqxScrollBarComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxscrollbar.ts';
 
 @NgModule({
-    declarations: [AppComponent, jqxScrollbarComponent],
+    declarations: [AppComponent, jqxScrollBarComponent],
     imports: [BrowserModule, FormsModule],
     providers: [],
     bootstrap: [AppComponent]
