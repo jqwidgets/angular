@@ -1,4 +1,4 @@
-﻿<jqxChart #myChart
+﻿<jqxChart [theme]="'material'" #myChart
     [width]="getWidth()" [height]="500"
     [title]="'Sales by City in Q1 & Q2'"
     [description]="''"
@@ -13,7 +13,7 @@
             <td>
                 <p>Select Serie 1 Symbol:</p>
 
-                <jqxDropDownList (onChange)="dropDownSerie1SymbolOnChange($event)"
+                <jqxDropDownList [theme]="'material'" (onChange)="dropDownSerie1SymbolOnChange($event)"
                     [width]="200" [height]="25" [selectedIndex]="2"
                     [dropDownHeight]="100" [source]="symbolsList">
                 </jqxDropDownList>
@@ -22,7 +22,7 @@
             <td>
                 <p>Select Serie 2 Symbol:</p>
 
-                <jqxDropDownList (onChange)="dropDownSerie2SymbolOnChange($event)"
+                <jqxDropDownList [theme]="'material'" (onChange)="dropDownSerie2SymbolOnChange($event)"
                     [width]="200" [height]="25" [selectedIndex]="1"
                     [dropDownHeight]="100" [source]="symbolsList">
                 </jqxDropDownList>

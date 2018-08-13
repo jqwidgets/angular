@@ -1,4 +1,4 @@
-﻿<jqxDateTimeInput #myDateTimeInput
+﻿<jqxDateTimeInput [theme]="'material'" #myDateTimeInput
     [width]="300" [height]="30" [formatString]="'d'">
 </jqxDateTimeInput>
 
@@ -9,7 +9,7 @@
     </div>
     <br />
 
-    <jqxDropDownList (onSelect)="listOnSelect($event)"
+    <jqxDropDownList [theme]="'material'" (onSelect)="listOnSelect($event)"
         [width]="230" [height]="30"
         [source]="availableFormats" [selectedIndex]="0">
     </jqxDropDownList>

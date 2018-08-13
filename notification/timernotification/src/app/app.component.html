@@ -1,5 +1,5 @@
 ﻿<!--Notifications-->
-<jqxNotification #timerNotification
+<jqxNotification [theme]="'material'" #timerNotification
                  [position]="position"
                  [animationCloseDelay]="0"
                  [autoOpen]="true"
@@ -10,7 +10,7 @@
     Hurry, you have <span class="timer">30</span> seconds left!
   </div>
 </jqxNotification>
-<jqxNotification #timeOutNotification
+<jqxNotification [theme]="'material'" #timeOutNotification
                  [position]="position"
                  [autoOpen]="false"
                  [autoClose]="false"
@@ -18,7 +18,7 @@
                  [width]="notificationWidth">
   <div>Time is up!</div>
 </jqxNotification>
-<jqxNotification #correctNotification
+<jqxNotification [theme]="'material'" #correctNotification
                  [position]="position"
                  [autoOpen]="false"
                  [autoClose]="true"
@@ -26,7 +26,7 @@
                  [width]="notificationWidth">
   <div>Your answer is correct.</div>
 </jqxNotification>
-<jqxNotification #wrongNotification
+<jqxNotification [theme]="'material'" #wrongNotification
                  [position]="position"
                  [autoOpen]="false"
                  [autoClose]="true"
@@ -34,7 +34,7 @@
                  [width]="notificationWidth">
   <div>Your answer is incorrect.</div>
 </jqxNotification>
-<jqxNotification #errorTimeOutNotification
+<jqxNotification [theme]="'material'" #errorTimeOutNotification
                  [position]="position"
                  [autoOpen]="false"
                  [autoClose]="true"
@@ -48,7 +48,7 @@
 </div>
 <div>
   20 - 3 × 4 =
-  <jqxInput #answerInput [width]="50" [height]="25"></jqxInput>
+  <jqxInput [theme]="'material'" #answerInput [width]="50" [height]="25"></jqxInput>
 </div>
 <br />
-<jqxButton #submitAnswer (onClick)="submitAnswerClick()">Submit answer</jqxButton>
+<jqxButton [theme]="'material'" #submitAnswer (onClick)="submitAnswerClick()">Submit answer</jqxButton>

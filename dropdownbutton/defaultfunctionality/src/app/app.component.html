@@ -1,6 +1,6 @@
-﻿<jqxDropDownButton #myDropDownButton style="float: left" 
+﻿<jqxDropDownButton [theme]="'material'" #myDropDownButton style="float: left" 
     [width]="150" [height]="25">
-    <jqxTree #myTree 
+    <jqxTree [theme]="'material'" #myTree 
         (onSelect)="treeOnSelect($event)" [width]="200">
         <ul>
             <li item-selected='true'>Home</li>
@@ -35,7 +35,7 @@
 </jqxDropDownButton>
 
 <div style="float: left; margin-top: 5px; margin-left: 30px">
-    <jqxCheckBox (onChange)="checkBoxOnChange($event)">
+    <jqxCheckBox [theme]="'material'" (onChange)="checkBoxOnChange($event)">
         Open On Mouse Over
     </jqxCheckBox>
 </div>

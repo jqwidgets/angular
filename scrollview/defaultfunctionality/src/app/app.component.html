@@ -1,4 +1,4 @@
-﻿<jqxScrollView #myScrollView
+﻿<jqxScrollView [theme]="'material'" #myScrollView
     [width]="600" [height]="450" [buttonsOffset]="[0, 0]">
     <div><div class="photo" style="background-image: url(../images/imageNature1.jpg)"></div></div>
     <div><div class="photo" style="background-image: url(../images/imageNature2.jpg)"></div></div>
@@ -9,12 +9,12 @@
 
 <div style="margin-top: 2em"></div>
 
-<jqxButton (onClick)="onStartClicked()"
+<jqxButton [theme]="'material'" (onClick)="onStartClicked()"
            [width]="120" [height]="25">
   Start SlideShow
 </jqxButton>
 
-<jqxButton (onClick)="onStopClicked()"
+<jqxButton [theme]="'material'" (onClick)="onStopClicked()"
            [width]="120" [height]="25">
   Stop SlideShow
 </jqxButton>

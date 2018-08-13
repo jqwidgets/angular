@@ -1,5 +1,5 @@
 ﻿<div style='float: left; width: 500px;' #jqxWidget>
-  <jqxListBox style="margin-left: 20px; margin-top: 10px; float: left;" #jqxListBox
+  <jqxListBox [theme]="'material'" style="margin-left: 20px; margin-top: 10px; float: left;" #jqxListBox
               (onSelect)="select($event)"
               (onUnselect)="unselect($event)"
               [source]="source"
@@ -11,7 +11,7 @@
       <span>
         Events:
       </span>
-      <jqxPanel #Events [width]="200" [height]="250">
+      <jqxPanel [theme]="'material'" #Events [width]="200" [height]="250">
       </jqxPanel>
     </div>
   </div>

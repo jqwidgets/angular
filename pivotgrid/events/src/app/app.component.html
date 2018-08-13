@@ -1,4 +1,4 @@
-<jqxPivotGrid #pivotGrid1
+<jqxPivotGrid [theme]="'material'" #pivotGrid1
         [width]="getWidth()" 
         [height]="400"
         [source]="pivotDataSource"
@@ -27,11 +27,11 @@
 	 >
 </jqxPivotGrid>
 <br />
-<jqxTextArea #eventsLog
+<jqxTextArea [theme]="'material'" #eventsLog
         [width]="getWidth()" 
         [height]="100"
 	 >
 </jqxTextArea>
 <br />
-<jqxButton [width]="90" (onClick)="onClearLog()">Clear Log</jqxButton>
+<jqxButton [theme]="'material'" [width]="90" (onClick)="onClearLog()">Clear Log</jqxButton>
 

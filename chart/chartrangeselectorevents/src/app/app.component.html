@@ -1,4 +1,4 @@
-﻿<jqxChart #myChart 
+﻿<jqxChart [theme]="'material'" #myChart 
     (onClick)="dumpEventInfo($event)" (onToggle)="dumpEventInfo($event)"
     (onRangeSelectionChanging)="dumpEventInfo($event)"  (onRangeSelectionChanged)="dumpEventInfo($event)"
     (onRefreshBegin)="dumpEventInfo($event)"  (onRefreshEnd)="dumpEventInfo($event)"

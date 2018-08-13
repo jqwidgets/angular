@@ -1,4 +1,4 @@
-﻿<jqxExpander #createAccount
+﻿<jqxExpander [theme]="'material'" #createAccount
              [showArrow]="false"
              [toggleMode]="'none'"
              [width]="350">
@@ -6,7 +6,7 @@
     Create a new account
   </div>
   <div style="font-family: Verdana; font-size: 13px;">
-    <jqxValidator #validatorReference (onValidationSuccess)="validationSuccess($event)" [rules]="rules" [hintType]="'label'">
+    <jqxValidator [theme]="'material'" #validatorReference (onValidationSuccess)="validationSuccess($event)" [rules]="rules" [hintType]="'label'">
     <form id="form" style="overflow: hidden; margin: 10px;" action="./">
       <table>
         <tr>
@@ -16,7 +16,7 @@
         </tr>
         <tr>
           <td>
-            <jqxInput #firstName id="firstName" [width]="300" [height]="21"></jqxInput>
+            <jqxInput [theme]="'material'" #firstName id="firstName" [width]="300" [height]="21"></jqxInput>
           </td>
         </tr>
         <tr>
@@ -26,7 +26,7 @@
         </tr>
         <tr>
           <td>
-            <jqxInput #lastName id="lastName" [width]="300" [height]="21"></jqxInput>
+            <jqxInput [theme]="'material'" #lastName id="lastName" [width]="300" [height]="21"></jqxInput>
           </td>
         </tr>
         <tr>
@@ -36,7 +36,7 @@
         </tr>
         <tr>
           <td colspan="2">
-            <jqxInput #userName id="userName" [width]="300" [height]="21"></jqxInput>
+            <jqxInput [theme]="'material'" #userName id="userName" [width]="300" [height]="21"></jqxInput>
           </td>
         </tr>
         <tr>
@@ -46,7 +46,7 @@
         </tr>
         <tr>
           <td colspan="2">
-            <jqxPasswordInput #password id="password" [width]="300" [height]="21"></jqxPasswordInput>
+            <jqxPasswordInput [theme]="'material'" #password id="password" [width]="300" [height]="21"></jqxPasswordInput>
           </td>
         </tr>
         <tr>
@@ -56,7 +56,7 @@
         </tr>
         <tr>
           <td colspan="2">
-            <jqxPasswordInput #passwordConfirm id="passwordConfirm" [width]="300" [height]="21"></jqxPasswordInput>
+            <jqxPasswordInput [theme]="'material'" #passwordConfirm id="passwordConfirm" [width]="300" [height]="21"></jqxPasswordInput>
           </td>
         </tr>
         <tr>
@@ -66,7 +66,7 @@
         </tr>
         <tr>
           <td colspan="2">
-            <jqxDateTimeInput #birthday id="birthday"
+            <jqxDateTimeInput [theme]="'material'" #birthday id="birthday"
                               [width]="300"
                               [height]="21">
             </jqxDateTimeInput>
@@ -79,7 +79,7 @@
         </tr>
         <tr>
           <td colspan="2">
-            <jqxDropDownList #gender id="gender"
+            <jqxDropDownList [theme]="'material'" #gender id="gender"
                              [source]="genders"
                              [selectedIndex]="-1"
                              [placeHolder]="'I am...'"
@@ -91,7 +91,7 @@
         </tr>
         <tr>
           <td colspan="2">
-            <jqxButton [width]="150" (onClick)="buttonClicked()">Create account</jqxButton>
+            <jqxButton [theme]="'material'" [width]="150" (onClick)="buttonClicked()">Create account</jqxButton>
           </td>
         </tr>
       </table>

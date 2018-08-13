@@ -1,8 +1,8 @@
-﻿<jqxPanel #myPanel style="border-width: 0; float: left; margin-left: 30px"
+﻿<jqxPanel [theme]="'material'" #myPanel style="border-width: 0; float: left; margin-left: 30px"
     [width]="350" [height]="50">
 </jqxPanel>
 
-<jqxDocking #myDocking style="float: left;"
+<jqxDocking [theme]="'material'" #myDocking style="float: left;"
     (onDragStart)="myDockingOnDragStart($event)" (onDragEnd)="myDockingOnDragEnd($event)"
     [width]="getWidth()" [orientation]="'horizontal'" [mode]="'default'">
     <div>

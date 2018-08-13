@@ -1,5 +1,5 @@
 ﻿<div style="width: 450px;">
-  <jqxRibbon #jqxRibbon style="float: right;"
+  <jqxRibbon [theme]="'material'" #jqxRibbon style="float: right;"
              [width]="375"
              [height]="335"
              [position]="'right'"
@@ -363,4 +363,4 @@
   </jqxRibbon>
 </div>
 <div style="clear: both;"></div>
-<jqxCheckBox style="margin-top: 50px;" #megaMenuMode (onChange)="change($event)">Menu Mode</jqxCheckBox>
+<jqxCheckBox [theme]="'material'" style="margin-top: 50px;" #megaMenuMode (onChange)="change($event)">Menu Mode</jqxCheckBox>

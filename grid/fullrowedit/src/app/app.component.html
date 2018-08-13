@@ -1,4 +1,4 @@
-﻿<jqxGrid
+﻿<jqxGrid [theme]="'material'"
     (onCellbeginedit)="myGridOnCellBeginEdit($event)" (onCellendedit)="myGridOnCellEndEdit($event)"
     [width]="getWidth()" [source]="dataAdapter" [columns]="columns"
     [editable]="true" [editmode]="'selectedrow'" [selectionmode]="'singlerow'">

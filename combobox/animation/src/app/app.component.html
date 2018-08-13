@@ -1,22 +1,22 @@
 ﻿<div id='selectionlog'>
     <h3>Animation Type</h3>
 
-    <jqxRadioButton (onChecked)="noneAnimationOnChecked()">
+    <jqxRadioButton [theme]="'material'" (onChecked)="noneAnimationOnChecked()">
         None
     </jqxRadioButton>
 
-    <jqxRadioButton (onChecked)="slideAnimationOnChecked()">
+    <jqxRadioButton [theme]="'material'" (onChecked)="slideAnimationOnChecked()">
         Slide
     </jqxRadioButton>
 
-    <jqxRadioButton (onChecked)="fadeAnimationOnChecked()" 
+    <jqxRadioButton [theme]="'material'" (onChecked)="fadeAnimationOnChecked()" 
         [checked]="true">
         Fade
     </jqxRadioButton>
 
 </div>
 
-<jqxComboBox #myComboBox
+<jqxComboBox [theme]="'material'" #myComboBox
     [width]="150" [height]="30" [source]="dataAdapter" [selectedIndex]="0"
     [animationType]="'fade'" [dropDownHorizontalAlignment]="'right'"
     [displayMember]="'ContactName'" [valueMember]="'CompanyName'">

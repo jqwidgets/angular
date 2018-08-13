@@ -1,5 +1,5 @@
 ﻿This demo demonstrates how to add a tag in first position or update/remove the tag in first position.
-<jqxTagCloud #tagCloud
+<jqxTagCloud [theme]="'material'" #tagCloud
              [width]="getWidth()"
              [source]="dataAdapter"
              [fontSizeUnit]="'px'"
@@ -13,7 +13,7 @@
 </jqxTagCloud>
 <br />
 <br />
-<jqxButton #addItem (onClick)="addItemClick()">Add Item</jqxButton>
-<jqxButton #deleteItem (onClick)="deleteItemClick()">Delete First Item</jqxButton>
-<jqxButton #updateItem (onClick)="updateItemClick()">Update First Item</jqxButton>
+<jqxButton [theme]="'material'" #addItem (onClick)="addItemClick()">Add Item</jqxButton>
+<jqxButton [theme]="'material'" #deleteItem (onClick)="deleteItemClick()">Delete First Item</jqxButton>
+<jqxButton [theme]="'material'" #updateItem (onClick)="updateItemClick()">Update First Item</jqxButton>
 <br />

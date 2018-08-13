@@ -2,6 +2,6 @@
     The value is {{ value | json }}
 </fieldset>
 
-<jqxDropDownList [(ngModel)]="value"
+<jqxDropDownList [theme]="'material'" [(ngModel)]="value"
     [width]="200" [height]="30" [source]="source" [selectedIndex]="1">
 </jqxDropDownList>

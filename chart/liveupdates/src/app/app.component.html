@@ -1,4 +1,4 @@
-﻿<jqxChart #myChart
+﻿<jqxChart [theme]="'material'" #myChart
     [width]="getWidth()" [height]="500"
     [title]="'Live updates demo'" [enableAxisTextAnimation]="true"
     [description]="''" [animationDuration]="1000"
@@ -13,7 +13,7 @@
             <td style="padding-left: 50px">
                 <p>Select the series type:</p>
 
-                <jqxDropDownList (onChange)="seriesOnChange($event)"
+                <jqxDropDownList [theme]="'material'" (onChange)="seriesOnChange($event)"
                     [width]="200" [height]="25" [selectedIndex]="2"
                     [dropDownHeight]="100" [source]="seriesList">
                 </jqxDropDownList>
@@ -22,7 +22,7 @@
             <td>
                 <p>Select color scheme:</p>
 
-                <jqxDropDownList (onChange)="colorsOnChange($event)"
+                <jqxDropDownList [theme]="'material'" (onChange)="colorsOnChange($event)"
                     [width]="200" [height]="25" [selectedIndex]="2"
                     [dropDownHeight]="100" [source]="colorsSchemesList">
                 </jqxDropDownList>

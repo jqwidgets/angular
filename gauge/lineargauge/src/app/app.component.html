@@ -1,4 +1,4 @@
-﻿<jqxLinearGauge #myLinearGauge style="margin-left: 20px; float: left;"
+﻿<jqxLinearGauge [theme]="'material'" #myLinearGauge style="margin-left: 20px; float: left;"
     [max]="60" [value]="-60" [pointer]="pointer"
     [colorScheme]="'scheme05'" [orientation]="'vertical'"
     [labels]="labels" [ticksMajor]="ticksMajor"
@@ -6,10 +6,10 @@
 </jqxLinearGauge>
 
 <div style="margin-left: 330px">
-  <jqxExpander [width]="280" [height]="320" [toggleMode]="'none'" [showArrow]="false">
+  <jqxExpander [theme]="'material'" [width]="280" [height]="320" [toggleMode]="'none'" [showArrow]="false">
     <div className='demo-options-header'>Options</div>
     <div>
-      <jqxCheckBox (onChange)="isVerticalCheckboxOnChange($event)" [checked]="true">Is Vertical</jqxCheckBox>
+      <jqxCheckBox [theme]="'material'" (onChange)="isVerticalCheckboxOnChange($event)" [checked]="true">Is Vertical</jqxCheckBox>
       <br />
       <div>
         <table style="float: left; margin-left: 10px">
@@ -19,17 +19,17 @@
             </tr>
             <tr>
               <td>
-                <jqxRadioButton (onChecked)="labelsNearRadioOnChecked()" [groupName]="'labels-position'">Near</jqxRadioButton>
+                <jqxRadioButton [theme]="'material'" (onChecked)="labelsNearRadioOnChecked()" [groupName]="'labels-position'">Near</jqxRadioButton>
               </td>
             </tr>
             <tr>
               <td>
-                <jqxRadioButton (onChecked)="labelsFarRadioOnChecked()" [groupName]="'labels-position'">Far</jqxRadioButton>
+                <jqxRadioButton [theme]="'material'" (onChecked)="labelsFarRadioOnChecked()" [groupName]="'labels-position'">Far</jqxRadioButton>
               </td>
             </tr>
             <tr>
               <td>
-                <jqxRadioButton (onChecked)="labelsBothRadioOnChecked()" [groupName]="'labels-position'" [checked]="true">Both</jqxRadioButton>
+                <jqxRadioButton [theme]="'material'" (onChecked)="labelsBothRadioOnChecked()" [groupName]="'labels-position'" [checked]="true">Both</jqxRadioButton>
               </td>
             </tr>
           </tbody>
@@ -41,17 +41,17 @@
             </tr>
             <tr>
               <td>
-                <jqxRadioButton (onChecked)="ticksNearRadioOnChecked()" [groupName]="'ticks-position'">Near</jqxRadioButton>
+                <jqxRadioButton [theme]="'material'" (onChecked)="ticksNearRadioOnChecked()" [groupName]="'ticks-position'">Near</jqxRadioButton>
               </td>
             </tr>
             <tr>
               <td>
-                <jqxRadioButton (onChecked)="ticksFarRadioOnChecked()" [groupName]="'ticks-position'">Far</jqxRadioButton>
+                <jqxRadioButton [theme]="'material'" (onChecked)="ticksFarRadioOnChecked()" [groupName]="'ticks-position'">Far</jqxRadioButton>
               </td>
             </tr>
             <tr>
               <td>
-                <jqxRadioButton (onChecked)="ticksBothRadioOnChecked()" [groupName]="'ticks-position'" [checked]="true">Both</jqxRadioButton>
+                <jqxRadioButton [theme]="'material'" (onChecked)="ticksBothRadioOnChecked()" [groupName]="'ticks-position'" [checked]="true">Both</jqxRadioButton>
               </td>
             </tr>
           </tbody>
@@ -59,12 +59,12 @@
         <div style="clear: both"></div>
       </div>
       <br />
-      <jqxCheckBox (onChange)="showTicksCheckboxOnChange($event)" [checked]="true">Show Ticks</jqxCheckBox>
-      <jqxCheckBox (onChange)="showLabelsCheckboxOnChange($event)" [checked]="true">Show Labels</jqxCheckBox>
-      <jqxCheckBox (onChange)="showRangesCheckboxOnChange($event)" [checked]="true">Show Ranges</jqxCheckBox>
-      <jqxCheckBox (onChange)="showBackgroundCheckboxOnChange($event)" [checked]="true">Show Background</jqxCheckBox>
+      <jqxCheckBox [theme]="'material'" (onChange)="showTicksCheckboxOnChange($event)" [checked]="true">Show Ticks</jqxCheckBox>
+      <jqxCheckBox [theme]="'material'" (onChange)="showLabelsCheckboxOnChange($event)" [checked]="true">Show Labels</jqxCheckBox>
+      <jqxCheckBox [theme]="'material'" (onChange)="showRangesCheckboxOnChange($event)" [checked]="true">Show Ranges</jqxCheckBox>
+      <jqxCheckBox [theme]="'material'" (onChange)="showBackgroundCheckboxOnChange($event)" [checked]="true">Show Background</jqxCheckBox>
       <br />
-      <jqxButton style="margin-left: 90px; text-align: center" (onClick)="showAnimationButtonOnClick()" [width]="100" [height]="25">Reset Value</jqxButton>
+      <jqxButton [theme]="'material'" style="margin-left: 90px; text-align: center" (onClick)="showAnimationButtonOnClick()" [width]="100" [height]="25">Reset Value</jqxButton>
     </div>
   </jqxExpander>
 </div>

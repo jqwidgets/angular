@@ -1,4 +1,4 @@
-﻿<jqxChart #myChart 
+﻿<jqxChart [theme]="'material'" #myChart 
     [width]="850" [height]="500"
     [title]="'Economic comparison'" 
     [description]="'GDP and Debt in 2010'"
@@ -10,5 +10,5 @@
 <br />
 <br />
 
-<jqxButton (onClick)="btnOnClick()" width="80">Print</jqxButton>
+<jqxButton [theme]="'material'" (onClick)="btnOnClick()" width="80">Print</jqxButton>
 

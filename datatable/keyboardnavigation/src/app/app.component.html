@@ -1,4 +1,4 @@
-﻿<jqxDataTable #myDataTable (onBindingComplete)="tableOnBindingComplete()"
+﻿<jqxDataTable [theme]="'material'" #myDataTable (onBindingComplete)="tableOnBindingComplete()"
     [width]="getWidth()" [source]="dataAdapter" [columns]="columns"
     [pageable]="true" [editable]="true">
 </jqxDataTable>

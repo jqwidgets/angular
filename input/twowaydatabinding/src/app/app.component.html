@@ -2,7 +2,7 @@
     The selected country is {{ country | json }}
 </fieldset>
 
-<jqxInput [(ngModel)]="country"
+<jqxInput [theme]="'material'" [(ngModel)]="country"
     [width]="200" [height]="25" [source]="countries"
     [minLength]="1" [items]="3">
 </jqxInput>

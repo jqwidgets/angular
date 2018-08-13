@@ -1,5 +1,5 @@
 ﻿<div #jqxWidget style='height: 300px;'>
-  <jqxMenu #jqxMenu
+  <jqxMenu [theme]="'material'" #jqxMenu
            [mode]="'vertical'"
            [width]="150"
            [height]="225">
@@ -65,17 +65,17 @@
         <img style='float: left; margin-right: 5px;' src='../images/settings.png' /><span>Settings</span>
         <ul style="width: 230px;">
           <li>            
-            <jqxCheckBox style='float: left; margin-right: 5px;' #checkbox [checked]="true">
+            <jqxCheckBox [theme]="'material'" style='float: left; margin-right: 5px;' #checkbox [checked]="true">
             </jqxCheckBox>            
             Enable Auto-Save
           </li>
           <li>
-            <jqxCheckBox style='float: left; margin-right: 5px;' #checkbox2>
+            <jqxCheckBox [theme]="'material'" style='float: left; margin-right: 5px;' #checkbox2>
             </jqxCheckBox>
             Send email as anonymous
           </li>
           <li>
-            <jqxCheckBox style='float: left; margin-right: 5px;' #checkbox3>
+            <jqxCheckBox [theme]="'material'" style='float: left; margin-right: 5px;' #checkbox3>
             </jqxCheckBox>
             Save sent emails
           </li>

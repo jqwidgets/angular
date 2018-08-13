@@ -1,4 +1,4 @@
-﻿<jqxChart #myChart
+﻿<jqxChart [theme]="'material'" #myChart
     [width]="getWidth()" [height]="500"
     [title]="'Live updates performance'" [enableAxisTextAnimation]="true"
     [description]="'Data changes every 100 milliseconds'"
@@ -13,7 +13,7 @@
             <td style="padding-left: 50px">
                 <p>Pause / Resume updates:</p>
 
-                <jqxButton #myBtn (onClick)="btnOnClick($event)" [width]="160">
+                <jqxButton [theme]="'material'" #myBtn (onClick)="btnOnClick($event)" [width]="160">
                     Pause
                 </jqxButton>
 
@@ -21,7 +21,7 @@
             <td>
                 <p>Select color scheme:</p>
 
-                <jqxDropDownList (onChange)="colorsOnChange($event)"
+                <jqxDropDownList [theme]="'material'" (onChange)="colorsOnChange($event)"
                     [width]="200" [height]="25" [selectedIndex]="0"
                     [dropDownHeight]="100" [source]="colorsSchemesList">
                 </jqxDropDownList>

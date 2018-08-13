@@ -1,4 +1,4 @@
-﻿<jqxTreeGrid
+﻿<jqxTreeGrid [theme]="'material'"
     (onCellBeginEdit)="treeGridOnCellBeginEdit($event)" (onCellEndEdit)="treeGridOnCellEndEdit($event)"
     [width]="getWidth()" [source]="dataAdapter" [columns]="columns"
     [sortable]="true" [editable]="true" [editSettings]="editSettings">

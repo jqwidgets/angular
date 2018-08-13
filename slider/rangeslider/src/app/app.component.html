@@ -15,7 +15,7 @@
         </div>
       </div>
       <br />
-      <jqxSlider filter="price" #priceSlider
+      <jqxSlider [theme]="'material'" filter="price" #priceSlider
                  (onChange)="priceSliderChange($event)"
                  [showButtons]="true"
                  [min]="500" [max]="4000" [step]="350"
@@ -34,7 +34,7 @@
         </div>
       </div>
       <br />
-      <jqxSlider filter="display" #displaySlider
+      <jqxSlider [theme]="'material'" filter="display" #displaySlider
                  (onChange)="displaySliderChange($event)"
                  [showButtons]="true"
                  [min]="9" [max]="19" [step]="1"
@@ -53,7 +53,7 @@
         </div>
       </div>
       <br />
-      <jqxSlider filter="ram" #ramSlider
+      <jqxSlider [theme]="'material'" filter="ram" #ramSlider
                  (onChange)="ramSliderChange($event)"
                  [showButtons]="true"
                  [min]="2" [max]="12" [step]="1"
@@ -72,7 +72,7 @@
         </div>
       </div>
       <br />
-      <jqxSlider filter="hdd" #hddSlider
+      <jqxSlider [theme]="'material'" filter="hdd" #hddSlider
                  (onChange)="hddSliderChange($event)"
                  [showButtons]="true"
                  [min]="150" [max]="1500" [step]="135"
@@ -81,7 +81,7 @@
                  [ticksFrequency]="135"                 
                  [height]="30" [width]="180">
       </jqxSlider>
-      <jqxButton [width]="100" #resetButton (onClick)="clickResetButton()" class="resetButton">Reset filters</jqxButton>
+      <jqxButton [theme]="'material'" [width]="100" #resetButton (onClick)="clickResetButton()" class="resetButton">Reset filters</jqxButton>
     </div>
   </div>
   <div style="clear: both;">

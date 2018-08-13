@@ -1,4 +1,4 @@
-﻿<jqxRibbon #jqxRibbon
+﻿<jqxRibbon [theme]="'material'" #jqxRibbon
            (onSelect)="select($event)"
            (onUnselect)="unselect($event)"
            [width]="360"
@@ -154,5 +154,5 @@
 <div style="margin-top: 30px; font-weight: bold;">
   Events:
 </div>
-<jqxPanel #log style="border-width: 0px;" [height]="250" [width]="200">
+<jqxPanel [theme]="'material'" #log style="border-width: 0px;" [height]="250" [width]="200">
 </jqxPanel>

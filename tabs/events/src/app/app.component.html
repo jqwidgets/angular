@@ -1,4 +1,4 @@
-﻿<jqxTabs #myTabs
+﻿<jqxTabs [theme]="'material'" #myTabs
     (onCreated)="myTabsOnCreated($event)" (onSelected)="myTabsOnSelected($event)" 
     (onTabclick)="myTabsOnTabClick($event)" (onUnselected)="myTabsOnUnselected($event)"
     (onDragStart)="myTabsOnDragStart($event)" (onDragEnd)="myTabsOnDragEnd($event)"
@@ -43,4 +43,4 @@
 
 <div style="font-family: Verdana; font-size: 13px">Events:</div>
 
-<jqxPanel #myPanel [width]="450" [height]="250"></jqxPanel>
+<jqxPanel [theme]="'material'" #myPanel [width]="450" [height]="250"></jqxPanel>

@@ -1,4 +1,4 @@
-﻿<jqxListBox #listbox
+﻿<jqxListBox [theme]="'material'" #listbox
             [filterable]="true"
             [selectedIndex]="0"
             [source]="shirts"
@@ -8,7 +8,7 @@
             [height]="300">
 </jqxListBox>
 <div style="margin-top: 10px;">
-  <jqxButton #clearFilter
+  <jqxButton [theme]="'material'" #clearFilter
              (onClick)="click($event)">
     Clear Filter
   </jqxButton>

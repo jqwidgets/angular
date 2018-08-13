@@ -1,4 +1,4 @@
-﻿<jqxGrid #myGrid
+﻿<jqxGrid [theme]="'material'" #myGrid
     (onCellselect)="myGridOnCellSelect($event)" (onCellendedit)="myGridOnCellEndEdit($event)"
     [width]="getWidth()" [source]="ordersAdapter" [columns]="columns"
     [pageable]="true" [editable]="true" [autoheight]="true"

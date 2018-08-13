@@ -1,21 +1,21 @@
 ﻿<div style="font-size: 13px; font-family: Verdana; float: left;">
   <div style="margin-top: 10px;">Horizontal</div>
-  <jqxProgressBar #horizontal
+  <jqxProgressBar [theme]="'material'" #horizontal
                   [width]="250" [height]="30" [value]="50">
   </jqxProgressBar>
   <div style="margin-top: 10px;">Vertical</div>
-  <jqxProgressBar #vertical
+  <jqxProgressBar [theme]="'material'" #vertical
                   [width]="30" [height]="250" [value]="50" [orientation]="'vertical'">
   </jqxProgressBar>
   <br />
   <div>Enter a value between 0 and 100</div>
-  <jqxInput #ValueInput></jqxInput>
+  <jqxInput [theme]="'material'" #ValueInput></jqxInput>
   <!--<input id="ValueInput" type="text" style="margin-top: 5px;" />-->
-  <jqxButton (onClick)="onClick()">Update</jqxButton>
-  <jqxCheckBox (onChange)="onCheckBox($event)">
+  <jqxButton [theme]="'material'" (onClick)="onClick()">Update</jqxButton>
+  <jqxCheckBox [theme]="'material'" (onChange)="onCheckBox($event)">
     Show Progress Text
   </jqxCheckBox>
-  <jqxCheckBox (onChange)="onCustomTextCheckBox($event)">
+  <jqxCheckBox [theme]="'material'" (onChange)="onCustomTextCheckBox($event)">
     Custom Progress Text
   </jqxCheckBox>
 </div>

@@ -1,4 +1,4 @@
-﻿<jqxNotification #jqxNotification
+﻿<jqxNotification [theme]="'material'" #jqxNotification
                  (onOpen)="open($event)"
                  (onClose)="close($event)"
                  (onClick)="click($event)"
@@ -16,13 +16,13 @@
     Click to view.
   </div>
 </jqxNotification>
-<jqxButton #checkMail (onClick)="clickCheckMail()">
+<jqxButton [theme]="'material'" #checkMail (onClick)="clickCheckMail()">
   Check mail
 </jqxButton>
 <div style="margin-top: 15px;">
   Events log:
 </div>
-<jqxPanel #eventsPanel [width]="150" [height]="150">
+<jqxPanel [theme]="'material'" #eventsPanel [width]="150" [height]="150">
 </jqxPanel>
 <div #messagePanel style="width: 400px; display: none;">
   <p>

@@ -1,9 +1,9 @@
-﻿<jqxSplitter #mainSplitter
+﻿<jqxSplitter [theme]="'material'" #mainSplitter
              (onExpanded)="expanded($event)"
              [panels]="[{ min: 150, size: 330 }, { min: 250 }]"
              [height]="400" [width]="getWidth()">
   <div>
-    <jqxGrid #jqxgrid
+    <jqxGrid [theme]="'material'" #jqxgrid
              (onRowselect)="rowselect($event)"
              [height]="'100%'" [width]="'100%'"
              [source]="dataAdapter"
@@ -17,29 +17,29 @@
         <tr>
           <td style="text-align: right;">Company Name:</td>
           <td style="text-align: left;">
-            <jqxInput #CompanyName [height]="23"></jqxInput>            
+            <jqxInput [theme]="'material'" #CompanyName [height]="23"></jqxInput>            
           </td>
         </tr>
         <tr>
           <td style="text-align: right;">Contact Name:</td>
-          <td style="text-align: left;"><jqxInput #ContactName [height]="23"></jqxInput> </td>
+          <td style="text-align: left;"><jqxInput [theme]="'material'" #ContactName [height]="23"></jqxInput> </td>
         </tr>
         <tr>
           <td style="text-align: right;">Contact Title:</td>
-          <td style="text-align: left;"><jqxInput #ContactTitle [height]="23"></jqxInput></td>
+          <td style="text-align: left;"><jqxInput [theme]="'material'" #ContactTitle [height]="23"></jqxInput></td>
         </tr>
         <tr>
           <td style="text-align: right;">City:</td>
-          <td style="text-align: left;"><jqxInput #City [height]="23"></jqxInput></td>
+          <td style="text-align: left;"><jqxInput [theme]="'material'" #City [height]="23"></jqxInput></td>
         </tr>
         <tr>
           <td style="text-align: right;">Country:</td>
-          <td style="text-align: left;"><jqxInput #Country [height]="23"></jqxInput></td>
+          <td style="text-align: left;"><jqxInput [theme]="'material'" #Country [height]="23"></jqxInput></td>
         </tr>
         <tr>
           <td></td>
           <td style="padding-left: 35px; text-align: left;">
-            <jqxButton #Save
+            <jqxButton [theme]="'material'" #Save
                        (onClick)="saveClick()"
                        [width]="70" [height]="23">Save</jqxButton>
           </td>

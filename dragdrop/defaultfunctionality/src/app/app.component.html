@@ -4,7 +4,7 @@
         <div class="draggable-demo-title jqx-rc-t">Shopping Cart</div>
         <div id="cart" class="draggable-demo-cart jqx-rc-all">
 
-            <jqxGrid #myGrid (onCellclick)="gridOnCellClick($event)"
+            <jqxGrid [theme]="'material'" #myGrid (onCellclick)="gridOnCellClick($event)"
                 [width]="230" [height]="335" [columns]="gridColumns"
                 [selectionmode]="'none'" [keyboardnavigation]="false">
             </jqxGrid>

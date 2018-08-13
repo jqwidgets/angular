@@ -5,8 +5,8 @@
 
 <div style="margin-top: 50px">
 
-    <jqxButton (onClick)="addToggleBtnOnClick()" [width]="150">Add a Toggle Button</jqxButton>
-    <jqxButton (onClick)="addCustomToolBtnOnClick()" [width]="150">Add a Custom Tool</jqxButton>
+    <jqxButton [theme]="'material'" (onClick)="addToggleBtnOnClick()" [width]="150">Add a Toggle Button</jqxButton>
+    <jqxButton [theme]="'material'" (onClick)="addCustomToolBtnOnClick()" [width]="150">Add a Custom Tool</jqxButton>
 
 </div>
 
@@ -14,16 +14,16 @@
     Insert position:
 </div>
 
-<jqxDropDownList #myDropDownList
+<jqxDropDownList [theme]="'material'" #myDropDownList
     [width]="150" [height]="22" [source]="['first','last']" 
     [selectedIndex]="1" [autoDropDownHeight]="true">
 </jqxDropDownList>
 
 <div style="margin-top: 50px">
 
-    <jqxButton (onClick)="disableToolBtnOnClick()" [width]="150">Disable Tool</jqxButton>
-    <jqxButton (onClick)="enableToolBtnOnClick()"  [width]="150">Enable Tool</jqxButton>
-    <jqxButton (onClick)="destroyToolBtnOnClick()" [width]="150">Destroy Tool</jqxButton>
+    <jqxButton [theme]="'material'" (onClick)="disableToolBtnOnClick()" [width]="150">Disable Tool</jqxButton>
+    <jqxButton [theme]="'material'" (onClick)="enableToolBtnOnClick()"  [width]="150">Enable Tool</jqxButton>
+    <jqxButton [theme]="'material'" (onClick)="destroyToolBtnOnClick()" [width]="150">Destroy Tool</jqxButton>
 
 </div>
 
@@ -31,7 +31,7 @@
    Tool index:
 </div>
 
-<jqxNumberInput #myNumberInput
+<jqxNumberInput [theme]="'material'" #myNumberInput
     [width]="50" [height]="25" [decimal]="0" 
     [decimalDigits]="0" [inputMode]="'simple'">
 </jqxNumberInput>

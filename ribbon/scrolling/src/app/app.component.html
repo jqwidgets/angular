@@ -1,4 +1,4 @@
-﻿  <jqxRibbon #jqxRibbon style='float: left;'
+﻿  <jqxRibbon [theme]="'material'" #jqxRibbon style='float: left;'
              [width]="370"
              [position]="'top'"
              [selectionMode]="'click'"
@@ -138,13 +138,13 @@
     <div>
       <b>Scroll Buttons Position:</b>
     </div>
-    <jqxRadioButton [width]="100" [height]="25" (onChecked)="checkedNear($event)">
+    <jqxRadioButton [theme]="'material'" [width]="100" [height]="25" (onChecked)="checkedNear($event)">
       Near
     </jqxRadioButton>
-    <jqxRadioButton [width]="100" [height]="25" (onChecked)="checkedFar($event)">
+    <jqxRadioButton [theme]="'material'" [width]="100" [height]="25" (onChecked)="checkedFar($event)">
       Far
     </jqxRadioButton>
-    <jqxRadioButton [width]="500" [height]="25" [checked]='true' (onChecked)="checkedBoth($event)">
+    <jqxRadioButton [theme]="'material'" [width]="500" [height]="25" [checked]='true' (onChecked)="checkedBoth($event)">
       Both
     </jqxRadioButton>
   </div>

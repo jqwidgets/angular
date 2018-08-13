@@ -1,10 +1,10 @@
 ﻿<div id="container" style="font-family: Verdana; font-size: 12px; float: left">
   <b>Default Layout</b>
-  <jqxSlider #horizontalSlider
+  <jqxSlider [theme]="'material'" #horizontalSlider
              [height]="50"
              [width]="300">
   </jqxSlider>
-  <jqxSlider style="margin-top: 10px;" #verticalSlider
+  <jqxSlider [theme]="'material'" style="margin-top: 10px;" #verticalSlider
              [height]="300"
              [width]="50"
              [orientation]="'vertical'">
@@ -12,12 +12,12 @@
 </div>
 <div style="float: right; font-family: Verdana; font-size: 12px;" id="rightContainer">
   <b>Reversed Layout</b>
-  <jqxSlider #mirrorHorizontalSlider
+  <jqxSlider [theme]="'material'" #mirrorHorizontalSlider
              [height]="50"
              [width]="300"
              [layout]="'reverse'">
   </jqxSlider>
-  <jqxSlider style="margin-top: 10px; float: right;" #mirrorVerticalSlider
+  <jqxSlider [theme]="'material'" style="margin-top: 10px; float: right;" #mirrorVerticalSlider
              [height]="300"
              [width]="50"
              [orientation]="'vertical'"

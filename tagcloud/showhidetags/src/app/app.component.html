@@ -1,4 +1,4 @@
-﻿<jqxTagCloud #tagCloud
+﻿<jqxTagCloud [theme]="'material'" #tagCloud
              [width]="getWidth()"
              [source]="dataAdapter"
              [displayMember]="'countryName'"
@@ -6,5 +6,5 @@
 </jqxTagCloud>
 <br />
 <br />
-<jqxButton #hideItem (onClick)="hideItemClick()">Hide Item</jqxButton>
-<jqxButton #showItem (onClick)="showItemClick()">Show Item</jqxButton>
+<jqxButton [theme]="'material'" #hideItem (onClick)="hideItemClick()">Hide Item</jqxButton>
+<jqxButton [theme]="'material'" #showItem (onClick)="showItemClick()">Show Item</jqxButton>

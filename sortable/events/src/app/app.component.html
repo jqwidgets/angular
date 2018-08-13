@@ -1,4 +1,4 @@
-﻿<jqxSortable #sortable
+﻿<jqxSortable [theme]="'material'" #sortable
              (onActivate)="activate($event)"
              (onBeforeStop)="beforeStop($event)"
              (onChange)="change($event)"
@@ -17,6 +17,6 @@
   <span>
     Events:
   </span>
-  <jqxPanel #eventsContainer [width]="200" [height]="250">
+  <jqxPanel [theme]="'material'" #eventsContainer [width]="200" [height]="250">
   </jqxPanel>
 </div>

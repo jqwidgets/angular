@@ -1,11 +1,11 @@
-﻿<jqxDocking [orientation]='"horizontal"' [width]='getWidth()' [mode]='"docked"'>
+﻿<jqxDocking [theme]="'material'" [orientation]='"horizontal"' [width]='getWidth()' [mode]='"docked"'>
   <div>
     <div id="window1" style="height: 220px;">
       <div>
         Date and Time
       </div>
       <div style="overflow: hidden;">
-        <jqxCalendar [width]='180' [height]='180' style="float: left; margin-right: 10px;">
+        <jqxCalendar [theme]="'material'" [width]='180' [height]='180' style="float: left; margin-right: 10px;">
         </jqxCalendar>
         <h3 style="text-align: center; color: #787878;">Sunny</h3>
         <div style="float: left; margin-left: 30px; text-align: center;">
@@ -23,7 +23,7 @@
         News
       </div>
       <div style="overflow: hidden;">
-        <jqxTabs [width]='375' [height]='181' [selectedItem]='1'>
+        <jqxTabs [theme]="'material'" [width]='375' [height]='181' [selectedItem]='1'>
           <ul style="margin-left: 30px">
             <li>World</li>
             <li>Local</li>
@@ -68,7 +68,7 @@
         Zodiac
       </div>
       <div style="overflow: hidden;">
-        <jqxPanel [width]='375' [height]='180'>
+        <jqxPanel [theme]="'material'" [width]='375' [height]='180'>
           <div style="padding-right: 20px;">
             <div style="padding: 3px; width: 150px; height: 110px; float: left; margin: 10px;">
               <img src="../images/leo.jpg" alt="Leo" title="Leo" />
@@ -89,7 +89,7 @@
         E-mail
       </div>
       <div style="overflow: hidden;">
-        <jqxListBox [width]='375' [height]='181' [source]='source'>
+        <jqxListBox [theme]="'material'" [width]='375' [height]='181' [source]='source'>
         </jqxListBox>
       </div>
     </div>

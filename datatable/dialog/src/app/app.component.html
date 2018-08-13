@@ -1,10 +1,10 @@
-﻿<jqxDataTable #myDataTable (onRowDoubleClick)="OnRowDoubleClick($event)"
+﻿<jqxDataTable [theme]="'material'" #myDataTable (onRowDoubleClick)="OnRowDoubleClick($event)"
     [width]="getWidth()" [source]="dataAdapter" [columns]="columns"
     [altRows]="true" [sortable]="true" [pageable]="true" 
     [pagerButtonsCount]="8">
 </jqxDataTable>
 
-<jqxWindow #myWindow (onClose)="myWindowOnClose()"
+<jqxWindow [theme]="'material'" #myWindow (onClose)="myWindowOnClose()"
     [width]="270" [height]="235" [resizable]="false" [autoOpen]="false" [position]="{ left: 85, top: 43 }">
     <div>Edit Dialog</div>
     <div style="overflow: hidden">
@@ -15,7 +15,7 @@
               Order ID:
             </td>
             <td align='left'>
-              <jqxInput #orderID [width]="150" [height]="30" [disabled]="true"></jqxInput>
+              <jqxInput [theme]="'material'" #orderID [width]="150" [height]="30" [disabled]="true"></jqxInput>
             </td>
           </tr>
           <tr>
@@ -23,7 +23,7 @@
               Freight:
             </td>
             <td align='left'>
-              <jqxNumberInput #freight
+              <jqxNumberInput [theme]="'material'" #freight
                   [width]="156" [height]="30" [spinButtons]="true" [inputMode]="'simple'">
               </jqxNumberInput>
             </td>
@@ -33,7 +33,7 @@
               Ship Country:
             </td>
             <td align='left'>
-              <jqxInput #shipCountry [width]="150" [height]="30" [source]="countries"></jqxInput>
+              <jqxInput [theme]="'material'" #shipCountry [width]="150" [height]="30" [source]="countries"></jqxInput>
             </td>
           </tr>
           <tr>
@@ -41,7 +41,7 @@
               Shipped Date:
             </td>
             <td align='left'>
-              <jqxDateTimeInput #shipDate
+              <jqxDateTimeInput [theme]="'material'" #shipDate
                   [width]="156" [height]="30">
               </jqxDateTimeInput>
             </td>
@@ -49,11 +49,11 @@
           <tr>
             <td colSpan='2' align='right'>
               <br />
-              <jqxButton (onClick)="cancelBtnOnClick()" style="margin-left: 5px; float: right"
+              <jqxButton [theme]="'material'" (onClick)="cancelBtnOnClick()" style="margin-left: 5px; float: right"
                   [width]="80" [height]="30">
                   Cancel
               </jqxButton>
-              <jqxButton (onClick)="saveBtnOnClick()" style="float: right"
+              <jqxButton [theme]="'material'" (onClick)="saveBtnOnClick()" style="float: right"
                   [width]="80" [height]="30">
                   Save
               </jqxButton>

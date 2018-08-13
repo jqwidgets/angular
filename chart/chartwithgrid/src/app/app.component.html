@@ -1,9 +1,9 @@
-﻿<jqxGrid #myGrid (onFilter)="gridOnFilter()"
+﻿<jqxGrid [theme]="'material'" #myGrid (onFilter)="gridOnFilter()"
     [width]="getWidth()" [height]="230" [filterable]="true"
     [source]="dataAdapter" [columns]="columns" [showfilterrow]="true">
 </jqxGrid>
 
-<jqxChart #myChart style="margin-top: 50px"
+<jqxChart [theme]="'material'" #myChart style="margin-top: 50px"
     [width]="getWidth()" [height]="500"
     [title]="'Fitness & exercise weekly scorecard'" 
     [description]="'Time spent in vigorous exercise'"

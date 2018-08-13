@@ -1,4 +1,4 @@
-﻿<jqxScheduler #scheduler
+﻿<jqxScheduler [theme]="'material'" #scheduler
               [width]="getWidth()" [height]="600"
               [date]="date"
               [source]="dataAdapter"
@@ -12,7 +12,7 @@
 
 <div style='margin-top: 20px;'>
   <div style='margin-left: 10px; float: left;'>
-    <jqxButton #excelExport
+    <jqxButton [theme]="'material'" #excelExport
                (onClick)="printClick()">
       Print
     </jqxButton>

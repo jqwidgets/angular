@@ -1,4 +1,4 @@
-﻿<jqxDataTable #myDataTable
+﻿<jqxDataTable [theme]="'material'" #myDataTable
     (onRowSelect)="onRowSelect($event)"  (onRowUnselect)="onRowUnselect($event)"
     (onRowEndEdit)="onRowEndEdit($event)"  (onRowBeginEdit)="onRowBeginEdit($event)"
     [width]="getWidth()" [source]="dataAdapter" [columns]="columns"

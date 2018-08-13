@@ -1,7 +1,7 @@
 ﻿<table cellpadding="0" cellspacing="0">
   <tr>
     <td>
-      <jqxChart [width]="360" [height]="180"
+      <jqxChart [theme]="'material'" [width]="360" [height]="180"
                 [title]="'Cluster capacity'" [description]="''"
                 [showLegend]="false" [enableAnimations]="true" [padding]="padding"
                 [titlePadding]="titlePadding" [source]="data1" [showToolTips]="true"
@@ -10,7 +10,7 @@
       </jqxChart>
     </td>
     <td>
-      <jqxChart [width]="360" [height]="180"
+      <jqxChart [theme]="'material'" [width]="360" [height]="180"
                 [title]="'Avg. CPU %'" [description]="''"
                 [showLegend]="false" [enableAnimations]="true" [padding]="padding"
                 [titlePadding]="titlePadding" [source]="data2" [showToolTips]="true"
@@ -21,7 +21,7 @@
   </tr>
   <tr>
     <td>
-      <jqxChart [width]="360" [height]="180"
+      <jqxChart [theme]="'material'" [width]="360" [height]="180"
                 [title]="'Storage capacity [TB]'" [description]="''"
                 [showLegend]="false" [enableAnimations]="true" [padding]="padding"
                 [titlePadding]="titlePadding" [source]="data3" [showToolTips]="true"
@@ -30,7 +30,7 @@
       </jqxChart>
     </td>
     <td>
-      <jqxChart [width]="360" [height]="180"
+      <jqxChart [theme]="'material'" [width]="360" [height]="180"
                 [title]="'Network utilization %'" [description]="''"
                 [showLegend]="false" [enableAnimations]="true" [padding]="padding"
                 [titlePadding]="titlePadding" [source]="data4" [showToolTips]="true"
@@ -41,7 +41,7 @@
   </tr>
   <tr>
     <td colspan="2">
-      <jqxChart [width]="getWidth()" [height]="300"
+      <jqxChart [theme]="'material'" [width]="getWidth()" [height]="300"
                 [title]="'Get request per second & response latencies'" [description]="''"
                 [showLegend]="false" [enableAnimations]="true" [padding]="padding"
                 [titlePadding]="titlePadding" [source]="data5" [showToolTips]="true"

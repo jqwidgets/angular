@@ -1,4 +1,4 @@
-﻿<jqxChart #myChart
+﻿<jqxChart [theme]="'material'" #myChart
     [width]="getWidth()" [height]="500"
     [title]="'Economic comparison'"
     [description]="'GDP and Debt in 2010'"
@@ -8,13 +8,13 @@
 </jqxChart>
 
 <div style="margin-top: 10px">
-    <jqxButton (onClick)="jpegButtonOnClick()">
+    <jqxButton [theme]="'material'" (onClick)="jpegButtonOnClick()">
       Save As JPEG
     </jqxButton>
-    <jqxButton (onClick)="pngButtonOnClick()">
+    <jqxButton [theme]="'material'" (onClick)="pngButtonOnClick()">
       Save As PNG
     </jqxButton>
-    <jqxButton (onClick)="pdfButtonOnClick()">
+    <jqxButton [theme]="'material'" (onClick)="pdfButtonOnClick()">
         Save As PDF
    </jqxButton>
 </div>

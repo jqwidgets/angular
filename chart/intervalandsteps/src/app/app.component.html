@@ -1,4 +1,4 @@
-﻿<jqxChart #myChart
+﻿<jqxChart [theme]="'material'" #myChart
           [width]="getWidth()" [height]="500"
           [title]="'Chart unit interval and steps example'"
           [description]="''"
@@ -17,7 +17,7 @@
             <tr>
               <td>Labels step</td>
               <td>
-                <jqxNumberInput (onValueChanged)="inputxAxisLabelsStepOnValueChange($event)"
+                <jqxNumberInput [theme]="'material'" (onValueChanged)="inputxAxisLabelsStepOnValueChange($event)"
                     [width]="50" [height]="25" [min]="1" [max]="10"
                     [inputMode]="'simple'" [decimalDigits]="0"
                     [digits]="2" [spinButtons]="true" [value]="2">
@@ -27,7 +27,7 @@
             <tr>
               <td>Grid lines step</td>
               <td>
-                <jqxNumberInput (onValueChanged)="inputxAxisGridLinesStepOnValueChange($event)"
+                <jqxNumberInput [theme]="'material'" (onValueChanged)="inputxAxisGridLinesStepOnValueChange($event)"
                     [width]="50" [height]="25" [min]="1" [max]="10"
                     [inputMode]="'simple'" [decimalDigits]="0"
                     [digits]="2" [spinButtons]="true" [value]="1">
@@ -37,7 +37,7 @@
             <tr>
               <td>Tick marks step</td>
               <td>
-                <jqxNumberInput (onValueChanged)="inputxAxisTickMarksStepOnValueChange($event)"
+                <jqxNumberInput [theme]="'material'" (onValueChanged)="inputxAxisTickMarksStepOnValueChange($event)"
                     [width]="50" [height]="25" [min]="1" [max]="10"
                     [inputMode]="'simple'" [decimalDigits]="0"
                     [digits]="2" [spinButtons]="true" [value]="1">
@@ -47,7 +47,7 @@
             <tr>
               <td>Unit interval</td>
               <td>
-                <jqxNumberInput (onValueChanged)="inputxAxisUnitIntervalOnValueChange($event)"
+                <jqxNumberInput [theme]="'material'" (onValueChanged)="inputxAxisUnitIntervalOnValueChange($event)"
                     [width]="50" [height]="25" [min]="1" [max]="10"
                     [inputMode]="'simple'" [decimalDigits]="0"
                     [digits]="2" [spinButtons]="true" [value]="1">
@@ -56,7 +56,7 @@
             </tr>
             <tr style="height: 40px">
               <td colspan='2'>
-                <jqxCheckBox [width]="200" [height]="25" (onChange)="btnValuesBetweenTicksOnChange($event)">
+                <jqxCheckBox [theme]="'material'" [width]="200" [height]="25" (onChange)="btnValuesBetweenTicksOnChange($event)">
                   Value's between ticks
                 </jqxCheckBox>
               </td>
@@ -71,7 +71,7 @@
             <tr>
               <td>Labels step</td>
               <td>
-                <jqxNumberInput (onValueChanged)="inputvalueAxisLabelsStepOnValueChange($event)"
+                <jqxNumberInput [theme]="'material'" (onValueChanged)="inputvalueAxisLabelsStepOnValueChange($event)"
                     [width]="50" [height]="25" [min]="1" [max]="10"
                     [inputMode]="'simple'" [decimalDigits]="0"
                     [digits]="2" [spinButtons]="true" [value]="1">
@@ -81,7 +81,7 @@
             <tr>
               <td>Grid lines step</td>
               <td>
-                <jqxNumberInput (onValueChanged)="inputvalueAxisGridLinesStepOnValueChange($event)"
+                <jqxNumberInput [theme]="'material'" (onValueChanged)="inputvalueAxisGridLinesStepOnValueChange($event)"
                     [width]="50" [height]="25" [min]="1" [max]="10"
                     [inputMode]="'simple'" [decimalDigits]="0"
                     [digits]="2" [spinButtons]="true" [value]="1">
@@ -91,7 +91,7 @@
             <tr>
               <td>Tick marks step</td>
               <td>
-                <jqxNumberInput (onValueChanged)="inputvalueAxisTickMarksStepOnValueChange($event)"
+                <jqxNumberInput [theme]="'material'" (onValueChanged)="inputvalueAxisTickMarksStepOnValueChange($event)"
                     [width]="50" [height]="25" [min]="1" [max]="10"
                     [inputMode]="'simple'" [decimalDigits]="0"
                     [digits]="2" [spinButtons]="true" [value]="1">
@@ -101,7 +101,7 @@
             <tr>
               <td>Unit interval</td>
               <td>
-                <jqxNumberInput (onValueChanged)="inputvalueAxisUnitIntervalOnValueChange($event)"
+                <jqxNumberInput [theme]="'material'" (onValueChanged)="inputvalueAxisUnitIntervalOnValueChange($event)"
                     [width]="50" [height]="25" [min]="1" [max]="10"
                     [inputMode]="'simple'" [decimalDigits]="0"
                     [digits]="2" [spinButtons]="true" [value]="5">
@@ -110,7 +110,7 @@
             </tr>
             <tr style="height: 40px">
               <td colspan='2'>
-                <jqxCheckBox [width]="200" [height]="25" (onChange)="btnvalueAxisValuesBetweenTicksOnChange($event)">
+                <jqxCheckBox [theme]="'material'" [width]="200" [height]="25" (onChange)="btnvalueAxisValuesBetweenTicksOnChange($event)">
                   Value's between ticks
                 </jqxCheckBox>
               </td>

@@ -1,4 +1,4 @@
-﻿<jqxListBox #jqxListBox
+﻿<jqxListBox [theme]="'material'" #jqxListBox
             style="float: left"
             (onCheckChange)="checkChange($event)"
             [source]="listSource"
@@ -7,7 +7,7 @@
             checkboxes="true">
 </jqxListBox>
 
-<jqxTreeGrid style="margin-left: 20px; float: left;"
+<jqxTreeGrid [theme]="'material'" style="margin-left: 20px; float: left;"
             [source]="dataAdapter"
             [altRows]="true"
             [columns]="columns"

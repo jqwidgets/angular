@@ -1,4 +1,4 @@
-﻿<jqxGrid #myGrid
+﻿<jqxGrid [theme]="'material'" #myGrid
     [width]="getWidth()" [source]="dataAdapter" [columns]="columns"
     [filterable]="true" [showeverpresentrow]="true" [editable]="true"
     [showfilterrow]="true" [everpresentrowposition]="'top'" 
@@ -7,9 +7,9 @@
 
 <br />
 
-<jqxRadioButton (onChecked)="topBtnOnChecked()" [checked]="true">Top Position</jqxRadioButton>
+<jqxRadioButton [theme]="'material'" (onChecked)="topBtnOnChecked()" [checked]="true">Top Position</jqxRadioButton>
 
-<jqxRadioButton (onChecked)="topAboveFilterRowBtnOnChecked()">Top Position Above Filter Row</jqxRadioButton>
+<jqxRadioButton [theme]="'material'" (onChecked)="topAboveFilterRowBtnOnChecked()">Top Position Above Filter Row</jqxRadioButton>
 
-<jqxRadioButton  (onChecked)="bottomBtnOnChecked()">Bottom Position</jqxRadioButton>
+<jqxRadioButton [theme]="'material'"  (onChecked)="bottomBtnOnChecked()">Bottom Position</jqxRadioButton>
 

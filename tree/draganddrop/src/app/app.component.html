@@ -1,5 +1,5 @@
 ﻿<div style='float: left;'>
-  <jqxTree #treeA style='float: left; margin-left: 0px;'
+  <jqxTree [theme]="'material'" #treeA style='float: left; margin-left: 0px;'
            (onDragStart)="dragStartTreeA($event)"
            (onDragEnd)="dragEndTreeA($event)"
            [width]="220"
@@ -19,7 +19,7 @@
       <li>Community</li>
     </ul>
   </jqxTree>
-  <jqxTree #treeB style='float: left; margin-left: 20px;'
+  <jqxTree [theme]="'material'" #treeB style='float: left; margin-left: 20px;'
            (onDragStart)="dragStartTreeB($event)"
            (onDragEnd)="dragEndTreeB($event)"
            [width]="220"

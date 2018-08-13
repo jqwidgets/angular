@@ -1,20 +1,20 @@
 ﻿<div id="jqxWidget" #jqxWidget>
   <div style="float: left;">
     <div>
-      <jqxButton [width]="70" (onClick)="onShowButton()">Open</jqxButton>
-      <jqxButton [width]="70" (onClick)="onHideButton()">Close</jqxButton>
+      <jqxButton [theme]="'material'" [width]="70" (onClick)="onShowButton()">Open</jqxButton>
+      <jqxButton [theme]="'material'" [width]="70" (onClick)="onHideButton()">Close</jqxButton>
     </div>
     <div style="margin-top: 10px;">
-      <jqxCheckBox [width]="100" [checked]="true" (onChange)="onResizeCheckBox($event)">
+      <jqxCheckBox [theme]="'material'" [width]="100" [checked]="true" (onChange)="onResizeCheckBox($event)">
         Resizable
       </jqxCheckBox>
-      <jqxCheckBox [width]="100" [checked]="true" (onChange)="onDragCheckBox($event)">
+      <jqxCheckBox [theme]="'material'" [width]="100" [checked]="true" (onChange)="onDragCheckBox($event)">
         Enable drag
       </jqxCheckBox>
     </div>
   </div>
   <div style="width: 100%; height: 650px; margin-top: 50px;" id="mainDemoContainer">
-    <jqxWindow #windowReference [width]="500" [height]="300"
+    <jqxWindow [theme]="'material'" #windowReference [width]="500" [height]="300"
                [maxHeight]="400" [minHeight]="200" [maxWidth]="700" [minWidth]="200"
                [showCollapseButton]="true">
       <div #windowHeader>
@@ -23,7 +23,7 @@
         </span>
       </div>
       <div style="overflow: hidden;" #windowContent>
-        <jqxTabs [width]="'100%'" [height]="'100%'">
+        <jqxTabs [theme]="'material'" [width]="'100%'" [height]="'100%'">
           <ul style="margin-left: 30px;">
             <li>Avatar</li>
             <li>End Game</li>

@@ -2,7 +2,7 @@
   The value is {{ value | json }}
 </fieldset>
 
-<jqxComboBox [(ngModel)]='value'
+<jqxComboBox [theme]="'material'" [(ngModel)]='value'
     [width]='250' [height]='30'
     [source]='source' [selectedIndex]='0'>
 </jqxComboBox>

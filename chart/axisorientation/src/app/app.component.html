@@ -1,4 +1,4 @@
-﻿<jqxChart #myChart
+﻿<jqxChart [theme]="'material'" #myChart
     [width]="getWidth()" [height]="500"
     [title]="'Fitness & exercise weekly scorecard'" [description]="'Time spent in vigorous exercise by activity'"
     [enableAnimations]="false" [enableAxisTextAnimation]="true" [padding]="padding" 
@@ -8,10 +8,10 @@
 
 <div style="margin-top: 10px">
     <div style="float: left">
-        <jqxCheckBox (onChange)="flipValueAxisOnChange($event)">
+        <jqxCheckBox [theme]="'material'" (onChange)="flipValueAxisOnChange($event)">
             Invert value axis
         </jqxCheckBox>
-        <jqxCheckBox style="margin-top: 5px" (onChange)="flipXAxisOnChange($event)">
+        <jqxCheckBox [theme]="'material'" style="margin-top: 5px" (onChange)="flipXAxisOnChange($event)">
             Invert x-axis
         </jqxCheckBox>
     </div>

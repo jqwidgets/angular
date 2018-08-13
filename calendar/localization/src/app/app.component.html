@@ -1,4 +1,4 @@
-﻿<jqxCalendar #myCalendar style="float: left; margin-right: 20px"
+﻿<jqxCalendar [theme]="'material'" #myCalendar style="float: left; margin-right: 20px"
     [width]="220" [height]="220" [enableTooltips]="false">
 </jqxCalendar>
 
@@ -8,7 +8,7 @@
     </div>
     <br /> <br />
 
-    <jqxDropDownList #myDropDownList style="float: left" (onSelect)="myDropDownListOnSelect($event)"
+    <jqxDropDownList [theme]="'material'" #myDropDownList style="float: left" (onSelect)="myDropDownListOnSelect($event)"
         [width]="220" [height]="25" [selectedIndex]="3" [source]="availableCultures">
     </jqxDropDownList>
 </div>

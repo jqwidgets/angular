@@ -3,7 +3,7 @@
 </fieldset>
 
 <label>Date Input</label>
-<jqxDateTimeInput [(ngModel)]='date'
+<jqxDateTimeInput [theme]="'material'" [(ngModel)]='date'
     [width]='300' [height]='25'>
 </jqxDateTimeInput>
 <br />
@@ -13,6 +13,6 @@
 </fieldset>
 
 <label>Time Input</label>
-<jqxDateTimeInput [(ngModel)]='time'
+<jqxDateTimeInput [theme]="'material'" [(ngModel)]='time'
     [width]='300' [height]='25' [formatString]='"T"' [showTimeButton]='true' [showCalendarButton]='false'>
 </jqxDateTimeInput>

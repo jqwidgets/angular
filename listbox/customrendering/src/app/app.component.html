@@ -1,9 +1,9 @@
-﻿<jqxSplitter #splitter
+﻿<jqxSplitter [theme]="'material'" #splitter
              [panels]="[{ size: '40%'}]"
              [height]="600"
              [width]="getWidth()">
   <div style="overflow: hidden;">
-    <jqxListBox #listbox
+    <jqxListBox [theme]="'material'" #listbox
                 (onSelect)="select($event)"
                 [selectedIndex]="0"
                 [source]="dataAdapter"

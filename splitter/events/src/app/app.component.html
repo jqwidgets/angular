@@ -1,5 +1,5 @@
 ﻿<div style="float: left">
-  <jqxSplitter #jqxSplitter
+  <jqxSplitter [theme]="'material'" #jqxSplitter
                (onResize)="resize($event)"
                (onExpanded)="expanded($event)"
                (onCollapsed)="collapsed($event)"
@@ -11,7 +11,7 @@
   <div style="font-family: Verdana; font-size: 13px;">
     Events:
   </div>
-  <jqxPanel #events 
+  <jqxPanel [theme]="'material'" #events 
             [height]="250" [width]="450"
             style="border-width: 0px;">
   </jqxPanel>

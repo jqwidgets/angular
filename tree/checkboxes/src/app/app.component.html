@@ -1,4 +1,4 @@
-﻿<jqxTree #myTree style="margin-left: 20px; float: left"
+﻿<jqxTree [theme]="'material'" #myTree style="margin-left: 20px; float: left"
     (onInitialized)="myTreeOnInitialized()"
     [width]="300" [height]="450" [hasThreeStates]="true" [checkboxes]="true">
   <ul>
@@ -86,7 +86,7 @@
 <div style="margin-left: 60px; float: left">
   <div style="margin-top: 10px">
 
-    <jqxCheckBox (onChange)="myCheckBoxOnChange($event)" [checked]="true">Three Check States</jqxCheckBox>
+    <jqxCheckBox [theme]="'material'" (onChange)="myCheckBoxOnChange($event)" [checked]="true">Three Check States</jqxCheckBox>
 
   </div>
 </div>

@@ -1,4 +1,4 @@
-﻿<jqxGrid #myGrid
+﻿<jqxGrid [theme]="'material'" #myGrid
     [width]="getWidth()" [source]="dataAdapter" [columns]="columns" 
     [filterable]="true" [showeverpresentrow]="true" [editable]="true"
     [everpresentrowposition]="'top'" [everpresentrowactionsmode]="'columns'" 
@@ -7,5 +7,5 @@
 
 <br />
 
-<jqxRadioButton (onChecked)="topRadioBtnOnChecked()" [checked]="true">Add New Row to Top</jqxRadioButton>
-<jqxRadioButton (onChecked)="bottomRadioBtnOnChecked()">Add New Row to Bottom</jqxRadioButton>
+<jqxRadioButton [theme]="'material'" (onChecked)="topRadioBtnOnChecked()" [checked]="true">Add New Row to Top</jqxRadioButton>
+<jqxRadioButton [theme]="'material'" (onChecked)="bottomRadioBtnOnChecked()">Add New Row to Bottom</jqxRadioButton>

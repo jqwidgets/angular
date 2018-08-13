@@ -1,4 +1,4 @@
-<jqxPivotGrid
+<jqxPivotGrid [theme]="'material'"
         #pivotGrid1
         [width]="getWidth()" 
         [height]="400"
@@ -9,7 +9,7 @@
 	 >
 </jqxPivotGrid>
 <br/>
-<jqxButton 
+<jqxButton [theme]="'material'" 
     #btnCheckRowsDisplayStyle
     (onClick)="onChangeRowsDisplayStyle()"
     height="30"

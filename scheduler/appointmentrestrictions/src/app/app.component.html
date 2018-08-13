@@ -1,4 +1,4 @@
-﻿<jqxScheduler #scheduler
+﻿<jqxScheduler [theme]="'material'" #scheduler
               [width]="getWidth()" [height]="600"
               [date]="date"
               [source]="dataAdapter"
@@ -9,7 +9,7 @@
               [appointmentDataFields]="appointmentDataFields">
 </jqxScheduler>
 <br />
-<jqxButton #showAppointmentsButton
+<jqxButton [theme]="'material'" #showAppointmentsButton
            (onClick)="click()">
   Show Hidden Appointments
 </jqxButton>

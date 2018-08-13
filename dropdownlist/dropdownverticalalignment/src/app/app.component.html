@@ -1,4 +1,4 @@
-﻿<jqxDropDownList #myDropDownList style="float: left; margin-top: 270px"
+﻿<jqxDropDownList [theme]="'material'" #myDropDownList style="float: left; margin-top: 270px"
     [width]="150" [height]="30" [source]="dataAdapter" [selectedIndex]="0"
     [displayMember]="'ContactName'" [valueMember]="'notes'"
     [dropDownVerticalAlignment]="'top'" [dropDownWidth]="200">
@@ -7,11 +7,11 @@
 <div style="float: left; font-size: 13px; font-family: Verdana; margin-left: 100px; margin-top: 270px">
     <h3>Alignment</h3>
 
-    <jqxRadioButton (onChecked)="topAlignBtnOnChecked()" checked="true">
+    <jqxRadioButton [theme]="'material'" (onChecked)="topAlignBtnOnChecked()" checked="true">
         Top
     </jqxRadioButton>
 
-    <jqxRadioButton (onChecked)="bottomAlignBtnOnChecked()">
+    <jqxRadioButton [theme]="'material'" (onChecked)="bottomAlignBtnOnChecked()">
         Bottom
     </jqxRadioButton>
 

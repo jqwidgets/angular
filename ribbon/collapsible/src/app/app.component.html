@@ -11,7 +11,7 @@
     </div>
   </div>
   <br /><br /><br />
-  <jqxRibbon id="jqxRibbon" #jqxRibbon
+  <jqxRibbon [theme]="'material'" id="jqxRibbon" #jqxRibbon
              [width]="700"
              [position]="'top'"
              [mode]="'popup'"
@@ -27,7 +27,7 @@
     </div>
   </jqxRibbon>
 </div>
-<jqxCheckBox style="float: left; margin-left: 50px;" #megaMenuMode
+<jqxCheckBox [theme]="'material'" style="float: left; margin-left: 50px;" #megaMenuMode
              (onChange)="change($event)"
              [width]="130" [checked]="true">
   Menu Mode
