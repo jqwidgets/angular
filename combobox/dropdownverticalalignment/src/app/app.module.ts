@@ -6,7 +6,7 @@ import { jqxComboBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqx
 import { jqxRadioButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxradiobutton.ts';
 
 @NgModule({
-    declarations: [AppComponent, jqxComboboxComponent, jqxRadioButtonComponent],
+    declarations: [AppComponent, jqxComboBoxComponent, jqxRadioButtonComponent],
     imports: [BrowserModule],
     providers: [],
     bootstrap: [AppComponent]

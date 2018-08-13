@@ -6,7 +6,7 @@ import { jqxButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxbu
 import { jqxComboBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxcombobox.ts';
 
 @NgModule({
-    declarations: [AppComponent, jqxButtonComponent, jqxComboboxComponent],
+    declarations: [AppComponent, jqxButtonComponent, jqxComboBoxComponent],
     imports: [BrowserModule],
     providers: [],
     bootstrap: [AppComponent]

@@ -9,7 +9,7 @@ import { jqxDropDownListComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular
 import { jqxExpanderComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxexpander.ts';
 
 @NgModule({
-    declarations: [AppComponent, jqxButtonComponent, jqxCheckBoxComponent, jqxComboboxComponent, jqxDropDownListComponent, jqxExpanderComponent],
+    declarations: [AppComponent, jqxButtonComponent, jqxCheckBoxComponent, jqxComboBoxComponent, jqxDropDownListComponent, jqxExpanderComponent],
     imports: [BrowserModule],
     providers: [],
     bootstrap: [AppComponent]

@@ -6,7 +6,7 @@ import { jqxComboBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqx
 import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid.ts';
 
 @NgModule({
-    declarations: [AppComponent, jqxComboboxComponent, jqxGridComponent],
+    declarations: [AppComponent, jqxComboBoxComponent, jqxGridComponent],
     imports: [BrowserModule],
     providers: [],
     bootstrap: [AppComponent]

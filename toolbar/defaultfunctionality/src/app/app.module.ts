@@ -9,7 +9,7 @@ import { jqxInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxinp
 import { jqxToolBarComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtoolbar.ts';
 
 @NgModule({
-    declarations: [AppComponent, jqxButtonComponent, jqxComboboxComponent, jqxDropDownListComponent, jqxInputComponent, jqxToolBarComponent],
+    declarations: [AppComponent, jqxButtonComponent, jqxComboBoxComponent, jqxDropDownListComponent, jqxInputComponent, jqxToolBarComponent],
     imports: [BrowserModule],
     providers: [],
     bootstrap: [AppComponent]
