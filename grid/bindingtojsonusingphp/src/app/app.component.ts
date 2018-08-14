@@ -18,7 +18,7 @@ export class AppComponent {
             { name: 'total', type: 'float' }
         ],
         id: 'id',
-        url: '../assets/data.php',
+        url: '../assets/data.txt',
         root: 'data'
     };
 

@@ -1,4 +1,4 @@
-﻿<div style="font-size: 13px; font-family: Verdana; float: left">
+﻿<div style="font-size: 13px; font-family: Verdana; float: left; width: 100%;">
 
     <jqxGrid [theme]="'material'" #myGrid
         [width]="getWidth()" [source]="dataAdapter" [columns]="columns" [selectionmode]="'multiplecellsadvanced'">
@@ -8,11 +8,11 @@
         
         <h3>Alignment</h3>
 
-        <jqxRadioButton [theme]="'material'" style="float: left" (onChecked)="leftBtnOnChecked()">Left</jqxRadioButton>
+        <jqxRadioButton [theme]="'material'" (onChecked)="leftBtnOnChecked()">Left</jqxRadioButton>
 
-        <jqxRadioButton [theme]="'material'" style="float: left" (onChecked)="centerBtnOnChecked()" [checked]="true">Center</jqxRadioButton>
+        <jqxRadioButton [theme]="'material'" (onChecked)="centerBtnOnChecked()" [checked]="true">Center</jqxRadioButton>
 
-        <jqxRadioButton [theme]="'material'" style="float: left" (onChecked)="rightBtnOnChecked()">Right</jqxRadioButton>
+        <jqxRadioButton [theme]="'material'" (onChecked)="rightBtnOnChecked()">Right</jqxRadioButton>
 
     </div>
 

@@ -39,11 +39,11 @@ export class AppComponent {
 
     columns: any[] =
     [
-        { text: 'First Name', groupable: true, aggregates: ['count'], datafield: 'firstname', width: 100 },
-        { text: 'Last Name', groupable: true, aggregates: ['count'], datafield: 'lastname', width: 100 },
-        { text: 'Product', groupable: true, columntype: 'dropdownlist', datafield: 'productname', width: 200 },
-        { text: 'Quantity', datafield: 'quantity', aggregates: ['sum'], width: 70, cellsalign: 'right' },
-        { text: 'Price', datafield: 'price', aggregates: ['sum'], cellsalign: 'right', width: 100, cellsformat: 'c2' },
+        { text: 'First Name', groupable: true, aggregates: ['count'], datafield: 'firstname', width: 70 },
+        { text: 'Last Name', groupable: true, aggregates: ['count'], datafield: 'lastname', width: 70 },
+        { text: 'Product', groupable: true, columntype: 'dropdownlist', datafield: 'productname', width: 180 },
+        { text: 'Quantity', datafield: 'quantity', aggregates: ['sum'], width: 60, cellsalign: 'right' },
+        { text: 'Price', datafield: 'price', aggregates: ['sum'], cellsalign: 'right', width: 60, cellsformat: 'c2' },
         {
             text: 'Total', datafield: 'total', aggregates: ['sum'], cellsalign: 'right', cellsformat: 'c2',
             cellsrenderer: (row, column, value, defaultRender, rowData) => {

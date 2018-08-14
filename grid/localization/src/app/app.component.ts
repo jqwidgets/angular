@@ -1,6 +1,6 @@
 ﻿import { Component } from '@angular/core';
 
-import { getLocalization } from '../../../scripts/localization';
+import { getLocalization } from '../assets/localization';
 import { generatedata } from '../assets/generatedata';
 
 @Component({

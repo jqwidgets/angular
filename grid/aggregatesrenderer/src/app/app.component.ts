@@ -42,14 +42,14 @@ export class AppComponent {
     columns: any[] =
     [
         {
-            text: 'First Name', columntype: 'textbox', datafield: 'firstname', width: 190,
+            text: 'First Name', columntype: 'textbox', datafield: 'firstname', width: 100,
             aggregatesrenderer: (aggregates: any, column: any, element: any): string => {
                 let renderstring = '<div class="jqx-widget-content jqx-widget-content-' + this.theme + '" style="float: left; width: 100%; height: 100%; "/>';
                 return renderstring;
             }
         },
         {
-            text: 'Last Name', datafield: 'lastname', columntype: 'textbox', width: 190,
+            text: 'Last Name', datafield: 'lastname', columntype: 'textbox', width: 100,
             aggregatesrenderer: (aggregates: any, column: any, element: any): string => {
                 let renderstring = '<div class="jqx-widget-content jqx-widget-content-' + this.theme + '" style="float: left; width: 100%; height: 100%; "/>';
                 return renderstring;

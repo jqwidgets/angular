@@ -38,10 +38,10 @@ export class AppComponent {
 
     columns: any[] =
     [
-        { text: 'First Name', columntype: 'textbox', datafield: 'firstname', width: 150 },
-        { text: 'Last Name', datafield: 'lastname', columntype: 'textbox', width: 150 },
-        { text: 'Product', datafield: 'productname', width: 200 },
-        { text: 'Quantity', datafield: 'quantity', width: 100, cellsalign: 'right', cellsformat: 'n2' },
+        { text: 'First Name', columntype: 'textbox', datafield: 'firstname', width: 90 },
+        { text: 'Last Name', datafield: 'lastname', columntype: 'textbox', width: 90 },
+        { text: 'Product', datafield: 'productname', width: 170 },
+        { text: 'Quantity', datafield: 'quantity', width: 80, cellsalign: 'right', cellsformat: 'n2' },
         {
             text: 'Price', datafield: 'price', cellsalign: 'right', cellsformat: 'c2',
             aggregates: [{

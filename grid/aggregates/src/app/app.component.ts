@@ -38,8 +38,8 @@ export class AppComponent {
 
     columns: any[] =
     [
-        { text: 'First Name', columntype: 'textbox', datafield: 'firstname', width: 170 },
-        { text: 'Last Name', datafield: 'lastname', columntype: 'textbox', width: 170 },
+        { text: 'First Name', columntype: 'textbox', datafield: 'firstname', width: 90 },
+        { text: 'Last Name', datafield: 'lastname', columntype: 'textbox', width: 90 },
         {
             text: 'Product', datafield: 'productname', width: 170,
             aggregates: ['count',
@@ -55,7 +55,7 @@ export class AppComponent {
             ]
         },
         {
-            text: 'In Stock', datafield: 'available', columntype: 'checkbox', width: 125,
+            text: 'In Stock', datafield: 'available', columntype: 'checkbox', width: 60,
             aggregates: [{
                 'In Stock':
                 (aggregatedValue: number, currentValue: string): number => {
@@ -77,7 +77,7 @@ export class AppComponent {
             ]
         },
         {
-            text: 'Quantity', datafield: 'quantity', width: 85, cellsalign: 'right', cellsformat: 'n2', aggregates: ['min', 'max'],
+            text: 'Quantity', datafield: 'quantity', width: 60, cellsalign: 'right', cellsformat: 'n2', aggregates: ['min', 'max'],
             aggregatesrenderer: (aggregates: any): string => {
                 let renderstring = '';
                 for (let obj in aggregates) {

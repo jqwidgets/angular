@@ -12,13 +12,13 @@ export class AppComponent {
         { 'Name': 'Capital', 'Berlin': 'true', 'Boston': 'false', 'London': 'true' }
     ];
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth() : any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+        
+        return 850;
+    }
 
     source: any =
     {
@@ -51,9 +51,17 @@ export class AppComponent {
             editor.jqxDropDownList({ theme: 'material', autoDropDownHeight: true, width: width, height: height, source: ['United States', 'Germany', 'United Kingdom'] });
         }
         else if (row == 2) {
-            let element: any = $('<div tabIndex=0 style="position: absolute; top: 50%; left: 50%; margin-top: -7px; margin-left: -10px;"></div>');
+            const element = document.createElement('div');
+            element.className = 'capitalCheckBox';
+            element.style.cssText = 'position: absolute; top: 50%; left: 50%; margin-top: -7px; margin-left: -10px;';
             editor.append(element);
-            element.jqxCheckBox({ animationShowDelay: 0, animationHideDelay: 0, width: 18, height: 18 });
+
+            const options = { 
+              width: 18, height: 18, theme: 'material',
+              animationShowDelay: 0, animationHideDelay: 0
+            };
+            
+            jqwidgets.createInstance(`.capitalCheckBox`, 'jqxCheckBox', options);
         }
     }
 

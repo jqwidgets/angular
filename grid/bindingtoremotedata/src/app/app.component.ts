@@ -15,7 +15,7 @@ export class AppComponent {
             { name: 'population', type: 'float' },
             { name: 'continentCode', type: 'string' }
         ],
-        url: 'http://api.geonames.org/searchJSON'
+        url: 'https://secure.geonames.org/searchJSON'
     };
 
 	getWidth() : any {

@@ -2,7 +2,7 @@
 
 import { jqxTreeGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtree.ts';
 
-import { getLocalization } from '../../../scripts/localization';
+import { getLocalization } from '../assets/localization';
 import { generateordersdata } from '../assets/generatedata';
 
 @Component({
