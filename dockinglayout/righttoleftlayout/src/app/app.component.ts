@@ -41,7 +41,7 @@ export class AppComponent {
                 {
                     type: 'layoutGroup',
                     orientation: 'vertical',
-                    width: 500,
+                    width: 308,
                     items: [{
                         type: 'documentGroup',
                         height: 400,
@@ -136,7 +136,7 @@ export class AppComponent {
                 width: 500,
                 height: 300,
                 position: {
-                    x: 350,
+                    x: 100,
                     y: 250
                 },
                 items: [{

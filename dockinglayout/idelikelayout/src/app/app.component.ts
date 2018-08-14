@@ -1,6 +1,6 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxDockingLayoutComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdocking.tslayout.ts';
+import { jqxDockingLayoutComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdocking.ts';
 import { jqxButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxbuttons.ts'
 
 
@@ -47,7 +47,7 @@ export class AppComponent {
             }, {
                 type: 'layoutGroup',
                 orientation: 'vertical',
-                width: 500,
+                width: 308,
                 items: [{
                     type: 'documentGroup',
                     height: 400,
@@ -197,7 +197,7 @@ export class AppComponent {
     }
 
     viewServerExplorerBtnOnClick(): void {
-        this.myDockingLayout.addFloatGroup(300, 200, { x: 500, y: 200 }, 'layoutPanel', 'Server Explorer', '<div id="serverExplorerTree" />',
+        this.myDockingLayout.addFloatGroup(300, 200, { x: 100, y: 200 }, 'layoutPanel', 'Server Explorer', '<div id="serverExplorerTree" />',
             (): void => {
                 let source = [{
                     icon: 'https://www.jqwidgets.com/angular/images/dataadapter.png',
