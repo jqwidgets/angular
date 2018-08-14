@@ -100,10 +100,10 @@ export class AppComponent {
         filterPanel[0].appendChild(inputContainer);
         filterPanel[0].appendChild(buttonsContainer);
 
-        let filterButtonOptions = { width: 45, height: 25, value: 'Filter' };
+        let filterButtonOptions = { theme: 'material', width: 45, height: 25, value: 'Filter' };
         let filterButton = jqwidgets.createInstance('#filterButtonContainer', 'jqxButton', filterButtonOptions);
 
-        let filterClearButtonOptions = { width: 45, height: 25, value: 'Clear' };
+        let filterClearButtonOptions = { theme: 'material', width: 45, height: 25, value: 'Clear' };
         let filterClearButton = jqwidgets.createInstance('#filterClearButtonContainer', 'jqxButton', filterClearButtonOptions);
 
         let dataSource =
@@ -124,6 +124,7 @@ export class AppComponent {
         let column = this.myGrid.getcolumn(datafield);
 
         let inputOptions = {
+            theme: 'material', 
             width: 175, height: 20, source: dataadapter,
             displayMember: 'datafield', popupZIndex: 99999,
             placeHolder: `Enter ${column.text}`

@@ -162,6 +162,7 @@ export class AppComponent implements AfterViewInit {
         fields.buttons[0].appendChild(buttonElement);
 
         let printButton: jqwidgets.jqxButton = jqwidgets.createInstance('#PrintButton', 'jqxButton', {
+            theme: 'material', 
             width: 50,
             height: 25
         });

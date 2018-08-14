@@ -146,7 +146,7 @@ export class AppComponent {
 
             container.appendChild(widgetContainer);
 
-            let myTextArea = jqwidgets.createInstance(`#${id}`, 'jqxTextArea', { width: '100%', height: 35 })
+            let myTextArea = jqwidgets.createInstance(`#${id}`, 'jqxTextArea', { theme: 'material', width: '100%', height: 35 })
 
             myTextArea.val(currentText);
 

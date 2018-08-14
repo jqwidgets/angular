@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
             let currentButton = allBuyButtons[i];
             let currentID = currentButton.id;
 
-            let currentBuyButton: jqwidgets.jqxButton = jqwidgets.createInstance('#' + currentID, 'jqxButton', {});
+            let currentBuyButton: jqwidgets.jqxButton = jqwidgets.createInstance('#' + currentID, 'jqxButton', { theme: 'material' });
 
             currentBuyButton.addEventHandler('click', function () {
                 itemsInCart += 1;

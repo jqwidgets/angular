@@ -19,12 +19,12 @@ export class AppComponent implements AfterViewInit {
     }
 
     dateInputSettings: jqwidgets.DateTimeInputOptions = {
-        width: '300px', height: '25px'
+        theme: 'material', width: '300px', height: '25px'
     }
     timeInputSettings: jqwidgets.DateTimeInputOptions = {
-        formatString: "T", showTimeButton: true, showCalendarButton: false, width: '300px', height: '25px'
+        theme: 'material', formatString: "T", showTimeButton: true, showCalendarButton: false, width: '300px', height: '25px'
     }
     dateTimeInputSettings: jqwidgets.DateTimeInputOptions = {
-        formatString: "F", showTimeButton: true, width: '300px', height: '25px'
+        theme: 'material', formatString: "F", showTimeButton: true, width: '300px', height: '25px'
     }
 }

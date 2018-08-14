@@ -32,6 +32,7 @@ export class AppComponent {
         let mainDataAdapter = new jqx.dataAdapter(mainSource);
         
         let mainGrid: jqwidgets.jqxGrid = jqwidgets.createInstance('#mainGrid', 'jqxGrid', {
+            theme: 'material', 
             width: '100%',
             autoheight: true,
             source: mainDataAdapter,
@@ -60,6 +61,7 @@ export class AppComponent {
         let socialDataAdapter = new jqx.dataAdapter(socialSource);
 
         let socialGrid: jqwidgets.jqxGrid = jqwidgets.createInstance('#socialGrid', 'jqxGrid', {
+            theme: 'material', 
             width: '100%',
             autoheight: true,
             source: socialDataAdapter,
@@ -81,7 +83,7 @@ export class AppComponent {
                 this.initiSocialGrid();
                 break;
             case 2:
-                let socialGrid: jqwidgets.jqxButton = jqwidgets.createInstance('#refreshButton', 'jqxButton', {});
+                let socialGrid: jqwidgets.jqxButton = jqwidgets.createInstance('#refreshButton', 'jqxButton', { theme: 'material' });
                 break;
         }
     }

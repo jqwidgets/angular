@@ -82,7 +82,7 @@ export class AppComponent {
                         inputContainer.style.cssText = 'height: 100%; border: none';
                         editor[0].appendChild(inputContainer);
 
-                        this.myInput = jqwidgets.createInstance('#myInput', 'jqxInput', { width: '100%', height: '100%' });
+                        this.myInput = jqwidgets.createInstance('#myInput', 'jqxInput', { theme: 'material',  width: '100%', height: '100%' });
 
                         break;
                     case 'align':
@@ -93,7 +93,7 @@ export class AppComponent {
 
                         let options =
                             {
-                                width: '100%', height: '100%', autoDropDownHeight: true, source: ['Left', 'Center', 'Right']
+                                theme: 'material', width: '100%', height: '100%', autoDropDownHeight: true, source: ['Left', 'Center', 'Right']
                             };
                         this.myDropDownList = jqwidgets.createInstance('#myDropDownList', 'jqxDropDownList', options);
 
@@ -106,7 +106,7 @@ export class AppComponent {
                             dropDownButtonContainer.innerHTML = '<div style="padding: 5px;"><div class="myColorPicker1"></div></div>';
                             editor[0].appendChild(dropDownButtonContainer);
 
-                            let myDropDownButton1 = jqwidgets.createInstance('#myDropDownButton1', 'jqxDropDownButton', { width: '100%', height: '100%' });
+                            let myDropDownButton1 = jqwidgets.createInstance('#myDropDownButton1', 'jqxDropDownButton', { theme: 'material', width: '100%', height: '100%' });
 
                             this.myColorPicker1 = jqwidgets.createInstance(`.myColorPicker1`, 'jqxColorPicker', { width: 220, height: 220 });
 
@@ -121,7 +121,7 @@ export class AppComponent {
                             dropDownButtonContainer.innerHTML = '<div style="padding: 5px;"><div class="myColorPicker2"></div></div>';
                             editor[0].appendChild(dropDownButtonContainer);
 
-                            let myDropDownButton2 = jqwidgets.createInstance('#myDropDownButton2', 'jqxDropDownButton', { width: '100%', height: '100%' });
+                            let myDropDownButton2 = jqwidgets.createInstance('#myDropDownButton2', 'jqxDropDownButton', { theme: 'material', width: '100%', height: '100%' });
 
                             this.myColorPicker2 = jqwidgets.createInstance(`.myColorPicker2`, 'jqxColorPicker', { width: 220, height: 220 });
 
@@ -137,7 +137,7 @@ export class AppComponent {
                         checkBoxContainer.style.cssText = 'margin-top: 6px; margin-left: -8px; left: 50%; position: relative';
                         editor[0].appendChild(checkBoxContainer);
 
-                        this.myCheckBox = jqwidgets.createInstance('#myCheckBox', 'jqxCheckBox', { checked: cellvalue });
+                        this.myCheckBox = jqwidgets.createInstance('#myCheckBox', 'jqxCheckBox', { theme: 'material', checked: cellvalue });
 
                         break;
                 }

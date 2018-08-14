@@ -132,7 +132,7 @@ export class AppComponent {
                 title: 'Solution Explorer',
                 contentContainer: 'SolutionExplorerPanel',
                 initContent: () => {
-                    jqwidgets.createInstance('#treeContainer', 'jqxTree', { source: this.source, height: '99%', width: '100%' })
+                    jqwidgets.createInstance('#treeContainer', 'jqxTree', { theme: 'material', source: this.source, height: '99%', width: '100%' })
                 }
             },
             {

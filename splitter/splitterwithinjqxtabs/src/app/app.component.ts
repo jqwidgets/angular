@@ -20,6 +20,7 @@ export class AppComponent {
     initTabContent = (tab: number): void => {
         if (tab == 0) {
             let jqxSplitter1: jqwidgets.jqxSplitter = jqwidgets.createInstance(this.splitter1.nativeElement, 'jqxSplitter', {
+                theme: 'material', 
                 height: '100%',
                 width: '100%',
                 panels: [{ size: '50%' }]
@@ -27,6 +28,7 @@ export class AppComponent {
         }
         else {
             let jqxSplitter2: jqwidgets.jqxSplitter = jqwidgets.createInstance(this.splitter2.nativeElement, 'jqxSplitter', {
+                theme: 'material', 
                 orientation: 'horizontal',
                 height: '100%',
                 width: '100%',

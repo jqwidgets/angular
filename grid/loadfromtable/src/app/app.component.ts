@@ -62,6 +62,7 @@ export class AppComponent {
         let dataAdapter = new jqx.dataAdapter(source);
 
         let settings = {
+            theme: 'material', 
             width: 850,
             source: dataAdapter,
             columnsresize: true,

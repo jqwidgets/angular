@@ -57,7 +57,7 @@ export class AppComponent {
                         title: 'index.htm',
                         contentContainer: 'Document1Panel',
                         initContent: () => {
-                            let textArea = jqwidgets.createInstance('#Document1TextArea', 'jqxTextArea', { width: '100%', height: 400 });
+                            let textArea = jqwidgets.createInstance('#Document1TextArea', 'jqxTextArea', { theme: 'material', width: '100%', height: 400 });
                             textArea.val('<!DOCTYPE html>\n<html>\n\t<head>\n\t<title>Page Title</title>\n\t</head>\n\t<body>\n\t\t<h1>This is a Heading</h1>\n\t\t<p>This is a paragraph.</p>\n\t</body>\n</html>');
                         }
                     }, {
@@ -65,7 +65,7 @@ export class AppComponent {
                         title: 'New Document',
                         contentContainer: 'Document2Panel',
                         initContent: () => {
-                            jqwidgets.createInstance('#Document2TextArea', 'jqxTextArea', { width: '100%', height: 400, placeHolder: 'Blank document' });
+                            jqwidgets.createInstance('#Document2TextArea', 'jqxTextArea', { theme: 'material', width: '100%', height: 400, placeHolder: 'Blank document' });
                         }
                     }]
                 }, {
@@ -184,7 +184,7 @@ export class AppComponent {
                                 selected: true
                             }]
                         }];
-                        jqwidgets.createInstance('#solutionExplorerTree', 'jqxTree', { width: 190, height: '99%', source: source });
+                        jqwidgets.createInstance('#solutionExplorerTree', 'jqxTree', { theme: 'material', width: 190, height: '99%', source: source });
                     }
                 }, {
                     type: 'layoutPanel',
@@ -218,7 +218,7 @@ export class AppComponent {
                         label: 'SharePoint Connections'
                     }]
                     }];
-                jqwidgets.createInstance('#serverExplorerTree', 'jqxTree', { width: '99%', height: '99%', source: source });
+                jqwidgets.createInstance('#serverExplorerTree', 'jqxTree', { theme: 'material', width: '99%', height: '99%', source: source });
             }
         );
         this.viewServerExplorerBtn.disabled(true);

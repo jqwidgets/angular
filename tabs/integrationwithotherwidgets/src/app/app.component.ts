@@ -28,6 +28,7 @@ export class AppComponent {
         let dataAdapter = new jqx.dataAdapter(source, { async: false, loadError: (xhr, status, error) => { alert('Error loading "' + source.url + '" : ' + error); } });
         //let myChart: jqwidgets.jqxChart = jqwidgets.createInstance('#jqxChart', 'jqxChart', settings);
         let myGrid: jqwidgets.jqxGrid = jqwidgets.createInstance('#jqxGrid', 'jqxGrid', {
+            theme: 'material', 
             width: '100%',
             height: '84%',
             source: dataAdapter,

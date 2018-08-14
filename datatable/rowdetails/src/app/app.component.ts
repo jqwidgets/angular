@@ -95,7 +95,7 @@
   
             tabsdiv.className = 'angularTabs';
 
-            jqwidgets.createInstance('.angularTabs', 'jqxTabs', { width: 820, height: 170 })
+            jqwidgets.createInstance('.angularTabs', 'jqxTabs', { theme: 'material', width: 820, height: 170 })
         }
     }
 

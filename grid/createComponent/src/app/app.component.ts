@@ -51,6 +51,7 @@ export class AppComponent implements AfterViewInit {
 
     settings: any =
     {
+        theme: 'material', 
         width: 850,
         source: this.dataAdapter,
         pageable: true,

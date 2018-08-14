@@ -12,7 +12,7 @@ export class AppComponent {
     @ViewChild('myDockingLayout') myDockingLayout: jqxDockingLayoutComponent;
 
     ngAfterViewInit(): void {
-        this.myDockingLayout.createComponent({ width: 800, height: 600, layout: this.layout() })
+        this.myDockingLayout.createComponent({ theme: 'material', width: 800, height: 600, layout: this.layout() })
     }
 
 	getWidth() : any {
@@ -126,7 +126,7 @@ export class AppComponent {
                                         }]
                                 }];
 
-                                jqwidgets.createInstance('#treeContainer', 'jqxTree', { width: '100%', height: '99%', source: source })
+                                jqwidgets.createInstance('#treeContainer', 'jqxTree', { theme: 'material', width: '100%', height: '99%', source: source })
                             }
                         },
                         {

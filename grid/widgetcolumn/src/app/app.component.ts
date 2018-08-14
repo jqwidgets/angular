@@ -38,6 +38,7 @@ export class AppComponent {
                 const imgurl = 'https://www.jqwidgets.com/angular/images/' + value.toLowerCase() + '.png';
 
                 const options = {
+                    theme: 'material', 
                     width: '100%', height: 90, template: 'success',
                     imgSrc: imgurl, imgWidth: 40, imgHeight: 50, value: value,
                     imgPosition: 'center', textPosition: 'center', textImageRelation: 'imageAboveText'

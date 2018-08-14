@@ -69,6 +69,7 @@ export class AppComponent {
                 htmlElement[0].appendChild(container);
 
                 let options = {
+                    theme: 'material', 
                     width: '100%', height: 30, source: this.getSourceAdapter('name'),
                     popupZIndex: 999999, placeHolder: 'Enter Name: ', displayMember: 'name'
                 };
@@ -96,6 +97,7 @@ export class AppComponent {
                 htmlElement[0].appendChild(container);
 
                 let options = {
+                    theme: 'material', 
                     width: '100%', height: 30, source: this.getSourceAdapter('productname'),
                     popupZIndex: 999999, placeHolder: 'Enter Product: ', displayMember: 'productname'
                 };
@@ -124,6 +126,7 @@ export class AppComponent {
                 htmlElement[0].appendChild(container);
 
                 let options = {
+                    theme: 'material', 
                     width: '100%', height: 30, value: null,
                     popupZIndex: 999999, placeHolder: 'Enter Date: '
                 };
@@ -151,6 +154,7 @@ export class AppComponent {
                 htmlElement[0].appendChild(container);
 
                 let options = {
+                    theme: 'material', 
                     width: '100%', height: 30, decimalDigits: 0, inputMode: 'simple'
                 };
 

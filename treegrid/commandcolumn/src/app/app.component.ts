@@ -96,10 +96,10 @@ export class AppComponent {
     };
 
     rendered = (): void => {
-        let uglyEditButtons = jqwidgets.createInstance('.editButton', 'jqxButton', { width: 60, height: 24, value: 'Edit' });
+        let uglyEditButtons = jqwidgets.createInstance('.editButton', 'jqxButton', { theme: 'material',  width: 60, height: 24, value: 'Edit' });
         let flattenEditButtons = flatten(uglyEditButtons);
 
-        let uglyCancelButtons = jqwidgets.createInstance('.cancelButton', 'jqxButton', { width: 60, height: 24, value: 'Cancel' });
+        let uglyCancelButtons = jqwidgets.createInstance('.cancelButton', 'jqxButton', { theme: 'material',  width: 60, height: 24, value: 'Cancel' });
         let flattenCancelButtons = flatten(uglyCancelButtons);
 
         function flatten(arr: any[]): any[] {

@@ -76,7 +76,7 @@ export class AppComponent {
 
         let buttons = document.getElementsByClassName('buy');
 
-        jqwidgets.createInstance('.buy', 'jqxButton', { value: 'Buy', width: 80 });
+        jqwidgets.createInstance('.buy', 'jqxButton', { theme: 'material', value: 'Buy', width: 80 });
 
         for (let i = 0; i < buttons.length; i++) {
             buttons[i].addEventListener('click', () => {

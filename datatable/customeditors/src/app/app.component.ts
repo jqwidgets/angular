@@ -69,7 +69,7 @@ export class AppComponent {
                 editor[0].appendChild(container);
 
                 let inputOptions = {
-                    width: width, height: height, source: this.getEditorDataAdapter('firstname'), displayMember: 'firstname'
+                    theme: 'material', width: width, height: height, source: this.getEditorDataAdapter('firstname'), displayMember: 'firstname'
                 };
 
                 jqwidgets.createInstance('.firstNameInput', 'jqxInput', inputOptions);
@@ -94,7 +94,7 @@ export class AppComponent {
                 editor[0].appendChild(container);
 
                 let inputOptions = {
-                    width: width, height: height, source: this.getEditorDataAdapter('lastname'), displayMember: 'lastname'
+                    theme: 'material', width: width, height: height, source: this.getEditorDataAdapter('lastname'), displayMember: 'lastname'
                 };
 
                 jqwidgets.createInstance('.lastNameInput', 'jqxInput', inputOptions);

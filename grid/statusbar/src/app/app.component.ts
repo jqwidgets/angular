@@ -100,6 +100,7 @@ export class AppComponent implements AfterViewInit {
 
     createButtons(): void {
         let addButtonOptions = {
+            theme: 'material', 
             width: 80, height: 25, value: 'Add',
             imgSrc: 'https://www.jqwidgets.com/angular/images/add.png',
             imgPosition: 'center', textPosition: 'center',
@@ -108,6 +109,7 @@ export class AppComponent implements AfterViewInit {
         let addButton = jqwidgets.createInstance('#addButton', 'jqxButton', addButtonOptions);
 
         let deleteButtonOptions = {
+            theme: 'material', 
             width: 80, height: 25, value: 'Delete',
             imgSrc: 'https://www.jqwidgets.com/angular/images/close.png',
             imgPosition: 'center', textPosition: 'center',
@@ -116,6 +118,7 @@ export class AppComponent implements AfterViewInit {
         let deleteButton = jqwidgets.createInstance('#deleteButton', 'jqxButton', deleteButtonOptions);
 
         let reloadButtonOptions = {
+            theme: 'material', 
             width: 80, height: 25, value: 'Reload',
             imgSrc: 'https://www.jqwidgets.com/angular/images/refresh.png',
             imgPosition: 'center', textPosition: 'center',
@@ -124,6 +127,7 @@ export class AppComponent implements AfterViewInit {
         let reloadButton = jqwidgets.createInstance('#reloadButton', 'jqxButton', reloadButtonOptions);
 
         let searchButtonOptions = {
+            theme: 'material', 
             width: 80, height: 25, value: 'Find',
             imgSrc: 'https://www.jqwidgets.com/angular/images/search.png',
             imgPosition: 'center', textPosition: 'center',

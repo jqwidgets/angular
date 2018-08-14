@@ -24,7 +24,7 @@ export class AppComponent implements AfterViewInit {
 	}
 
     ngAfterViewInit(): void {
-        this.myCheckBox = jqwidgets.createInstance('#myCheckBox', 'jqxCheckBox', {});
+        this.myCheckBox = jqwidgets.createInstance('#myCheckBox', 'jqxCheckBox', { theme: 'material' });
 
         this.myCheckBox.addEventHandler('change', (event: any) => {
             if (!this.updatingSelectionFromDataTable) {

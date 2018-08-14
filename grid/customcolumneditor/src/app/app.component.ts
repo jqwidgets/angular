@@ -58,7 +58,7 @@ export class AppComponent {
 
                 let options = {
                     width: width, height: height,
-                    displayMember: 'firstname',
+                    displayMember: 'firstname', theme: 'material', 
                     source: this.getEditorDataAdapter('firstname')
                 };
 
@@ -90,7 +90,7 @@ export class AppComponent {
 
                 let options = {
                     width: width, height: height,
-                    displayMember: 'lastname',
+                    displayMember: 'lastname', theme: 'material', 
                     source: this.getEditorDataAdapter('lastname')
                 };
 

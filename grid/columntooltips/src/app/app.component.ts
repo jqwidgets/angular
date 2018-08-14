@@ -40,7 +40,7 @@ export class AppComponent {
         let id = `toolTipContainer${this.counter}`;
         element[0].id = id;
         let content = element[0].innerHTML;
-        setTimeout(_ => jqwidgets.createInstance(`#${id}`, 'jqxTooltip', { position: 'mouse', content: content }))     
+        setTimeout(_ => jqwidgets.createInstance(`#${id}`, 'jqxTooltip', { theme: 'material', position: 'mouse', content: content }))     
         this.counter++;
     }
 

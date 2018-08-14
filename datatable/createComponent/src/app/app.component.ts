@@ -45,6 +45,7 @@ export class AppComponent implements AfterViewInit {
 
     settings: jqwidgets.DataTableOptions =
     {
+        theme: 'material', 
         source: this.dataAdapter,
         altRows: true,
         sortable: true,

@@ -16,6 +16,7 @@ export class AppComponent implements AfterViewInit {
 
     settings: jqwidgets.ComboBoxOptions =
     {
+        theme: 'material', 
         source: this.generateHTML(),
         selectedIndex: 0,
         width: 250,

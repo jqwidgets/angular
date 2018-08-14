@@ -120,7 +120,7 @@ export class AppComponent {
                                         }]
                                 }];
 
-                                jqwidgets.createInstance('#treeContainer', 'jqxTree', { width: '100%', height: '99%', source: source })
+                                jqwidgets.createInstance('#treeContainer', 'jqxTree', { theme: 'material', width: '100%', height: '99%', source: source })
                             }
                         },
                         {

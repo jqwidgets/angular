@@ -108,7 +108,7 @@ export class AppComponent {
 
             let options =
                 {
-                    width: 820, height: 180, columns: columns,
+                    width: 820, height: 180, columns: columns, theme: 'material', 
                     pageable: true, source: nestedDataTableAdapter
                 };
 

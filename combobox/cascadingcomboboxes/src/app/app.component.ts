@@ -81,6 +81,7 @@ export class AppComponent {
                 let detailsAdapter = new jqx.dataAdapter(detailsSource);
 
                 let options = {
+                    theme: 'material',
                     source: detailsAdapter,
                     width: 500,
                     columns: [

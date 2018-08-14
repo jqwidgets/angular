@@ -48,7 +48,7 @@ export class AppComponent {
                     title: 'index.htm',
                     contentContainer: 'Document1Panel',
                     initContent: (): void => {
-                        let textArea = jqwidgets.createInstance('#Document1TextArea', 'jqxTextArea', { width: '100%', height: 400 });
+                        let textArea = jqwidgets.createInstance('#Document1TextArea', 'jqxTextArea', { theme: 'material', width: '100%', height: 400 });
                         textArea.val('<!DOCTYPE html>\n<html>\n\t<head>\n\t<title>Page Title</title>\n\t</head>\n\t<body>\n\t\t<h1>This is a Heading</h1>\n\t\t<p>This is a paragraph.</p>\n\t</body>\n</html>');
                     }
                 }, {
@@ -56,7 +56,7 @@ export class AppComponent {
                     title: 'New Document',
                     contentContainer: 'Document2Panel',
                     initContent: (): void => {
-                        jqwidgets.createInstance('#Document2TextArea', 'jqxTextArea', { width: '100%', height: 400, placeHolder: 'Blank document' });
+                        jqwidgets.createInstance('#Document2TextArea', 'jqxTextArea', { theme: 'material', width: '100%', height: 400, placeHolder: 'Blank document' });
                     }
                 }]
             }, {
@@ -211,7 +211,7 @@ export class AppComponent {
                         label: 'index.htm'
                     }]
                 }];
-                jqwidgets.createInstance('#solutionExplorerTree', 'jqxTree', { width: '100%', height: '99%', source: source });
+                jqwidgets.createInstance('#solutionExplorerTree', 'jqxTree', { theme: 'material', width: '100%', height: '99%', source: source });
             }
         }, {
             type: 'layoutPanel',

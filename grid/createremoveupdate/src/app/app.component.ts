@@ -114,10 +114,10 @@ export class AppComponent {
         container.appendChild(buttonContainer4);
         toolbar[0].appendChild(container);
 
-        let addRowButton = jqwidgets.createInstance('#buttonContainer1', 'jqxButton', { width: 105, value: 'Add New Row' });
-        let addMultipleRowsButton = jqwidgets.createInstance('#buttonContainer2', 'jqxButton', { width: 170, value: 'Add Multiple New Rows' });
-        let deleteRowButton = jqwidgets.createInstance('#buttonContainer3', 'jqxButton', { width: 150, value: 'Delete Selected Row' });
-        let updateRowButton = jqwidgets.createInstance('#buttonContainer4', 'jqxButton', { width: 155, value: 'Update Selected Row' });
+        let addRowButton = jqwidgets.createInstance('#buttonContainer1', 'jqxButton', { theme: 'material', width: 105, value: 'Add New Row' });
+        let addMultipleRowsButton = jqwidgets.createInstance('#buttonContainer2', 'jqxButton', { theme: 'material', width: 170, value: 'Add Multiple New Rows' });
+        let deleteRowButton = jqwidgets.createInstance('#buttonContainer3', 'jqxButton', { theme: 'material', width: 150, value: 'Delete Selected Row' });
+        let updateRowButton = jqwidgets.createInstance('#buttonContainer4', 'jqxButton', { theme: 'material', width: 155, value: 'Update Selected Row' });
 
         addRowButton.addEventHandler('click', () => {
             let datarow = this.generaterow();

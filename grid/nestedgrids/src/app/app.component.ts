@@ -90,6 +90,7 @@ export class AppComponent {
         if (nestedGridContainer != null) {
 
             let settings = {
+                theme: 'material', 
                 width: 780,
                 height: 200,
                 source: nestedGridAdapter, 

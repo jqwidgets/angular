@@ -37,6 +37,6 @@ export class AppComponent {
             '<div>Content of window  ' + this.count + '</div>';
         widgetContainer.appendChild(newWindow);
 
-        jqwidgets.createInstance('#' + currentWindowID, 'jqxWindow', { height: 150, width: 300 });
+        jqwidgets.createInstance('#' + currentWindowID, 'jqxWindow', { theme: 'material', height: 150, width: 300 });
     }    
 }

@@ -111,7 +111,7 @@ export class AppComponent {
 
             tabsdiv.className = 'angularTabs';
 
-            jqwidgets.createInstance('.angularTabs', 'jqxTabs', { width: 780, height: 170 })
+            jqwidgets.createInstance('.angularTabs', 'jqxTabs', { theme: 'material', width: 780, height: 170 })
         }
     }
 

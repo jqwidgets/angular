@@ -48,6 +48,6 @@ export class AppComponent implements AfterViewInit {
 
     settings: jqwidgets.DropDownListOptions =
     {
-        source: this.source, selectedIndex: 1, width: '200', height: '25'
+        theme: 'material', source: this.source, selectedIndex: 1, width: '200', height: '25'
     }
 }
