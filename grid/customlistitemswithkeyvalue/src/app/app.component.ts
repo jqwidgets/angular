@@ -169,7 +169,7 @@ export class AppComponent {
             text: 'Country', filtertype: 'list',
             filteritems: new jqx.dataAdapter(this.countriesSource), datafield: 'countryCode', displayfield: 'Country',
             createfilterwidget: (column: any, htmlElement: any, editor: any): void => {
-                editor.jqxDropDownList({ displayMember: 'label', valueMember: 'value' });
+                editor.jqxDropDownList({ theme: 'material', displayMember: 'label', valueMember: 'value' });
             }
         }
     ];

@@ -82,7 +82,7 @@ export class AppComponent {
                 let source = ['Corporate Headquarters', 'Finance Division', 'Accounting Department', 'Investment Department',
                     'Banking Office', 'Bonds Office', 'Operations Division', 'Manufacturing Department',
                     'Public Relations Department', 'Sales Department', 'Research Division'];
-                editor.jqxDropDownList({ autoDropDownHeight: true, source: source, width: '100%', height: '100%' });
+                editor.jqxDropDownList({ theme: 'material', autoDropDownHeight: true, source: source, width: '100%', height: '100%' });
             },
             initEditor: (row, cellvalue, editor, celltext, width, height) => {
                 // set the editor's current value. The callback is called each time the editor is displayed.
@@ -98,6 +98,7 @@ export class AppComponent {
             createEditor: (row, cellvalue, editor, cellText, width, height) => {
                 // construct the editor. 
                 editor.jqxSlider({
+                    theme: 'material',
                     showTicks: false, min: 0, max: 1250000, width: width, height: height, tooltip: true, tooltipFormatFunction: (value) => {
                         return jqx.formatNumber(value, 'c2');
                     }

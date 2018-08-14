@@ -40,7 +40,7 @@ export class AppComponent {
             createeditor: (row: number, column: any, editor: any): void => {
                 // assign a new data source to the combobox.
                 let list = ['Stuttgart', 'Rio de Janeiro', 'Strasbourg'];
-                editor.jqxComboBox({ autoDropDownHeight: true, source: list, promptText: 'Please Choose:' });
+                editor.jqxComboBox({ theme: 'material', autoDropDownHeight: true, source: list, promptText: 'Please Choose:' });
             },
             // update the editor's value before saving it.
             cellvaluechanging: (row: number, column: any, columntype: any, oldvalue: any, newvalue: any): any => {
@@ -53,7 +53,7 @@ export class AppComponent {
             createeditor: (row: number, column: any, editor: any): void => {
                 // assign a new data source to the dropdownlist.
                 let list = ['Germany', 'Brazil', 'France'];
-                editor.jqxDropDownList({ autoDropDownHeight: true, source: list });
+                editor.jqxDropDownList({ theme: 'material', autoDropDownHeight: true, source: list });
             },
             // update the editor's value before saving it.
             cellvaluechanging: (row: number, column: any, columntype: any, oldvalue: any, newvalue: any): any => {

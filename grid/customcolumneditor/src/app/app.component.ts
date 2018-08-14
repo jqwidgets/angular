@@ -117,6 +117,7 @@ export class AppComponent {
             createeditor: (row: number, cellvalue: any, editor: any, cellText: any, width: any, height: any): void => {
                 // construct the editor. 
                 editor.jqxDropDownList({
+                    theme: 'material',
                     checkboxes: true, source: this.getEditorDataAdapter('productname'), displayMember: 'productname', valueMember: 'productname', width: width, height: height,
                     selectionRenderer: () => {
                         return '<span style="top: 4px; position: relative;">Please Choose:</span>';
@@ -146,7 +147,7 @@ export class AppComponent {
             createeditor: (row: number, cellvalue: any, editor: any, cellText: any, width: any, height: any): void => {
                 // construct the editor. 
                 editor.css('margin-top', '2px');
-                editor.jqxSlider({ step: 1, mode: 'fixed', showTicks: false, min: 0, max: 30, width: width, height: height });
+                editor.jqxSlider({ theme: 'material', step: 1, mode: 'fixed', showTicks: false, min: 0, max: 30, width: width, height: height });
             },
             initeditor: (row: number, cellvalue: any, editor: any, celltext: any, pressedkey: any): void => {
                 // set the editor's current value. The callback is called each time the editor is displayed.

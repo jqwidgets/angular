@@ -45,10 +45,10 @@ export class AppComponent {
     createGridEditor = (row: number, cellValue: any, editor: any, cellText: any, width: any, height: any): void => {
         // construct the editor.
         if (row == 0) {
-            editor.jqxNumberInput({ decimalDigits: 0, inputMode: 'simple', width: width, height: height, spinButtons: true });
+            editor.jqxNumberInput({ theme: 'material', decimalDigits: 0, inputMode: 'simple', width: width, height: height, spinButtons: true });
         }
         else if (row == 1) {
-            editor.jqxDropDownList({ autoDropDownHeight: true, width: width, height: height, source: ['United States', 'Germany', 'United Kingdom'] });
+            editor.jqxDropDownList({ theme: 'material', autoDropDownHeight: true, width: width, height: height, source: ['United States', 'Germany', 'United Kingdom'] });
         }
         else if (row == 2) {
             let element: any = $('<div tabIndex=0 style="position: absolute; top: 50%; left: 50%; margin-top: -7px; margin-left: -10px;"></div>');
@@ -60,7 +60,7 @@ export class AppComponent {
     initGridEditor = (row: number, cellValue: any, editor: any, cellText: any, width: any, height: any): any => {
         // set the editor's current value. The callback is called each time the editor is displayed.
         if (row == 0) {
-            editor.jqxNumberInput({ decimal: parseInt(cellValue) });
+            editor.jqxNumberInput({ theme: 'material', decimal: parseInt(cellValue) });
         }
         else if (row == 1) {
             editor.jqxDropDownList('selectItem', cellValue);

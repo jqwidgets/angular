@@ -149,7 +149,7 @@ export class AppComponent {
         {
             text: 'Country', datafield: 'countryCode', displayfield: 'Country', columntype: 'dropdownlist',
             createeditor: (row: number, value: any, editor: any): void => {
-                editor.jqxDropDownList({ width: '99%', height: 27, source: this.countriesAdapter, displayMember: 'label', valueMember: 'value' });
+                editor.jqxDropDownList({ theme: 'material', width: '99%', height: 27, source: this.countriesAdapter, displayMember: 'label', valueMember: 'value' });
             }
         }
     ];

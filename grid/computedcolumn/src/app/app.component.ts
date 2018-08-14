@@ -54,7 +54,7 @@ export class AppComponent {
                 return true;
             },
             createeditor: (row: number, cellvalue: any, editor: any): void => {
-                editor.jqxNumberInput({ decimalDigits: 0, digits: 3 });
+                editor.jqxNumberInput({ theme: 'material', decimalDigits: 0, digits: 3 });
             }
         },
         {
@@ -66,7 +66,7 @@ export class AppComponent {
                 return true;
             },
             createeditor: (row: number, cellvalue: any, editor: any): void => {
-                editor.jqxNumberInput({ digits: 3 });
+                editor.jqxNumberInput({ theme: 'material', digits: 3 });
             }
         },
         {

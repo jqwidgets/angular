@@ -113,12 +113,12 @@ export class AppComponent {
             createEditor: (row: any, cellvalue: any, editor: any, cellText: any, width: any, height: any): void => {
                 // construct the editor. 
                 editor.jqxDropDownList({
-                    source: this.getEditorDataAdapter('productname'), displayMember: 'productname', valueMember: 'productname', width: width, height: height
+                    theme: 'material', source: this.getEditorDataAdapter('productname'), displayMember: 'productname', valueMember: 'productname', width: width, height: height
                 });
             },
             initEditor: (row: any, cellvalue: any, editor: any, celltext: any, width: any, height: any): void => {
                 // set the editor's current value. The callback is called each time the editor is displayed.
-                editor.jqxDropDownList({ width: width, height: height });
+                editor.jqxDropDownList({ theme: 'material', width: width, height: height });
                 editor.val(cellvalue);
             },
             getEditorValue: (row: any, cellvalue: any, editor: any): void => {
@@ -130,7 +130,7 @@ export class AppComponent {
             text: 'Quantity', width: 200, columntype: 'custom', datafield: 'quantity',
             createEditor: (row: any, cellvalue: any, editor: any, cellText: any, width: any, height: any): void => {
                 // construct the editor. 
-                editor.jqxSlider({ step: 1, mode: 'fixed', tooltip: true, showTicks: false, min: 0, max: 30, width: width, height: height });
+                editor.jqxSlider({ theme: 'material', step: 1, mode: 'fixed', tooltip: true, showTicks: false, min: 0, max: 30, width: width, height: height });
             },
             initEditor: (row: any, cellvalue: any, editor: any, celltext: any, width: any, height: any): void => {
                 // set the editor's current value. The callback is called each time the editor is displayed.

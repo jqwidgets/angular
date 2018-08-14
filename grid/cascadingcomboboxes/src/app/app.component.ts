@@ -59,7 +59,7 @@ export class AppComponent {
                         cities = ['Los Angeles', 'Minneapolis', 'Washington'];
                         break;
                 };
-                editor.jqxComboBox({ autoDropDownHeight: true, source: cities });
+                editor.jqxComboBox({ theme: 'material', autoDropDownHeight: true, source: cities });
                 if (city != 'Select a city...') {
                     let index = cities.indexOf(city);
                     editor.jqxComboBox('selectIndex', index);

@@ -149,7 +149,7 @@ export class AppComponent {
         {
             text: 'Country', datafield: 'countryCode', displayfield: 'Country', columntype: 'combobox',
             createeditor: (row: number, value: any, editor: any): void => {
-                editor.jqxComboBox({ source: this.countriesAdapter, displayMember: 'label', valueMember: 'value' });
+                editor.jqxComboBox({ theme: 'material', source: this.countriesAdapter, displayMember: 'label', valueMember: 'value' });
             }
         }
     ];
