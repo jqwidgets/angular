@@ -17,7 +17,7 @@ export class AppComponent {
             { name: 'population', type: 'float' },
             { name: 'continentCode' }
         ],
-        url: "http://api.geonames.org/searchJSON",
+        url: "https://secure.geonames.org/searchJSON",
         data: {
             featureClass: "P",
             style: "full",

@@ -18,7 +18,7 @@ export class AppComponent {
             { name: 'ShippedDate', type: 'date' }
         ],
         root: 'value',
-        url: 'http://services.odata.org/V3/Northwind/Northwind.svc/Orders?$format=json&$callback=?'
+        url: 'https://services.odata.org/V3/Northwind/Northwind.svc/Orders?$format=json&$callback=?'
     };
 
 	getWidth() : any {

@@ -16,7 +16,7 @@
             { name: 'population', type: 'float' },
             { name: 'continentCode', type: 'string' }
         ],
-        url: 'http://api.geonames.org/searchJSON'     };      dataAdapter: any = new jqx.dataAdapter(this.source,
+        url: 'https://secure.geonames.org/searchJSON'     };      dataAdapter: any = new jqx.dataAdapter(this.source,
         {
             formatData: function (data: any): any {
                 data.featureClass = 'P';

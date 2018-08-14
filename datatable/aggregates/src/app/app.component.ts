@@ -37,8 +37,8 @@ export class AppComponent {
 
     columns: any[] =
     [
-        { text: 'Supplier Name', cellsAlign: 'center', align: 'center', dataField: 'SupplierName', width: 300 },
-        { text: 'Product', cellsAlign: 'center', align: 'center', dataField: 'ProductName', width: 300 },
+        { text: 'Supplier Name', cellsAlign: 'center', align: 'center', dataField: 'SupplierName', width: 200 },
+        { text: 'Product', cellsAlign: 'center', align: 'center', dataField: 'ProductName', width: 200 },
         { text: 'Quantity', dataField: 'Quantity', cellsFormat: 'd2', aggregates: ['avg', 'min', 'max'], cellsAlign: 'center', align: 'center', width: 120 },
         { text: 'Price', dataField: 'Price', cellsFormat: 'c2', align: 'center', cellsAlign: 'center', aggregates: ['sum', 'min', 'max'] }
     ];

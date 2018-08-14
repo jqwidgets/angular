@@ -5,29 +5,20 @@
 
 <div style="margin-top: 20px">
 
-  <div style="float: left">
     <jqxButton [theme]="'material'" (onClick)="excelExport()" [width]="110">Export to Excel</jqxButton>
-    <br />
-    <br />
     <jqxButton [theme]="'material'" (onClick)="xmlExport()" [width]="110">Export to XML</jqxButton>
-  </div>
-
-  <div style="margin-left 10px; float: left">
     <jqxButton [theme]="'material'" (onClick)="csvExport()" [width]="110">Export to CSV</jqxButton>
+
     <br />
     <br />
+
     <jqxButton [theme]="'material'" (onClick)="tsvExport()" [width]="110">Export to TSV</jqxButton>
-  </div>
-
-  <div style="margin-left 10px; float: left">
-    <jqxButton [theme]="'material'" (onClick)="htmlExport()" [width]="110">Export to HTML</jqxButton>
-    <br />
-    <br />
     <jqxButton [theme]="'material'" (onClick)="jsonExport()" [width]="110">Export to JSON</jqxButton>
-  </div>
-
-  <div style="margin-left 10px; float: left">
     <jqxButton [theme]="'material'" (onClick)="pdfExport()" [width]="110">Export to PDF</jqxButton>
-  </div>
+
+    <br />
+    <br />
+
+    <jqxButton [theme]="'material'" (onClick)="htmlExport()" [width]="110">Export to HTML</jqxButton>
 
 </div>
