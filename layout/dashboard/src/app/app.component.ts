@@ -1,14 +1,14 @@
 ﻿import { Component, ViewEncapsulation } from '@angular/core';
 
-import { initTeamDataTable } from '../../../scripts/initdashboard';
-import { initProjectsListBox } from '../../../scripts/initdashboard';
-import { initProjectHistoryChart } from '../../../scripts/initdashboard';
-import { teamSalesProjectsTimeline } from '../../../scripts/initdashboard';
-import { teamSupportProjectsTimeline } from '../../../scripts/initdashboard';
-import { teamSalesContacts } from '../../../scripts/initdashboard';
-import { teamSupportStaff } from '../../../scripts/initdashboard'; 
-import { teamSalesStaff } from '../../../scripts/initdashboard';
-import { team } from '../../../scripts/initdashboard';
+import { initTeamDataTable } from '../assets/initdashboard';
+import { initProjectsListBox } from '../assets/initdashboard';
+import { initProjectHistoryChart } from '../assets/initdashboard';
+import { teamSalesProjectsTimeline } from '../assets/initdashboard';
+import { teamSupportProjectsTimeline } from '../assets/initdashboard';
+import { teamSalesContacts } from '../assets/initdashboard';
+import { teamSupportStaff } from '../assets/initdashboard'; 
+import { teamSalesStaff } from '../assets/initdashboard';
+import { team } from '../assets/initdashboard';
 
 @Component({
     selector: 'app-root',
