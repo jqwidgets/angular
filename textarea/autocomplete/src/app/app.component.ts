@@ -17,7 +17,7 @@ export class AppComponent  {
                 { name: 'continentCode' },
                 { name: 'adminName1' }
             ],
-            url: 'http://api.geonames.org/searchJSON',
+            url: 'https://secure.geonames.org/searchJSON',
             data:
             {
                 featureClass: 'P',
