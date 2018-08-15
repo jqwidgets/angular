@@ -1,7 +1,6 @@
 ﻿import { Component, ViewChild, OnInit, ViewEncapsulation, ElementRef } from '@angular/core';
 
 import { jqxRibbonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxribbon.ts';
-import '../../../jqwidgets/jqxdata.js';
 
 @Component({
     selector: 'app-root',

@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { jqxButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxbuttons.ts';
 import { jqxCheckBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxcheckbox.ts';
 import { jqxRibbonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxribbon.ts';
+import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid.ts';
 
 @NgModule({
-    declarations: [AppComponent, jqxButtonComponent, jqxCheckBoxComponent, jqxRibbonComponent],
+    declarations: [AppComponent, jqxButtonComponent, jqxCheckBoxComponent, jqxRibbonComponent, jqxGridComponent],
     imports: [BrowserModule, FormsModule],
     providers: [],
     bootstrap: [AppComponent]
