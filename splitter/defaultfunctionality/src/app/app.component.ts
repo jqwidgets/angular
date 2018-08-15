@@ -125,7 +125,7 @@ export class AppComponent implements AfterViewInit {
     {
         feeds: { 'CNN.com': 'cnn', 'Geek.com': 'geek', 'ScienceDaily': 'sciencedaily' },
         format: 'txt',
-        dataDir: '../sampledata',
+        dataDir: '../assets',
         feedTree: (<HTMLElement>document.getElementsByTagName('angularTree')[0]),
         feedItemHeader: (<HTMLElement>document.getElementById('feedItemHeader')),
         feedUpperPanel: (<HTMLElement>document.getElementById('feedUpperPanel')),
