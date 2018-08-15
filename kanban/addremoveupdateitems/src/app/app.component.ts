@@ -52,7 +52,7 @@ export class AppComponent {
         let resourcesSource =
             {
                 localData: [
-                    { id: 0, name: 'No name', image: '../jqwidgets/styles/images/common.png', common: true },
+                    { id: 0, name: 'No name', image: 'https://www.jqwidgets.com/angular/jqwidgets/styles/images/common.png', common: true },
                     { id: 1, name: 'Andrew Fuller', image: 'https://www.jqwidgets.com/angular/images/andrew.png' },
                     { id: 2, name: 'Janet Leverling', image: 'https://www.jqwidgets.com/angular/images/janet.png' },
                     { id: 3, name: 'Steven Buchanan', image: 'https://www.jqwidgets.com/angular/images/steven.png' },

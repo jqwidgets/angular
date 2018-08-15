@@ -46,7 +46,7 @@ export class AppComponent {
 
         let img = document.createElement('img');
         img.setAttribute('style', 'width: auto; height: auto; vertical-align: middle;');
-        img.src = '../jqwidgets/styles/images/close.png';
+        img.src = 'https://www.jqwidgets.com/angular/jqwidgets/styles/images/close.png';
 
         img.addEventListener('click', (): void => {
             let liElements = this.myTagCloud.elementRef.nativeElement.getElementsByTagName('li');
