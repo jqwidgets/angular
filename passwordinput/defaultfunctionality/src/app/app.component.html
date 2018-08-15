@@ -6,7 +6,7 @@
     Create a new account
   </div>
   <div style="font-family: Verdana; font-size: 13px;">
-    <jqxValidator [theme]="'material'" #validatorReference (onValidationSuccess)="validationSuccess($event)" [rules]="rules" [hintType]="'label'">
+    <jqxValidator #validatorReference (onValidationSuccess)="validationSuccess($event)" [rules]="rules" [hintType]="'label'">
     <form id="form" style="overflow: hidden; margin: 10px;" action="./">
       <table>
         <tr>

@@ -79,7 +79,7 @@ export class AppComponent {
             type: 'layoutGroup',
             orientation: 'vertical',
             allowPin: false,
-            width: 500,
+            width: 308,
             pinnedWidth: 80,
             items: [{
                 type: 'tabbedGroup',
