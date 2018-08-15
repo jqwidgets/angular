@@ -75,7 +75,7 @@ export class AppComponent {
         
     columns: any[] = [
         { text: 'Name', align: 'left', dataField: 'name', width: 300 },
-        { text: 'Location', dataField: 'location', cellsAlign: 'left', align: 'left', width: 250 },
+        { text: 'Location', dataField: 'location', cellsAlign: 'left', align: 'left', width: 100 },
         {
             text: 'Budget', cellsAlign: 'right', align: 'right', dataField: 'budget', cellsFormat: 'c2',
             aggregates: [{

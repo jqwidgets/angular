@@ -86,8 +86,8 @@ export class AppComponent {
     };
 
     columns: any[] = [
-        { text: 'Task', dataField: 'task', align: 'center', width: 300 },
-        { text: 'Person Name', dataField: 'name', cellsAlign: 'center', align: 'center', width: 300 },
+        { text: 'Task', dataField: 'task', align: 'center', width: 200 },
+        { text: 'Person Name', dataField: 'name', cellsAlign: 'center', align: 'center', width: 200 },
         {
             text: 'Duration', aggregates: ['sum'], dataField: 'duration', cellsAlign: 'center', align: 'center', cellsRenderer: (row, column, value) => {
                 let hour = value > 1 ? ' hours' : ' hour';
