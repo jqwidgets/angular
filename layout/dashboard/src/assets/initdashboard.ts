@@ -1,4 +1,4 @@
-﻿export let teamSalesContacts = '<tr><td style="width: 100px;"><img src="../images/janet.png" /></td><td style=""><strong>Team lead:</strong> Petra Wilson<br /><strong>Phone: </strong>555-313-899<br /><strong>Email: </strong>petraw@company.com</td></tr>',
+﻿export let teamSalesContacts = '<tr><td style="width: 100px;"><img src="https://www.jqwidgets.com/angular/images/janet.png" /></td><td style=""><strong>Team lead:</strong> Petra Wilson<br /><strong>Phone: </strong>555-313-899<br /><strong>Email: </strong>petraw@company.com</td></tr>',
     teamSalesStaff = '<strong>Petra Wilson</strong> Team lead, Phone: 555-313-899<br /><strong>Jenny Oswald</strong> Marketing consultant, Phone: 555-313-333<br /><strong>Peter Tennant</strong> Accountant, Phone: 555-313-161',
     teamSupportContacts = '<tr><td style="width: 100px;"><img src="../images/steven.png" /></td><td style=""><strong>Team lead:</strong> Michael Nagase<br /><strong>Phone: </strong>555-313-643<br /><strong>Email: </strong>nagase@company.com</td></tr>',
     teamSupportStaff = '<strong>Michael Nagase</strong> Team lead, Phone: 555-313-643<br /><strong>Sam Forrester</strong> Chief support officer, Phone: 555-313-644<br /><strong>Dean Milhouse</strong> Support officer, Phone: 555-313-188',
@@ -40,6 +40,7 @@ export function initTeamDataTable(): void {
 
     const teamTableOptions =
         {
+			theme: 'material',
             width: '100%',
             height: '100%',
             source: dataAdapter,
@@ -89,7 +90,7 @@ export function initTeamDataTable(): void {
             staffDiv.innerHTML = staff;
         }
         if (projectsListBox) {
-            const projectsListBox = jqwidgets.createInstance('#projectsListBox', 'jqxListBox', { source: projects });
+            const projectsListBox = jqwidgets.createInstance('#projectsListBox', 'jqxListBox', { theme: 'material', source: projects });
             projectsListBox.selectIndex(0);
         }
         if (projectsTimelineDiv) {
@@ -104,6 +105,7 @@ export function initTeamDataTable(): void {
 export function initProjectsListBox(): void {
     const projectsListBoxOptions =
         {
+			theme: 'material',
             selectedIndex: 0,
             source: teamSalesProjects,
             width: '100%',
