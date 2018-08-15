@@ -1,10 +1,13 @@
-﻿<jqxTextArea [theme]="'material'" #jqxTextArea
+﻿<div style="height: 30px"></div>
+
+<jqxTextArea [theme]="'material'" #jqxTextArea
              (onSelect)="select($event)"
              [placeHolder]="'Contact Name:'"
              [source]="dataAdapter"
              [displayMember]="'ContactName'" [valueMember]="'CompanyName'"
              [width]="200" [height]="40">
 </jqxTextArea>
+
 <label style="font-family: Verdana; font-size: 10px;">
   ex: Ana
 </label>
