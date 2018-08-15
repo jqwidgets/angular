@@ -46,7 +46,7 @@ export class AppComponent {
         'monthView'
     ];
 
-    date: any = new jqx.date(2018, 11, 23);
+    date: any = new jqx.date(2016, 11, 23);
 
     ready = (): void => {
         this.myScheduler.scrollTop(200);

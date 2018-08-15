@@ -58,7 +58,7 @@ export class AppComponent {
         'weekView'
     ];
 
-    date: any = new jqx.date(2018, 11, 23);
+    date: any = new jqx.date(2016, 11, 23);
 
     ready = (): void => {
         this.myScheduler.scrollTop(700);

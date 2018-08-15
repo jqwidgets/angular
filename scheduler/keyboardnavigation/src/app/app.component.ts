@@ -14,7 +14,7 @@ export class AppComponent implements AfterViewInit {
         this.myScheduler.focus();
     }
 
-    date: any = new jqx.date(2018, 11, 23);
+    date: any = new jqx.date(2016, 11, 23);
 
 	getWidth() : any {
 		if (document.body.offsetWidth < 850) {

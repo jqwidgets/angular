@@ -1,14 +1,12 @@
 ﻿import { Component } from '@angular/core';
 
-import { jqxSchedulerComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxscheduler.ts';
-
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html'
 })
 
 export class AppComponent {
-    date: any = new jqx.date(2018, 11, 23);
+    date: any = new jqx.date(2016, 11, 23);
 
     source: any =
     {

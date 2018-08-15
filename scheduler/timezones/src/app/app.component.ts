@@ -6,7 +6,7 @@
 })
 
 export class AppComponent {
-    date: any = new jqx.date(2018, 11, 23);
+    date: any = new jqx.date(2016, 11, 23);
 
     source: any =
     {

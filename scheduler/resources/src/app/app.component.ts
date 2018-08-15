@@ -106,7 +106,7 @@ export class AppComponent implements AfterViewInit {
     };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
-    date: any = new jqx.date(2018, 11, 23);
+    date: any = new jqx.date(2016, 11, 23);
 
     appointmentDataFields: any =
     {
