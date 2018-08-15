@@ -33,7 +33,7 @@ export class AppComponent {
             parentDataField: { name: 'ParentID' }
         },
         id: 'Id',
-        url: '../assets/locations.tsv',
+        url: '../assets/locations.txt',
         addRow: (rowID, rowData, position, parentID, commit) => {
             // synchronize with the server - send insert command
             // call commit with parameter true if the synchronization with the server is successful 

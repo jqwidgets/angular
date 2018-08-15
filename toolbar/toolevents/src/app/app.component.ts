@@ -36,7 +36,7 @@ export class AppComponent {
                 });
                 break;
             case 2:
-                tool.jqxDropDownList({ width: 130, source: ['square', 'circle'], placeHolder: 'Choose shape...' });
+                tool.jqxDropDownList({ width: 130, source: ['square', 'circle'] });
                 tool.on('change', (event) => {
                     let args = event.args;
                     if (args) {
@@ -70,7 +70,7 @@ export class AppComponent {
                     this.shape.nativeElement.style.backgroundColor = '#' + event.args.color.hex;
                 });
                 colorPicker.jqxColorPicker({ color: '0F2B70', colorMode: 'hue', width: 220, height: 220 });
-                tool.jqxDropDownButton({ width: 130, height: 21 });
+                tool.jqxDropDownButton({ theme: 'material', width: 130, height: 21 });
                 tool.jqxDropDownButton('setContent', getTextElementByColor(new jqx.color({ hex: '0F2B70' })));
                 break;
         }

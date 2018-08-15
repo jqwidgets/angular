@@ -45,8 +45,7 @@ export class AppComponent implements AfterViewInit {
                 tool.jqxComboBox({
                     width: 150,
                     source: this.countries,
-                    selectedIndex: 0,
-                    promptText: 'Select a country...'
+                    selectedIndex: 0
                 });
                 if (menuToolIninitialization === false) {
                     this.myComboBox1 = tool;
@@ -58,8 +57,7 @@ export class AppComponent implements AfterViewInit {
                 tool.jqxComboBox({
                     width: 150,
                     source: this.JapaneseCities,
-                    selectedIndex: 0,
-                    promptText: 'Select a city...'
+                    selectedIndex: 0
                 });
                 if (menuToolIninitialization === false) {
                     this.myComboBox2 = tool;

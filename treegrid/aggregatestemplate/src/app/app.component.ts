@@ -81,8 +81,8 @@ export class AppComponent {
     };
 
     columns: any[] = [
-        { text: 'Name', align: 'center', dataField: 'name', width: 300 },
-        { text: 'Location', dataField: 'location', cellsAlign: 'center', align: 'center', width: 250 },
+        { text: 'Name', align: 'center', dataField: 'name', width: 200 },
+        { text: 'Location', dataField: 'location', cellsAlign: 'center', align: 'center', width: 150 },
         {
             text: 'Budget', cellsAlign: 'center', align: 'center', dataField: 'budget', cellsFormat: 'c2',
             aggregates: ['sum'],
