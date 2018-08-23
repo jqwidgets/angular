@@ -38,6 +38,8 @@ export class AppComponent {
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
+    exportSettings: any = { columnsHeader: true, hiddenColumns: false, serverURL: 'https://jqwidgets.com/export_server/dataexport.php', characterSet: null, recordsInView: true, fileName: "jqxDataTable"};
+	
     columns: any[] =
     [
         { text: 'First Name', dataField: 'firstname', width: 190 },
