@@ -21,6 +21,7 @@ export class AppComponent {
 		return 850;
 	}
 
+   exportSettings: any = { columnsHeader: true, hiddenColumns: false, serverURL: 'https://jqwidgets.com/export_server/dataexport.php', characterSet: null, recordsInView: true, fileName: "jqxTreeGrid"};
 
     source: any =
     {
