@@ -50,30 +50,30 @@ export class AppComponent {
     ];
 
     excelBtnOnClick() {
-        this.myGrid.exportdata('xls', 'jqxGrid');
+        this.myGrid.exportdata('xls', 'jqxGrid', true, null, true, 'https://jqwidgets.com/export_server/dataexport.php');
     };
 
     xmlBtnOnClick() {
-        this.myGrid.exportdata('xml', 'jqxGrid');
+        this.myGrid.exportdata('xml', 'jqxGrid', true, null, true, 'https://jqwidgets.com/export_server/dataexport.php');
     };
 
     csvBtnOnClick() {
-        this.myGrid.exportdata('csv', 'jqxGrid');
+        this.myGrid.exportdata('csv', 'jqxGrid', true, null, true, 'https://jqwidgets.com/export_server/dataexport.php');
     };
 
     tsvBtnOnClick() {
-        this.myGrid.exportdata('tsv', 'jqxGrid');
+        this.myGrid.exportdata('tsv', 'jqxGrid', true, null, true, 'https://jqwidgets.com/export_server/dataexport.php');
     };
 
     htmlBtnOnClick() {
-        this.myGrid.exportdata('html', 'jqxGrid');
+        this.myGrid.exportdata('html', 'jqxGrid', true, null, true, 'https://jqwidgets.com/export_server/dataexport.php');
     };
 
     jsonBtnOnClick() {
-        this.myGrid.exportdata('json', 'jqxGrid');
+        this.myGrid.exportdata('json', 'jqxGrid', true, null, true, 'https://jqwidgets.com/export_server/dataexport.php');
     };
 
     pdfBtnOnClick() {
-        this.myGrid.exportdata('pdf', 'jqxGrid');
+        this.myGrid.exportdata('pdf', 'jqxGrid', true, null, true, 'https://jqwidgets.com/export_server/dataexport.php');
     };
 }
