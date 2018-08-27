@@ -1,5 +1,5 @@
 import { Component, ViewChild, AfterViewInit } from '@angular/core';
-import { jqxFormComponent} from '../../../jqwidgets-ts/angular_jqxform';
+import { jqxFormComponent} from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxform.ts';
 
 @Component({
     selector: 'app-root',
