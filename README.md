@@ -1,4 +1,4 @@
-# This page contains all jQWidgets Angular Demos. 
+# This GitHub repository contains all jQWidgets Angular Demos. 
 
 You can view them online here: https://www.jqwidgets.com/angular/.
 
