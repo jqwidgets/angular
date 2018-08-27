@@ -2,6 +2,8 @@
 
 You can view them online here: https://www.jqwidgets.com/angular/.
 
+Build modern Web Apps with jQWidgets and Angular 6. jQWidgets Angular UI components will help you to build perfect looking web applications. Use the most advanced UI framework for Angular 6 and save your time for the business logic. Choose from more than 60 UI components including Grid, Chart, Scheduler, Editor, TreeGrid and more. Our product supports native Angular features 
+
 Angular Buttons - https://www.jqwidgets.com/angular/angular-buttons/
 
 Angular BarGauge - https://www.jqwidgets.com/angular/angular-bargauge/
@@ -118,7 +120,7 @@ Angular TagCloud - https://www.jqwidgets.com/angular/angular-tagcloud/
 
 Angular Tooltip - https://www.jqwidgets.com/angular/angular-tooltip/
 
-Angular Validator - https://www.jqwidgets.com/angular/angular-validation/
+Angular Validator - https://www.jqwidgets.com/angular/angular-validator/
 
 Angular Window - https://www.jqwidgets.com/angular/angular-window/
 
