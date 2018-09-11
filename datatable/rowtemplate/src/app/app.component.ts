@@ -101,7 +101,7 @@ export class AppComponent {
           text: 'Products', align: 'left', dataField: 'model',
           cellsRenderer: (row: number, column: string, value: any, rowData: any): string => {
               const laptops = rowData.laptops;
-              let container;
+              let container = '';
               for (let i = 0; i < laptops.length; i++) {
                   let item = '<div style="float: left; width: 33%; height: 265px;">';
                   const image = '<img class="center" width=160 height=120 style="display: block;" src="' + laptops[i].img + '"/>';
