@@ -17,7 +17,7 @@
     "rxjs-compat": "6.2.2",
     "zone.js": "0.8.26",
     "moment": "2.22.2",
-    "jqwidgets-scripts": "6.0.5"
+    "jqwidgets-scripts": "6.0.6"
   },
   "version": "0.0.0",
   "license": "MIT",
