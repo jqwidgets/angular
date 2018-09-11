@@ -133,6 +133,13 @@ export class AppComponent implements AfterViewInit {
         'monthView'
     ];
 
+    exportSettings: any =
+    {
+        serverURL: 'https://jqwidgets.com/export_server/dataexport.php',
+        characterSet: null,
+        fileName: 'jqxScheduler'
+    };
+
     excelExportClick(): void {
         this.myScheduler.exportData('xls');
     };

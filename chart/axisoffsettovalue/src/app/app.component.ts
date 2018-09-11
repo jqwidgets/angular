@@ -103,6 +103,6 @@ export class AppComponent {
         let x = event.pageX || event.clientX || event.screenX;
         let y = event.pageY || event.clientY || event.screenY;
 
-        return { x: x, y: y };
+        return { x: x, y: y + 65 };
     }
 }

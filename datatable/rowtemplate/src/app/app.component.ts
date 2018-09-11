@@ -95,40 +95,34 @@ export class AppComponent {
 		return 850;
 	}
 
-    columns: any[] =
-    [
-        {
-            text: 'Products', align: 'left', dataField: 'model',
-            cellsRenderer: (row: number, column: string, value: any, rowData: any): string => {
-                let laptops = rowData.laptops;
-                let container = '<div>';
-                for (let i = 0; i < laptops.length; i++) {
-                    let laptop = laptops[i];
-                    let item = '<div style="float: left; width: 210px; overflow: hidden; white-space: nowrap; height: 265px;">';
-                    let image = '<div style="margin: 5px; margin-bottom: 3px;">';
-                    let imgurl = laptop.img;
-                    let img = '<img width=160 height=120 style="display: block;" src="' + imgurl + '"/>';
-                    image += img;
-                    image += '</div>';
-                    let info = '<div style="margin: 5px; margin-left: 10px; margin-bottom: 3px;">';
-                    info += '<div><i>' + laptop.model + '</i></div>';
-                    info += '<div>Price: $' + laptop.price + '</div>';
-                    info += '<div>RAM: ' + laptop.ram + '</div>';
-                    info += '<div>HDD: ' + laptop.hdd + '</div>';
-                    info += '<div>CPU: ' + laptop.cpu + '</div>';
-                    info += '<div>Display: ' + laptop.display + '</div>';
-                    info += '</div>';
-                    let buy = '<div class="buy" style="margin: 5px; left: -40px; position: relative; margin-left: 50%; margin-bottom: 3px;"></div>';
-                    item += image;
-                    item += info;
-                    item += buy;
-                    item += '</div>';
-                    container += item;
-                }
-                container += '</div>';
-                return container;
-            }
-        }
-    ];
+  columns: any[] =
+  [
+      {
+          text: 'Products', align: 'left', dataField: 'model',
+          cellsRenderer: (row: number, column: string, value: any, rowData: any): string => {
+              const laptops = rowData.laptops;
+              let container;
+              for (let i = 0; i < laptops.length; i++) {
+                  let item = '<div style="float: left; width: 33%; height: 265px;">';
+                  const image = '<img class="center" width=160 height=120 style="display: block;" src="' + laptops[i].img + '"/>';
+                  let info = '<div class="center" style="display: inline-block;">';
+                  info += '<div><i>' + laptops[i].model + '</i></div>';
+                  info += '<div>Price: $' + laptops[i].price + '</div>';
+                  info += '<div>RAM: ' + laptops[i].ram + '</div>';
+                  info += '<div>HDD: ' + laptops[i].hdd + '</div>';
+                  info += '<div>CPU: ' + laptops[i].cpu + '</div>';
+                  info += '<div>Display: ' + laptops[i].display + '</div>';
+                  info += '</div>';
+                  const button = '<div class="buy center" ></div>';
+                  item += image;
+                  item += info;
+                  item += button;
+                  item += '</div>';
+                  container += item;
+              }
 
+              return container;
+          }
+      }
+  ];
 }
