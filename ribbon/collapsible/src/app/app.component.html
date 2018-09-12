@@ -1,4 +1,10 @@
-﻿<div style="float: left;">
+﻿<jqxCheckBox [theme]="'material'" style="margin-top: 10px;" #megaMenuMode
+             (onChange)="change($event)"
+             [width]="130" [checked]="true">
+  Menu Mode
+</jqxCheckBox>
+
+<div style="margin-top: 60px;">
   <div class="cart-top">
     <p>0 products</p>
   </div>
@@ -10,25 +16,17 @@
       </div>
     </div>
   </div>
-  <br /><br /><br />
+
+  
   <jqxRibbon [theme]="'material'" id="jqxRibbon" #jqxRibbon
-             [width]="700"
-             [position]="'top'"
-             [mode]="'popup'"
-             [selectedIndex]="0"
-             [selectionMode]="'click'"
-             [animationType]="'fade'">
+    [width]="700" [position]="'top'" [mode]="'popup'"
+    [selectedIndex]="0" [selectionMode]="'click'" [animationType]="'fade'">
     <ul>
       <li style="margin-left:20px;">Business</li>
       <li>Games</li>
       <li>Internet and Movies</li>
     </ul>
-    <div #content>
-    </div>
+    <div #content></div>
   </jqxRibbon>
+
 </div>
-<jqxCheckBox [theme]="'material'" style="float: left; margin-left: 50px;" #megaMenuMode
-             (onChange)="change($event)"
-             [width]="130" [checked]="true">
-  Menu Mode
-</jqxCheckBox>
