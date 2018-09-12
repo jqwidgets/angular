@@ -1,7 +1,6 @@
 ﻿import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 
-import { jqxMaskedInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxmaskedinput.ts';
-import { jqxPanelComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxpanel.ts';
+import { jqxPanelComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxpanel';
 
 @Component({
     selector: 'app-root',
@@ -11,11 +10,11 @@ import { jqxPanelComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxpan
 })
 
 export class AppComponent {
-    @ViewChild('numericInput') numericInput: jqxMaskedInputComponent;
     @ViewChild('Events') Events: jqxPanelComponent;
 
     change(event: any): void {
-        let value = this.numericInput.val();
-        this.Events.prepend('<div style="margin-top: 5px;">Value: ' + value + '</div>');
+        const eventType = event.type;
+        const eventValue = event.args.value;
+        this.Events.prepend('<div style="margin-top: 5px;">type: ' + eventType + '; value: ' + eventValue + '</div>');
     };
 }

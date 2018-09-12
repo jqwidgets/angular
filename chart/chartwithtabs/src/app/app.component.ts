@@ -1,6 +1,4 @@
-﻿import { Component, ViewChild, AfterViewInit } from '@angular/core';
-
-import { jqxChartComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxchart.ts';
+﻿import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-root',
@@ -8,21 +6,28 @@ import { jqxChartComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxcha
 })
 
 export class AppComponent {
-    @ViewChild('chart1') chart1: jqxChartComponent;
-
-    ngAfterViewInit() {
-        this.chart1.createComponent(this.settings)
-    }
-
     months: string[] = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
+	  getWidth() : any {
+		  if (document.body.offsetWidth < 850) {
+			  return '90%';
+		  }
 		
-		return 850;
-	}
+		  return 850;
+    }
+
+    toolTipCustomFormatFn = (value: any, itemIndex: any, serie: any, group: any, categoryValue: any, categoryAxis: any) => {
+        const dataItem = this.dataAdapter.records[itemIndex];
+        const volume = dataItem.SPVolume;
+        return '<DIV style="text-align:left"><b>Date: ' +
+            categoryValue.getDate() + '-' + this.months[categoryValue.getMonth()] + '-' + categoryValue.getFullYear() +
+            '</b><br />Open price: $' + value.open +
+            '</b><br />Close price: $' + value.close +
+            '</b><br />Low price: $' + value.low +
+            '</b><br />High price: $' + value.high +
+            '</b><br />Daily volume: ' + volume +
+            '</DIV>';
+    };
 	
     source: any =
     {
@@ -39,7 +44,7 @@ export class AppComponent {
         url: '../assets/nasdaq_vs_sp500_detailed.txt'
     };
 
-    dataAdapter: any = new jqx.dataAdapter(this.source, { async: false, autoBind: true, loadError: (xhr: any, status: any, error: any) => { alert('Error loading "' + this.source.url + '" : ' + error); } });
+    dataAdapter: any = new jqx.dataAdapter(this.source);
 
     source2: any =
     {
@@ -52,24 +57,75 @@ export class AppComponent {
         url: '../assets/nasdaq_vs_sp500.txt'
     };
 
-    dataAdapter2: any = new jqx.dataAdapter(this.source2, { async: false, autoBind: true, loadError: (xhr: any, status: any, error: any) => { alert('Error loading "' + this.source2.url + '" : ' + error); } });
-
-    toolTipCustomFormatFn = (value: any, itemIndex: any, serie: any, group: any, categoryValue: any, categoryAxis: any) => {
-        let dataItem = this.dataAdapter.records[itemIndex];
-        let volume = dataItem.SPVolume;
-        return '<DIV style="text-align:left"><b>Date: ' +
-            categoryValue.getDate() + '-' + this.months[categoryValue.getMonth()] + '-' + categoryValue.getFullYear() +
-            '</b><br />Open price: $' + value.open +
-            '</b><br />Close price: $' + value.close +
-            '</b><br />Low price: $' + value.low +
-            '</b><br />High price: $' + value.high +
-            '</b><br />Daily volume: ' + volume +
-            '</DIV>';
-    };
+    dataAdapter2: any = new jqx.dataAdapter(this.source2);
 
     padding: any = { left: 5, top: 5, right: 5, bottom: 5 };
 
     titlePadding: any = { left: 50, top: 0, right: 0, bottom: 10 };
+
+    xAxis: any =
+    {
+        dataField: 'Date',
+        formatFunction: (value: any) => {
+            return value.getDate() + '-' + this.months[value.getMonth()] + '\'' + value.getFullYear().toString().substring(2);
+        },
+        type: 'date',
+        valuesOnTicks: true,
+        minValue: new Date(2014, 0, 1),
+        maxValue: new Date(2014, 11, 1)
+    };
+
+    seriesGroups: any =
+    [
+        {
+            type: 'candlestick',
+            columnsMinWidth: 4,
+            //skipOverlappingPoints: false,
+            toolTipFormatFunction: this.toolTipCustomFormatFn,
+            valueAxis:
+                {
+                    title: { text: 'S&P 500<br>' },
+                    minValue: 1500
+                },
+            series: [
+                {
+                    dataFieldClose: 'SPClose',
+                    displayTextClose: 'S&P Close price',
+                    dataFieldOpen: 'SPOpen',
+                    displayTextOpen: 'S&P Open price',
+                    dataFieldHigh: 'SPHigh',
+                    displayTextHigh: 'S&P High price',
+                    dataFieldLow: 'SPLow',
+                    displayTextLow: 'S&P Low price',
+                    displayText: 'S&P 500',
+                    lineWidth: 1
+                }
+            ]
+        },
+        {
+            type: 'line',
+            valueAxis:
+                {
+                    position: 'right',
+                    title: { text: '<br>Daily Volume' },
+                    gridLines: { visible: false },
+                    tickMarks: { visible: false },
+                    labels: {
+                        formatFunction: (value: any) => {
+                            return value / 1000000 + 'M';
+                        }
+                    }
+                },
+            series: [
+                {
+                    dataField: 'SPVolume',
+                    displayText: 'Volume',
+                    lineWidth: 1
+                }
+            ]
+        }
+    ]
+
 
     xAxis2: any =
     {
@@ -106,76 +162,4 @@ export class AppComponent {
             ]
         }
     ];
-
-    settings = {
-        title: "S&P 500 Candlestick Chart",
-        description: "(January 2014 - November 2014)",
-        enableAnimations: true,
-        animationDuration: 1500,
-        enableCrosshairs: true,
-        padding: { left: 5, top: 5, right: 5, bottom: 5 },
-        source: this.dataAdapter,
-        xAxis:
-        {
-            dataField: 'Date',
-            formatFunction: (value: any) => {
-                return value.getDate() + '-' + this.months[value.getMonth()] + '\'' + value.getFullYear().toString().substring(2);
-            },
-            type: 'date',
-            valuesOnTicks: true,
-            minValue: new Date(2014, 0, 1),
-            maxValue: new Date(2014, 11, 1)
-        },
-        colorScheme: 'scheme17',
-        seriesGroups:
-        [
-            {
-                type: 'candlestick',
-                columnsMinWidth: 4,
-                //skipOverlappingPoints: false,
-                toolTipFormatFunction: this.toolTipCustomFormatFn,
-                valueAxis:
-                {
-                    title: { text: 'S&P 500<br>' },
-                    minValue: 1500
-                },
-                series: [
-                    {
-                        dataFieldClose: 'SPClose',
-                        displayTextClose: 'S&P Close price',
-                        dataFieldOpen: 'SPOpen',
-                        displayTextOpen: 'S&P Open price',
-                        dataFieldHigh: 'SPHigh',
-                        displayTextHigh: 'S&P High price',
-                        dataFieldLow: 'SPLow',
-                        displayTextLow: 'S&P Low price',
-                        displayText: 'S&P 500',
-                        lineWidth: 1
-                    }
-                ]
-            },
-            {
-                type: 'line',
-                valueAxis:
-                {
-                    position: 'right',
-                    title: { text: '<br>Daily Volume' },
-                    gridLines: { visible: false },
-                    tickMarks: { visible: false },
-                    labels: {
-                        formatFunction: (value: any) => {
-                            return value / 1000000 + 'M';
-                        }
-                    }
-                },
-                series: [
-                    {
-                        dataField: 'SPVolume',
-                        displayText: 'Volume',
-                        lineWidth: 1
-                    }
-                ]
-            }
-        ]
-    }
 }
