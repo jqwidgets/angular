@@ -1,4 +1,8 @@
-﻿.inputField1 {
+﻿#myKnobTwo {
+  top: 60px !important;
+}
+
+.inputField1 {
   left: 110px;
   top: -220px;
   width: 180px;

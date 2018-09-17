@@ -1,8 +1,7 @@
 ﻿jqxNumberInput > div {
-  left: 120px;
-  top: 200px;
+  left: 110px;
+  top: -220px;
   position: absolute;
-  background: transparent !important;
   border: none !important;
 }
 

@@ -9,7 +9,8 @@ import { jqxDateTimeInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angula
 
 @Component({
     selector: 'app-root',
-    templateUrl: './app.component.html'
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
 })
 
 export class AppComponent {
@@ -26,28 +27,30 @@ export class AppComponent {
 
     rules: any[] = [
         {
-            input: "#firstName", message: "First name is required!", action: 'keyup, blur', rule: (input: any, commit: any): boolean => {
-                return this.firstName.val() != "" && this.firstName.val() != "First";
+            input: ".firstName", message: "First name is required!", action: 'keyup, blur', rule: (input: any, commit: any): boolean => {
+                return this.firstName.val() != "" && this.firstName.val() != "First"
             }
         },
         {
-            input: "#lastName", message: "Last name is required!", action: 'keyup, blur', rule: (input: any, commit: any): boolean => {
+            input: ".lastName", message: "Last name is required!", action: 'keyup, blur', rule: (input: any, commit: any): boolean => {
                 return this.lastName.val() != "" && this.lastName.val() != "Last";
             }
         },
-        { input: "#userName", message: "Username is required!", action: 'keyup, blur', rule: 'required' },
-        { input: "#password", message: "Password is required!", action: 'keyup, blur', rule: 'required' },
-        { input: "#passwordConfirm", message: "Password is required!", action: 'keyup, blur', rule: 'required' },
+        { input: ".userName", message: "Username is required!", action: 'keyup, blur', rule: 'required' },
+        { input: ".password", message: "Password is required!", action: 'keyup, blur', rule: 'required' },
+        { input: ".passwordConfirm", message: "Password is required!", action: 'keyup, blur', rule: 'required' },
         {
-            input: "#passwordConfirm", message: "Passwords should match!", action: 'keyup, blur', rule: (input: any, commit: any): boolean => {
+            input: ".passwordConfirm", message: "Passwords should match!", action: 'keyup, blur', rule: (input: any, commit: any): boolean => {
                 let firstPassword = this.password.val();
                 let secondPassword = this.passwordConfirm.val();
+
                 return firstPassword == secondPassword;
             }
         },
         {
-            input: "#gender", message: "Gender is required!", action: 'blur', rule: (input: any, commit: any): boolean => {
+            input: ".gender", message: "Gender is required!", action: 'blur', rule: (input: any, commit: any): boolean => {
                 let index = this.gender.getSelectedIndex();
+
                 return index != -1;
             }
         }

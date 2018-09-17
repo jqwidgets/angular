@@ -74,7 +74,7 @@ export class AppComponent {
                     popupZIndex: 999999, placeHolder: 'Enter Name: ', displayMember: 'name'
                 };
 
-                this.myInput = jqwidgets.createInstance('#myInput', 'jqxInput', options);
+                setTimeout(_ => this.myInput = jqwidgets.createInstance('#myInput', 'jqxInput', options));
 
                 return container;
             },
