@@ -19,7 +19,7 @@ export class AppComponent {
         document.addEventListener('contextmenu', event => {
             event.preventDefault();
             if ((<Element>event.target).classList.contains('jqx-tree-item')) {
-                this.myTree.selectItem(event.target);
+                this.myTree.selectItem(event.target.parentNode);
                 let scrollTop = window.scrollY;
                 let scrollLeft = window.scrollX;
                 this.myMenu.open(event.clientX + 5 + scrollLeft, event.clientY + 5 + scrollTop);
