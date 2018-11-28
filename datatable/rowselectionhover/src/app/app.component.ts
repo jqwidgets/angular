@@ -1,9 +1,19 @@
-﻿import { Component, ViewChild, ElementRef } from '@angular/core';   import { jqxDataTableComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdatatable.ts';  import { jqxInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxinput.ts';
+﻿import { Component, ViewChild, ElementRef } from '@angular/core';
+import { jqxDataTableComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdatatable.ts';
+import { jqxInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxinput.ts';
 
 import { generatedata } from '../assets/generatedata';
 
-   @Component({     selector: 'app-root',     templateUrl: './app.component.html'
- })   export class AppComponent {     @ViewChild('myDataTable') myDataTable: jqxDataTableComponent;     @ViewChild('myInput') myInput: jqxInputComponent;     @ViewChild('selectedRows') selectedRows: ElementRef; 
+@Component({
+    selector: 'app-root',
+    templateUrl: './app.component.html'
+})
+
+export class AppComponent {
+    @ViewChild('myDataTable') myDataTable: jqxDataTableComponent;
+    @ViewChild('myInput') myInput: jqxInputComponent;
+    @ViewChild('selectedRows') selectedRows: ElementRef;
+
     source: any =
     {
         localData: generatedata(15, false),
@@ -18,19 +28,26 @@ import { generatedata } from '../assets/generatedata';
         ]
     };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
 
-    dataAdapter: any = new jqx.dataAdapter(this.source);      columns: any[] =     [         { text: 'First Name', dataField: 'firstname', width: 200 },
+        return 850;
+    }
+
+    dataAdapter: any = new jqx.dataAdapter(this.source);
+
+    columns: any[] =
+    [
+        { text: 'First Name', dataField: 'firstname', width: 200 },
         { text: 'Last Name', dataField: 'lastname', width: 200 },
         { text: 'Product', dataField: 'productname', width: 180 },
         { text: 'Unit Price', dataField: 'price', width: 90, align: 'right', cellsAlign: 'right', cellsFormat: 'c2' },
-        { text: 'Quantity', dataField: 'quantity', align: 'right', cellsAlign: 'right' }     ];      selectionInfo() {
+        { text: 'Quantity', dataField: 'quantity', align: 'right', cellsAlign: 'right' }
+    ];
+
+    selectionInfo() {
         // gets selected row indexes. The method returns an Array of indexes.
         let selection = this.myDataTable.getSelection();
         let selectedRows = '<br/>Selected Row Indexes:<br/>';
@@ -48,7 +65,9 @@ import { generatedata } from '../assets/generatedata';
             }
         }
         this.selectedRows.nativeElement.innerHTML = selectedRows;
-    }      dropDownOnChange(event: any): void {
+    }
+
+    dropDownOnChange(event: any): void {
         switch (event.args.index) {
             case 0:
                 // disable multiple rows selection with Shift or Ctrl.
@@ -93,4 +112,4 @@ import { generatedata } from '../assets/generatedata';
         let rowKey = args.key;
         this.selectionInfo();
     };
- }
+}
