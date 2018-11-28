@@ -1,5 +1,5 @@
 ﻿jqxResponsivePanel > div, jqxPanel > div {
-  float: left;
+  float: left !important;
 }
 
 jqxMenu > div {

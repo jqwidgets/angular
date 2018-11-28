@@ -35,7 +35,7 @@ export class AppComponent {
             type: 'layoutGroup',
             orientation: 'vertical',
             allowPin: false,
-            width: 300,
+            width: 270,
             items: [{
                 type: 'tabbedGroup',
                 height: 300,
@@ -79,7 +79,7 @@ export class AppComponent {
             type: 'layoutGroup',
             orientation: 'vertical',
             allowPin: false,
-            width: 308,
+            width: 320,
             pinnedWidth: 80,
             items: [{
                 type: 'tabbedGroup',

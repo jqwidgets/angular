@@ -94,7 +94,7 @@ export class AppComponent {
         }, {
             type: 'layoutGroup',
             orientation: 'vertical',
-            width: 308,
+            width: 250,
             items: [{
                 type: 'documentGroup',
                 height: 400,
@@ -125,8 +125,8 @@ export class AppComponent {
             }]
         }, {
             type: 'tabbedGroup',
-            width: 220,
-            minWidth: 200,
+            width: 150,
+            minWidth: 150,
             items: [{
                 type: 'layoutPanel',
                 title: 'Solution Explorer',
