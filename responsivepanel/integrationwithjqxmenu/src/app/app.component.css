@@ -1,5 +1,6 @@
 ﻿jqxResponsivePanel > div, jqxPanel > div {
-  float: left !important;
+    float: left;
+    display: inline-block;
 }
 
 jqxMenu > div {
