@@ -1,6 +1,6 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxGridComponent } from 'jqwidgets-ng/jqxgrid'
+import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid.ts';
 
 import { generatedata } from './../../../sampledata/generatedata';
 
