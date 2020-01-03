@@ -3,15 +3,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
-import { jqxGridModule } from 'jqwidgets-ng/jqxgrid';
-import { jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
+import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid.ts';
+import { jqxButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxbuttons.ts';
 
 @NgModule({
   declarations: [
-      AppComponent
+      AppComponent, jqxButtonComponent, jqxGridComponent
   ],
   imports: [
-      BrowserModule, CommonModule, jqxGridModule, jqxButtonModule
+      BrowserModule, CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
