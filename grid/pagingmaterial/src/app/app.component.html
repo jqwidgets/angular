@@ -1,5 +1,5 @@
-<jqxGrid #myGrid (onPagechanged)="onPageChanged($event)" (onPagesizechanged)="onPageSizeChanged($event)"
-    [width]="getWidth()" [source]="dataAdapter" [columns]="columns"
+<jqxGrid #myGrid
+    [source]="dataAdapter" [columns]="columns"
     [pageable]="true" [sortable]="true" [columnsresize]="true"
 	[pagermode]="'material'" 
 	[pagerheight]="50"
