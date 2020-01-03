@@ -1,3 +1,17 @@
-﻿<jqxGrid [theme]="'material'" [width]="350" [source]="dataAdapter" [columnsresize]="true"
-         [adaptive]="true" [columns]="columns">
+<jqxGrid #myGrid (onPagechanged)="onPageChanged($event)" (onPagesizechanged)="onPageSizeChanged($event)"
+    [width]="getWidth()" [source]="dataAdapter" [columns]="columns"
+    [pageable]="true" [sortable]="true" [columnsresize]="true"
+	[pagermode]="'material'" 
+	[pagerheight]="50"
+    [autoheight]="true" [selectionmode]="'multiplerowsextended'">
 </jqxGrid>
+<div #eventsLog style="display: none; margin-top: 30px;">
+    <div style="float: left;">
+        Event Log:
+        <jqxPanel #myPanel [width]="300" [height]="300"></jqxPanel>
+    </div>
+    <div style="float: left;">
+        Paging Details:
+        <div #pagingInfo></div>
+    </div>
+</div>
