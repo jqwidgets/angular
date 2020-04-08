@@ -3,8 +3,8 @@ import { jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 
 @Component({
   selector: 'app-grid',
-  templateUrl: './grid.component.html',
-  styleUrls: ['./grid.component.css'],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
   encapsulation: ViewEncapsulation.None
 })
 export class GridComponent implements AfterViewInit, OnInit {
