@@ -2,12 +2,12 @@ import { AfterViewInit, Component, OnInit, ViewChild, ViewEncapsulation } from '
 import { jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 
 @Component({
-  selector: 'app-grid',
+  selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class GridComponent implements AfterViewInit, OnInit {
+export class AppComponent implements AfterViewInit, OnInit {
   @ViewChild('grid', { static: false }) grid: jqxGridComponent;
 
   columns = [
