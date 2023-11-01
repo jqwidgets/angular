@@ -22,7 +22,11 @@
                 "src/assets"
             ],
             "styles": [
-                
+               	"./node_modules/@smart-webcomponents-angular/threedchart/styles/smart.base.css",
+				"./node_modules/@smart-webcomponents-angular/threedchart/styles/smart.3dchart.css",
+				"./node_modules/@smart-webcomponents-angular/threedchart/styles/smart.common.css",
+                "src/assets/fonts.css",
+			    "src/assets/styles.css"
             ],
             "scripts": []
             },
@@ -34,7 +38,7 @@
                     "with": "src/environments/environment.prod.ts"
                 }
                 ],
-                "optimization": true,
+                "optimization": false,
                 "outputHashing": "all",
                 "sourceMap": false,
                 "extractCss": true,
@@ -42,7 +46,7 @@
                 "aot": true,
                 "extractLicenses": true,
                 "vendorChunk": false,
-                "buildOptimizer": true
+                "buildOptimizer": false
             }
             }
         },
