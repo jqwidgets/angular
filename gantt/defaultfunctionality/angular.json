@@ -22,9 +22,6 @@
                 "src/assets"
             ],
             "styles": [
-               	"./node_modules/@smart-webcomponents-angular/threedchart/styles/smart.base.css",
-				"./node_modules/@smart-webcomponents-angular/threedchart/styles/smart.3dchart.css",
-				"./node_modules/@smart-webcomponents-angular/threedchart/styles/smart.common.css",
                 "src/assets/fonts.css",
 			    "src/assets/styles.css"
             ],
