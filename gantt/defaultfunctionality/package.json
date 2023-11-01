@@ -12,9 +12,9 @@
     "@angular/platform-browser": "12 - 16",
     "@angular/platform-browser-dynamic": "12 - 16",
     "@angular/router": "12 - 16",
-    "core-js": "2.5.7",
-    "rxjs": "6.3.3",
-    "zone.js": "0.8.26",
+    "core-js": "3.32.2",
+    "rxjs": "^6.5.3 || ^7.4.0",
+    "zone.js": "0.13.0",
     "moment": "2.22.2",
     "jqwidgets-ng": "17.1.0"
   },
