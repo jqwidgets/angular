@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>AngularTemplate</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="https://www.jqwidgets.com/public/jqwidgets/styles/jqx.base.css">
+  <link rel="stylesheet" type="text/css" href="https://www.jqwidgets.com/public/jqwidgets/styles/jqx.fluent.css">
+  <link rel="stylesheet" type="text/css" href="https://www.jqwidgets.com/public/jqwidgets/styles/gantt/jqx.gantt.css">
+ 	<style>
+   jqx-gantt-chart {
+            width: calc(100% - 300px);
+            --jqx-gantt-chart-task-label-color: white;
+            --jqx-gantt-chart-task-color: #517eb5;
+            --jqx-gantt-chart-project-color: #45af50;
+            --jqx-gantt-chart-project-label-color: var(--jqx-gantt-chart-task-label-color);
+            --jqx-gantt-chart-project-label-color-selected: var(--jqx-gantt-chart-project-label-color);
+            --jqx-gantt-chart-task-label-color-selected: var(--jqx-gantt-chart-task-label-color);
+        }
+
+        @media only screen and (max-width: 600px) {
+            .jqx-gantt-chart {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        jqx-gantt-chart .jqx-task-item[group]>.jqx-task-label-container,
+        jqx-gantt-chart .jqx-tree-items-group>.jqx-tree-item-label-container {
+            font-weight: bold;
+        }
+
+        jqx-gantt-chart .gantt-chart-task-assignee {
+            border-radius: 50%;
+            color: white;
+            background: linear-gradient(45deg, #13547a, #80d0c7);
+            width: calc(var(--jqx-gantt-chart-task-default-height) - 12px);
+            height: calc(var(--jqx-gantt-chart-task-default-height) - 12px);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 1px 2px 0px grey;
+            margin-right: 5px;
+        }
+
+        jqx-gantt-chart .unassigned {
+            background: red;
+        }
+	</style>
+  <title>jQWidgets Angular Demo</title>
+</head>
+<body>
+<app-root>Loading...</app-root>
+        
+                    <div style="position: absolute; bottom: 5px; right: 5px;">
+                        <a href="https://www.jqwidgets.com/" alt="https://www.jqwidgets.com/"><img alt="https://www.jqwidgets.com/" title="https://www.jqwidgets.com/" src="https://www.jqwidgets.com/wp-content/design/i/logo-jqwidgets.png"/></a>
+                    </div>
+</body>
+</html>
