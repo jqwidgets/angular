@@ -1,15 +1,18 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxMenuComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxmenu.ts';
 
+
+import { jqxMenuModule, jqxMenuComponent } from 'jqwidgets-ng/jqxmenu';
 @Component({
     selector: 'app-root',
+    imports: [jqxMenuModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
 export class AppComponent {
     @ViewChild('jqxMenu') jqxMenu: jqxMenuComponent;
-    
+
     isRightClick(event: any): boolean {
         let rightclick;
         if (!event) event = window.event;

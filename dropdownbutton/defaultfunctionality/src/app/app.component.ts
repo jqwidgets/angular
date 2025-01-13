@@ -1,10 +1,13 @@
 ﻿import { Component, ViewChild, AfterViewInit, ViewEncapsulation } from '@angular/core';
 
-import { jqxDropDownButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdropdownbutton.ts';
-import { jqxTreeComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtree.ts';
+
+import { jqxTreeModule, jqxTreeComponent } from 'jqwidgets-ng/jqxtree';
+import { jqxDropDownButtonModule, jqxDropDownButtonComponent } from 'jqwidgets-ng/jqxdropdownbutton';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxDropDownButtonModule, jqxTreeModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
     encapsulation: ViewEncapsulation.None
@@ -17,7 +20,7 @@ export class AppComponent implements AfterViewInit {
     ngAfterViewInit(): void {
         this.myDropDownButton.setContent('<div style="position: relative; margin-left: 3px; margin-top: 4px;">Home</div>');
     }
-   
+
     treeOnSelect(event: any): void {
         let item = this.myTree.getItem(event.args.element);
         let dropDownContent = `<div style="position: relative; margin-left: 3px; margin-top: 4px;">${item.label}</div>`;

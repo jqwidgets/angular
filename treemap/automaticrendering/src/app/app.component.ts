@@ -1,7 +1,10 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxTreeMapModule, jqxTreeMapComponent } from 'jqwidgets-ng/jqxtreemap';
 @Component({
     selector: 'app-root',
+    imports: [jqxTreeMapModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -73,14 +76,14 @@ export class AppComponent {
         }
     ];
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
     legendScaleCallback(v: number): string {
         return v.toFixed(1);
     }

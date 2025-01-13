@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid.ts'
 
+
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -11,44 +14,44 @@ export class AppComponent {
     @ViewChild('myGrid') myGrid: jqxGridComponent;
 
     source: any =
-    {
-        datatype: 'json',
-        datafields: [
-            { name: 'name' },
-            { name: 'type' },
-            { name: 'calories', type: 'int' },
-            { name: 'totalfat' },
-            { name: 'protein' }
-        ],
-        id: 'id',
-        url: '../assets/beverages.txt'
-    }
+        {
+            datatype: 'json',
+            datafields: [
+                { name: 'name' },
+                { name: 'type' },
+                { name: 'calories', type: 'int' },
+                { name: 'totalfat' },
+                { name: 'protein' }
+            ],
+            id: 'id',
+            url: '../assets/beverages.txt'
+        }
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
     columns: any[] =
-    [
-        { text: 'Name', datafield: 'name', width: 100, hidden: true },
-        { text: 'Beverage Type', datafield: 'type' },
-        { text: 'Calories', datafield: 'calories' },
-        { text: 'Total Fat', datafield: 'totalfat' },
-        { text: 'Protein', datafield: 'protein' }
-    ];
+        [
+            { text: 'Name', datafield: 'name', width: 100, hidden: true },
+            { text: 'Beverage Type', datafield: 'type' },
+            { text: 'Calories', datafield: 'calories' },
+            { text: 'Total Fat', datafield: 'totalfat' },
+            { text: 'Protein', datafield: 'protein' }
+        ];
 
     listBoxSource: any[] =
-    [
-        { label: 'Name', value: 'name', checked: false }, { label: 'Beverage Type', value: 'type', checked: true },
-        { label: 'Calories', value: 'calories', checked: true }, { label: 'Total Fat', value: 'totalfat', checked: true },
-        { label: 'Protein', value: 'protein', checked: true }
-    ];
+        [
+            { label: 'Name', value: 'name', checked: false }, { label: 'Beverage Type', value: 'type', checked: true },
+            { label: 'Calories', value: 'calories', checked: true }, { label: 'Total Fat', value: 'totalfat', checked: true },
+            { label: 'Protein', value: 'protein', checked: true }
+        ];
 
     myListBoxOnCheckChange(event: any): void {
         this.myGrid.beginupdate();

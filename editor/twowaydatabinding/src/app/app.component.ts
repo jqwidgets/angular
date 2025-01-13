@@ -1,19 +1,22 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxEditorModule, jqxEditorComponent } from 'jqwidgets-ng/jqxeditor';
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html'
+	selector: 'app-root',
+	imports: [jqxEditorModule],
+	standalone: true,
+	templateUrl: './app.component.html'
 })
 
-export class AppComponent{
-    value: string;
-	
-	
-	getWidth() : any {
+export class AppComponent {
+	value: string;
+
+
+	getWidth(): any {
 		if (document.body.offsetWidth < 850) {
 			return '90%';
 		}
-		
+
 		return 850;
 	}
 }

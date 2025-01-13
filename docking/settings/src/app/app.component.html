@@ -1,5 +1,5 @@
 ﻿<div style="float: left">
-    <jqxDocking [theme]="'material'" #myDocking
+    <jqxDocking [theme]="'fluent'" #myDocking
                 [width]="370" [orientation]="'horizontal'" [mode]="'default'"
                 [windowsMode]="{ window0: 'floating' }">
         <div id='panel0'>
@@ -30,38 +30,38 @@
     <table style="margin-left: 20px; margin-top: 20px; margin-bottom: 30px">
         <tr>
             <td>
-                <jqxCheckBox [theme]="'material'" #collapseButtonsCheckbox (onChange)="collapseButtonsCheckboxOnChange()"
+                <jqxCheckBox [theme]="'fluent'" #collapseButtonsCheckbox (onChange)="collapseButtonsCheckboxOnChange()"
                     [width]="200" [checked]="true">
                     Collapse Buttons
                 </jqxCheckBox>
             </td>
             <td>
-                <jqxButton [theme]="'material'" (onClick)="moveButtonOnClick()">Move AngularDock4 To Left Zone</jqxButton>
+                <jqxButton [theme]="'fluent'" (onClick)="moveButtonOnClick()">Move AngularDock4 To Left Zone</jqxButton>
             </td>
         </tr>
         <tr>
             <td>
-                <jqxCheckBox [theme]="'material'" #closeButtonsCheckbox (onChange)="closeButtonsCheckboxOnChange()"
+                <jqxCheckBox [theme]="'fluent'" #closeButtonsCheckbox (onChange)="closeButtonsCheckboxOnChange()"
                     [width]="200">
                     Close Buttons
                 </jqxCheckBox>
             </td>
             <td>
-                <jqxButton [theme]="'material'" (onClick)="collapseButtonOnClick()">Collapse AngularDock1</jqxButton>
+                <jqxButton [theme]="'fluent'" (onClick)="collapseButtonOnClick()">Collapse AngularDock1</jqxButton>
             </td>
         </tr>
         <tr>
             <td>
-                <jqxCheckBox [theme]="'material'" (onChange)="disabledCheckboxOnChange()" [width]="200">Disabled</jqxCheckBox>
+                <jqxCheckBox [theme]="'fluent'" (onChange)="disabledCheckboxOnChange()" [width]="200">Disabled</jqxCheckBox>
             </td>
             <td>
-                <jqxButton [theme]="'material'" (onClick)="expandButtonOnClick()">Expand AngularDock1</jqxButton>
+                <jqxButton [theme]="'fluent'" (onClick)="expandButtonOnClick()">Expand AngularDock1</jqxButton>
             </td>
         </tr>
         <tr>
             <td style="width: 100px">
                 <span style="font-family: Verdana; font-size: 13px">Windows Margin</span>
-                <jqxSlider [theme]="'material'" (onChange)="mySliderOnChange($event)"
+                <jqxSlider [theme]="'fluent'" (onChange)="mySliderOnChange($event)"
                     [width]="200" [max]="9" [value]="5" [mode]="'fixed'" [ticksFrequency]="1">
                 </jqxSlider>
             </td>

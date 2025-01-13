@@ -1,6 +1,6 @@
 ﻿<div style="font-size: 13px; font-family: Verdana; float: left">
 
-    <jqxGrid [theme]="'material'" #myGrid (onSort)="myGridOnSort($event)"
+    <jqxGrid [theme]="'fluent'" #myGrid (onSort)="myGridOnSort($event)"
         [width]="getWidth()" [height]="450" [source]="dataAdapter" [columns]="columns"
         [sortable]="true" [altrows]="true" [filterable]="true"
         [selectionmode]="'multiplecellsadvanced'">
@@ -9,18 +9,18 @@
     <div style="margin-top: 30px">
         <div style="float: left; margin-right: 10px">
 
-            <jqxButton [theme]="'material'" (onClick)="removeSortBtnOnClick()" [height]="25">Remove Sort</jqxButton>
+            <jqxButton [theme]="'fluent'" (onClick)="removeSortBtnOnClick()" [height]="25">Remove Sort</jqxButton>
 
             <div style="margin-top: 10px"></div>
 
-            <jqxCheckBox [theme]="'material'" (onChange)="sortBackGroundBtn($event)" [height]="25" [checked]="true">Sort Background</jqxCheckBox>
+            <jqxCheckBox [theme]="'fluent'" (onChange)="sortBackGroundBtn($event)" [height]="25" [checked]="true">Sort Background</jqxCheckBox>
 
         </div>
 
         <div style="margin-left: 100px; float: left">
             Event Log:
 
-            <jqxPanel [theme]="'material'" #myPanel [width]="300" [height]="80"></jqxPanel>
+            <jqxPanel [theme]="'fluent'" #myPanel [width]="300" [height]="80"></jqxPanel>
 
         </div>
     </div>

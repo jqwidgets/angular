@@ -1,13 +1,16 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxChartComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxchart.ts';
+
 import { jqxButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxbuttons.ts'
-import { jqxInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxinput.ts';
-import { jqxDropDownListComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdropdownlist.ts';
+import { jqxInputComponent } from 'jqwidgets-ng/jqxinput';
+import { jqxDropDownListComponent } from 'jqwidgets-ng/jqxdropdownlist';
 import { jqxListBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxlistbox.ts';
 
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 @Component({
     selector: 'app-root',
+    imports: [jqxChartModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -22,14 +25,14 @@ export class AppComponent {
     @ViewChild('listboxCustomPositions_xAxis') listboxCustomPositions_xAxis: jqxListBoxComponent;
     @ViewChild('listboxCustomPositions_valueAxis') listboxCustomPositions_valueAxis: jqxListBoxComponent;
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
     sampleData: any[] = [
         { a: 0.1535, b: 0.5 },
         { a: 0.48, b: 20.5 },
@@ -48,55 +51,55 @@ export class AppComponent {
     titlePadding: any = { left: 0, top: 0, right: 0, bottom: 10 };
 
     xAxis: any =
-    {
-        dataField: 'a',
-        logarithmicScale: true,
-        logarithmicScaleBase: 2,
-        labels: {
-            visible: true,
-            custom: [{ value: 10 }, { value: 20 }]
-        },
-        gridLines:
         {
-            visible: true,
-            custom: [{ value: 10 }, { value: 20 }]
-        },
-        tickMarks:
-        {
-            visible: true,
-            custom: [{ value: 10 }, { value: 20 }]
-        },
-        flip: false
-    };
+            dataField: 'a',
+            logarithmicScale: true,
+            logarithmicScaleBase: 2,
+            labels: {
+                visible: true,
+                custom: [{ value: 10 }, { value: 20 }]
+            },
+            gridLines:
+            {
+                visible: true,
+                custom: [{ value: 10 }, { value: 20 }]
+            },
+            tickMarks:
+            {
+                visible: true,
+                custom: [{ value: 10 }, { value: 20 }]
+            },
+            flip: false
+        };
 
     valueAxis: any =
-    {
-        logarithmicScale: true,
-        logarithmicScaleBase: 2,
-        title: { text: '' },
-        labels: {
-            horizontalAlignment: 'right',
-            custom: [{ value: 10 }, { value: 20 }]
-        },
-        gridLines: {
-            custom: [{ value: 10 }, { value: 20 }]
-        },
-        tickMarks: {
-            custom: [{ value: 10 }, { value: 20 }]
-        },
-        flip: false
-    };
+        {
+            logarithmicScale: true,
+            logarithmicScaleBase: 2,
+            title: { text: '' },
+            labels: {
+                horizontalAlignment: 'right',
+                custom: [{ value: 10 }, { value: 20 }]
+            },
+            gridLines: {
+                custom: [{ value: 10 }, { value: 20 }]
+            },
+            tickMarks: {
+                custom: [{ value: 10 }, { value: 20 }]
+            },
+            flip: false
+        };
 
     seriesGroups: any[] =
-    [
-        {
-            type: 'scatter',
-            series: [
-                { dataField: 'a', displayText: 'A', symbolType: 'diamond', symbolSize: 10 },
-                { dataField: 'b', displayText: 'B', symbolType: 'triangle_up', symbolSize: 10 }
-            ]
-        }
-    ];
+        [
+            {
+                type: 'scatter',
+                series: [
+                    { dataField: 'a', displayText: 'A', symbolType: 'diamond', symbolSize: 10 },
+                    { dataField: 'b', displayText: 'B', symbolType: 'triangle_up', symbolSize: 10 }
+                ]
+            }
+        ];
 
     dropDownLabelsVisibility_xAxisOnChange(event: any): void {
         let value = event.args.item.value;

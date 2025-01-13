@@ -1,49 +1,52 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxTreeGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtree.ts';
 
+
+import { jqxTreeGridModule, jqxTreeGridComponent } from 'jqwidgets-ng/jqxtreegrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxTreeGridModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
 export class AppComponent {
     @ViewChild('TreeGrid') treeGrid: jqxTreeGridComponent;
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
 
     source: any =
-    {
-        datatype: 'xml',
-        datafields: [
-            { name: 'CompanyName', map: 'm\\:properties>d\\:CompanyName' },
-            { name: 'ContactName', map: 'm\\:properties>d\\:ContactName' },
-            { name: 'ContactTitle', map: 'm\\:properties>d\\:ContactTitle' },
-            { name: 'City', map: 'm\\:properties>d\\:City' },
-            { name: 'PostalCode', map: 'm\\:properties>d\\:PostalCode' },
-            { name: 'Country', map: 'm\\:properties>d\\:Country' }
-        ],
-        hierarchy:
         {
-            groupingDataFields:
-            [
-                {
-                    name: 'Country'
-                }
-            ]
-        },
-        root: 'entry',
-        record: 'content',
-        id: { name: 'CustomerID', map: 'm\\:properties>d\\:CustomerID' },
-        url: '../assets/customers.txt'
-    };
+            datatype: 'xml',
+            datafields: [
+                { name: 'CompanyName', map: 'm\\:properties>d\\:CompanyName' },
+                { name: 'ContactName', map: 'm\\:properties>d\\:ContactName' },
+                { name: 'ContactTitle', map: 'm\\:properties>d\\:ContactTitle' },
+                { name: 'City', map: 'm\\:properties>d\\:City' },
+                { name: 'PostalCode', map: 'm\\:properties>d\\:PostalCode' },
+                { name: 'Country', map: 'm\\:properties>d\\:Country' }
+            ],
+            hierarchy:
+            {
+                groupingDataFields:
+                    [
+                        {
+                            name: 'Country'
+                        }
+                    ]
+            },
+            root: 'entry',
+            record: 'content',
+            id: { name: 'CustomerID', map: 'm\\:properties>d\\:CustomerID' },
+            url: '../assets/customers.txt'
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 

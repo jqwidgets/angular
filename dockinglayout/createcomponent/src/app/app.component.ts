@@ -1,9 +1,10 @@
 ﻿import { Component, ViewChild, AfterViewInit } from '@angular/core';
 
-import { jqxDockingLayoutComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdocking.ts';
-
+import { jqxDockingLayoutModule, jqxDockingLayoutComponent } from 'jqwidgets-ng/jqdockinglayout';
 @Component({
     selector: 'app-root',
+    imports: [jqxDockingLayoutModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css']
 })
@@ -15,13 +16,13 @@ export class AppComponent {
         this.myDockingLayout.createComponent({ theme: 'material', width: 800, height: 600, layout: this.layout() })
     }
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 800) {
-			return '90%';
-		}
-		
-		return 800;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 800) {
+            return '90%';
+        }
+
+        return 800;
+    }
 
     layout(): any[] {
         let layout = [

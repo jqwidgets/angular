@@ -1,7 +1,10 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxListBoxModule, jqxListBoxComponent } from 'jqwidgets-ng/jqxlistbox';
 @Component({
     selector: 'app-root',
+    imports: [jqxListBoxModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 

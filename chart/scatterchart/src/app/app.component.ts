@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxChartComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxchart.ts';
 
+
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 @Component({
     selector: 'app-root',
+    imports: [jqxChartModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -24,42 +27,42 @@ export class AppComponent {
 
     titlePadding: any = { left: 90, top: 0, right: 0, bottom: 10 };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
     xAxis: any =
-    {
-        dataField: 'City',
-        valuesOnTicks: false
-    };
+        {
+            dataField: 'City',
+            valuesOnTicks: false
+        };
 
     valueAxis: any =
-    {
-        minValue: 50000,
-        maxValue: 350000,
-        unitInterval: 50000,
-        title: { text: 'Sales ($)<br>' },
-        labels: {
-            formatSettings: { prefix: '$', thousandsSeparator: ',' },
-            horizontalAlignment: 'right'
-        }
-    };
+        {
+            minValue: 50000,
+            maxValue: 350000,
+            unitInterval: 50000,
+            title: { text: 'Sales ($)<br>' },
+            labels: {
+                formatSettings: { prefix: '$', thousandsSeparator: ',' },
+                horizontalAlignment: 'right'
+            }
+        };
 
     seriesGroups: any[] =
-    [
-        {
-            type: 'scatter',
-            series: [
-                { dataField: 'SalesQ1', symbolSize: 20, symbolType: 'circle', displayText: 'Sales in Q1' },
-                { dataField: 'SalesQ2', symbolSize: 20, symbolType: 'diamond', displayText: 'Sales in Q2' }
-            ]
-        }
-    ];
+        [
+            {
+                type: 'scatter',
+                series: [
+                    { dataField: 'SalesQ1', symbolSize: 20, symbolType: 'circle', displayText: 'Sales in Q1' },
+                    { dataField: 'SalesQ2', symbolSize: 20, symbolType: 'diamond', displayText: 'Sales in Q2' }
+                ]
+            }
+        ];
 
     symbolsList: string[] = ['circle', 'diamond', 'square', 'triangle_up', 'triangle_down', 'triangle_left', 'triangle_right'];
 

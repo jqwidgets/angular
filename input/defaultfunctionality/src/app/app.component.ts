@@ -1,7 +1,10 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxInputModule, jqxInputComponent } from 'jqwidgets-ng/jqxinput';
 @Component({
     selector: 'app-root',
+    imports: [jqxInputModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 

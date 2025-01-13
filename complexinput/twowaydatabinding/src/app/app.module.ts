@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { jqxComplexInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxcomplexinput.ts';
-import { jqxInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxinput.ts';
+import { jqxInputComponent } from 'jqwidgets-ng/jqxinput';
 
 @NgModule({
     declarations: [AppComponent, jqxComplexInputComponent, jqxInputComponent],

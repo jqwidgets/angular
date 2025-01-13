@@ -1,11 +1,16 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxBarGaugeComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxbargauge.ts';
+import { jqxListBoxModule, jqxListBoxComponent } from 'jqwidgets-ng/jqxlistbox';
+import { jqxBarGaugeModule, jqxBarGaugeComponent } from 'jqwidgets-ng/jqxbargauge';
+
 
 @Component({
     selector: 'app-root',
+    imports: [jqxListBoxModule, jqxBarGaugeModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
+
 
 export class AppComponent {
     @ViewChild('myBarGauge') myBarGauge: jqxBarGaugeComponent;

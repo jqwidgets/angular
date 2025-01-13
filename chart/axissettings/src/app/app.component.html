@@ -1,6 +1,6 @@
 ﻿<jqxChart #myChart
     [width]="getWidth()" [height]="500"
-    [title]="'Electricity prices in Europe between 2004 and 2019'" [description]="'Source: Eurostat'"
+    [title]="'Electricity prices in Europe between 2004 and 2025'" [description]="'Source: Eurostat'"
     [enableAnimations]="true" [showLegend]="true" [padding]="padding" 
     [titlePadding]="titlePadding" [source]="data" [xAxis]="xAxis"
     [valueAxis]="valueAxis" [seriesGroups]="seriesGroups" [colorScheme]="'scheme04'">
@@ -14,14 +14,14 @@
   <tr>
     <td>
       Left padding:
-      <jqxSlider [theme]="'material'" (onChange)="sliderValueAxisLeftPaddingOnChange($event)"
+      <jqxSlider [theme]="'fluent'" (onChange)="sliderValueAxisLeftPaddingOnChange($event)"
           [width]="250" [min]="0" [max]="50" [step]="1"
           [value]="0" [ticksFrequency]="5" [mode]="'fixed'">
       </jqxSlider>
     </td>
     <td>
       Top padding:
-      <jqxSlider [theme]="'material'" (onChange)="sliderXAxisTopPaddingOnChange($event)"
+      <jqxSlider [theme]="'fluent'" (onChange)="sliderXAxisTopPaddingOnChange($event)"
           [width]="250" [min]="0" [max]="50" [step]="1"
           [value]="0" [ticksFrequency]="5" [mode]="'fixed'">
     </jqxSlider>
@@ -30,14 +30,14 @@
   <tr>
     <td>
       Right padding:
-      <jqxSlider [theme]="'material'" (onChange)="sliderValueAxisRightPaddingOnChange($event)"
+      <jqxSlider [theme]="'fluent'" (onChange)="sliderValueAxisRightPaddingOnChange($event)"
           [width]="250" [min]="0" [max]="50" [step]="1"
           [value]="0" [ticksFrequency]="5" [mode]="'fixed'">
       </jqxSlider>
     </td>
     <td>
       Bottom padding:
-      <jqxSlider [theme]="'material'" (onChange)="sliderXAxisBottomPaddingOnChange($event)"
+      <jqxSlider [theme]="'fluent'" (onChange)="sliderXAxisBottomPaddingOnChange($event)"
           [width]="250" [min]="0" [max]="50" [step]="1"
           [value]="0" [ticksFrequency]="5" [mode]="'fixed'">
       </jqxSlider>
@@ -46,14 +46,14 @@
   <tr>
     <td>
       Labels angle:
-      <jqxSlider [theme]="'material'" (onChange)="sliderValueAxisAngleOnChange($event)"
+      <jqxSlider [theme]="'fluent'" (onChange)="sliderValueAxisAngleOnChange($event)"
           [width]="250" [min]="0" [max]="360" [step]="1"
           [value]="0" [ticksFrequency]="30" [mode]="'fixed'">
       </jqxSlider>
     </td>
     <td>
       Labels angle:
-      <jqxSlider [theme]="'material'" (onChange)="sliderXAxisAngleOnChange($event)"
+      <jqxSlider [theme]="'fluent'" (onChange)="sliderXAxisAngleOnChange($event)"
           [width]="250" [min]="0" [max]="360" [step]="1"
           [value]="0" [ticksFrequency]="30" [mode]="'fixed'">
       </jqxSlider>
@@ -65,13 +65,13 @@
       <table>
         <tr>
           <td>
-            <jqxRadioButton [theme]="'material'" style="margin-left: 10px" (onChange)="btnLeftOnChange($event)"
+            <jqxRadioButton [theme]="'fluent'" style="margin-left: 10px" (onChange)="btnLeftOnChange($event)"
                   [width]="60" [height]="25" [groupName]="'valueAxis'">
                   Left
             </jqxRadioButton>
           </td>
           <td>
-            <jqxRadioButton [theme]="'material'" style="margin-left: 10px" (onChange)="btnRightOnChange($event)"
+            <jqxRadioButton [theme]="'fluent'" style="margin-left: 10px" (onChange)="btnRightOnChange($event)"
                   [width]="60" [height]="25" [checked]="true" [groupName]="'valueAxis'">
                   Right
             </jqxRadioButton>
@@ -84,13 +84,13 @@
       <table>
         <tr>
           <td>
-            <jqxRadioButton [theme]="'material'" style="margin-left: 10px" (onChange)="btnTopOnChange($event)"
+            <jqxRadioButton [theme]="'fluent'" style="margin-left: 10px" (onChange)="btnTopOnChange($event)"
                   [width]="60" [height]="25" [groupName]="'xAxis'">
                   Top
             </jqxRadioButton>
           </td>
           <td>
-            <jqxRadioButton [theme]="'material'" style="margin-left: 10px" (onChange)="btnBottomOnChange($event)"
+            <jqxRadioButton [theme]="'fluent'" style="margin-left: 10px" (onChange)="btnBottomOnChange($event)"
                   [width]="80" [height]="25" [checked]="true" [groupName]="'xAxis'">
                   Bottom
             </jqxRadioButton>
@@ -101,12 +101,12 @@
   </tr>
   <tr>
     <td>
-      <jqxCheckBox [theme]="'material'" [height]="25" (onChange)="btnValueAxisFlipOnChange($event)">
+      <jqxCheckBox [theme]="'fluent'" [height]="25" (onChange)="btnValueAxisFlipOnChange($event)">
           Flip valueAxis Positions
       </jqxCheckBox>
     </td>
     <td>
-      <jqxCheckBox [theme]="'material'" [height]="25" (onChange)="btnXAxisFlipOnChange($event)">
+      <jqxCheckBox [theme]="'fluent'" [height]="25" (onChange)="btnXAxisFlipOnChange($event)">
           Flip xAxis Positions
       </jqxCheckBox>
     </td>

@@ -1,53 +1,56 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
 export class AppComponent {
     source: any =
-    {
-        localdata: this.generateData(),
-        datatype: 'array',
-        datafields:
-        [
-            { name: 'firstname', type: 'string' },
-            { name: 'lastname', type: 'string' },
-            { name: 'productname', type: 'string' },
-            { name: 'quantity', type: 'number' },
-            { name: 'price', type: 'number' },
-            { name: 'total', type: 'number' }
-        ]
-    }
+        {
+            localdata: this.generateData(),
+            datatype: 'array',
+            datafields:
+                [
+                    { name: 'firstname', type: 'string' },
+                    { name: 'lastname', type: 'string' },
+                    { name: 'productname', type: 'string' },
+                    { name: 'quantity', type: 'number' },
+                    { name: 'price', type: 'number' },
+                    { name: 'total', type: 'number' }
+                ]
+        }
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     columns: any[] =
-    [
-        {
-            text: '#', sortable: false, filterable: false, editable: false,
-            groupable: false, draggable: false, resizable: false,
-            datafield: '', columntype: 'number', width: 50,
-            cellsrenderer: (row: number, column: any, value: number): string => {
-                return '<div style="margin: 4px;">' + (value + 1) + '</div>';
-            }
-        },
-        { text: 'Name', datafield: 'firstname', width: 120 },
-        { text: 'Last Name', datafield: 'lastname', width: 120 },
-        { text: 'Product', datafield: 'productname', width: 180 },
-        { text: 'Quantity', datafield: 'quantity', width: 80, cellsalign: 'right' },
-        { text: 'Unit Price', datafield: 'price', width: 90, cellsalign: 'right', cellsformat: 'c2' },
-        { text: 'Total', datafield: 'total', cellsalign: 'right', cellsformat: 'c2' }
-    ];
+        [
+            {
+                text: '#', sortable: false, filterable: false, editable: false,
+                groupable: false, draggable: false, resizable: false,
+                datafield: '', columntype: 'number', width: 50,
+                cellsrenderer: (row: number, column: any, value: number): string => {
+                    return '<div style="margin: 4px;">' + (value + 1) + '</div>';
+                }
+            },
+            { text: 'Name', datafield: 'firstname', width: 120 },
+            { text: 'Last Name', datafield: 'lastname', width: 120 },
+            { text: 'Product', datafield: 'productname', width: 180 },
+            { text: 'Quantity', datafield: 'quantity', width: 80, cellsalign: 'right' },
+            { text: 'Unit Price', datafield: 'price', width: 90, cellsalign: 'right', cellsformat: 'c2' },
+            { text: 'Total', datafield: 'total', cellsalign: 'right', cellsformat: 'c2' }
+        ];
 
     generateData(): any[] {
         let data = new Array();

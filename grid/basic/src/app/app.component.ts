@@ -252,8 +252,8 @@ function getCountriesCodesData() {
 		["Åland Islands", "AX", "ALA", 248]
 	]
 	return data;
-	}
-	/// <reference path="../../../source/typescript/jqx.elements.d.ts" />
+}
+/// <reference path="../../../source/typescript/jqx.elements.d.ts" />
 function getOrderData(count) {
 	const orderData: any = [], productNames: any = ['Wireless Microphone System', 'One for the Blackbird, One for the Crow', 'Ultrean 6 Quart Air Fryer', 'NETGEAR WiFi Range Extender', 'YTD Men\'s Short Sleeve Polo Shirt', 'Sling Bag', 'Kantek Tablet Stand', 'Cuisinart C55CNS-8CFP', 'Panasonic Noise Cancelling Over The Ear Headphones', 'Magid GF18T Pesticide Glove', 'Ink+Ivy Alpine Cotton Duvet Cover', '12 Little Zoo Animals Toy Figure'], productPrices = [47.59, 7.48, 64.59, 29.99, 28.99, 25.49, 17.03, 10.14, 136.88, 7.73, 71.33, 6.99], countryCodes: any = getCountriesCodesData();
 	let firstNames: string[] = [
@@ -314,127 +314,130 @@ function getOrderData(count) {
 	return orderData;
 }
 
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html'
+	selector: 'app-root',
+	imports: [jqxGridModule],
+	standalone: true,
+	templateUrl: './app.component.html'
 })
 
 export class AppComponent {
-    source: any =
-    {
-       localdata: getOrderData(100),
-		dataFields: [
-			{ name: 'id', type: 'number' },
-			{ name: 'productName', type: 'string' },
-			{ name: 'price', type: 'number' },
-			{ name: 'quantity', type: 'number' },
-			{ name: 'firstName', type: 'string' },
-			{ name: 'lastName', type: 'string' },
-			{ name: 'points', type: 'string' },
-			{ name: 'barPoints', type: 'string' },
-			{ name: 'columnPoints', type: 'string' },
-			{ name: 'linePoints', type: 'string' },
-			{ name: 'total', type: 'number' },
-			{ name: 'bought', type: 'boolean' },
-			{ name: 'rating', type: 'number' },
-			{ name: 'date', type: 'date' },
-			{ name: 'country', type: 'string' },
-			{ name: 'countryCode', type: 'string' },
-			{ name: 'margin', type: 'number' },
-			{ name: 'profit', type: 'number' },
-			{ name: 'status', type: 'string' }
-		]
-    };
+	source: any =
+		{
+			localdata: getOrderData(100),
+			dataFields: [
+				{ name: 'id', type: 'number' },
+				{ name: 'productName', type: 'string' },
+				{ name: 'price', type: 'number' },
+				{ name: 'quantity', type: 'number' },
+				{ name: 'firstName', type: 'string' },
+				{ name: 'lastName', type: 'string' },
+				{ name: 'points', type: 'string' },
+				{ name: 'barPoints', type: 'string' },
+				{ name: 'columnPoints', type: 'string' },
+				{ name: 'linePoints', type: 'string' },
+				{ name: 'total', type: 'number' },
+				{ name: 'bought', type: 'boolean' },
+				{ name: 'rating', type: 'number' },
+				{ name: 'date', type: 'date' },
+				{ name: 'country', type: 'string' },
+				{ name: 'countryCode', type: 'string' },
+				{ name: 'margin', type: 'number' },
+				{ name: 'profit', type: 'number' },
+				{ name: 'status', type: 'string' }
+			]
+		};
 
-	getWidth() : any {
+	getWidth(): any {
 		if (document.body.offsetWidth < 850) {
 			return '90%';
 		}
-		
+
 		return 850;
 	}
 
-    dataAdapter: any = new jqx.dataAdapter(this.source);
+	dataAdapter: any = new jqx.dataAdapter(this.source);
 
 
-    columns: any[] =
-    [
-		{
-			text: 'First Name', dataField: 'firstName', columnGroup: 'name', width: 100
-		},
-		{ text: 'Last Name', dataField: 'lastName', columnGroup: 'name', width: 100 },
-		{ text: 'Rating', dataField: 'rating', columnGroup: 'product', columntype: 'rating', width: 150 },
-		{ text: 'Bought', dataField: 'bought', columnGroup: 'product', columntype: 'checkbox', width: 100 },
-		{ text: 'Order Date', dataField: 'date', columntype: 'datetimeinput', columnGroup: 'product', cellsFormat: 'd', width: 150 },
-		{
-			text: 'Country', allowEdit: false, columnGroup: 'product', displayField: 'country', dataField: 'countryCode', width: 150,
-			cellsrenderer: function (row, dataField, value, html, column, data) {
-				return '<div style="align-items: center; height: 100%; display: flex;"><img class="flag" style="width: 15px; height: 10px;" src="./flags/' + data.countryCode + '.svg"/>' + value + "</div>";
+	columns: any[] =
+		[
+			{
+				text: 'First Name', dataField: 'firstName', columnGroup: 'name', width: 100
+			},
+			{ text: 'Last Name', dataField: 'lastName', columnGroup: 'name', width: 100 },
+			{ text: 'Rating', dataField: 'rating', columnGroup: 'product', columntype: 'rating', width: 150 },
+			{ text: 'Bought', dataField: 'bought', columnGroup: 'product', columntype: 'checkbox', width: 100 },
+			{ text: 'Order Date', dataField: 'date', columntype: 'datetimeinput', columnGroup: 'product', cellsFormat: 'd', width: 150 },
+			{
+				text: 'Country', allowEdit: false, columnGroup: 'product', displayField: 'country', dataField: 'countryCode', width: 150,
+				cellsrenderer: function (row, dataField, value, html, column, data) {
+					return '<div style="align-items: center; height: 100%; display: flex;"><img class="flag" style="width: 15px; height: 10px;" src="./flags/' + data.countryCode + '.svg"/>' + value + "</div>";
+				}
+			},
+			{ text: 'Product Name', dataField: 'productName', columnGroup: 'product', width: 150 },
+			{
+				text: 'Sales Trends', dataField: 'linePoints', columnGroup: 'product', columntype: 'sparklines', sparklines: {
+					type: 'line',
+					max: 100,
+					colorFunction(value) {
+						const colors = ['#D50000', '#F4511E', '#F6BF26', '#33B679'];
+
+						if (value < 30) {
+							return colors[0];
+						}
+						if (value < 50) {
+							return colors[1];
+						}
+						if (value < 60) {
+							return colors[2];
+						}
+						if (value < 85) {
+							return colors[3];
+						}
+						return 'var(--jqx-primary)';
+					}
+				}, dataType: 'string', width: 150
+			},
+			{ text: 'Price', dataField: 'price', columnGroup: 'product', cellsFormat: 'c2', width: 150 },
+			{ text: 'Quantity', dataField: 'quantity', columnGroup: 'order', width: 100 },
+			{ text: 'Total', dataField: 'total', columnGroup: 'order', cellsformat: 'c2', width: 150 },
+			{
+				text: 'Margin', dataField: 'margin', columnGroup: 'order', cellsFormat: 'p', width: 150
+			},
+			{ text: 'Profit', dataField: 'profit', columnGroup: 'order', cellsFormat: 'c2', width: 150 },
+			{
+				text: 'Status', dataField: 'status', width: 150, cellclassname: function (index: number, dataField: string, value: any) {
+					if (value === 'Delivered') {
+						return 'delivered';
+					}
+					else if (value === 'Received') {
+						return 'received';
+					}
+					else if (value === 'Processing') {
+						return 'processing';
+					}
+					else if (value === 'In transit') {
+						return 'inTransit';
+					}
+					else if (value === 'Processing') {
+						return 'processing';
+					}
+					else if (value === 'Shipped') {
+						return 'shipped';
+					}
+					else if (value === 'Confirmed') {
+						return 'confirmed';
+					}
+					return '';
+				}
 			}
-		},
-		{ text: 'Product Name', dataField: 'productName', columnGroup: 'product', width: 150 },
-		{
-			text: 'Sales Trends', dataField: 'linePoints', columnGroup: 'product', columntype: 'sparklines', sparklines: {
-				type: 'line',
-				max: 100,
-				colorFunction(value) {
-					const colors = ['#D50000', '#F4511E', '#F6BF26', '#33B679'];
+		]
 
-					if (value < 30) {
-						return colors[0];
-					}
-					if (value < 50) {
-						return colors[1];
-					}
-					if (value < 60) {
-						return colors[2];
-					}
-					if (value < 85) {
-						return colors[3];
-					}
-					return 'var(--jqx-primary)';
-				}
-			}, dataType: 'string', width: 150
-		},
-		{ text: 'Price', dataField: 'price', columnGroup: 'product', cellsFormat: 'c2', width: 150 },
-		{ text: 'Quantity', dataField: 'quantity', columnGroup: 'order', width: 100 },
-		{ text: 'Total', dataField: 'total', columnGroup: 'order', cellsformat: 'c2', width: 150 },
-		{
-			text: 'Margin', dataField: 'margin', columnGroup: 'order', cellsFormat: 'p', width: 150
-		},
-		{ text: 'Profit', dataField: 'profit', columnGroup: 'order', cellsFormat: 'c2', width: 150 },
-		{
-			text: 'Status', dataField: 'status', width: 150, cellclassname: function (index: number, dataField: string, value: any) {
-				if (value === 'Delivered') {
-					return 'delivered';
-				}
-				else if (value === 'Received') {
-					return 'received';
-				}
-				else if (value === 'Processing') {
-					return 'processing';
-				}
-				else if (value === 'In transit') {
-					return 'inTransit';
-				}
-				else if (value === 'Processing') {
-					return 'processing';
-				}
-				else if (value === 'Shipped') {
-					return 'shipped';
-				}
-				else if (value === 'Confirmed') {
-					return 'confirmed';
-				}
-				return '';
-			}
-		}
-	]
-
-    columngroups: any[] =
-    [
-		{ text: 'Name', align: 'center', name: 'name' },
-		{ text: 'Product', align: 'center', name: 'product' },
-		{ text: 'Order', align: 'center', name: 'order' }
-    ];
+	columngroups: any[] =
+		[
+			{ text: 'Name', align: 'center', name: 'name' },
+			{ text: 'Product', align: 'center', name: 'product' },
+			{ text: 'Order', align: 'center', name: 'order' }
+		];
 }

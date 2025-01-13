@@ -1,11 +1,14 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid.ts'
+
 
 import { generatedata } from '../assets/generatedata';
 
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -14,13 +17,13 @@ export class AppComponent {
 
     data: any = generatedata(100, false);
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     customsortfunc = (column: any, direction: string | boolean): void => {
         let sortdata = new Array();
@@ -67,32 +70,32 @@ export class AppComponent {
     };
 
     source: any =
-    {
-        localdata: this.data,
-        sort: this.customsortfunc,
-        datafields:
-        [
-            { name: 'firstname', type: 'string' },
-            { name: 'lastname', type: 'string' },
-            { name: 'productname', type: 'string' },
-            { name: 'quantity', type: 'number' },
-            { name: 'price', type: 'number' },
-            { name: 'total', type: 'number' }
-        ],
-        datatype: 'array'
-    };
+        {
+            localdata: this.data,
+            sort: this.customsortfunc,
+            datafields:
+                [
+                    { name: 'firstname', type: 'string' },
+                    { name: 'lastname', type: 'string' },
+                    { name: 'productname', type: 'string' },
+                    { name: 'quantity', type: 'number' },
+                    { name: 'price', type: 'number' },
+                    { name: 'total', type: 'number' }
+                ],
+            datatype: 'array'
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
     columns: any[] =
-    [
-        { text: 'First Name', datafield: 'firstname', width: 200 },
-        { text: 'Last Name', datafield: 'lastname', width: 200 },
-        { text: 'Product', datafield: 'productname', width: 180 },
-        { text: 'Quantity', datafield: 'quantity', width: 80, cellsalign: 'right' },
-        { text: 'Unit Price', datafield: 'price', width: 90, cellsalign: 'right', cellsformat: 'c2' },
-        { text: 'Total', datafield: 'total', cellsalign: 'right', cellsformat: 'c2' }
-    ];
+        [
+            { text: 'First Name', datafield: 'firstname', width: 200 },
+            { text: 'Last Name', datafield: 'lastname', width: 200 },
+            { text: 'Product', datafield: 'productname', width: 180 },
+            { text: 'Quantity', datafield: 'quantity', width: 80, cellsalign: 'right' },
+            { text: 'Unit Price', datafield: 'price', width: 90, cellsalign: 'right', cellsformat: 'c2' },
+            { text: 'Total', datafield: 'total', cellsalign: 'right', cellsformat: 'c2' }
+        ];
 
     ready = (): void => {
         this.myGrid.sortby('firstname', 'asc');

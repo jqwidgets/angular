@@ -1,24 +1,27 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule],
+    standalone: true,
     templateUrl: './app.component.html',
 })
 
 export class AppComponent {
     source =
-    {
-        datatype: 'tsv',
-        datafields: [
-            { name: 'Year' },
-            { name: 'Northeast' },
-            { name: 'South' },
-            { name: 'Midwest' },
-            { name: 'West' },
-            { name: 'UnitedStates' }
-        ],
-        url: '../assets/us_homeownership_rate.txt'
-    };
+        {
+            datatype: 'tsv',
+            datafields: [
+                { name: 'Year' },
+                { name: 'Northeast' },
+                { name: 'South' },
+                { name: 'Midwest' },
+                { name: 'West' },
+                { name: 'UnitedStates' }
+            ],
+            url: '../assets/us_homeownership_rate.txt'
+        };
 
     dataAdapter = new jqx.dataAdapter(this.source, { async: false, autoBind: true, loadError: (xhr: any, status: any, error: any) => { alert('Error loading "' + this.source.url + '" : ' + error); } });
 
@@ -26,14 +29,14 @@ export class AppComponent {
 
     titlePadding: any = { left: 0, top: 0, right: 0, bottom: 10 };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
     bands() {
         let recessions =
             [
@@ -56,42 +59,42 @@ export class AppComponent {
     }
 
     xAxis: any =
-    {
-        dataField: 'Year',
-        tickMarks: {
-            visible: true,
-            interval: 1,
-            color: '#BCBCBC'
-        },
-        labels: { angle: -90 },
-        unitInterval: 1,
-        flip: false,
-        bands: this.bands() // attach the color bands to the xAxis
-    };
+        {
+            dataField: 'Year',
+            tickMarks: {
+                visible: true,
+                interval: 1,
+                color: '#BCBCBC'
+            },
+            labels: { angle: -90 },
+            unitInterval: 1,
+            flip: false,
+            bands: this.bands() // attach the color bands to the xAxis
+        };
 
     valueAxis =
-    {
-        title: { text: 'Homeownership rate<br>' },
-        labels: {
-            formatSettings: { sufix: '%' }
-        },
-        bands: [
-            //  { minValue: 60, maxValue: 63 }
-        ],
-        flip: false
-    };
+        {
+            title: { text: 'Homeownership rate<br>' },
+            labels: {
+                formatSettings: { sufix: '%' }
+            },
+            bands: [
+                //  { minValue: 60, maxValue: 63 }
+            ],
+            flip: false
+        };
 
     seriesGroups: any[] =
-    [
-        {
-            type: 'line',
-            series: [
-                { dataField: 'Northeast', displayText: 'NorthEast' },
-                { dataField: 'South' },
-                { dataField: 'Midwest', displayText: 'MidWest' },
-                { dataField: 'West' },
-                { dataField: 'UnitedStates', displayText: 'United States' },
-            ]
-        }
-    ];
+        [
+            {
+                type: 'line',
+                series: [
+                    { dataField: 'Northeast', displayText: 'NorthEast' },
+                    { dataField: 'South' },
+                    { dataField: 'Midwest', displayText: 'MidWest' },
+                    { dataField: 'West' },
+                    { dataField: 'UnitedStates', displayText: 'United States' },
+                ]
+            }
+        ];
 }

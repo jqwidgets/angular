@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 
-import { jqxMenuComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxmenu.ts';
 
+
+import { jqxMenuModule, jqxMenuComponent } from 'jqwidgets-ng/jqxmenu';
 @Component({
     selector: 'app-root',
+    imports: [jqxMenuModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -14,15 +17,15 @@ export class AppComponent implements AfterViewInit {
     ngAfterViewInit() {
         this.jqxMenu.focus();
     }
-	
-	getWidth() : any {
-		if (document.body.offsetWidth < 600) {
-			return '90%';
-		}
-		
-		return 600;
-	}
-	
+
+    getWidth(): any {
+        if (document.body.offsetWidth < 600) {
+            return '90%';
+        }
+
+        return 600;
+    }
+
     itemclick(event: any): void {
         this.log.nativeElement.innerHTML = "Clicked: " + event.args.innerText;
     };

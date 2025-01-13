@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid.ts'
 
+
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -11,32 +14,32 @@ export class AppComponent {
     @ViewChild('myGrid') myGrid: jqxGridComponent;
 
     firstNames: string[] =
-    [
-        'Andrew', 'Nancy', 'Shelley', 'Regina', 'Yoshi', 'Antoni', 'Mayumi', 'Ian', 'Peter', 'Lars', 'Petra', 'Martin', 'Sven', 'Elio', 'Beate', 'Cheryl', 'Michael', 'Guylene'
-    ];
+        [
+            'Andrew', 'Nancy', 'Shelley', 'Regina', 'Yoshi', 'Antoni', 'Mayumi', 'Ian', 'Peter', 'Lars', 'Petra', 'Martin', 'Sven', 'Elio', 'Beate', 'Cheryl', 'Michael', 'Guylene'
+        ];
 
     lastNames: string[] =
-    [
-        'Fuller', 'Davolio', 'Burke', 'Murphy', 'Nagase', 'Saavedra', 'Ohno', 'Devling', 'Wilson', 'Peterson', 'Winkler', 'Bein', 'Petersen', 'Rossi', 'Vileid', 'Saylor', 'Bjorn', 'Nodier'
-    ];
+        [
+            'Fuller', 'Davolio', 'Burke', 'Murphy', 'Nagase', 'Saavedra', 'Ohno', 'Devling', 'Wilson', 'Peterson', 'Winkler', 'Bein', 'Petersen', 'Rossi', 'Vileid', 'Saylor', 'Bjorn', 'Nodier'
+        ];
 
     productNames: string[] =
-    [
-        'Black Tea', 'Green Tea', 'Caffe Espresso', 'Doubleshot Espresso', 'Caffe Latte', 'White Chocolate Mocha', 'Cramel Latte', 'Caffe Americano', 'Cappuccino', 'Espresso Truffle', 'Espresso con Panna', 'Peppermint Mocha Twist'
-    ];
+        [
+            'Black Tea', 'Green Tea', 'Caffe Espresso', 'Doubleshot Espresso', 'Caffe Latte', 'White Chocolate Mocha', 'Cramel Latte', 'Caffe Americano', 'Cappuccino', 'Espresso Truffle', 'Espresso con Panna', 'Peppermint Mocha Twist'
+        ];
 
     priceValues: string[] =
-    [
-        '2.25', '1.5', '3.0', '3.3', '4.5', '3.6', '3.8', '2.5', '5.0', '1.75', '3.25', '4.0'
-    ];
+        [
+            '2.25', '1.5', '3.0', '3.3', '4.5', '3.6', '3.8', '2.5', '5.0', '1.75', '3.25', '4.0'
+        ];
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     generaterow(): any {
         let row = {};
@@ -63,31 +66,31 @@ export class AppComponent {
     }
 
     source: any =
-    {
-        localdata: this.generateData(),
-        datatype: 'local',
-        datafields:
-        [
-            { name: 'firstname', type: 'string' },
-            { name: 'lastname', type: 'string' },
-            { name: 'productname', type: 'string' },
-            { name: 'quantity', type: 'number' },
-            { name: 'price', type: 'number' },
-            { name: 'total', type: 'number' }
-        ]
-    };
+        {
+            localdata: this.generateData(),
+            datatype: 'local',
+            datafields:
+                [
+                    { name: 'firstname', type: 'string' },
+                    { name: 'lastname', type: 'string' },
+                    { name: 'productname', type: 'string' },
+                    { name: 'quantity', type: 'number' },
+                    { name: 'price', type: 'number' },
+                    { name: 'total', type: 'number' }
+                ]
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
     columns: any[] =
-    [
-        { text: 'First Name', datafield: 'firstname', width: 200 },
-        { text: 'Last Name', datafield: 'lastname', width: 200 },
-        { text: 'Product', datafield: 'productname', width: 180 },
-        { text: 'Quantity', datafield: 'quantity', width: 80, cellsalign: 'right' },
-        { text: 'Unit Price', datafield: 'price', width: 90, cellsalign: 'right', cellsformat: 'c2' },
-        { text: 'Total', datafield: 'total', cellsalign: 'right', cellsformat: 'c2' }
-    ];
+        [
+            { text: 'First Name', datafield: 'firstname', width: 200 },
+            { text: 'Last Name', datafield: 'lastname', width: 200 },
+            { text: 'Product', datafield: 'productname', width: 180 },
+            { text: 'Quantity', datafield: 'quantity', width: 80, cellsalign: 'right' },
+            { text: 'Unit Price', datafield: 'price', width: 90, cellsalign: 'right', cellsformat: 'c2' },
+            { text: 'Total', datafield: 'total', cellsalign: 'right', cellsformat: 'c2' }
+        ];
 
     rendertoolbar = (toolbar: any): void => {
         let container = document.createElement('div');

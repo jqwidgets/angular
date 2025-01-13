@@ -1,34 +1,37 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule],
+    standalone: true,
     templateUrl: './app.component.html',
 })
 
 export class AppComponent {
     source: any =
-    {
-        datatype: 'json',
-        datafields: [
-            { name: 'id' },
-            { name: 'path' },
-            { name: 'europe' },
-            { name: 'eu' }
-        ],
-        /* EU map definitions in JSON derived from  http://commons.wikimedia.org/wiki/File:116_000_map_of_Europe.svg */
-        url: '../assets/europe.txt'
-    };
+        {
+            datatype: 'json',
+            datafields: [
+                { name: 'id' },
+                { name: 'path' },
+                { name: 'europe' },
+                { name: 'eu' }
+            ],
+            /* EU map definitions in JSON derived from  http://commons.wikimedia.org/wiki/File:116_000_map_of_Europe.svg */
+            url: '../assets/europe.txt'
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source, { async: false, autoBind: true, loadError: (xhr: any, status: any, error: any) => { alert('Error loading "' + this.source.url + '" : ' + error); } });
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
     padding: any = { left: 10, top: 5, right: 10, bottom: 5 };
 
     titlePadding: any = { left: 90, top: 0, right: 0, bottom: 10 };

@@ -1,22 +1,25 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxTreeGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtree.ts';
 
+
+import { jqxTreeGridModule, jqxTreeGridComponent } from 'jqwidgets-ng/jqxtreegrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxTreeGridModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
 export class AppComponent {
     @ViewChild('TreeGrid') treeGrid: jqxTreeGridComponent
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     employees: any[] = [
         {
@@ -39,28 +42,28 @@ export class AppComponent {
     ];
 
     source: any =
-    {
-        dataType: "json",
-        dataFields: [
-            { name: 'EmployeeID', type: 'number' },
-            { name: 'FirstName', type: 'string' },
-            { name: 'LastName', type: 'string' },
-            { name: 'Country', type: 'string' },
-            { name: 'City', type: 'string' },
-            { name: 'Address', type: 'string' },
-            { name: 'Title', type: 'string' },
-            { name: 'HireDate', type: 'date' },
-            { name: 'children', type: 'array' },
-            { name: 'expanded', type: 'bool' },
-            { name: 'BirthDate', type: 'date' }
-        ],
-        hierarchy:
         {
-            root: 'children'
-        },
-        id: 'EmployeeID',
-        localData: this.employees
-    };
+            dataType: "json",
+            dataFields: [
+                { name: 'EmployeeID', type: 'number' },
+                { name: 'FirstName', type: 'string' },
+                { name: 'LastName', type: 'string' },
+                { name: 'Country', type: 'string' },
+                { name: 'City', type: 'string' },
+                { name: 'Address', type: 'string' },
+                { name: 'Title', type: 'string' },
+                { name: 'HireDate', type: 'date' },
+                { name: 'children', type: 'array' },
+                { name: 'expanded', type: 'bool' },
+                { name: 'BirthDate', type: 'date' }
+            ],
+            hierarchy:
+            {
+                root: 'children'
+            },
+            id: 'EmployeeID',
+            localData: this.employees
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 

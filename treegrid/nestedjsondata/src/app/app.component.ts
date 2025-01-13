@@ -1,7 +1,10 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxTreeGridModule, jqxTreeGridComponent } from 'jqwidgets-ng/jqxtreegrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxTreeGridModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -25,50 +28,50 @@ export class AppComponent {
             ]
         }
     ];
-	
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
 
-     source: any =
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
+    source: any =
         {
-           dataType: 'json',
-           dataFields: [
-               { name: 'EmployeeID', type: 'number' },
-               { name: 'FirstName', type: 'string' },
-               { name: 'LastName', type: 'string' },
-               { name: 'Country', type: 'string' },
-               { name: 'City', type: 'string' },
-               { name: 'Address', type: 'string' },
-               { name: 'Title', type: 'string' },
-               { name: 'HireDate', type: 'date' },
-               { name: 'children', type: 'array' },
-               { name: 'expanded', type: 'bool' },
-               { name: 'BirthDate', type: 'date' }
-           ],
-           hierarchy:
-           {
-               root: 'children'
-           },
-           id: 'EmployeeID',
-           localData: this.employees
+            dataType: 'json',
+            dataFields: [
+                { name: 'EmployeeID', type: 'number' },
+                { name: 'FirstName', type: 'string' },
+                { name: 'LastName', type: 'string' },
+                { name: 'Country', type: 'string' },
+                { name: 'City', type: 'string' },
+                { name: 'Address', type: 'string' },
+                { name: 'Title', type: 'string' },
+                { name: 'HireDate', type: 'date' },
+                { name: 'children', type: 'array' },
+                { name: 'expanded', type: 'bool' },
+                { name: 'BirthDate', type: 'date' }
+            ],
+            hierarchy:
+            {
+                root: 'children'
+            },
+            id: 'EmployeeID',
+            localData: this.employees
         };
 
-     dataAdapter: any = new jqx.dataAdapter(this.source);
+    dataAdapter: any = new jqx.dataAdapter(this.source);
 
-     columns: any[] =
-     [
-         { text: 'FirstName', dataField: 'FirstName', width: 200 },
-         { text: 'LastName', dataField: 'LastName', width: 120 },
-         { text: 'Title', dataField: 'Title', width: 160 },
-         { text: 'Birth Date', dataField: 'BirthDate', cellsFormat: 'd', width: 120 },
-         { text: 'Hire Date', dataField: 'HireDate', cellsFormat: 'd', width: 120 },
-         { text: 'Address', dataField: 'Address', width: 250 },
-         { text: 'City', dataField: 'City', width: 120 },
-         { text: 'Country', dataField: 'Country' }
-     ];
+    columns: any[] =
+        [
+            { text: 'FirstName', dataField: 'FirstName', width: 200 },
+            { text: 'LastName', dataField: 'LastName', width: 120 },
+            { text: 'Title', dataField: 'Title', width: 160 },
+            { text: 'Birth Date', dataField: 'BirthDate', cellsFormat: 'd', width: 120 },
+            { text: 'Hire Date', dataField: 'HireDate', cellsFormat: 'd', width: 120 },
+            { text: 'Address', dataField: 'Address', width: 250 },
+            { text: 'City', dataField: 'City', width: 120 },
+            { text: 'Country', dataField: 'Country' }
+        ];
 }

@@ -1,16 +1,19 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
 
-import { jqxButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxbuttons.ts';
-import { jqxWindowComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxwindow.ts';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
+import { jqxCheckBoxComponent, jqxCheckBoxModule } from 'jqwidgets-ng/jqxcheckbox';
+import { jqxWindowModule, jqxWindowComponent } from 'jqwidgets-ng/jqxwindow';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxWindowModule, jqxCheckBoxModule, jqxButtonModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
 export class AppComponent {
     @ViewChild('customWindow') customWindow: jqxWindowComponent;
-    @ViewChild('searchTextButton') searchTextButton: jqxButtonComponent; 
+    @ViewChild('searchTextButton') searchTextButton: jqxButtonComponent;
     @ViewChild('searchTextInput') searchTextInput: ElementRef;
 
     _searchButtonHandle = () => {

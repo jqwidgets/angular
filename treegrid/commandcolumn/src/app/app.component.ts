@@ -1,105 +1,108 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxTreeGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtree.ts';
 
+
+import { jqxTreeGridModule, jqxTreeGridComponent } from 'jqwidgets-ng/jqxtreegrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxTreeGridModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
 export class AppComponent {
     @ViewChild('myTreeGrid') myTreeGrid: jqxTreeGridComponent;
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
 
     data: any[] = [
         {
             'id': '1', 'name': 'Corporate Headquarters', 'budget': '1230000', 'location': 'Las Vegas',
             'children':
-            [
-                {
-                    'id': '2', 'name': 'Finance Division', 'budget': '423000', 'location': 'San Antonio',
-                    'children':
-                    [
-                        { 'id': '3', 'name': 'Accounting Department', 'budget': '113000', 'location': 'San Antonio' },
-                        {
-                            'id': '4', 'name': 'Investment Department', 'budget': '310000', 'location': 'San Antonio',
-                            'children':
+                [
+                    {
+                        'id': '2', 'name': 'Finance Division', 'budget': '423000', 'location': 'San Antonio',
+                        'children':
                             [
-                                { 'id': '5', 'name': 'Banking Office', 'budget': '240000', 'location': 'San Antonio' },
-                                { 'id': '6', 'name': 'Bonds Office', 'budget': '70000', 'location': 'San Antonio' },
+                                { 'id': '3', 'name': 'Accounting Department', 'budget': '113000', 'location': 'San Antonio' },
+                                {
+                                    'id': '4', 'name': 'Investment Department', 'budget': '310000', 'location': 'San Antonio',
+                                    'children':
+                                        [
+                                            { 'id': '5', 'name': 'Banking Office', 'budget': '240000', 'location': 'San Antonio' },
+                                            { 'id': '6', 'name': 'Bonds Office', 'budget': '70000', 'location': 'San Antonio' },
+                                        ]
+                                }
                             ]
-                        }
-                    ]
-                },
-                {
-                    'id': '7', 'name': 'Operations Division', 'budget': '600000', 'location': 'Miami',
-                    'children':
-                    [
-                        { 'id': '8', 'name': 'Manufacturing Department', 'budget': '300000', 'location': 'Miami' },
-                        { 'id': '9', 'name': 'Public Relations Department', 'budget': '200000', 'location': 'Miami' },
-                        { 'id': '10', 'name': 'Sales Department', 'budget': '100000', 'location': 'Miami' }
-                    ]
-                },
-                { 'id': '11', 'name': 'Research Division', 'budget': '200000', 'location': 'Boston' }
-            ]
+                    },
+                    {
+                        'id': '7', 'name': 'Operations Division', 'budget': '600000', 'location': 'Miami',
+                        'children':
+                            [
+                                { 'id': '8', 'name': 'Manufacturing Department', 'budget': '300000', 'location': 'Miami' },
+                                { 'id': '9', 'name': 'Public Relations Department', 'budget': '200000', 'location': 'Miami' },
+                                { 'id': '10', 'name': 'Sales Department', 'budget': '100000', 'location': 'Miami' }
+                            ]
+                    },
+                    { 'id': '11', 'name': 'Research Division', 'budget': '200000', 'location': 'Boston' }
+                ]
         }
     ];
 
     source: any =
-    {
-        dataType: 'json',
-        dataFields: [
-            { name: 'name', type: 'string' },
-            { name: 'budget', type: 'number' },
-            { name: 'id', type: 'number' },
-            { name: 'children', type: 'array' },
-            { name: 'location', type: 'string' }
-        ],
-        hierarchy:
         {
-            root: 'children'
-        },
-        localData: this.data,
-        id: 'id'
-    };
+            dataType: 'json',
+            dataFields: [
+                { name: 'name', type: 'string' },
+                { name: 'budget', type: 'number' },
+                { name: 'id', type: 'number' },
+                { name: 'children', type: 'array' },
+                { name: 'location', type: 'string' }
+            ],
+            hierarchy:
+            {
+                root: 'children'
+            },
+            localData: this.data,
+            id: 'id'
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
     columns: any[] =
-    [
-        { text: 'ID', editable: false, dataField: 'id', width: 150 },
-        { text: 'Name', dataField: 'name', width: 250 },
-        { text: 'Budget', align: 'right', cellsAlign: 'right', cellsFormat: 'c2', dataField: 'budget', width: 150 },
-        { text: 'Location', dataField: 'location', width: 130 },
-        {
-            text: 'Edit', cellsAlign: 'center', align: 'center', columnType: 'none', editable: false, sortable: false, dataField: null,
-            cellsRenderer: (row: number, column: any, value: any): string => {
-                return `<div data-row='` + row + `' class='editButton' style='margin-left: 4em; float: left'></div>
+        [
+            { text: 'ID', editable: false, dataField: 'id', width: 150 },
+            { text: 'Name', dataField: 'name', width: 250 },
+            { text: 'Budget', align: 'right', cellsAlign: 'right', cellsFormat: 'c2', dataField: 'budget', width: 150 },
+            { text: 'Location', dataField: 'location', width: 130 },
+            {
+                text: 'Edit', cellsAlign: 'center', align: 'center', columnType: 'none', editable: false, sortable: false, dataField: null,
+                cellsRenderer: (row: number, column: any, value: any): string => {
+                    return `<div data-row='` + row + `' class='editButton' style='margin-left: 4em; float: left'></div>
                         <div data-row='` + row + `' class='cancelButton' style='display: none; float: left; margin-left: 1em'></div>`;
+                }
             }
-        }
-    ];
+        ];
 
     editSettings: any =
-    {
-        saveOnPageChange: true, saveOnBlur: true,
-        saveOnSelectionChange: false, cancelOnEsc: true,
-        saveOnEnter: true, editOnDoubleClick: false, editOnF2: false
-    };
+        {
+            saveOnPageChange: true, saveOnBlur: true,
+            saveOnSelectionChange: false, cancelOnEsc: true,
+            saveOnEnter: true, editOnDoubleClick: false, editOnF2: false
+        };
 
     rendered = (): void => {
-        let uglyEditButtons = jqwidgets.createInstance('.editButton', 'jqxButton', { theme: 'material',  width: 60, height: 24, value: 'Edit' });
+        let uglyEditButtons = jqwidgets.createInstance('.editButton', 'jqxButton', { theme: 'material', width: 60, height: 24, value: 'Edit' });
         let flattenEditButtons = flatten(uglyEditButtons);
 
-        let uglyCancelButtons = jqwidgets.createInstance('.cancelButton', 'jqxButton', { theme: 'material',  width: 60, height: 24, value: 'Cancel' });
+        let uglyCancelButtons = jqwidgets.createInstance('.cancelButton', 'jqxButton', { theme: 'material', width: 60, height: 24, value: 'Cancel' });
         let flattenCancelButtons = flatten(uglyCancelButtons);
 
         function flatten(arr: any[]): any[] {

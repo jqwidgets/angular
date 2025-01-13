@@ -1,15 +1,17 @@
 ﻿
 import { Component, ViewChild } from '@angular/core';
 
-import { jqxBulletChartComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxbulletchart.ts';
-import { jqxCheckBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxcheckbox.ts';
-import { jqxDropDownListComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdropdownlist.ts';
-import { jqxExpanderComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxexpander.ts';
-import { jqxRadioButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxradiobutton.ts';
-import { jqxSliderComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxslider.ts';
+import { jqxBulletChartComponent, jqxBulletChartModule } from 'jqwidgets-ng/jqxbulletchart';
+import { jqxCheckBoxComponent, jqxCheckBoxModule } from 'jqwidgets-ng/jqxcheckbox';
+import { jqxDropDownListComponent, jqxDropDownListModule } from 'jqwidgets-ng/jqxdropdownlist';
+import { jqxExpanderComponent, jqxExpanderModule } from 'jqwidgets-ng/jqxexpander';
+import { jqxRadioButtonComponent, jqxRadioButtonModule } from 'jqwidgets-ng/jqxradiobutton';
+import { jqxSliderComponent, jqxSliderModule } from 'jqwidgets-ng/jqxslider';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxBulletChartModule, jqxCheckBoxModule, jqxSliderModule, jqxDropDownListModule, jqxExpanderModule, jqxRadioButtonModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -30,15 +32,15 @@ export class AppComponent {
     @ViewChild('targetDropDownList') targetDropDownList: jqxDropDownListComponent;
 
     ranges: any[] =
-    [
-        { startValue: 0, endValue: 200, color: '#000000', opacity: 0.5 },
-        { startValue: 200, endValue: 250, color: '#000000', opacity: 0.3 },
-        { startValue: 250, endValue: 300, color: '#000000', opacity: 0.1 }
-    ];
+        [
+            { startValue: 0, endValue: 200, color: '#000000', opacity: 0.5 },
+            { startValue: 200, endValue: 250, color: '#000000', opacity: 0.3 },
+            { startValue: 250, endValue: 300, color: '#000000', opacity: 0.1 }
+        ];
 
-    pointer: any = { value: 270, label: 'Revenue 2019 YTD', size: '25%', color: '' };
+    pointer: any = { value: 270, label: 'Revenue 2025 YTD', size: '25%', color: '' };
 
-    target: any = { value: 260, label: 'Revenue 2018 YTD', size: 4, color: '' };
+    target: any = { value: 260, label: 'Revenue 2024 YTD', size: 4, color: '' };
 
     ticks: any = { position: 'both', interval: 50, size: 10 };
 

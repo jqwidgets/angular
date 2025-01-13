@@ -1,7 +1,10 @@
 ﻿import { Component, ViewEncapsulation } from '@angular/core';
 
+import { jqxKnobModule, jqxKnobComponent } from 'jqwidgets-ng/jqxknob';
 @Component({
     selector: 'app-root',
+    imports: [jqxKnobModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
     encapsulation: ViewEncapsulation.None
@@ -9,43 +12,43 @@
 
 export class AppComponent {
     marks: any =
-    {
-        colorRemaining: '#fff',
-        colorProgress: '#fff',
-        type: 'line',
-        offset: '75%',
-        thickness: 2,
-        size: '15%',
-        majorSize: '15%',
-        drawAboveProgressBar: true,
-        majorInterval: 10,
-        minorInterval: 2
-    };
+        {
+            colorRemaining: '#fff',
+            colorProgress: '#fff',
+            type: 'line',
+            offset: '75%',
+            thickness: 2,
+            size: '15%',
+            majorSize: '15%',
+            drawAboveProgressBar: true,
+            majorInterval: 10,
+            minorInterval: 2
+        };
 
     labels: any =
-    {
-        offset: '50%',
-        rotate: true,
-        step: 10
-    };
+        {
+            offset: '50%',
+            rotate: true,
+            step: 10
+        };
 
     progressBar: any =
-    {
-        size: '15%',
-        offset: '75%',
-        style: {
-            stroke: '#a2da39', strokeWidth: 1, fill: '#a2da39'
-        },
-        background: {
-            stroke: '#d1d2d4', strokeWidth: 1, fill: '#d1d2d4'
-        }
-    };
+        {
+            size: '15%',
+            offset: '75%',
+            style: {
+                stroke: '#a2da39', strokeWidth: 1, fill: '#a2da39'
+            },
+            background: {
+                stroke: '#d1d2d4', strokeWidth: 1, fill: '#d1d2d4'
+            }
+        };
 
     pointer: any =
-    {
-        type: 'arrow', style: { fill: '#a2da39' },
-        size: '55%', thickness: 5, offset: '0%'
-    };
+        {
+            type: 'arrow', style: { fill: '#a2da39' },
+            size: '55%', thickness: 5, offset: '0%'
+        };
 
     dial: any = {
         innerRadius: '0%', // specifies the inner Radius of the dial

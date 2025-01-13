@@ -3,11 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { jqxButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxbuttons.ts';
-import { jqxCheckBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxcheckbox.ts';
-import { jqxComboBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxcombobox.ts';
-import { jqxDropDownListComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdropdownlist.ts';
-import { jqxExpanderComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxexpander.ts';
+import { jqxButtonComponent } from 'jqwidgets-ng/jqxbuttons';
+import { jqxCheckBoxComponent } from 'jqwidgets-ng/jqxcheckbox';
+
+import { jqxDropDownListComponent } from 'jqwidgets-ng/jqxdropdownlist';
+import { jqxExpanderComponent } from 'jqwidgets-ng/jqxexpander';
 
 @NgModule({
     declarations: [AppComponent, jqxButtonComponent, jqxCheckBoxComponent, jqxComboBoxComponent, jqxDropDownListComponent, jqxExpanderComponent],

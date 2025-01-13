@@ -1,16 +1,19 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxRangeSelectorModule, jqxRangeSelectorComponent } from 'jqwidgets-ng/jqxrangeselector';
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html'
+	selector: 'app-root',
+	imports: [jqxRangeSelectorModule],
+	standalone: true,
+	templateUrl: './app.component.html'
 })
 
 export class AppComponent {
-	getWidth() : any {
+	getWidth(): any {
 		if (document.body.offsetWidth < 750) {
 			return '90%';
 		}
-		
+
 		return 750;
 	}
 }

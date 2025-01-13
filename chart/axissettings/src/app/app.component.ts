@@ -1,9 +1,14 @@
 ﻿import { Component, AfterViewInit, ViewChild } from '@angular/core';
 
-import { jqxChartComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxchart.ts';
+import { jqxCheckBoxComponent, jqxCheckBoxModule } from 'jqwidgets-ng/jqxcheckbox';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
+import { jqxSliderModule } from 'jqwidgets-ng/jqxslider';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxChartModule, jqxSliderModule, jqxButtonModule, jqxCheckBoxModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -28,62 +33,62 @@ export class AppComponent implements AfterViewInit {
         { year: 2014, price: 0.2178 }
     ];
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
     padding: any = { left: 5, top: 5, right: 15, bottom: 5 };
 
     titlePadding: any = { left: 90, top: 0, right: 0, bottom: 10 };
 
     xAxis: any =
-    {
-        padding: { top: 0, bottom: 0 },
-        labels: { angle: 0 },
-        dataField: 'year',
-        displayText: 'Year',
-        valuesOnTicks: false,
-        gridLines: { color: '#CDCDCD' },
-        tickMarks: { color: '#CDCDCD' }
-    };
+        {
+            padding: { top: 0, bottom: 0 },
+            labels: { angle: 0 },
+            dataField: 'year',
+            displayText: 'Year',
+            valuesOnTicks: false,
+            gridLines: { color: '#CDCDCD' },
+            tickMarks: { color: '#CDCDCD' }
+        };
 
     valueAxis: any =
-    {
-        position: 'right',
-        padding: { left: 0, right: 0 },
-        title: { text: '<br><br>Price EUR / kWh' },
-        labels: {
-            visible: true,
-            angle: 0,
-            formatSettings: { decimalPlaces: 4, sufix: ' €' }
-        },
-        tickMarks: {
-            visible: true,
-            color: '#CDCDCD',
-            size: 5
-        },
-        gridLines: {
-            visible: true,
-            color: '#CDCDCD',
-        },
-        alternatingBackgroundColor: '#EFEFEF',
-        alternatingBackgroundColor2: '#CECECE',
-        alternatingBackgroundOpacity: 0.2
-    };
+        {
+            position: 'right',
+            padding: { left: 0, right: 0 },
+            title: { text: '<br><br>Price EUR / kWh' },
+            labels: {
+                visible: true,
+                angle: 0,
+                formatSettings: { decimalPlaces: 4, sufix: ' €' }
+            },
+            tickMarks: {
+                visible: true,
+                color: '#CDCDCD',
+                size: 5
+            },
+            gridLines: {
+                visible: true,
+                color: '#CDCDCD',
+            },
+            alternatingBackgroundColor: '#EFEFEF',
+            alternatingBackgroundColor2: '#CECECE',
+            alternatingBackgroundOpacity: 0.2
+        };
 
     seriesGroups: any[] =
-    [
-        {
-            type: 'stepline',
-            series: [
-                { formatSettings: { decimalPlaces: 4 }, dataField: 'price', displayText: 'Price per kWh', showLabels: true, symbolType: 'circle' }
-            ]
-        }
-    ];
+        [
+            {
+                type: 'stepline',
+                series: [
+                    { formatSettings: { decimalPlaces: 4 }, dataField: 'price', displayText: 'Price per kWh', showLabels: true, symbolType: 'circle' }
+                ]
+            }
+        ];
 
     sliderValueAxisLeftPaddingOnChange(event: any): void {
         this.myChart.valueAxis().padding.left = event.args.value;

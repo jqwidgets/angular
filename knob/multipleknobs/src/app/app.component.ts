@@ -2,8 +2,11 @@
 
 import { jqxKnobComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxknob.ts';
 
+import { jqxKnobModule, jqxKnobComponent } from 'jqwidgets-ng/jqxknob';
 @Component({
     selector: 'app-root',
+    imports: [jqxKnobModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
     encapsulation: ViewEncapsulation.None
@@ -26,54 +29,54 @@ export class AppComponent implements AfterViewInit {
         knobThreeContainer.id = 'myKnobThree';
 
         knobOneContainer.appendChild(knobTwoContainer);
-        
+
         let knobTwoOptions =
-            {
-                value: 60,
-                min: 0,
-                max: 100,
-                startAngle: 190,
-                width: 300,
-                height: 300,
-                endAngle: 350,
-                snapToStep: true,
-                pointerGrabAction: 'progressBar',
-                rotation: 'clockwise',
-                style: { fill: 'transparent' },
-                progressBar: {
-                    style: { fill: '#ef6100', stroke: '#ef6100' },
-                    size: '18%',
-                    offset: '78%',
-                    background: { fill: '#cfd0d4', stroke: '#cfd0d4' }
-                },
-                pointer: { type: 'line', visible: false, style: { fill: '#33AADD' }, size: '18%', offset: '78%', thickness: 0 }
-            };
+        {
+            value: 60,
+            min: 0,
+            max: 100,
+            startAngle: 190,
+            width: 300,
+            height: 300,
+            endAngle: 350,
+            snapToStep: true,
+            pointerGrabAction: 'progressBar',
+            rotation: 'clockwise',
+            style: { fill: 'transparent' },
+            progressBar: {
+                style: { fill: '#ef6100', stroke: '#ef6100' },
+                size: '18%',
+                offset: '78%',
+                background: { fill: '#cfd0d4', stroke: '#cfd0d4' }
+            },
+            pointer: { type: 'line', visible: false, style: { fill: '#33AADD' }, size: '18%', offset: '78%', thickness: 0 }
+        };
         let myKnobTwo = jqwidgets.createInstance('#myKnobTwo', 'jqxKnob', knobTwoOptions);
 
         knobTwoContainer.appendChild(knobThreeContainer);
-        
+
 
         let knobThreeOptions =
-            {
-                value: 60,
-                min: 0,
-                max: 100,
-                startAngle: 10,
-                width: 300,
-                height: 300,
-                endAngle: 170,
-                snapToStep: true,
-                pointerGrabAction: 'progressBar',
-                rotation: 'clockwise',
-                style: { fill: 'transparent' },
-                progressBar: {
-                    style: { fill: '#18a25e', stroke: '#18a25e' },
-                    size: '18%',
-                    offset: '78%',
-                    background: { fill: '#cfd0d4', stroke: '#cfd0d4' }
-                },
-                pointer: { type: 'line', visible: false, style: { fill: '#00a4e1' }, size: '18%', offset: '78%', thickness: 0 }
-            };
+        {
+            value: 60,
+            min: 0,
+            max: 100,
+            startAngle: 10,
+            width: 300,
+            height: 300,
+            endAngle: 170,
+            snapToStep: true,
+            pointerGrabAction: 'progressBar',
+            rotation: 'clockwise',
+            style: { fill: 'transparent' },
+            progressBar: {
+                style: { fill: '#18a25e', stroke: '#18a25e' },
+                size: '18%',
+                offset: '78%',
+                background: { fill: '#cfd0d4', stroke: '#cfd0d4' }
+            },
+            pointer: { type: 'line', visible: false, style: { fill: '#00a4e1' }, size: '18%', offset: '78%', thickness: 0 }
+        };
         let myKnobThree = jqwidgets.createInstance('#myKnobThree', 'jqxKnob', knobThreeOptions);
 
         knobTwoContainer.style.cssText = 'position: absolute !important; top: 90px; left: 60px;';
@@ -116,47 +119,47 @@ export class AppComponent implements AfterViewInit {
 
 
     marks: any =
-    {
-        drawAboveProgressBar: true,
-        colorRemaining: 'white',
-        colorProgress: 'white',
-        style: 'line',
-        offset: '78%',
-        thickness: 3,
-        size: '18%',
-        minorInterval: 5
-    };
+        {
+            drawAboveProgressBar: true,
+            colorRemaining: 'white',
+            colorProgress: 'white',
+            style: 'line',
+            offset: '78%',
+            thickness: 3,
+            size: '18%',
+            minorInterval: 5
+        };
 
     progressBar: any =
-    {
-        style: { fill: '#407ec3', stroke: '#407ec3' },
-        size: '18%',
-        offset: '78%',
-        background: { fill: '#cfd0d4', stroke: '#cfd0d4' }
-    };
+        {
+            style: { fill: '#407ec3', stroke: '#407ec3' },
+            size: '18%',
+            offset: '78%',
+            background: { fill: '#cfd0d4', stroke: '#cfd0d4' }
+        };
 
     pointer: any =
-    {
-        type: 'line', visible: false, style: { fill: '#407ec3' }, size: '18%', offset: '78%', thickness: 0
-    };
+        {
+            type: 'line', visible: false, style: { fill: '#407ec3' }, size: '18%', offset: '78%', thickness: 0
+        };
 
     spinner: any =
-    {
-        style: { fill: '#66707e', stroke: '#66707e' },
-        innerRadius: '0%', // specifies the inner Radius of the dial
-        outerRadius: '58%', // specifies the outer Radius of the dial
-        marks: {
-            colorRemaining: '#a2da39',
-            colorProgress: '#a2da39',
-            type: 'circle',
-            offset: '55%',
-            thickness: 3,
-            size: '1%',
-            majorSize: '1%',
-            majorInterval: 10,
-            minorInterval: 10
-        }
-    };
+        {
+            style: { fill: '#66707e', stroke: '#66707e' },
+            innerRadius: '0%', // specifies the inner Radius of the dial
+            outerRadius: '58%', // specifies the outer Radius of the dial
+            marks: {
+                colorRemaining: '#a2da39',
+                colorProgress: '#a2da39',
+                type: 'circle',
+                offset: '55%',
+                thickness: 3,
+                size: '1%',
+                majorSize: '1%',
+                majorInterval: 10,
+                minorInterval: 10
+            }
+        };
 
     myKnobOneOnChange(event: any): void {
         if (event.target !== event.currentTarget) {

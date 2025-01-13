@@ -1,11 +1,14 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxTextAreaModule, jqxTextAreaComponent } from 'jqwidgets-ng/jqxtextarea';
 @Component({
     selector: 'app-root',
+    imports: [jqxTextAreaModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
-export class AppComponent {    
+export class AppComponent {
     generateSource(): string[] {
         let quotes: string[] = [];
         quotes.push('Life is a dream for the wise, a game for the fool, a comedy for the rich, a tragedy for the poor.');

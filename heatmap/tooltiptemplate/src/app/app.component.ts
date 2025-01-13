@@ -1,7 +1,10 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxHeatMapModule, jqxHeatMapComponent } from 'jqwidgets-ng/jqxheatmap';
 @Component({
     selector: 'app-root',
+    imports: [jqxHeatMapModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css']
 })

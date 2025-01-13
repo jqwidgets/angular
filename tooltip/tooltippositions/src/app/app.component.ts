@@ -2,8 +2,11 @@
 
 import { jqxTooltipComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtooltip.ts';
 
+import { jqxTooltipModule, jqxTooltipComponent } from 'jqwidgets-ng/jqxtooltip';
 @Component({
     selector: 'app-root',
+    imports: [jqxTooltipModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styles: [`        
         jqxTooltip {

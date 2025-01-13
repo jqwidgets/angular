@@ -1,7 +1,10 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 @Component({
     selector: 'app-root',
+    imports: [jqxChartModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -12,42 +15,42 @@ export class AppComponent {
 
     titlePadding: any = { left: 0, top: 0, right: 0, bottom: 10 };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
-    valueAxis: any =
-    {
-        logarithmicScale: true,
-        logarithmicScaleBase: 2,
-        unitInterval: 1,
-        title: { text: 'Value' },
-        labels: {
-            formatSettings: { decimalPlaces: 3 },
-            horizontalAlignment: 'right'
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
         }
-    };
+
+        return 850;
+    }
+
+    valueAxis: any =
+        {
+            logarithmicScale: true,
+            logarithmicScaleBase: 2,
+            unitInterval: 1,
+            title: { text: 'Value' },
+            labels: {
+                formatSettings: { decimalPlaces: 3 },
+                horizontalAlignment: 'right'
+            }
+        };
 
     seriesGroups: any[] =
-    [
-        {
-            type: 'stackedcolumn',
-            columnsGapPercent: 50,
-            series: [
-                { dataField: 'a', displayText: 'A' },
-                { dataField: 'b', displayText: 'B' }
-            ]
-        },
-        {
-            type: 'stackedline',
-            series: [
-                { dataField: 'a', displayText: 'A2' },
-                { dataField: 'b', displayText: 'B2' }
-            ]
-        }
-    ];
+        [
+            {
+                type: 'stackedcolumn',
+                columnsGapPercent: 50,
+                series: [
+                    { dataField: 'a', displayText: 'A' },
+                    { dataField: 'b', displayText: 'B' }
+                ]
+            },
+            {
+                type: 'stackedline',
+                series: [
+                    { dataField: 'a', displayText: 'A2' },
+                    { dataField: 'b', displayText: 'B2' }
+                ]
+            }
+        ];
 }

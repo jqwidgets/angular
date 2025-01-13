@@ -1,7 +1,10 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 @Component({
     selector: 'app-root',
+    imports: [jqxChartModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -21,39 +24,39 @@ export class AppComponent {
 
     titlePadding: any = { left: 0, top: 0, right: 0, bottom: 10 };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
     xAxis: any =
-    {
-        dataField: 'a',
-        logarithmicScale: true,
-        logarithmicScaleBase: 2
-    };
+        {
+            dataField: 'a',
+            logarithmicScale: true,
+            logarithmicScaleBase: 2
+        };
 
     valueAxis: any =
-    {
-        logarithmicScale: false,
-        logarithmicScaleBase: 2,
-        title: { text: 'Value' },
-        labels: {
-            horizontalAlignment: 'right'
-        }
-    };
+        {
+            logarithmicScale: false,
+            logarithmicScaleBase: 2,
+            title: { text: 'Value' },
+            labels: {
+                horizontalAlignment: 'right'
+            }
+        };
 
     seriesGroups: any[] =
-    [
-        {
-            type: 'line',
-            series: [
-                { dataField: 'a', displayText: 'A', symbolType: 'square', symbolSize: 6, dashStyle: '4,4', lineWidth: 1 },
-                { dataField: 'b', displayText: 'B', symbolType: 'circle', symbolSize: 6, lineWidth: 1 }
-            ]
-        }
-    ];
+        [
+            {
+                type: 'line',
+                series: [
+                    { dataField: 'a', displayText: 'A', symbolType: 'square', symbolSize: 6, dashStyle: '4,4', lineWidth: 1 },
+                    { dataField: 'b', displayText: 'B', symbolType: 'circle', symbolSize: 6, lineWidth: 1 }
+                ]
+            }
+        ];
 }

@@ -1,11 +1,14 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 @Component({
     selector: 'app-root',
+    imports: [jqxChartModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
-export class AppComponent{
+export class AppComponent {
     sampleData: any = [
         { Country: 'China', Population: 1347350000, Percent: 19.18 },
         { Country: 'India', Population: 1210193422, Percent: 17.22 },
@@ -19,41 +22,41 @@ export class AppComponent{
     titlePadding: any = { left: 90, top: 0, right: 0, bottom: 10 };
 
     xAxis: any =
-    {
-        dataField: 'Country',
-        gridLines: { visible: true },
-        flip: false
-    };
+        {
+            dataField: 'Country',
+            gridLines: { visible: true },
+            flip: false
+        };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
-    valueAxis: any =
-    {
-        flip: true,
-        labels: {
-            visible: true,
-            formatFunction: (value: string) => {
-                return parseInt(value) / 1000000;
-            }
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
         }
-    };
+
+        return 850;
+    }
+
+    valueAxis: any =
+        {
+            flip: true,
+            labels: {
+                visible: true,
+                formatFunction: (value: string) => {
+                    return parseInt(value) / 1000000;
+                }
+            }
+        };
 
     seriesGroups: any[] =
-    [
-        {
-            type: 'column',
-            orientation: 'horizontal',
-            columnsGapPercent: 50,
-            toolTipFormatSettings: { thousandsSeparator: ',' },
-            series: [
-                { dataField: 'Population', displayText: 'Population (millions)' }
-            ]
-        }
-    ];
+        [
+            {
+                type: 'column',
+                orientation: 'horizontal',
+                columnsGapPercent: 50,
+                toolTipFormatSettings: { thousandsSeparator: ',' },
+                series: [
+                    { dataField: 'Population', displayText: 'Population (millions)' }
+                ]
+            }
+        ];
 }

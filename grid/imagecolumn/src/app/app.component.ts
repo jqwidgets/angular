@@ -1,15 +1,18 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
 export class AppComponent {
     source: any =
-    {
-        localdata: this.generateData(), datatype: 'array'
-    };
+        {
+            localdata: this.generateData(), datatype: 'array'
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
@@ -17,20 +20,20 @@ export class AppComponent {
         return '<img style="margin-left: 5px;" height="60" width="50" src="https://www.jqwidgets.com/angular/images/' + value + '"/>';
     }
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     columns: any[] =
-    [
-        { text: 'Image', datafield: 'Image', width: 60, cellsrenderer: this.imagerenderer },
-        { text: 'Title', datafield: 'Title', width: 200 },
-        { text: 'Year', datafield: 'Year' }
-    ];
+        [
+            { text: 'Image', datafield: 'Image', width: 60, cellsrenderer: this.imagerenderer },
+            { text: 'Title', datafield: 'Title', width: 200 },
+            { text: 'Year', datafield: 'Year' }
+        ];
 
     generateData(): any[] {
         let movies = new Array();

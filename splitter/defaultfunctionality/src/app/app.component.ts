@@ -1,13 +1,16 @@
 ﻿import { Component, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 import { Http } from '@angular/http';
 import { map } from "rxjs/operators";
-import { jqxExpanderComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxexpander.ts';
-import { jqxTreeComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtree.ts';
-import { jqxPanelComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxpanel.ts';
-import { jqxListBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxlistbox.ts';
+import { jqxExpanderModule, jqxExpanderComponent } from 'jqwidgets-ng/jqxexpander';
 
+import { jqxPanelComponent, jqxPanelModule } from 'jqwidgets-ng/jqxpanel';
+import { jqxListBoxModule,  jqxListBoxComponent } from 'jqwidgets-ng/jqxlistbox';
+
+import { jqxSplitterModule, jqxSplitterComponent } from 'jqwidgets-ng/jqxsplitter';
 @Component({
     selector: 'app-root',
+    imports: [jqxSplitterModule, jqxListBoxModule, jqxPanelModule, jqxExpanderModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -17,13 +20,13 @@ export class AppComponent implements AfterViewInit {
     @ViewChild('listBoxReference') myListBox: jqxListBoxComponent;
     @ViewChild('panelReference') myPanel: jqxPanelComponent;
     @ViewChild('treeReference') myTree: jqxTreeComponent;
-   	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	} 
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
     constructor(public http: Http) { }
     ngAfterViewInit(): void {
         this.getFeed('sciencedaily');
@@ -56,15 +59,15 @@ export class AppComponent implements AfterViewInit {
         this.http.get(feed)
             .pipe(map(res => res.json()))
             .subscribe(
-            data => response = data,
-            err => console.log(err),
-            () => {
-                let channel = response.rss.channel;
-                this.config['currentFeedContent'] = channel.item;
-                this.displayFeedList(this.config['currentFeedContent']);
-                this.displayFeedHeader(channel.title);
-                this.selectFirst();
-            }
+                data => response = data,
+                err => console.log(err),
+                () => {
+                    let channel = response.rss.channel;
+                    this.config['currentFeedContent'] = channel.item;
+                    this.displayFeedList(this.config['currentFeedContent']);
+                    this.displayFeedHeader(channel.title);
+                    this.selectFirst();
+                }
             );
     };
 
@@ -122,17 +125,17 @@ export class AppComponent implements AfterViewInit {
     };
 
     config: any =
-    {
-        feeds: { 'CNN.com': 'cnn', 'Geek.com': 'geek', 'ScienceDaily': 'sciencedaily' },
-        format: 'txt',
-        dataDir: '../assets',
-        feedTree: (<HTMLElement>document.getElementsByTagName('angularTree')[0]),
-        feedItemHeader: (<HTMLElement>document.getElementById('feedItemHeader')),
-        feedUpperPanel: (<HTMLElement>document.getElementById('feedUpperPanel')),
-        feedHeader: (<HTMLElement>document.getElementById('feedHeader')),
-        feedContentArea: (<HTMLElement>document.getElementById('feedContentArea')),
-        selectedIndex: -1,
-        currentFeed: '',
-        currentFeedContent: {}
-    };
+        {
+            feeds: { 'CNN.com': 'cnn', 'Geek.com': 'geek', 'ScienceDaily': 'sciencedaily' },
+            format: 'txt',
+            dataDir: '../assets',
+            feedTree: (<HTMLElement>document.getElementsByTagName('angularTree')[0]),
+            feedItemHeader: (<HTMLElement>document.getElementById('feedItemHeader')),
+            feedUpperPanel: (<HTMLElement>document.getElementById('feedUpperPanel')),
+            feedHeader: (<HTMLElement>document.getElementById('feedHeader')),
+            feedContentArea: (<HTMLElement>document.getElementById('feedContentArea')),
+            selectedIndex: -1,
+            currentFeed: '',
+            currentFeedContent: {}
+        };
 }

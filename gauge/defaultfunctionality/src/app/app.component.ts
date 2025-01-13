@@ -1,23 +1,24 @@
 ﻿import { Component, ViewChild, ViewEncapsulation, ElementRef, AfterViewInit } from '@angular/core';
 
-import { jqxGaugeComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgauge.ts';
-import { jqxLinearGaugeComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxlineargauge.ts';
-
+import { jqxLinearGaugeModule, jqxLinearGaugeComponent } from 'jqwidgets-ng/jqxlineargauge';
+import { jqxGaugeModule, jqxGaugeComponent } from 'jqwidgets-ng/jqxgauge';
 @Component({
     selector: 'app-root',
+    imports: [jqxLinearGaugeModule, jqxGaugeModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
     encapsulation: ViewEncapsulation.None
 })
 
 export class AppComponent implements AfterViewInit {
-    @ViewChild('myGauge') myGauge: jqxGaugeComponent; 
+    @ViewChild('myGauge') myGauge: jqxGaugeComponent;
     @ViewChild('myLinearGauge') myLinearGauge: jqxLinearGaugeComponent;
     @ViewChild('gaugeValue') gaugeValue: ElementRef;
 
     ngAfterViewInit(): void {
-        this.myGauge.value(140);   
-        this.myLinearGauge.value(40);   
+        this.myGauge.value(140);
+        this.myLinearGauge.value(40);
     }
 
     ticksMinor: any = { interval: 5, size: '5%' };
@@ -25,12 +26,12 @@ export class AppComponent implements AfterViewInit {
     ticksMajor: any = { interval: 10, size: '9%' };
 
     ranges: any[] =
-    [
-        { startValue: 0, endValue: 55, style: { fill: '#4bb648', stroke: '#4bb648' }, endWidth: 5, startWidth: 1 },
-        { startValue: 55, endValue: 110, style: { fill: '#fbd109', stroke: '#fbd109' }, endWidth: 10, startWidth: 5 },
-        { startValue: 110, endValue: 165, style: { fill: '#ff8000', stroke: '#ff8000' }, endWidth: 13, startWidth: 10 },
-        { startValue: 165, endValue: 220, style: { fill: '#e02629', stroke: '#e02629' }, endWidth: 16, startWidth: 13 }
-    ];
+        [
+            { startValue: 0, endValue: 55, style: { fill: '#4bb648', stroke: '#4bb648' }, endWidth: 5, startWidth: 1 },
+            { startValue: 55, endValue: 110, style: { fill: '#fbd109', stroke: '#fbd109' }, endWidth: 10, startWidth: 5 },
+            { startValue: 110, endValue: 165, style: { fill: '#ff8000', stroke: '#ff8000' }, endWidth: 13, startWidth: 10 },
+            { startValue: 165, endValue: 220, style: { fill: '#e02629', stroke: '#e02629' }, endWidth: 16, startWidth: 13 }
+        ];
 
     ticksMinorLinear: any = { size: '5%', interval: 2.5, style: { 'stroke-width': 1, stroke: '#aaaaaa' } };
 

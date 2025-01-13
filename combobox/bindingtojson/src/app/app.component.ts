@@ -1,23 +1,28 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
 
+import { jqxComboBoxModule, jqxComboBoxComponent } from 'jqwidgets-ng/jqxcombobox';
 @Component({
     selector: 'app-root',
-    templateUrl: './app.component.html'
+    imports: [jqxComboBoxModule],
+    standalone: true,
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css'],
+    encapsulation: ViewEncapsulation.None
 })
 
 export class AppComponent {
-	@ViewChild('selectionlog') selectionlog: ElementRef;
-	
+    @ViewChild('selectionlog') selectionlog: ElementRef;
+
     source: any =
-    {
-        datatype: 'json',
-        datafields: [
-            { name: 'CompanyName' },
-            { name: 'ContactName' }
-        ],
-        id: 'id',
-        url: '../assets/customers.txt'
-    };
+        {
+            datatype: 'json',
+            datafields: [
+                { name: 'CompanyName' },
+                { name: 'ContactName' }
+            ],
+            id: 'id',
+            url: '../assets/customers.txt'
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 

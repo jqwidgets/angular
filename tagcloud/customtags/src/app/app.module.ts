@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { jqxInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxinput.ts';
-import { jqxTagCloudComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtagcloud.ts';
+import { jqxInputComponent } from 'jqwidgets-ng/jqxinput';
+
 
 @NgModule({
     declarations: [AppComponent, jqxInputComponent, jqxTagCloudComponent],

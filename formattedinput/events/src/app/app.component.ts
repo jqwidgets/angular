@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxPanelComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxpanel.ts';
+import { jqxPanelComponent, jqxPanelModule } from 'jqwidgets-ng/jqxpanel';
 
+import { jqxFormattedInputModule, jqxFormattedInputComponent } from 'jqwidgets-ng/jqxformattedinput';
 @Component({
     selector: 'app-root',
+    imports: [jqxFormattedInputModule, jqxPanelModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 

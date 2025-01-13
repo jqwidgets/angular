@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild, OnInit } from '@angular/core';
 
-import { jqxChartComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxchart.ts';
+import { jqxCheckBoxComponent, jqxCheckBoxModule } from 'jqwidgets-ng/jqxcheckbox';
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxChartModule, jqxCheckBoxModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -16,14 +19,14 @@ export class AppComponent implements OnInit {
         this.chartInstance = this.myChart
     }
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
     data: any[] = [
         {
             type: 'Organic Search',
@@ -62,38 +65,38 @@ export class AppComponent implements OnInit {
     titlePadding: any = { left: 0, top: 0, right: 0, bottom: 5 };
 
     xAxis: any =
-    {
-        dataField: 'type',
-        displayText: 'Traffic source',
-        valuesOnTicks: true,
-        labels: { autoRotate: false }
-    };
+        {
+            dataField: 'type',
+            displayText: 'Traffic source',
+            valuesOnTicks: true,
+            labels: { autoRotate: false }
+        };
 
     valueAxis: any =
-    {
-        unitInterval: 1000000,
-        labels: {
-            formatSettings: { decimalPlaces: 0 },
-            formatFunction: (value: any, itemIndex: any, serieIndex: any, groupIndex: any): string => {
-                return Math.round(value / 1000) + ' K';
+        {
+            unitInterval: 1000000,
+            labels: {
+                formatSettings: { decimalPlaces: 0 },
+                formatFunction: (value: any, itemIndex: any, serieIndex: any, groupIndex: any): string => {
+                    return Math.round(value / 1000) + ' K';
+                }
             }
-        }
-    };
+        };
 
     seriesGroups: any =
-    [
-        {
-            spider: true,
-            startAngle: 0,
-            endAngle: 360,
-            radius: 120,
-            type: 'spline',
-            series: [
-                { dataField: 'month1', displayText: 'January 2014', opacity: 0.7, radius: 2, lineWidth: 2, symbolType: 'circle' },
-                { dataField: 'month2', displayText: 'February 2014', opacity: 0.7, radius: 2, lineWidth: 2, symbolType: 'square' }
-            ]
-        }
-    ];
+        [
+            {
+                spider: true,
+                startAngle: 0,
+                endAngle: 360,
+                radius: 120,
+                type: 'spline',
+                series: [
+                    { dataField: 'month1', displayText: 'January 2014', opacity: 0.7, radius: 2, lineWidth: 2, symbolType: 'circle' },
+                    { dataField: 'month2', displayText: 'February 2014', opacity: 0.7, radius: 2, lineWidth: 2, symbolType: 'square' }
+                ]
+            }
+        ];
 
     colorsSchemesList: string[] = ['scheme01', 'scheme02', 'scheme03', 'scheme04', 'scheme05', 'scheme06', 'scheme07', 'scheme08'];
 

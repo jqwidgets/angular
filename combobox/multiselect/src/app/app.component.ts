@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 
-import { jqxComboBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxcombobox.ts';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons'; 
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule, jqxButtonModule],
+    standalone: true,
     templateUrl: './app.component.html'
 
 })
@@ -23,7 +26,7 @@ export class AppComponent implements AfterViewInit {
         let items = this.myComboBox.getSelectedItems();
         let selectedItems = 'Selected Items: ';
         items.map(item => selectedItems += `${item.label}, `);
-    
+
         this.log.nativeElement.innerHTML = selectedItems;
     }
 

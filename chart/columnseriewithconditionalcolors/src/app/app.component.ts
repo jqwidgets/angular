@@ -1,20 +1,23 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule],
+    standalone: true,
     templateUrl: './app.component.html',
 })
 
 export class AppComponent {
     source: any =
-    {
-        datatype: 'csv',
-        datafields: [
-            { name: 'Quarter' },
-            { name: 'Change' }
-        ],
-        url: '../assets/us_gdp_2008-2013.txt'
-    };
+        {
+            datatype: 'csv',
+            datafields: [
+                { name: 'Quarter' },
+                { name: 'Change' }
+            ],
+            url: '../assets/us_gdp_2008-2013.txt'
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source, { async: false, autoBind: true, loadError: (xhr: any, status: any, error: any) => { alert('Error loading "' + this.source.url + '" : ' + error); } });
 
@@ -22,57 +25,57 @@ export class AppComponent {
 
     titlePadding: any = { left: 50, top: 0, right: 0, bottom: 10 };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
     xAxis: any =
-    {
-        dataField: 'Quarter',
-        unitInterval: 1,
-        textRotationAngle: -75,
-        formatFunction: (value: any) => {
-            return value;
-        },
-        valuesOnTicks: false
-    };
+        {
+            dataField: 'Quarter',
+            unitInterval: 1,
+            textRotationAngle: -75,
+            formatFunction: (value: any) => {
+                return value;
+            },
+            valuesOnTicks: false
+        };
 
     seriesGroups: any[] =
-    [
-        {
-            type: 'column',
-            valueAxis:
+        [
             {
-                description: 'Percentage Change',
-                formatFunction: (value: any) => {
-                    return value + '%';
-                },
-                maxValue: 10,
-                minValue: -10,
-                unitInterval: 2
-            },
-            series:
-            [
+                type: 'column',
+                valueAxis:
                 {
-                    dataField: 'Change',
-                    displayText: 'Change',
-                    toolTipFormatFunction: (value: any, itemIndex: any, serie: any, group: any, categoryValue: any, categoryAxis: any) => {
-                        return '<DIV style="text-align:left";><b>Year-Quarter: </b>' + categoryValue
-                            + '<br /><b>GDP Change:</b> ' + value + ' %</DIV>'
+                    description: 'Percentage Change',
+                    formatFunction: (value: any) => {
+                        return value + '%';
                     },
-                    // Modify this function to return the desired colors.
-                    // jqxChart will call the function for each data point.
-                    // Sequential points that have the same color will be
-                    // grouped automatically in a line segment
-                    colorFunction: (value: any, itemIndex: any, serie: any, group): any => {
-                        return (value < 0) ? '#CC1133' : '#55CC55';
-                    }
-                }
-            ]
-        }
-    ];
+                    maxValue: 10,
+                    minValue: -10,
+                    unitInterval: 2
+                },
+                series:
+                    [
+                        {
+                            dataField: 'Change',
+                            displayText: 'Change',
+                            toolTipFormatFunction: (value: any, itemIndex: any, serie: any, group: any, categoryValue: any, categoryAxis: any) => {
+                                return '<DIV style="text-align:left";><b>Year-Quarter: </b>' + categoryValue
+                                    + '<br /><b>GDP Change:</b> ' + value + ' %</DIV>'
+                            },
+                            // Modify this function to return the desired colors.
+                            // jqxChart will call the function for each data point.
+                            // Sequential points that have the same color will be
+                            // grouped automatically in a line segment
+                            colorFunction: (value: any, itemIndex: any, serie: any, group): any => {
+                                return (value < 0) ? '#CC1133' : '#55CC55';
+                            }
+                        }
+                    ]
+            }
+        ];
 }

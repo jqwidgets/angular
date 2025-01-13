@@ -1,7 +1,10 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 @Component({
     selector: 'app-root',
+    imports: [jqxChartModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -20,60 +23,60 @@ export class AppComponent {
 
     titlePadding: any = { left: 90, top: 0, right: 0, bottom: 10 };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     xAxis: any =
-    {
-        dataField: 'Day',
-        unitInterval: 1,
-        tickMarks: {
-            visible: true,
+        {
+            dataField: 'Day',
             unitInterval: 1,
-            color: '#888888'
-        },
-        gridLines: {
-            visible: false,
-            unitInterval: 1,
-            color: '#888888'
-        }
-    };
+            tickMarks: {
+                visible: true,
+                unitInterval: 1,
+                color: '#888888'
+            },
+            gridLines: {
+                visible: false,
+                unitInterval: 1,
+                color: '#888888'
+            }
+        };
 
     valueAxis: any =
-    {
-        unitInterval: 10,
-        minValue: 0,
-        maxValue: 120,
-        visible: true,
-        title: { text: 'Time in minutes<br>' },
-        tickMarks: { color: '#888888' },
-        gridLines: { color: '#888888' }
-    };
+        {
+            unitInterval: 10,
+            minValue: 0,
+            maxValue: 120,
+            visible: true,
+            title: { text: 'Time in minutes<br>' },
+            tickMarks: { color: '#888888' },
+            gridLines: { color: '#888888' }
+        };
 
     seriesGroups: any[] =
-    [
-        {
-            type: 'stackedcolumn',
-            columnsGapPercent: 50,
-            seriesGapPercent: 5,
-            series: [
-                { dataField: 'Running', displayText: 'Running' },
-                { dataField: 'Swimming', displayText: 'Swimming' }
-            ]
-        },
-        {
-            type: 'stackedcolumn',
-            columnsGapPercent: 50,
-            seriesGapPercent: 5,
-            series: [
-                { dataField: 'Riding', displayText: 'Riding' },
-                { dataField: 'Cycling', displayText: 'Cycling' }
-            ]
-        }
-    ];
+        [
+            {
+                type: 'stackedcolumn',
+                columnsGapPercent: 50,
+                seriesGapPercent: 5,
+                series: [
+                    { dataField: 'Running', displayText: 'Running' },
+                    { dataField: 'Swimming', displayText: 'Swimming' }
+                ]
+            },
+            {
+                type: 'stackedcolumn',
+                columnsGapPercent: 50,
+                seriesGapPercent: 5,
+                series: [
+                    { dataField: 'Riding', displayText: 'Riding' },
+                    { dataField: 'Cycling', displayText: 'Cycling' }
+                ]
+            }
+        ];
 }

@@ -1,10 +1,13 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxChartComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxchart.ts';
+
 import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid.ts'
 
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule],
+    standalone: true,
     templateUrl: './app.component.html',
 })
 
@@ -22,14 +25,14 @@ export class AppComponent {
         { Day: 'Sunday', Keith: 60, Erica: 45, George: 90 }
     ];
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
     dataAdapter: any = new jqx.dataAdapter({
         datafields: [
             { name: "Day", type: "string" },
@@ -46,40 +49,40 @@ export class AppComponent {
     titlePadding: any = { left: 90, top: 0, right: 0, bottom: 10 };
 
     xAxis: any =
-    {
-        dataField: 'Day',
-        gridLines: { visible: true }
-    };
+        {
+            dataField: 'Day',
+            gridLines: { visible: true }
+        };
 
     seriesGroups: any[] =
-    [
-        {
-            type: 'column',
-            columnsGapPercent: 50,
-            seriesGapPercent: 0,
-            valueAxis:
+        [
             {
-                visible: true,
-                unitInterval: 10,
-                minValue: 0,
-                maxValue: 100,
-                title: { text: 'Time in minutes' }
-            },
-            series: [
-                { dataField: 'Keith', displayText: 'Keith' },
-                { dataField: 'Erica', displayText: 'Erica' },
-                { dataField: 'George', displayText: 'George' }
-            ]
-        }
-    ];
+                type: 'column',
+                columnsGapPercent: 50,
+                seriesGapPercent: 0,
+                valueAxis:
+                {
+                    visible: true,
+                    unitInterval: 10,
+                    minValue: 0,
+                    maxValue: 100,
+                    title: { text: 'Time in minutes' }
+                },
+                series: [
+                    { dataField: 'Keith', displayText: 'Keith' },
+                    { dataField: 'Erica', displayText: 'Erica' },
+                    { dataField: 'George', displayText: 'George' }
+                ]
+            }
+        ];
 
     columns: any[] =
-    [
-        { text: "Day", width: '40%', datafield: "Day", filteritems: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], filtertype: "checkedlist" },
-        { text: "Keith", width: '20%', datafield: "Keith" },
-        { text: "Erica", width: '20%', datafield: "Erica" },
-        { text: "George", width: '20%', datafield: "George" }
-    ];
+        [
+            { text: "Day", width: '40%', datafield: "Day", filteritems: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], filtertype: "checkedlist" },
+            { text: "Keith", width: '20%', datafield: "Keith" },
+            { text: "Erica", width: '20%', datafield: "Erica" },
+            { text: "George", width: '20%', datafield: "George" }
+        ];
 
     gridOnFilter(): void {
         let rows = this.myGrid.getrows();

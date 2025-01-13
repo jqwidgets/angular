@@ -1,7 +1,10 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule],
+    standalone: true,
     templateUrl: './app.component.html',
 })
 
@@ -22,7 +25,7 @@ export class AppComponent {
     ];
 
     toolTipCustomFormatFn = (value: any, itemIndex: any, serie: any, group: any, categoryValue: any, categoryAxis: any): string => {
-        let dataItem =this.data[itemIndex];
+        let dataItem = this.data[itemIndex];
         return '<DIV style="text-align:left"><b>Month: ' +
             categoryValue + '</b><br />Min: ' +
             dataItem.min + '°<br />Max: ' +
@@ -30,55 +33,55 @@ export class AppComponent {
             dataItem.avg + '°</DIV>';
     };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
     padding = { left: 5, top: 5, right: 5, bottom: 5 };
 
     titlePadding = { left: 90, top: 0, right: 0, bottom: 10 };
 
     xAxis =
-    {
-        dataField: 'month',
-        unitInterval: 1,
-        gridLines: {
-            step: 3
-        }
-    };
+        {
+            dataField: 'month',
+            unitInterval: 1,
+            gridLines: {
+                step: 3
+            }
+        };
 
     valueAxis =
-    {
-        minValue: -5,
-        maxValue: 30,
-        unitInterval: 5,
-        title: { text: 'Temperature [C]<br>' },
-        labels: {
-            horizontalAlignment: 'right',
-            formatSettings: { sufix: '°' }
-        }
-    };
+        {
+            minValue: -5,
+            maxValue: 30,
+            unitInterval: 5,
+            title: { text: 'Temperature [C]<br>' },
+            labels: {
+                horizontalAlignment: 'right',
+                formatSettings: { sufix: '°' }
+            }
+        };
 
     seriesGroups =
-    [
-        {
-            type: 'rangecolumn',
-            columnsGapPercent: 50,
-            toolTipFormatFunction: this.toolTipCustomFormatFn,
-            series: [
-                { dataFieldTo: 'max', displayText: 'Temperature Range', dataFieldFrom: 'min', opacity: 1 }
-            ]
-        },
-        {
-            type: 'spline',
-            toolTipFormatFunction: this.toolTipCustomFormatFn,
-            series: [
-                { dataField: 'avg', displayText: 'Average Temperature', opacity: 1, lineWidth: 2 }
-            ]
-        }
-    ];
+        [
+            {
+                type: 'rangecolumn',
+                columnsGapPercent: 50,
+                toolTipFormatFunction: this.toolTipCustomFormatFn,
+                series: [
+                    { dataFieldTo: 'max', displayText: 'Temperature Range', dataFieldFrom: 'min', opacity: 1 }
+                ]
+            },
+            {
+                type: 'spline',
+                toolTipFormatFunction: this.toolTipCustomFormatFn,
+                series: [
+                    { dataField: 'avg', displayText: 'Average Temperature', opacity: 1, lineWidth: 2 }
+                ]
+            }
+        ];
 }

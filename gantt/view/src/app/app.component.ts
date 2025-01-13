@@ -1,16 +1,19 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
-import { jqxGanttComponent } from 'jqwidgets-ng/jqxgantt';
+
 import { jqxDropDownListComponent } from 'jqwidgets-ng/jqxdropdownlist';
 
+import { jqxGanttModule, jqxGanttComponent } from 'jqwidgets-ng/jqxgantt';
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html'
+	selector: 'app-root',
+	imports: [jqxGanttModule],
+	standalone: true,
+	templateUrl: './app.component.html'
 })
 
 export class AppComponent {
 	@ViewChild('gantt', { static: false }) gantt: jqxGanttComponent;
 	@ViewChild('viewSelector', { static: false }) viewSelector: jqxDropDownListComponent;
-	
+
 	view: string = 'year';
 	views: any[] = [
 		{ label: 'Year', value: 'year' },
@@ -18,13 +21,13 @@ export class AppComponent {
 		{ label: 'Week', value: 'week' },
 		{ label: 'Day', value: 'day' }
 	]
-	
+
 	setView(event: any) {
-		this.gantt.setOptions({view: this.viewSelector.val()});
+		this.gantt.setOptions({ view: this.viewSelector.val() });
 		this.view = this.viewSelector.val();
 	}
-	
-	source: any[] =  [
+
+	source: any[] = [
 		{
 			//Note: dateStart/dateEnd and min/max of syncronized projects are automatically calculated based on the tasks
 			label: 'Project 1',

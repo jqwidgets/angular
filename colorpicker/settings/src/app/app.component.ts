@@ -1,15 +1,20 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
 
-import { jqxColorPickerComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxcolorpicker.ts';
+import { jqxDropDownButtonModule, jqxDropDownButtonComponent } from 'jqwidgets-ng/jqxdropdownbutton';
+import { jqxColorPickerModule } from 'jqwidgets-ng/jqxcolorpicker';
 
 @Component({
     selector: 'app-root',
-    templateUrl: './app.component.html'
+    imports: [jqxDropDownButtonModule, jqxColorPickerModule],
+    standalone: true,
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css'],
+    encapsulation: ViewEncapsulation.None
 })
 
 export class AppComponent {
     @ViewChild('myColorPicker') myColorPicker: jqxColorPickerComponent;
-	@ViewChild('colorLog') colorLog: ElementRef;
+    @ViewChild('colorLog') colorLog: ElementRef;
 
     colorChanged(event: any): void {
         this.colorLog.nativeElement.innerHTML = `<div>Color: #${event.args.color.hex}</div>`;

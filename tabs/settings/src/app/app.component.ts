@@ -1,15 +1,19 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxTabsComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtabs.ts';
+
+import { jqxTabsModule, jqxTabsComponent } from 'jqwidgets-ng/jqxtabs';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxTabsModule, jqxButtonModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
 export class AppComponent {
     @ViewChild('jqxTabs') jqxTabs: jqxTabsComponent;
-    
+
     clickAdd(): void {
         this.jqxTabs.addLast('Sample title', 'Sample content');
         this.jqxTabs.ensureVisible(-1);
@@ -23,7 +27,7 @@ export class AppComponent {
             this.jqxTabs.removeAt(selectedItem);
         }
     };
-    
+
     clickDisable(): void {
         let selectedItem = this.jqxTabs.selectedItem();
         this.jqxTabs.disableAt(selectedItem);

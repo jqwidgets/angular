@@ -1,10 +1,12 @@
 ﻿import { Component, ViewChild, AfterViewInit } from '@angular/core';
 
-import { jqxDockingComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdocking.ts';
-import { jqxPanelComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxpanel.ts';
+import { jqxPanelComponent, jqxPanelModule } from 'jqwidgets-ng/jqxpanel';
 
+import { jqxDockingModule, jqxDockingComponent } from 'jqwidgets-ng/jqxdocking';
 @Component({
     selector: 'app-root',
+    imports: [jqxDockingModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -12,13 +14,13 @@ export class AppComponent implements AfterViewInit {
     @ViewChild('myDocking') myDocking; jqxDockingComponent;
     @ViewChild('myPanel') myPanel; jqxPanelComponent;
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 550) {
-			return '90%';
-		}
-		
-		return 550;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 550) {
+            return '90%';
+        }
+
+        return 550;
+    }
 
     ngAfterViewInit(): void {
         this.myDocking.hideAllCloseButtons();

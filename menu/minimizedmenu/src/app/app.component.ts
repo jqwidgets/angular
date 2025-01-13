@@ -1,10 +1,11 @@
 ﻿import { Component, ViewChild, AfterViewInit } from '@angular/core';
 
-import { jqxMenuComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxmenu.ts';
-import { jqxCheckBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxcheckbox.ts';
-
+import { jqxCheckBoxComponent, jqxCheckBoxModule } from 'jqwidgets-ng/jqxcheckbox';
+import { jqxMenuModule, jqxMenuComponent } from 'jqwidgets-ng/jqxmenu';
 @Component({
     selector: 'app-root',
+    imports: [jqxMenuModule, jqxCheckBoxModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 

@@ -1,10 +1,11 @@
 ﻿
 import { Component } from '@angular/core';
 
-import { jqxBulletChartComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxbulletchart.ts';
-
+import { jqxBulletChartModule, jqxBulletChartComponent } from 'jqwidgets-ng/jqxbulletchart';
 @Component({
     selector: 'app-root',
+    imports: [jqxBulletChartModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -37,12 +38,12 @@ export class AppComponent {
             (target * 1.8 + 32) + '°F</strong> (' + target + '°C)</div>'
     }
     ranges: any[] =
-    [
-        { startValue: 0, endValue: 10, color: '#0099FF', opacity: 1 },
-        { startValue: 10, endValue: 15, color: '#006600', opacity: 1 },
-        { startValue: 15, endValue: 20, color: '#FF6600', opacity: 1 },
-        { startValue: 20, endValue: 25, color: '#FF4526', opacity: 1 }
-    ];
+        [
+            { startValue: 0, endValue: 10, color: '#0099FF', opacity: 1 },
+            { startValue: 10, endValue: 15, color: '#006600', opacity: 1 },
+            { startValue: 15, endValue: 20, color: '#FF6600', opacity: 1 },
+            { startValue: 20, endValue: 25, color: '#FF4526', opacity: 1 }
+        ];
 
     pointer: any = { value: 11, size: '25%', color: '#181818' };
 

@@ -1,4 +1,4 @@
-﻿<jqxTreeGrid [theme]="'material'" style="float: left;"
+﻿<jqxTreeGrid [theme]="'fluent'" style="float: left;"
              [width]="550"
              [source]="dataAdapter"
              [columns]="columns"
@@ -16,7 +16,7 @@
     <tr>
       <td align="right">Column:</td>
       <td align="left">
-        <jqxDropDownList [theme]="'material'" #columnName
+        <jqxDropDownList [theme]="'fluent'" #columnName
                          [width]="100" [source]="['First Name', 'Last Name' , 'City' , 'Country']"
                          [selectedIndex]="0" [autoDropDownHeight]="true">
         </jqxDropDownList>
@@ -25,7 +25,7 @@
     <tr>
       <td align="right">Sort Order:</td>
       <td align="left">
-        <jqxDropDownList [theme]="'material'" #sortOrder
+        <jqxDropDownList [theme]="'fluent'" #sortOrder
                          [width]="100" [source]="['Ascending', 'Descending']"
                          [selectedIndex]="0" [autoDropDownHeight]="true">
         </jqxDropDownList>
@@ -34,8 +34,8 @@
     <tr>
       <td align="right"></td>
       <td align="left">
-        <jqxButton [theme]="'material'" #sort style="float: left;" (onClick)="clickSort()">Sort</jqxButton>
-        <jqxButton [theme]="'material'" #clear style="float: left; margin-left: 5px;" (onClick)="clickClear()">Clear</jqxButton>
+        <jqxButton [theme]="'fluent'" #sort style="float: left;" (onClick)="clickSort()">Sort</jqxButton>
+        <jqxButton [theme]="'fluent'" #clear style="float: left; margin-left: 5px;" (onClick)="clickClear()">Clear</jqxButton>
       </td>
     </tr>
   </table>

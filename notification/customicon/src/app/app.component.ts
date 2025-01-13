@@ -1,11 +1,15 @@
 ﻿import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 
-import { jqxNotificationComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxnotification.ts';
-import { jqxInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxinput.ts';
-import { jqxTextAreaComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtextarea.ts';
+import { jqxInputComponent, jqxInputModule } from 'jqwidgets-ng/jqxinput';
+import { jqxTextAreaComponent, jqxTextAreaModule } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtextarea.ts';
+
+import { jqxNotificationModule, jqxNotificationComponent } from 'jqwidgets-ng/jqxnotification';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxNotificationModule, jqxInputModule, jqxTextAreaModule, jqxButtonModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
     encapsulation: ViewEncapsulation.None

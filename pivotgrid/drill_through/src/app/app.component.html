@@ -8,7 +8,7 @@
         (onPivotcelldblclick)="onPivotCellDblClick($event)"
 	 >
 </jqxPivotGrid>
-<jqxWindow [theme]="'material'"
+<jqxWindow [theme]="'fluent'"
         #drillThroughWindow
         [autoOpen]="false"
         [width]="370" 
@@ -22,7 +22,7 @@
 		Drillthrough records
 	</div>
 	<div style="overflow: hidden;" #windowContent>
-		<jqxDataTable [theme]="'material'"
+		<jqxDataTable [theme]="'fluent'"
             #tableSrcRecords
             [width]="'100%'"
             [height]="'100%'"

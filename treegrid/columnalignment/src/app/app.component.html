@@ -1,4 +1,4 @@
-﻿<jqxTreeGrid [theme]="'material'" [width]="getWidth()"
+﻿<jqxTreeGrid [theme]="'fluent'" [width]="getWidth()"
              [source]="dataAdapter"
              [sortable]="true"
              [columns]="columns"
@@ -8,7 +8,7 @@
 <div style="font-size: 13px; font-family: Verdana; width: 600px; margin-top: 10px;">
   <div style="float: left; width: 300px">
     <h4>Column Alignment</h4>
-    <jqxDropDownList [theme]="'material'" #columnAlignment
+    <jqxDropDownList [theme]="'fluent'" #columnAlignment
                      (onChange)="columnAlignmentChange($event)"
                      [height]="25"
                      [selectedIndex]="0"
@@ -18,7 +18,7 @@
   </div>
   <div style="float: left; width: 300px">
     <h4>Cells Alignment</h4>
-    <jqxDropDownList [theme]="'material'" #cellsAlignment
+    <jqxDropDownList [theme]="'fluent'" #cellsAlignment
                      (onChange)="cellsAlignmentChange($event)"
                      [height]="25"
                      [selectedIndex]="0"

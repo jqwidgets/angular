@@ -3,9 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { jqxInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxinput.ts';
-import { jqxNumberInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxnumberinput.ts';
-import { jqxPanelComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxpanel.ts';
+import { jqxInputComponent } from 'jqwidgets-ng/jqxinput';
+import { jqxNumberInputComponent } from 'jqwidgets-ng/jqxnumberinput';
+import { jqxPanelComponent, jqxPanelModule } from 'jqwidgets-ng/jqxpanel';
 
 @NgModule({
     declarations: [AppComponent, jqxInputComponent, jqxNumberInputComponent, jqxPanelComponent],

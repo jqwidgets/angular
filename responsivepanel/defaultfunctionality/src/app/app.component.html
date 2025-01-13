@@ -3,12 +3,12 @@
         <div #toggleResponsivePanel id="toggleResponsivePanel"></div>
     </div>
 
-    <jqxResponsivePanel [theme]="'material'" #myResponsivePanel
+    <jqxResponsivePanel [theme]="'fluent'" #myResponsivePanel
         (onOpen)="responsivePanelEventsHandler($event)" (onClose)="responsivePanelEventsHandler($event)"
         (onExpand)="responsivePanelEventsHandler($event)" (onCollapse)="responsivePanelEventsHandler($event)"
         [width]="'30%'" [height]="'100%'" [collapseBreakpoint]="700" [autoClose]="false"
         [toggleButton]="'#toggleResponsivePanel'" [animationType]="'none'">
-        <jqxTree [theme]="'material'" [width]="'100%'" [height]="'100%'">
+        <jqxTree [theme]="'fluent'" [width]="'100%'" [height]="'100%'">
             <ul>
               <li><a href="#">Home</a></li>
               <li>
@@ -79,7 +79,7 @@
         </jqxTree>
     </jqxResponsivePanel>
 
-    <jqxPanel [theme]="'material'" #myPanel [width]="'65%'" [height]="'100%'">
+    <jqxPanel [theme]="'fluent'" #myPanel [width]="'65%'" [height]="'100%'">
         <h4 style="text-align: center;">About Us</h4>
         <p style="line-height: 1.5;">
             <span style="float: left; font-size: 3.26em; line-height: 0.5; margin-top: 0.2em;">S</span><strong>
@@ -111,6 +111,6 @@
 
 <div style="padding-top: 20px; clear: both"></div>
 
-<jqxButton [theme]="'material'" (onClick)="resizeSmallBtnOnClick()" [width]="180" [height]="25">Resize Panel to 500px</jqxButton>
+<jqxButton [theme]="'fluent'" (onClick)="resizeSmallBtnOnClick()" [width]="180" [height]="25">Resize Panel to 500px</jqxButton>
 
-<jqxButton [theme]="'material'" (onClick)="resizeBigBtnOnClick()" [width]="180" [height]="25">Resize Panel to 800px</jqxButton>
+<jqxButton [theme]="'fluent'" (onClick)="resizeBigBtnOnClick()" [width]="180" [height]="25">Resize Panel to 800px</jqxButton>

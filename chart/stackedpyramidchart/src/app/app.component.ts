@@ -1,7 +1,10 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 @Component({
     selector: 'app-root',
+    imports: [jqxChartModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -19,47 +22,47 @@ export class AppComponent {
     titlePadding: any = { left: 90, top: 0, right: 0, bottom: 10 };
 
     xAxis: any =
-    {
-        flip: true,
-        dataField: 'Index',
-        tickMarks: {
-            visible: true,
-            interval: 1
-        },
-        gridLines: {
-            visible: true,
-            interval: 1
-        }
-    };
+        {
+            flip: true,
+            dataField: 'Index',
+            tickMarks: {
+                visible: true,
+                interval: 1
+            },
+            gridLines: {
+                visible: true,
+                interval: 1
+            }
+        };
 
     valueAxis: any =
-    {
-        flip: true,
-        labels: { horizontalAlignment: 'right' }
-    };
-
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
-    seriesGroups: any[] =
-    [
         {
-            orientation: 'horizontal',
-            type: 'stackedcolumn',
-            columnsGapPercent: 50,
-            seriesGapPercent: 0,
-            columnsTopWidthPercent: 0,
-            columnsBottomWidthPercent: 100,
-            series: [
-                { dataField: 'SerieA', displayText: 'Serie A' },
-                { dataField: 'SerieB', displayText: 'Serie B' },
-                { dataField: 'SerieC', displayText: 'Serie C' }
-            ]
+            flip: true,
+            labels: { horizontalAlignment: 'right' }
+        };
+
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
         }
-    ];
+
+        return 850;
+    }
+
+    seriesGroups: any[] =
+        [
+            {
+                orientation: 'horizontal',
+                type: 'stackedcolumn',
+                columnsGapPercent: 50,
+                seriesGapPercent: 0,
+                columnsTopWidthPercent: 0,
+                columnsBottomWidthPercent: 100,
+                series: [
+                    { dataField: 'SerieA', displayText: 'Serie A' },
+                    { dataField: 'SerieB', displayText: 'Serie B' },
+                    { dataField: 'SerieC', displayText: 'Serie C' }
+                ]
+            }
+        ];
 }

@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxNumberInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxnumberinput.ts';
+import { jqxCheckBoxComponent, jqxCheckBoxModule } from 'jqwidgets-ng/jqxcheckbox';
 
+import { jqxNumberInputModule, jqxNumberInputComponent } from 'jqwidgets-ng/jqxnumberinput';
 @Component({
     selector: 'app-root',
+    imports: [jqxNumberInputModule, jqxCheckBoxModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -46,5 +49,5 @@ export class AppComponent {
     digitsSelect(event) {
         let index = event.args.index;
         this.numericInput.digits(this.digitsNumbers[index]);
-    };    
+    };
 }

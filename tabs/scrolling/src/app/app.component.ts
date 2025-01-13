@@ -1,9 +1,11 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxTabsComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtabs.ts';
 
+import { jqxTabsModule, jqxTabsComponent } from 'jqwidgets-ng/jqxtabs';
 @Component({
     selector: 'app-root',
+    imports: [jqxTabsModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 

@@ -1,7 +1,10 @@
 ﻿import { Component, AfterContentInit } from '@angular/core';
 
+import { jqxTabsModule, jqxTabsComponent } from 'jqwidgets-ng/jqxtabs';
 @Component({
     selector: 'app-root',
+    imports: [jqxTabsModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 

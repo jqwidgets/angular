@@ -1,9 +1,11 @@
 ﻿import { Component, ViewChild, AfterViewInit } from '@angular/core';
-
-import { jqxPanelComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxpanel.ts';
+import { jqxPanelComponent, jqxPanelModule } from 'jqwidgets-ng/jqxpanel';
+import { jqxSplitterModule, jqxSplitterComponent } from 'jqwidgets-ng/jqxsplitter';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxSplitterModule, jqxPanelModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -13,14 +15,14 @@ export class AppComponent implements AfterViewInit {
     ngAfterViewInit() {
         this.events.elementRef.nativeElement.firstChild.style.border = 'none';
     }
-	
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
 
     panels: any[] = [{ size: 200 }];

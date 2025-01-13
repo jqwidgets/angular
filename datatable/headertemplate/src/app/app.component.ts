@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild, AfterViewInit } from '@angular/core';
 
-import { jqxDataTableComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdatatable.ts';
 
+
+import { jqxDataTableModule, jqxDataTableComponent } from 'jqwidgets-ng/jqxdatatable';
 @Component({
     selector: 'app-root',
+    imports: [jqxDataTableModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -15,13 +18,13 @@ export class AppComponent implements AfterViewInit {
     updatingSelection: boolean = false;
     updatingSelectionFromDataTable: boolean = false;
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     ngAfterViewInit(): void {
         this.myCheckBox = jqwidgets.createInstance('#myCheckBox', 'jqxCheckBox', { theme: 'material' });
@@ -45,62 +48,62 @@ export class AppComponent implements AfterViewInit {
     }
 
     source: any =
-    {
-        localData: this.generateData(),
-        dataType: 'array'
-    };
+        {
+            localData: this.generateData(),
+            dataType: 'array'
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
     columns: any[] =
-    [
-        {
-            text: 'Photo', align: 'center', dataField: 'firstname', width: 80,
-            renderer: (text, align, height) => {
-                return '<div id="myCheckBox" style="z-index: 999; margin: 5px; margin-left: 30px; margin-top: 8px; margin-bottom: 3px;"></div>';
+        [
+            {
+                text: 'Photo', align: 'center', dataField: 'firstname', width: 80,
+                renderer: (text, align, height) => {
+                    return '<div id="myCheckBox" style="z-index: 999; margin: 5px; margin-left: 30px; margin-top: 8px; margin-bottom: 3px;"></div>';
+                },
+                cellsRenderer: (row: number, column: string, value: any, rowData: any): string => {
+                    let image = '<div style="margin: 5px; margin-bottom: 3px;">';
+                    let imgurl = 'https://www.jqwidgets.com/angular/images/' + rowData.firstname.toLowerCase() + '.png';
+                    let img = '<img width="60" height="60" style="display: block" src="' + imgurl + '"/>';
+                    image += img;
+                    image += '</div>';
+                    return image;
+                }
             },
-            cellsRenderer: (row: number, column: string, value: any, rowData: any): string => {
-                let image = '<div style="margin: 5px; margin-bottom: 3px;">';
-                let imgurl = 'https://www.jqwidgets.com/angular/images/' + rowData.firstname.toLowerCase() + '.png';
-                let img = '<img width="60" height="60" style="display: block" src="' + imgurl + '"/>';
-                image += img;
-                image += '</div>';
-                return image;
-            }
-        },
-        {
-            text: 'Details', align: 'center', dataField: 'lastname',
-            cellsRenderer: (row: number, column: string, value: any, rowData: any): string => {
-                let container = '<div style="width: 100%; height: 100%;">'
-                let leftcolumn = '<div style="float: left; width: 50%;">';
-                let rightcolumn = '<div style="float: left; width: 50%;">';
+            {
+                text: 'Details', align: 'center', dataField: 'lastname',
+                cellsRenderer: (row: number, column: string, value: any, rowData: any): string => {
+                    let container = '<div style="width: 100%; height: 100%;">'
+                    let leftcolumn = '<div style="float: left; width: 50%;">';
+                    let rightcolumn = '<div style="float: left; width: 50%;">';
 
-                let firstname = '<div style="margin: 10px;"><b>First Name:</b> ' + rowData.firstname + '</div>';
-                let lastname = '<div style="margin: 10px;"><b>Last Name:</b> ' + rowData.lastname + '</div>';
-                let title = '<div style="margin: 10px;"><b>Title:</b> ' + rowData.title + '</div>';
-                let address = '<div style="margin: 10px;"><b>Address:</b> ' + rowData.address + '</div>';
+                    let firstname = '<div style="margin: 10px;"><b>First Name:</b> ' + rowData.firstname + '</div>';
+                    let lastname = '<div style="margin: 10px;"><b>Last Name:</b> ' + rowData.lastname + '</div>';
+                    let title = '<div style="margin: 10px;"><b>Title:</b> ' + rowData.title + '</div>';
+                    let address = '<div style="margin: 10px;"><b>Address:</b> ' + rowData.address + '</div>';
 
-                leftcolumn += firstname;
-                leftcolumn += lastname;
-                leftcolumn += title;
-                leftcolumn += address;
-                leftcolumn += '</div>';
-                let postalcode = '<div style="margin: 10px;"><b>Postal Code:</b> ' + rowData.postalcode + '</div>';
-                let city = '<div style="margin: 10px;"><b>City:</b> ' + rowData.city + '</div>';
-                let phone = '<div style="margin: 10px;"><b>Phone:</b> ' + rowData.homephone + '</div>';
-                let hiredate = '<div style="margin: 10px;"><b>Hire Date:</b> ' + rowData.hiredate + '</div>';
-                rightcolumn += postalcode;
-                rightcolumn += city;
-                rightcolumn += phone;
-                rightcolumn += hiredate;
-                rightcolumn += '</div>';
-                container += leftcolumn;
-                container += rightcolumn;
-                container += '</div>';
-                return container;
+                    leftcolumn += firstname;
+                    leftcolumn += lastname;
+                    leftcolumn += title;
+                    leftcolumn += address;
+                    leftcolumn += '</div>';
+                    let postalcode = '<div style="margin: 10px;"><b>Postal Code:</b> ' + rowData.postalcode + '</div>';
+                    let city = '<div style="margin: 10px;"><b>City:</b> ' + rowData.city + '</div>';
+                    let phone = '<div style="margin: 10px;"><b>Phone:</b> ' + rowData.homephone + '</div>';
+                    let hiredate = '<div style="margin: 10px;"><b>Hire Date:</b> ' + rowData.hiredate + '</div>';
+                    rightcolumn += postalcode;
+                    rightcolumn += city;
+                    rightcolumn += phone;
+                    rightcolumn += hiredate;
+                    rightcolumn += '</div>';
+                    container += leftcolumn;
+                    container += rightcolumn;
+                    container += '</div>';
+                    return container;
+                }
             }
-        }
-    ];
+        ];
 
     generateData(): any[] {
         let data = new Array();

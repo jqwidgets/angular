@@ -3,12 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { jqxDropDownListComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdropdownlist.ts';
-import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid.ts';
+import { jqxDropDownListComponent } from 'jqwidgets-ng/jqxdropdownlist';
+import { jqxTreeGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtreegrid.ts';
 import { jqxTreeGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtreegrid.ts';
 
 @NgModule({
-    declarations: [AppComponent, jqxDropDownListComponent, jqxGridComponent, jqxTreeGridComponent],
+    declarations: [AppComponent, jqxDropDownListComponent, jqxTreeGridComponent, jqxTreeGridComponent],
     imports: [BrowserModule, FormsModule],
     providers: [],
     bootstrap: [AppComponent]

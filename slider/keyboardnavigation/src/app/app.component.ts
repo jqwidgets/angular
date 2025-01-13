@@ -1,9 +1,10 @@
 ﻿import { Component, ViewChild, AfterViewInit } from '@angular/core';
 
-import { jqxSliderComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxslider.ts';
-
+import { jqxSliderModule, jqxSliderComponent } from 'jqwidgets-ng/jqxslider';
 @Component({
     selector: 'app-root',
+    imports: [jqxSliderModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 

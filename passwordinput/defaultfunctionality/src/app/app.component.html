@@ -1,4 +1,4 @@
-﻿<jqxExpander [theme]="'material'" #createAccount
+﻿<jqxExpander [theme]="'fluent'" #createAccount
              [showArrow]="false"
              [toggleMode]="'none'"
              [width]="350">
@@ -16,7 +16,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <jqxInput [theme]="'material'" #firstName class="firstName" [width]="300" [height]="21"></jqxInput>
+                            <jqxInput [theme]="'fluent'" #firstName class="firstName" [width]="300" [height]="21"></jqxInput>
                         </td>
                     </tr>
                     <tr>
@@ -26,7 +26,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <jqxInput [theme]="'material'" #lastName class="lastName" [width]="300" [height]="21"></jqxInput>
+                            <jqxInput [theme]="'fluent'" #lastName class="lastName" [width]="300" [height]="21"></jqxInput>
                         </td>
                     </tr>
                     <tr>
@@ -36,7 +36,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <jqxInput [theme]="'material'" #userName class="userName" [width]="300" [height]="21"></jqxInput>
+                            <jqxInput [theme]="'fluent'" #userName class="userName" [width]="300" [height]="21"></jqxInput>
                         </td>
                     </tr>
                     <tr>
@@ -46,7 +46,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <jqxPasswordInput [theme]="'material'" #password class="password" [width]="300" [height]="21"></jqxPasswordInput>
+                            <jqxPasswordInput [theme]="'fluent'" #password class="password" [width]="300" [height]="21"></jqxPasswordInput>
                         </td>
                     </tr>
                     <tr>
@@ -56,7 +56,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <jqxPasswordInput [theme]="'material'" #passwordConfirm class="passwordConfirm" [width]="300" [height]="21"></jqxPasswordInput>
+                            <jqxPasswordInput [theme]="'fluent'" #passwordConfirm class="passwordConfirm" [width]="300" [height]="21"></jqxPasswordInput>
                         </td>
                     </tr>
                     <tr>
@@ -66,7 +66,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <jqxDateTimeInput [theme]="'material'" #birthday class="birthday"
+                            <jqxDateTimeInput [theme]="'fluent'" #birthday class="birthday"
                                               [width]="300"
                                               [height]="21">
                             </jqxDateTimeInput>
@@ -79,7 +79,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <jqxDropDownList [theme]="'material'" #gender class="gender"
+                            <jqxDropDownList [theme]="'fluent'" #gender class="gender"
                                              [source]="genders"
                                              [selectedIndex]="-1"
                                              [placeHolder]="'I am...'"
@@ -91,7 +91,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <jqxButton [theme]="'material'" [width]="150" (onClick)="buttonClicked()">Create account</jqxButton>
+                            <jqxButton (onClick)="buttonClicked()">Create account</jqxButton>
                         </td>
                     </tr>
                 </table>

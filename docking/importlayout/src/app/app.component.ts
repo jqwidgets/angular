@@ -1,22 +1,24 @@
 ﻿import { Component, ViewChild, AfterViewInit } from '@angular/core';
 
-import { jqxDockingComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdocking.ts';
 
+import { jqxDockingModule, jqxDockingComponent } from 'jqwidgets-ng/jqxdocking';
 @Component({
     selector: 'app-root',
+    imports: [jqxDockingModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
 export class AppComponent implements AfterViewInit {
     @ViewChild('myDocking') myDocking; jqxDockingComponent;
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 650) {
-			return '90%';
-		}
-		
-		return 650;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 650) {
+            return '90%';
+        }
+
+        return 650;
+    }
 
     ngAfterViewInit(): void {
         this.myDocking.importLayout('{"panel0": {"window0":{"collapsed":false}},"panel1": {"window1":{"collapsed":false}},"floating":{"window2":{"x":"200px","y":"400","width":"350px","height":"auto","collapsed":false}},"orientation": "horizontal"}');

@@ -1,13 +1,23 @@
 ﻿import { Component, ViewChild, AfterViewInit, ViewEncapsulation } from '@angular/core';
 
-import { jqxLinearGaugeComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxlineargauge.ts';
+import { jqxSliderComponent, jqxSliderModule } from 'jqwidgets-ng/jqxslider';
+
+import { jqxLinearGaugeModule, jqxLinearGaugeComponent } from 'jqwidgets-ng/jqxlineargauge';
+import { jqxGaugeModule, jqxGaugeComponent } from 'jqwidgets-ng/jqxgauge';
+import { jqxCheckBoxComponent, jqxCheckBoxModule } from 'jqwidgets-ng/jqxcheckbox';
+import { jqxExpanderComponent, jqxExpanderModule } from 'jqwidgets-ng/jqxexpander';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxLinearGaugeModule, jqxButtonModule, jqxGaugeModule, jqxExpanderModule, jqxSliderModule, jqxCheckBoxModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
     encapsulation: ViewEncapsulation.None
 })
+
+
 
 export class AppComponent {
     @ViewChild('myLinearGauge') myLinearGauge: jqxLinearGaugeComponent;
@@ -25,11 +35,11 @@ export class AppComponent {
     ticksMajor: any = { size: '10%', interval: 10 };
 
     ranges: any[] =
-    [
-        { startValue: -10, endValue: 10, style: { fill: '#FFF157', stroke: '#FFF157' } },
-        { startValue: 10, endValue: 35, style: { fill: '#FFA200', stroke: '#FFA200' } },
-        { startValue: 35, endValue: 60, style: { fill: '#FF4800', stroke: '#FF4800' } }
-    ];
+        [
+            { startValue: -10, endValue: 10, style: { fill: '#FFF157', stroke: '#FFF157' } },
+            { startValue: 10, endValue: 35, style: { fill: '#FFA200', stroke: '#FFA200' } },
+            { startValue: 35, endValue: 60, style: { fill: '#FF4800', stroke: '#FF4800' } }
+        ];
 
     isVerticalCheckboxOnChange(event: any): void {
         if (event.args.checked) {

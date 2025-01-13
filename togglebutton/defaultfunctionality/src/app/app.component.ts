@@ -2,8 +2,11 @@
 
 import { jqxToggleButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtogglebutton.ts';
 
+import { jqxToggleButtonModule, jqxToggleButtonComponent } from 'jqwidgets-ng/jqxtogglebutton';
 @Component({
     selector: 'app-root',
+    imports: [jqxToggleButtonModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 

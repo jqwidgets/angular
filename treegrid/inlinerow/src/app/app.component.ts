@@ -1,60 +1,63 @@
 ﻿import { Component, ViewChild, AfterViewInit } from '@angular/core';
 
-import { jqxTreeGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtree.ts';
 
+
+import { jqxTreeGridModule, jqxTreeGridComponent } from 'jqwidgets-ng/jqxtreegrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxTreeGridModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
 export class AppComponent {
     @ViewChild('TreeGrid') treeGrid: jqxTreeGridComponent;
-	
-   	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
- 
-    source: any =
-    {
-        dataType: 'tab',
-        dataFields: [
-            { name: 'Id', type: 'number' },
-            { name: 'Name', type: 'string' },
-            { name: 'ParentID', type: 'number' },
-            { name: 'Population', type: 'number' }
-        ],
-        hierarchy:
-        {
-            keyDataField: { name: 'Id' },
-            parentDataField: { name: 'ParentID' }
-        },
-        id: 'Id',
-        url: '../assets/locations.txt',
-        addRow: (rowID, rowData, position, parentID, commit) => {
-            // synchronize with the server - send insert command
-            // call commit with parameter true if the synchronization with the server is successful 
-            // and with parameter false if the synchronization failed.
-            // you can pass additional argument to the commit callback which represents the new ID if it is generated from a DB.
-            this.newRowID = rowID;
-            commit(true);
-        },
-        updateRow: (rowID, rowData, commit) => {
-            // synchronize with the server - send update command
-            // call commit with parameter true if the synchronization with the server is successful 
-            // and with parameter false if the synchronization failed.
-            commit(true);
-        },
-        deleteRow: (rowID, commit) => {
-            // synchronize with the server - send delete command
-            // call commit with parameter true if the synchronization with the server is successful 
-            // and with parameter false if the synchronization failed.
-            commit(true);
+
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
         }
-    };
+
+        return 850;
+    }
+
+    source: any =
+        {
+            dataType: 'tab',
+            dataFields: [
+                { name: 'Id', type: 'number' },
+                { name: 'Name', type: 'string' },
+                { name: 'ParentID', type: 'number' },
+                { name: 'Population', type: 'number' }
+            ],
+            hierarchy:
+            {
+                keyDataField: { name: 'Id' },
+                parentDataField: { name: 'ParentID' }
+            },
+            id: 'Id',
+            url: '../assets/locations.txt',
+            addRow: (rowID, rowData, position, parentID, commit) => {
+                // synchronize with the server - send insert command
+                // call commit with parameter true if the synchronization with the server is successful 
+                // and with parameter false if the synchronization failed.
+                // you can pass additional argument to the commit callback which represents the new ID if it is generated from a DB.
+                this.newRowID = rowID;
+                commit(true);
+            },
+            updateRow: (rowID, rowData, commit) => {
+                // synchronize with the server - send update command
+                // call commit with parameter true if the synchronization with the server is successful 
+                // and with parameter false if the synchronization failed.
+                commit(true);
+            },
+            deleteRow: (rowID, commit) => {
+                // synchronize with the server - send delete command
+                // call commit with parameter true if the synchronization with the server is successful 
+                // and with parameter false if the synchronization failed.
+                commit(true);
+            }
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
@@ -129,7 +132,7 @@ export class AppComponent {
         cancelButton.jqxButton({ cursor: 'pointer', disabled: true, enableDefault: false, height: 25, width: 25 });
         cancelButton.find('div:first').addClass(toTheme('jqx-icon-cancel'));
         cancelButton.jqxTooltip({ position: 'bottom', content: 'Cancel' });
-        
+
         this.buttonsObject = {
             addButton: addButton,
             editButton: editButton,
@@ -137,7 +140,7 @@ export class AppComponent {
             cancelButton: cancelButton,
             updateButton: updateButton,
         };
-        
+
         addButton.click((event) => {
             if (!addButton.jqxButton('disabled')) {
                 this.treeGrid.expandRow(this.rowKey);
@@ -179,7 +182,7 @@ export class AppComponent {
                     for (let i = 0; i < selection.length; i++) {
                         let key = this.treeGrid.getKey(selection[i]);
                         this.treeGrid.deleteRow(key);
-                    }   
+                    }
                 }
                 else {
                     this.treeGrid.deleteRow(this.rowKey);
@@ -188,7 +191,7 @@ export class AppComponent {
             }
         });
     };
-    
+
     rowKey = null;
 
     rowSelect(event: any): void {
@@ -212,5 +215,5 @@ export class AppComponent {
     columns: any[] = [
         { text: 'Location Name', dataField: 'Name', align: 'center', width: '50%' },
         { text: 'Population', dataField: 'Population', align: 'right', cellsAlign: 'right', width: '50%' }
-    ];    
+    ];
 }

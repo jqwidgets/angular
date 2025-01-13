@@ -2,8 +2,11 @@
 
 import { generatedata } from '../assets/generatedata';
 
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -11,23 +14,23 @@ export class AppComponent {
     data: any = generatedata(500, false);
 
     source: any =
-    {
-        localdata: this.data,
-        datafields:
-        [
-            { name: 'name', type: 'string' },
-            { name: 'productname', type: 'string' }
-        ],
-        datatype: 'array'
-    };
+        {
+            localdata: this.data,
+            datafields:
+                [
+                    { name: 'name', type: 'string' },
+                    { name: 'productname', type: 'string' }
+                ],
+            datatype: 'array'
+        };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
@@ -45,8 +48,8 @@ export class AppComponent {
     }
 
     columns: any[] =
-    [
-        { text: 'Name', filtertype: 'list', filteritems: this.items, datafield: 'name', width: 200 },
-        { text: 'Product', filtertype: 'checkedlist', filteritems: ['Black Tea', 'Green Tea', 'Caffe Latte'], datafield: 'productname' }
-    ];
+        [
+            { text: 'Name', filtertype: 'list', filteritems: this.items, datafield: 'name', width: 200 },
+            { text: 'Product', filtertype: 'checkedlist', filteritems: ['Black Tea', 'Green Tea', 'Caffe Latte'], datafield: 'productname' }
+        ];
 }

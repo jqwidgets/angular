@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild, OnInit } from '@angular/core';
 
-import { jqxChartComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxchart.ts';
 
+
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 @Component({
     selector: 'app-root',
+    imports: [jqxChartModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -16,26 +19,26 @@ export class AppComponent implements OnInit {
         this.chartInstance = this.myChart
     }
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
     source: any =
-    {
-        datatype: 'tab',
-        datafields: [
-            { name: 'Year' },
-            { name: 'HPI' },
-            { name: 'BuildCost' },
-            { name: 'Population' },
-            { name: 'Rate' }
-        ],
-        url: '../assets/homeprices.txt'
-    };
+        {
+            datatype: 'tab',
+            datafields: [
+                { name: 'Year' },
+                { name: 'HPI' },
+                { name: 'BuildCost' },
+                { name: 'Population' },
+                { name: 'Rate' }
+            ],
+            url: '../assets/homeprices.txt'
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source, { async: false, autoBind: true, loadError: (xhr: any, status: any, error: any) => { alert('Error loading "' + this.source.url + '" : ' + error); } });
 
@@ -44,36 +47,36 @@ export class AppComponent implements OnInit {
     titlePadding: any = { left: 0, top: 0, right: 0, bottom: 5 };
 
     xAxis: any =
-    {
-        dataField: 'Year',
-        unitInterval: 10,
-        maxValue: 2010,
-        valuesOnTicks: true,
-        labels: { autoRotate: true }
-    };
+        {
+            dataField: 'Year',
+            unitInterval: 10,
+            maxValue: 2010,
+            valuesOnTicks: true,
+            labels: { autoRotate: true }
+        };
 
     seriesGroups: any =
-    [
-        {
-            polar: true,
-            radius: 120,
-            type: 'splinearea',
-            valueAxis:
+        [
             {
-                labels: {
-                    formatSettings: { decimalPlaces: 0 },
-                    autoRotate: true
-                }
-            },
-            series: [
-                { dataField: 'HPI', displayText: 'Real Home Price Index', opacity: 0.7, lineWidth: 1, radius: 2 },
-                { dataField: 'BuildCost', displayText: 'Building Cost Index', opacity: 0.7, lineWidth: 1, radius: 2 }
-            ]
-        }
-    ];
+                polar: true,
+                radius: 120,
+                type: 'splinearea',
+                valueAxis:
+                {
+                    labels: {
+                        formatSettings: { decimalPlaces: 0 },
+                        autoRotate: true
+                    }
+                },
+                series: [
+                    { dataField: 'HPI', displayText: 'Real Home Price Index', opacity: 0.7, lineWidth: 1, radius: 2 },
+                    { dataField: 'BuildCost', displayText: 'Building Cost Index', opacity: 0.7, lineWidth: 1, radius: 2 }
+                ]
+            }
+        ];
 
     colorsSchemesList: string[] = ['scheme01', 'scheme02', 'scheme03', 'scheme04', 'scheme05', 'scheme06', 'scheme07', 'scheme08'];
- 
+
     seriesList: string[] = ['splinearea', 'spline', 'column', 'scatter', 'stackedcolumn', 'stackedsplinearea', 'stackedspline'];
 
     sliderStartAngle(event: any): void {

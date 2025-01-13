@@ -1,45 +1,48 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxDataTableModule, jqxDataTableComponent } from 'jqwidgets-ng/jqxdatatable';
 @Component({
     selector: 'app-root',
+    imports: [jqxDataTableModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
 export class AppComponent {
     source: any =
-    {
-        localData: this.generateData(),
-        dataType: 'array',
-        dataFields:
-        [
-            { name: 'firstname', type: 'string' },
-            { name: 'lastname', type: 'string' },
-            { name: 'productname', type: 'string' },
-            { name: 'quantity', type: 'number' },
-            { name: 'price', type: 'number' },
-            { name: 'total', type: 'number' }
-        ]
-    };
+        {
+            localData: this.generateData(),
+            dataType: 'array',
+            dataFields:
+                [
+                    { name: 'firstname', type: 'string' },
+                    { name: 'lastname', type: 'string' },
+                    { name: 'productname', type: 'string' },
+                    { name: 'quantity', type: 'number' },
+                    { name: 'price', type: 'number' },
+                    { name: 'total', type: 'number' }
+                ]
+        };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
     columns: any[] =
-    [
-        { text: 'Name', dataField: 'firstname', width: 200 },
-        { text: 'Last Name', dataField: 'lastname', width: 200 },
-        { text: 'Product', editable: false, dataField: 'productname', width: 180 },
-        { text: 'Quantity', dataField: 'quantity', width: 80, cellsAlign: 'right', align: 'right' },
-        { text: 'Unit Price', dataField: 'price', width: 90, cellsAlign: 'right', align: 'right', cellsFormat: 'c2' },
-        { text: 'Total', dataField: 'total', cellsAlign: 'right', align: 'right', cellsFormat: 'c2' }
-    ];
+        [
+            { text: 'Name', dataField: 'firstname', width: 200 },
+            { text: 'Last Name', dataField: 'lastname', width: 200 },
+            { text: 'Product', editable: false, dataField: 'productname', width: 180 },
+            { text: 'Quantity', dataField: 'quantity', width: 80, cellsAlign: 'right', align: 'right' },
+            { text: 'Unit Price', dataField: 'price', width: 90, cellsAlign: 'right', align: 'right', cellsFormat: 'c2' },
+            { text: 'Total', dataField: 'total', cellsAlign: 'right', align: 'right', cellsFormat: 'c2' }
+        ];
 
     generateData(): any[] {
         let data = new Array();

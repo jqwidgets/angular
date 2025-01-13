@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid.ts'
 
+
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -11,35 +14,35 @@ export class AppComponent {
     @ViewChild('myGrid') myGrid: jqxGridComponent;
 
     source: any =
-    {
-        localdata: this.generateData(),
-        datatype: 'array'
-    }
+        {
+            localdata: this.generateData(),
+            datatype: 'array'
+        }
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
     columns: any[] =
-    [
-        { text: 'First Name', datafield: 'firstname', width: 200 },
-        { text: 'Last Name', datafield: 'lastname', width: 200 },
-        { text: 'Title', datafield: 'title', width: 180 },
-        { text: 'City', datafield: 'city', width: 100 },
-        { text: 'Country', datafield: 'country' }
-    ];
+        [
+            { text: 'First Name', datafield: 'firstname', width: 200 },
+            { text: 'Last Name', datafield: 'lastname', width: 200 },
+            { text: 'Title', datafield: 'title', width: 180 },
+            { text: 'City', datafield: 'city', width: 100 },
+            { text: 'Country', datafield: 'country' }
+        ];
 
     rowdetailstemplate: any =
-    {
-        rowdetails: '<div style="margin: 10px;"><ul style="margin-left: 30px;"><li class="title"></li><li>Notes</li></ul><div class="information"></div><div class="notes"></div></div>',
-        rowdetailsheight: 200
-    };
+        {
+            rowdetails: '<div style="margin: 10px;"><ul style="margin-left: 30px;"><li class="title"></li><li>Notes</li></ul><div class="information"></div><div class="notes"></div></div>',
+            rowdetailsheight: 200
+        };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     initrowdetails = (index: any, parentElement: any, gridElement: any, datarecord: any): void => {
         let tabsdiv = parentElement.children[0];
@@ -47,7 +50,7 @@ export class AppComponent {
         let notes = tabsdiv.children[2];
         let title = tabsdiv.children[0].children[0];
 
-        if (tabsdiv != null) {          
+        if (tabsdiv != null) {
             title.innerHTML = datarecord.firstname;
 
             let container = document.createElement('div');

@@ -46,7 +46,7 @@ import { AppComponent } from './app.component';
     for (i = 0; i < widgetsUsed.length; i++) {
         const comma = i === widgetsUsed.length - 1 ? '' : ', ';
         if (widgetsUsed[i] === 'Buttons') {
-            data += `import { jqxButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxbuttons.ts';\n`;
+            data += `import { jqxButtonComponent } from 'jqwidgets-ng/jqxbuttons';\n`;
             declarations += `jqxButtonComponent${comma}`;
         } else {
             data += `import { jqx${widgetsUsed[i]}Component } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqx${widgetsUsed[i].toLocaleLowerCase()}.ts';\n`;

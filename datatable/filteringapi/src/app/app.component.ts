@@ -1,13 +1,16 @@
 ﻿import { Component, ViewChild, AfterViewInit } from '@angular/core';
 
-import { jqxDataTableComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdatatable.ts';
-import { jqxDropDownListComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdropdownlist.ts';
-import { jqxListBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxlistbox.ts';
+import { jqxDropDownListComponent, jqxDropDownListModule } from 'jqwidgets-ng/jqxdropdownlist';
+import { jqxListBoxComponent, jqxListBoxModule } from 'jqwidgets-ng/jqxlistbox';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
 
 import { generatedata } from '../assets/generatedata';
 
+import { jqxDataTableModule, jqxDataTableComponent } from 'jqwidgets-ng/jqxdatatable';
 @Component({
     selector: 'app-root',
+    imports: [jqxDataTableModule, jqxButtonModule, jqxDropDownListModule, jqxListBoxModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -23,43 +26,43 @@ export class AppComponent implements AfterViewInit {
     handleCheckChange: boolean = true;
 
     source: any =
-    {
-        localData: generatedata(200, false),
-        dataFields:
-        [
-            { name: 'firstname', type: 'string' },
-            { name: 'lastname', type: 'string' },
-            { name: 'productname', type: 'string' },
-            { name: 'quantity', type: 'number' }
-        ],
-        dataType: 'array'
-    };
+        {
+            localData: generatedata(200, false),
+            dataFields:
+                [
+                    { name: 'firstname', type: 'string' },
+                    { name: 'lastname', type: 'string' },
+                    { name: 'productname', type: 'string' },
+                    { name: 'quantity', type: 'number' }
+                ],
+            dataType: 'array'
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     columns: any[] =
-    [
-        { text: 'First Name', dataField: 'firstname', width: 190 },
-        { text: 'Last Name', dataField: 'lastname', width: 190 },
-        { text: 'Product', dataField: 'productname', width: 170 },
-        { text: 'Quantity', dataField: 'quantity', cellsAlign: 'right' }
-    ];
+        [
+            { text: 'First Name', dataField: 'firstname', width: 190 },
+            { text: 'Last Name', dataField: 'lastname', width: 190 },
+            { text: 'Product', dataField: 'productname', width: 170 },
+            { text: 'Quantity', dataField: 'quantity', cellsAlign: 'right' }
+        ];
 
     dropDownListSource: any[] =
-    [
-        { label: 'First Name', value: 'firstname' },
-        { label: 'Last Name', value: 'lastname' },
-        { label: 'Product', value: 'productname' },
-        { label: 'Quantity', value: 'quantity' }
-    ];
+        [
+            { label: 'First Name', value: 'firstname' },
+            { label: 'Last Name', value: 'lastname' },
+            { label: 'Product', value: 'productname' },
+            { label: 'Quantity', value: 'quantity' }
+        ];
 
     updateMyListBox(dataField: string): void {
         this.myDataTable.clearFilters();

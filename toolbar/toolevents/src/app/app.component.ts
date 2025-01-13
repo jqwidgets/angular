@@ -2,8 +2,11 @@
 
 import { jqxToolBarComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtoolbar.ts';
 
+import { jqxToolbarModule, jqxToolbarComponent } from 'jqwidgets-ng/jqxtoolbar';
 @Component({
     selector: 'app-root',
+    imports: [jqxToolbarModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -11,14 +14,14 @@ export class AppComponent {
     @ViewChild('myToolbar') myToolBar: jqxToolBarComponent;
     @ViewChild('shape') shape: ElementRef;
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 700) {
-			return '90%';
-		}
-		
-		return 700;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 700) {
+            return '90%';
+        }
+
+        return 700;
+    }
+
     theme: string = '';
     tools: string = 'input | input | dropdownlist | custom';
     initTools: any = (type: any, index: number, tool: any, menuToolIninitialization: any): void => {

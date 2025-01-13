@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxChartComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxchart.ts';
 
+
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 @Component({
     selector: 'app-root',
+    imports: [jqxChartModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -17,40 +20,40 @@ export class AppComponent {
     titlePadding: any = { left: 0, top: 0, right: 0, bottom: 10 };
 
     xAxis: any =
-    {
-        text: 'x',
-        valuesOnTicks: false
-    };
-
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
-    seriesGroups: any[] =
-    [
         {
-            type: 'line',
-            source: this.sampleData,
-            toolTipFormatFunction: (value: any, itemIndex: any, serie: any, group: any, categoryValue: any, categoryAxis: any) => {
-                let dataItem = this.sampleData[itemIndex];
-                return '<DIV style="text-align:left"><b>Index:</b> ' +
-                    itemIndex + '<br /><b>Value:</b> ' +
-                    value + '<br /></DIV>';
-            },
-            valueAxis:
-            {
-                title: { text: 'Value<br>' }
-            },
-            series:
-            [
-                { emptyPointsDisplay: 'skip', displayText: 'Value', lineWidth: 2, symbolSize: 8, symbolType: 'circle' }
-            ]
+            text: 'x',
+            valuesOnTicks: false
+        };
+
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
         }
-    ];
+
+        return 850;
+    }
+
+    seriesGroups: any[] =
+        [
+            {
+                type: 'line',
+                source: this.sampleData,
+                toolTipFormatFunction: (value: any, itemIndex: any, serie: any, group: any, categoryValue: any, categoryAxis: any) => {
+                    let dataItem = this.sampleData[itemIndex];
+                    return '<DIV style="text-align:left"><b>Index:</b> ' +
+                        itemIndex + '<br /><b>Value:</b> ' +
+                        value + '<br /></DIV>';
+                },
+                valueAxis:
+                {
+                    title: { text: 'Value<br>' }
+                },
+                series:
+                    [
+                        { emptyPointsDisplay: 'skip', displayText: 'Value', lineWidth: 2, symbolSize: 8, symbolType: 'circle' }
+                    ]
+            }
+        ];
 
     dropDownOnSelect(event: any): void {
         let chartInstance = this.myChart.getInstance();

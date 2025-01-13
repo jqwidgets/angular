@@ -2,10 +2,13 @@
 
 import { generatedata } from '../assets/generatedata';
 
-import { jqxDataTableComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdatatable.ts';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
+import { jqxDataTableModule, jqxDataTableComponent } from 'jqwidgets-ng/jqxdatatable';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxDataTableModule, jqxButtonModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -13,40 +16,40 @@ export class AppComponent {
     @ViewChild('myDataTable') myDataTable: jqxDataTableComponent;
 
     source: any =
-    {
-        localdata: generatedata(10, false),
-        datatype: 'array',
-        dataFields:
-        [
-            { name: 'firstname', type: 'string' },
-            { name: 'lastname', type: 'string' },
-            { name: 'productname', type: 'string' },
-            { name: 'available', type: 'bool' },
-            { name: 'date', type: 'date' },
-            { name: 'quantity', type: 'number' },
-            { name: 'price', type: 'number' }
-        ]
-    };
+        {
+            localdata: generatedata(10, false),
+            datatype: 'array',
+            dataFields:
+                [
+                    { name: 'firstname', type: 'string' },
+                    { name: 'lastname', type: 'string' },
+                    { name: 'productname', type: 'string' },
+                    { name: 'available', type: 'bool' },
+                    { name: 'date', type: 'date' },
+                    { name: 'quantity', type: 'number' },
+                    { name: 'price', type: 'number' }
+                ]
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     columns: any[] =
-    [
-        { text: 'First Name', dataField: 'firstname', width: 150 },
-        { text: 'Last Name', dataField: 'lastname', width: 150 },
-        { text: 'Product', dataField: 'productname', width: 200 },
-        { text: 'Ship Date', dataField: 'date', width: 150, align: 'right', cellsAlign: 'right', cellsFormat: 'd' },
-        { text: 'Quantity', dataField: 'quantity', width: 100, align: 'right', cellsAlign: 'right' },
-        { text: 'Price', dataField: 'price', width: 100, cellsalign: 'right', align: 'right', cellsFormat: 'c2' }
-    ];
+        [
+            { text: 'First Name', dataField: 'firstname', width: 150 },
+            { text: 'Last Name', dataField: 'lastname', width: 150 },
+            { text: 'Product', dataField: 'productname', width: 200 },
+            { text: 'Ship Date', dataField: 'date', width: 150, align: 'right', cellsAlign: 'right', cellsFormat: 'd' },
+            { text: 'Quantity', dataField: 'quantity', width: 100, align: 'right', cellsAlign: 'right' },
+            { text: 'Price', dataField: 'price', width: 100, cellsalign: 'right', align: 'right', cellsFormat: 'c2' }
+        ];
 
     printBtnOnClick(): void {
         let gridContent = this.myDataTable.exportData('html');

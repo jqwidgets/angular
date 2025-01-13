@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { jqxDataTableComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdatatable.ts';
-import { jqxDropDownListComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdropdownlist.ts';
+
+import { jqxDropDownListComponent } from 'jqwidgets-ng/jqxdropdownlist';
 
 @NgModule({
     declarations: [AppComponent, jqxDataTableComponent, jqxDropDownListComponent],

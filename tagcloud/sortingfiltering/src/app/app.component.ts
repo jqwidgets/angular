@@ -1,10 +1,15 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxTagCloudComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtagcloud.ts';
-import { jqxDropDownListComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdropdownlist.ts';
 
+import { jqxDropDownListComponent, jqxDropDownListModule } from 'jqwidgets-ng/jqxdropdownlist';
+import { jqxCheckBoxComponent, jqxCheckBoxModule } from 'jqwidgets-ng/jqxcheckbox';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
+
+import { jqxTagCloudModule, jqxTagCloudComponent } from 'jqwidgets-ng/jqxtagcloud';
 @Component({
     selector: 'app-root',
+    imports: [jqxTagCloudModule, jqxDropDownListModule, jqxCheckBoxModule, jqxButtonModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -14,18 +19,18 @@ export class AppComponent {
     @ViewChild('sortDirectionListBox') sortDirectionListBox: jqxDropDownListComponent;
     @ViewChild('minValueListBox') minValueListBox: jqxDropDownListComponent;
     @ViewChild('maxTagsListBox') maxTagsListBox: jqxDropDownListComponent;
-    
+
     width: number = 200;
     height: number = 25;
 
- 	getWidth() : any {
-		if (document.body.offsetWidth < 600) {
-			return '90%';
-		}
-		
-		return 600;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 600) {
+            return '90%';
+        }
+
+        return 600;
+    }
+
     unemploymentRate: any[] = [
         { "country": "Namibia", "rate": 37.6 },
         { "country": "Macedonia, FYR", "rate": 32.0 },
@@ -49,14 +54,14 @@ export class AppComponent {
         { "country": "Greece", "rate": 12.5 }
     ];
     source: any =
-    {
-        datatype: "array",
-        localdata: this.unemploymentRate,
-        datafields: [
-            { name: 'country' },
-            { name: 'rate' }
-        ]
-    };
+        {
+            datatype: "array",
+            localdata: this.unemploymentRate,
+            datafields: [
+                { name: 'country' },
+                { name: 'rate' }
+            ]
+        };
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
     hideItemClick(): void {

@@ -1,7 +1,10 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 @Component({
     selector: 'app-root',
+    imports: [jqxChartModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -10,51 +13,51 @@ export class AppComponent {
 
     padding: any = { left: 5, top: 5, right: 5, bottom: 5 };
 
-    titlePadding: any= { left: 0, top: 0, right: 0, bottom: 10 };
+    titlePadding: any = { left: 0, top: 0, right: 0, bottom: 10 };
 
     xAxis: any =
-    {
-        dataField: ''
-    };
+        {
+            dataField: ''
+        };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
-    valueAxis: any =
-    {
-        logarithmicScale: true,
-        logarithmicScaleBase: 2,
-        baselineValue: 8,
-        unitInterval: 1,
-        title: { text: 'Value' },
-        tickMarks: { interval: 1 },
-        gridLines: { interval: 1 },
-        labels: {
-            formatSettings: { decimalPlaces: 3 },
-            horizontalAlignment: 'right'
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
         }
-    };
+
+        return 850;
+    }
+
+    valueAxis: any =
+        {
+            logarithmicScale: true,
+            logarithmicScaleBase: 2,
+            baselineValue: 8,
+            unitInterval: 1,
+            title: { text: 'Value' },
+            tickMarks: { interval: 1 },
+            gridLines: { interval: 1 },
+            labels: {
+                formatSettings: { decimalPlaces: 3 },
+                horizontalAlignment: 'right'
+            }
+        };
 
     seriesGroups: any[] =
-    [
-        {
-            type: 'column',
-            series: [
-                { dataField: 'a', displayText: 'A' },
-                { dataField: 'b', displayText: 'B' }
-            ]
-        },
-        {
-            type: 'line',
-            series: [
-                { dataField: 'a', displayText: 'A2' },
-                { dataField: 'b', displayText: 'B2' }
-            ]
-        }
-    ];
+        [
+            {
+                type: 'column',
+                series: [
+                    { dataField: 'a', displayText: 'A' },
+                    { dataField: 'b', displayText: 'B' }
+                ]
+            },
+            {
+                type: 'line',
+                series: [
+                    { dataField: 'a', displayText: 'A2' },
+                    { dataField: 'b', displayText: 'B2' }
+                ]
+            }
+        ];
 }

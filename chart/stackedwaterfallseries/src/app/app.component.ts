@@ -1,7 +1,10 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 @Component({
     selector: 'app-root',
+    imports: [jqxChartModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -20,41 +23,41 @@ export class AppComponent {
 
     titlePadding: any = { left: 0, top: 0, right: 0, bottom: 10 };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
     xAxis: any =
-    {
-        gridLines: { visible: true },
-        tickMarks: { visible: true }
-    };
+        {
+            gridLines: { visible: true },
+            tickMarks: { visible: true }
+        };
 
     valueAxis: any =
-    {
-        logarithmicScale: true,
-        logarithmicScaleBase: 2,
-        title: { text: 'Value<br>' },
-        labels:
         {
-            formatSettings: { decimalPlaces: 0 },
-            horizontalAlignment: 'right'
-        }
-    };
+            logarithmicScale: true,
+            logarithmicScaleBase: 2,
+            title: { text: 'Value<br>' },
+            labels:
+            {
+                formatSettings: { decimalPlaces: 0 },
+                horizontalAlignment: 'right'
+            }
+        };
 
     seriesGroups: any[] =
-    [
-        {
-            type: 'stackedwaterfall',
-            columnsMaxWidth: 50,
-            series: [
-                { dataField: 'a', displayText: 'A' },
-                { dataField: 'b', displayText: 'B', summary: 'c' }
-            ]
-        }
-    ];
+        [
+            {
+                type: 'stackedwaterfall',
+                columnsMaxWidth: 50,
+                series: [
+                    { dataField: 'a', displayText: 'A' },
+                    { dataField: 'b', displayText: 'B', summary: 'c' }
+                ]
+            }
+        ];
 }

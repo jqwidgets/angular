@@ -1,7 +1,10 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
 
+import { jqxCheckBoxModule, jqxCheckBoxComponent } from 'jqwidgets-ng/jqxcheckbox';
 @Component({
     selector: 'app-root',
+    imports: [jqxCheckBoxModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 

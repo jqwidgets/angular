@@ -3,9 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { jqxButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxbuttons.ts';
-import { jqxCheckBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxcheckbox.ts';
-import { jqxWindowComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxwindow.ts';
+import { jqxButtonComponent } from 'jqwidgets-ng/jqxbuttons';
+import { jqxCheckBoxComponent } from 'jqwidgets-ng/jqxcheckbox';
+
 
 @NgModule({
     declarations: [AppComponent, jqxButtonComponent, jqxCheckBoxComponent, jqxWindowComponent],

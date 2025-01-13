@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxChartComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxchart.ts';
 
+
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 @Component({
     selector: 'app-root',
+    imports: [jqxChartModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -26,46 +29,46 @@ export class AppComponent {
         { 'month': 'Dec', 'min': -0.5, 'max': 4.5, 'avg': 1.5 }
     ];
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
     padding: any = { left: 10, top: 5, right: 10, bottom: 5 };
 
     titlePadding: any = { left: 0, top: 0, right: 0, bottom: 10 };
 
     xAxis: any =
-    {
-        textRotationAngle: 0,
-        dataField: 'month',
-        unitInterval: 1,
-        tickMarks: {
-            visible: true,
-            step: 1,
-            color: '#888888'
-        },
-        gridLines: {
-            visible: true,
-            step: 1,
-            color: '#888888'
-        }
-    };
+        {
+            textRotationAngle: 0,
+            dataField: 'month',
+            unitInterval: 1,
+            tickMarks: {
+                visible: true,
+                step: 1,
+                color: '#888888'
+            },
+            gridLines: {
+                visible: true,
+                step: 1,
+                color: '#888888'
+            }
+        };
 
     valueAxis: any =
-    {
-        unitInterval: 5,
-        title: { text: 'Temperature [C]' },
-        tickMarks: { color: '#888888' },
-        minValue: -5,
-        maxValue: 30,
-        alternatingBackgroundColor: '#E5E5E5',
-        alternatingBackgroundColor2: '#F5F5F5',
-        alternatingBackgroundOpacity: 0.5
-    };
+        {
+            unitInterval: 5,
+            title: { text: 'Temperature [C]' },
+            tickMarks: { color: '#888888' },
+            minValue: -5,
+            maxValue: 30,
+            alternatingBackgroundColor: '#E5E5E5',
+            alternatingBackgroundColor2: '#F5F5F5',
+            alternatingBackgroundOpacity: 0.5
+        };
 
     toolTipCustomFormatFn = (value: any, itemIndex: number, serie: any, group: any, categoryValue: any, categoryAxis: any) => {
         let dataItem = this.data[itemIndex];
@@ -77,26 +80,26 @@ export class AppComponent {
     };
 
     seriesGroups: any[] =
-    [
-        {
-            type: 'rangecolumn',
-            columnsGapPercent: 100,
-            toolTipFormatFunction: this.toolTipCustomFormatFn,
-            series: [
-                { dataFieldTo: 'max', displayText: 'Temperature Range', dataFieldFrom: 'min', opacity: 1 }
-            ]
-        },
-        {
-            type: 'spline',
-            toolTipFormatFunction: this.toolTipCustomFormatFn,
-            series: [
-                { dataField: 'avg', displayText: 'Average Temperature', opacity: 1, lineWidth: 2 }
-            ]
-        }
-    ];
+        [
+            {
+                type: 'rangecolumn',
+                columnsGapPercent: 100,
+                toolTipFormatFunction: this.toolTipCustomFormatFn,
+                series: [
+                    { dataFieldTo: 'max', displayText: 'Temperature Range', dataFieldFrom: 'min', opacity: 1 }
+                ]
+            },
+            {
+                type: 'spline',
+                toolTipFormatFunction: this.toolTipCustomFormatFn,
+                series: [
+                    { dataField: 'avg', displayText: 'Average Temperature', opacity: 1, lineWidth: 2 }
+                ]
+            }
+        ];
 
     checkboxSwapAxisOnChange(event: any): void {
-    let swap = event.args.checked;
+        let swap = event.args.checked;
         for (let i = 0; i < this.myChart.seriesGroups().length; i++)
             this.myChart.seriesGroups()[i].orientation = swap ? 'horizontal' : 'vertical';
         this.myChart.refresh();

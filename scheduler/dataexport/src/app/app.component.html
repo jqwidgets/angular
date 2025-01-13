@@ -1,4 +1,4 @@
-﻿<jqxScheduler [theme]="'material'" #scheduler
+﻿<jqxScheduler [theme]="'fluent'" #scheduler
               [width]="getWidth()" [height]="600"
               [date]="date"
               [source]="dataAdapter"
@@ -12,49 +12,49 @@
 
 <div style='margin-top: 20px;'>
   <div style='float: left;'>
-    <jqxButton [theme]="'material'" #excelExport
+    <jqxButton [theme]="'fluent'" #excelExport
                (onClick)="excelExportClick()">
       Export to Excel
     </jqxButton>
     <br />
     <br />
-    <jqxButton [theme]="'material'" #xmlExport
+    <jqxButton [theme]="'fluent'" #xmlExport
                (onClick)="xmlExportClick()">
       Export to XML
     </jqxButton>
   </div>
   <div style='margin-left: 10px; float: left;'>
-    <jqxButton [theme]="'material'" #csvExport
+    <jqxButton [theme]="'fluent'" #csvExport
                (onClick)="csvExportClick()">
       Export to CSV
     </jqxButton>
     <br />
     <br />
-    <jqxButton [theme]="'material'" #tsvExport
+    <jqxButton [theme]="'fluent'" #tsvExport
                (onClick)="tsvExportClick()">
       Export to TSV
     </jqxButton>
   </div>
   <div style='margin-left: 10px; float: left;'>
-    <jqxButton [theme]="'material'" #htmlExport
+    <jqxButton [theme]="'fluent'" #htmlExport
                (onClick)="htmlExportClick()">
       Export to HTML
     </jqxButton>
     <br />
     <br />
-    <jqxButton [theme]="'material'" #jsonExport
+    <jqxButton [theme]="'fluent'" #jsonExport
                (onClick)="jsonExportClick()">
       Export to JSON
     </jqxButton>
   </div>
   <div style='margin-left: 10px; float: left;'>
-    <jqxButton [theme]="'material'" #pdfExport
+    <jqxButton [theme]="'fluent'" #pdfExport
                (onClick)="pdfExportClick()">
       Export to PDF
     </jqxButton>
     <br />
     <br />
-    <jqxButton [theme]="'material'" #icalExport
+    <jqxButton [theme]="'fluent'" #icalExport
                (onClick)="icalExportClick()">
       Export to ICAL
     </jqxButton>

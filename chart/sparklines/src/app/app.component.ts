@@ -1,7 +1,10 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 @Component({
     selector: 'app-root',
+    imports: [jqxChartModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -15,62 +18,62 @@ export class AppComponent {
     ];
 
     source: any =
-    {
-        localData: this.data,
-        dataType: 'array'
-    };
+        {
+            localData: this.data,
+            dataType: 'array'
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     columns: any[] =
-    [
-        {
-            text: 'City', align: 'center', dataField: 'city', width: 250,
-        },
-        {
-            text: 'Store locations', align: 'center', dataField: 'count', width: 200
-        },
-        {
-            text: 'Monthly sales', align: 'center', dataField: 'monthlySales'
-        },
-        {
-            text: 'Daily sales trend', align: 'center', dataField: 'dailyTrend',
-            cellsRenderer: (row: any, column: any, value: any, rowData: any) => {
-                let div = '<div id="sparklineContainer' + row + '" style="margin: 0; margin-bottom: 0; width: 100%; height: 40px;"></div>';
-                return div;
+        [
+            {
+                text: 'City', align: 'center', dataField: 'city', width: 250,
+            },
+            {
+                text: 'Store locations', align: 'center', dataField: 'count', width: 200
+            },
+            {
+                text: 'Monthly sales', align: 'center', dataField: 'monthlySales'
+            },
+            {
+                text: 'Daily sales trend', align: 'center', dataField: 'dailyTrend',
+                cellsRenderer: (row: any, column: any, value: any, rowData: any) => {
+                    let div = '<div id="sparklineContainer' + row + '" style="margin: 0; margin-bottom: 0; width: 100%; height: 40px;"></div>';
+                    return div;
+                }
             }
-        }
-    ];
+        ];
 
     createSparkline(selector, data, type) {
 
         let options =
+        {
+            title: '',
+            description: '',
+            showLegend: false,
+            enableAnimations: false,
+            showBorderLine: false,
+            showToolTips: false,
+            backgroundColor: 'transparent',
+            padding: { left: 0, top: 0, right: 0, bottom: 0 },
+            titlePadding: { left: 0, top: 0, right: 0, bottom: 0 },
+            source: data,
+            xAxis:
             {
-                title: '',
-                description: '',
-                showLegend: false,
-                enableAnimations: false,
-                showBorderLine: false,
-                showToolTips: false,
-                backgroundColor: 'transparent',
-                padding: { left: 0, top: 0, right: 0, bottom: 0 },
-                titlePadding: { left: 0, top: 0, right: 0, bottom: 0 },
-                source: data,
-                xAxis:
-                {
-                    visible: false,
-                    valuesOnTicks: false
-                },
-                colorScheme: 'scheme01',
-                seriesGroups:
+                visible: false,
+                valuesOnTicks: false
+            },
+            colorScheme: 'scheme01',
+            seriesGroups:
                 [
                     {
                         type: type,
@@ -91,7 +94,7 @@ export class AppComponent {
                         ]
                     }
                 ]
-            };
+        };
 
         let myChart: jqwidgets.jqxChart =
             jqwidgets.createInstance(`#${selector}`, 'jqxChart', options);

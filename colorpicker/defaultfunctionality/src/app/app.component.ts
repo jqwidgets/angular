@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild, AfterViewInit, ViewEncapsulation } from '@angular/core';
 
-import { jqxDropDownButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdropdownbutton.ts';
+import { jqxDropDownButtonModule, jqxDropDownButtonComponent } from 'jqwidgets-ng/jqxdropdownbutton';
+import { jqxColorPickerModule } from 'jqwidgets-ng/jqxcolorpicker';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxDropDownButtonModule, jqxColorPickerModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
     encapsulation: ViewEncapsulation.None

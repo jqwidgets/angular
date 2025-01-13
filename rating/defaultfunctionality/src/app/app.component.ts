@@ -1,9 +1,11 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
 
-import { jqxRatingComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxrating.ts';
 
+import { jqxRatingModule, jqxRatingComponent } from 'jqwidgets-ng/jqxrating';
 @Component({
     selector: 'app-root',
+    imports: [jqxRatingModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 

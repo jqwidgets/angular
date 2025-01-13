@@ -1,4 +1,4 @@
-﻿<jqxExpander [theme]="'material'" [width]="350" [showArrow]="false" [toggleMode]="'none'">
+﻿<jqxExpander [theme]="'fluent'" [width]="350" [showArrow]="false" [toggleMode]="'none'">
     <div><h3 style="padding: 0; margin: 0;">Register</h3></div>
     <div style="padding: 5px;">
         <jqxValidator #myValidator [rules]="rules">
@@ -7,48 +7,48 @@
                     <tbody>
                         <tr>
                             <td>Username:</td>
-                            <td><jqxInput [theme]="'material'" class="userInput text-input" [width]="195" [height]="22"></jqxInput></td>
+                            <td><jqxInput [theme]="'fluent'" class="userInput text-input" [width]="195" [height]="22"></jqxInput></td>
                         </tr>
                         <tr>
                             <td>Password:</td>
-                            <td><jqxPasswordInput [theme]="'material'" #passwordInput class="passwordInput text-input" [width]="195" [height]="22"></jqxPasswordInput></td>
+                            <td><jqxPasswordInput [theme]="'fluent'" #passwordInput class="passwordInput text-input" [width]="195" [height]="22"></jqxPasswordInput></td>
                         </tr>
                         <tr>
                             <td>Confirm password:</td>
-                            <td><jqxPasswordInput [theme]="'material'" #confirmPasswordInput class="passwordConfirmInput text-input" [width]="195" [height]="22"></jqxPasswordInput></td>
+                            <td><jqxPasswordInput [theme]="'fluent'" #confirmPasswordInput class="passwordConfirmInput text-input" [width]="195" [height]="22"></jqxPasswordInput></td>
                         </tr>
                         <tr>
                             <td>Real name:</td>
-                            <td><jqxInput [theme]="'material'" [width]="195" [height]="22" class="realNameInput text-input"></jqxInput></td>
+                            <td><jqxInput [theme]="'fluent'" [width]="195" [height]="22" class="realNameInput text-input"></jqxInput></td>
                         </tr>
                         <tr>
                             <td>Birth date:</td>
-                            <td><jqxDateTimeInput [theme]="'material'" #dateTimeInput [width]="195" [height]="22" [value]="initialDate" class="birthInput"></jqxDateTimeInput></td>
+                            <td><jqxDateTimeInput [theme]="'fluent'" #dateTimeInput [width]="195" [height]="22" [value]="initialDate" class="birthInput"></jqxDateTimeInput></td>
                         </tr>
                         <tr>
                             <td>E-mail:</td>
-                            <td><jqxInput [theme]="'material'" class="emailInput text-input" [width]="195" [height]="22"></jqxInput></td>
+                            <td><jqxInput [theme]="'fluent'" class="emailInput text-input" [width]="195" [height]="22"></jqxInput></td>
                         </tr>
                         <tr>
                             <td>SSN:</td>
-                            <td><jqxMaskedInput [theme]="'material'" [width]="195" [height]="22" [mask]="'###-##-####'" class="ssnInput"></jqxMaskedInput></td>
+                            <td><jqxMaskedInput [theme]="'fluent'" [width]="195" [height]="22" [mask]="'###-##-####'" class="ssnInput"></jqxMaskedInput></td>
                         </tr>
                         <tr>
                             <td>Phone:</td>
-                            <td><jqxMaskedInput [theme]="'material'" [width]="195" [height]="22" [mask]="'(###)###-####'" class="phoneInput"></jqxMaskedInput></td>
+                            <td><jqxMaskedInput [theme]="'fluent'" [width]="195" [height]="22" [mask]="'(###)###-####'" class="phoneInput"></jqxMaskedInput></td>
                         </tr>
                         <tr>
                             <td>Zip code:</td>
-                            <td><jqxMaskedInput [theme]="'material'" [width]="195" [height]="22" [mask]="'###-##-####'" class="zipInput"></jqxMaskedInput></td>
+                            <td><jqxMaskedInput [theme]="'fluent'" [width]="195" [height]="22" [mask]="'###-##-####'" class="zipInput"></jqxMaskedInput></td>
                         </tr>
                         <tr>
                             <td colspan="2" style="padding-left: 100px; padding-top: 10px; padding-bottom: 10px;">
-                                <jqxCheckBox [theme]="'material'" [width]="130" id="acceptCheckBox">I accept terms</jqxCheckBox>
+                                <jqxCheckBox [theme]="'fluent'" [width]="130" id="acceptCheckBox">I accept terms</jqxCheckBox>
                             </td>
                         </tr>
                         <tr>
                             <td colspan="2" style="padding-left: 20px;">
-                                <jqxButton [theme]="'material'" #SendButton
+                                <jqxButton [theme]="'fluent'" #SendButton
                                            (onClick)="sendButton()"
                                            style="text-align: center; margin-left: 8em;"
                                            [width]="60" [height]="25">

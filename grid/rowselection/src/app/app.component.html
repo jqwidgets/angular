@@ -1,6 +1,6 @@
 ﻿<div style="font-size: 13px; font-family: Verdana; float: left">
 
-  <jqxGrid [theme]="'material'" #myGrid (onRowselect)="myGridOnRowSelect($event)" (onRowunselect)="myGridOnRowUnselect($event)"
+  <jqxGrid [theme]="'fluent'" #myGrid (onRowselect)="myGridOnRowSelect($event)" (onRowunselect)="myGridOnRowUnselect($event)"
         [width]="getWidth()" [height]="350" [source]="dataAdapter" [columns]="columns" >
   </jqxGrid>
 
@@ -8,33 +8,33 @@
     <div style="float: left">
       <div>
 
-        <jqxInput [theme]="'material'" #myInput1 style="float: left; margin-right: 5px"
+        <jqxInput [theme]="'fluent'" #myInput1 style="float: left; margin-right: 5px"
             [width]="50" [height]="20" [value]="100">
         </jqxInput>
 
-        <jqxButton [theme]="'material'" style="float: left" (onClick)="scrollToBtnOnClick()">Scroll to Row</jqxButton>
+        <jqxButton [theme]="'fluent'" style="float: left" (onClick)="scrollToBtnOnClick()">Scroll to Row</jqxButton>
 
       </div>
       <div style="clear: both"></div>
       <div style="margin-top: 10px;">
 
-        <jqxInput [theme]="'material'" #myInput2 style="float: left" [width]="50" [value]="0"></jqxInput>
+        <jqxInput [theme]="'fluent'" #myInput2 style="float: left" [width]="50" [value]="0"></jqxInput>
 
-        <jqxButton [theme]="'material'" #mySelectRowBtn style="float: left; margin-left: 5px" (onClick)="selectRowBtnOnClick()">Select Row</jqxButton>
+        <jqxButton [theme]="'fluent'" #mySelectRowBtn style="float: left; margin-left: 5px" (onClick)="selectRowBtnOnClick()">Select Row</jqxButton>
 
-        <jqxButton [theme]="'material'" style="float: left; margin-left: 5px" (onClick)="clearSelectionBtnOnClick()">Clear Selection</jqxButton>
+        <jqxButton [theme]="'fluent'" style="float: left; margin-left: 5px" (onClick)="clearSelectionBtnOnClick()">Clear Selection</jqxButton>
 
       </div>
       <div style="clear: both"></div>
 
       <div style="margin-top: 10px;" >
-        <jqxCheckBox [theme]="'material'" [checked]="true" (onChange)="enableHoverOnChange($event)">Enable Hover</jqxCheckBox>
+        <jqxCheckBox [theme]="'fluent'" [checked]="true" (onChange)="enableHoverOnChange($event)">Enable Hover</jqxCheckBox>
       </div>
       
       <div style="margin-top: 10px">
         <span>Selection Mode:</span>
 
-        <jqxDropDownList [theme]="'material'" style="margin-top: 5px" (onSelect)="enableSelectionOnSelect($event)"
+        <jqxDropDownList [theme]="'fluent'" style="margin-top: 5px" (onSelect)="enableSelectionOnSelect($event)"
             [width]="120" [height]="25" [selectedIndex]="1" [dropDownWidth]="200"
             [autoDropDownHeight]="true" [source]="dropDownSource">
         </jqxDropDownList>

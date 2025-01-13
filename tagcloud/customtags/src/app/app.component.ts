@@ -1,42 +1,45 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxTagCloudComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtagcloud.ts';
 
+
+import { jqxTagCloudModule, jqxTagCloudComponent } from 'jqwidgets-ng/jqxtagcloud';
 @Component({
     selector: 'app-root',
+    imports: [jqxTagCloudModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
 export class AppComponent {
     @ViewChild('myTagCloud') myTagCloud: jqxTagCloudComponent
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 600) {
-			return '90%';
-		}
-		
-		return 600;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 600) {
+            return '90%';
+        }
+
+        return 600;
+    }
+
     data: any[] =
-    [
-        { countryName: 'Australia', technologyRating: 35, url: 'test' },
-        { countryName: 'United States', technologyRating: 60 },
-        { countryName: 'Germany', technologyRating: 55 },
-        { countryName: 'Brasil', technologyRating: 20 },
-        { countryName: 'United Kingdom', technologyRating: 50 },
-        { countryName: 'Japan', technologyRating: 80 }
-    ];
+        [
+            { countryName: 'Australia', technologyRating: 35, url: 'test' },
+            { countryName: 'United States', technologyRating: 60 },
+            { countryName: 'Germany', technologyRating: 55 },
+            { countryName: 'Brasil', technologyRating: 20 },
+            { countryName: 'United Kingdom', technologyRating: 50 },
+            { countryName: 'Japan', technologyRating: 80 }
+        ];
 
     source: any =
-    {
-        localdata: this.data,
-        datatype: 'array',
-        datafields: [
-            { name: 'countryName' },
-            { name: 'technologyRating' }
-        ]
-    };
+        {
+            localdata: this.data,
+            datatype: 'array',
+            datafields: [
+                { name: 'countryName' },
+                { name: 'technologyRating' }
+            ]
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 

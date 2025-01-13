@@ -3,45 +3,48 @@
 
 import { generatedata } from '../assets/generatedata';
 
+import { jqxDataTableModule, jqxDataTableComponent } from 'jqwidgets-ng/jqxdatatable';
 @Component({
     selector: 'app-root',
+    imports: [jqxDataTableModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
 export class AppComponent {
     source: any =
-    {
-        localdata: generatedata(250, false),
-        dataFields:
-        [
-            { name: 'name', type: 'string' },
-            { name: 'productname', type: 'string' },
-            { name: 'available', type: 'bool' },
-            { name: 'date', type: 'date' },
-            { name: 'quantity', type: 'number' },
-            { name: 'price', type: 'number' }
-        ],
-        datatype: 'array'
-    };
+        {
+            localdata: generatedata(250, false),
+            dataFields:
+                [
+                    { name: 'name', type: 'string' },
+                    { name: 'productname', type: 'string' },
+                    { name: 'available', type: 'bool' },
+                    { name: 'date', type: 'date' },
+                    { name: 'quantity', type: 'number' },
+                    { name: 'price', type: 'number' }
+                ],
+            datatype: 'array'
+        };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
     columns: any[] =
-    [
-        { text: 'Name', dataField: 'name', width: 215 },
-        { text: 'Produkt', dataField: 'productname', width: 220 },
-        { text: 'Datum', dataField: 'date', width: 210, cellsAlign: 'right', cellsFormat: 'd' },
-        { text: 'Qt.', dataField: 'quantity', cellsAlign: 'right', width: 60 },
-        { text: 'Preis', dataField: 'price', cellsFormat: "c2", cellsAlign: 'right' }
-    ];
+        [
+            { text: 'Name', dataField: 'name', width: 215 },
+            { text: 'Produkt', dataField: 'productname', width: 220 },
+            { text: 'Datum', dataField: 'date', width: 210, cellsAlign: 'right', cellsFormat: 'd' },
+            { text: 'Qt.', dataField: 'quantity', cellsAlign: 'right', width: 60 },
+            { text: 'Preis', dataField: 'price', cellsFormat: "c2", cellsAlign: 'right' }
+        ];
 
     localizationObject = this.getLocalization();
 

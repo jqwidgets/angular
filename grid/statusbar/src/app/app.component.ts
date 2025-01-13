@@ -1,14 +1,17 @@
 ﻿import { Component, ViewChild, AfterViewInit } from '@angular/core';
 
-import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid.ts'
-import { jqxDropDownListComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdropdownlist.ts';
-import { jqxInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxinput.ts';
-import { jqxWindowComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxwindow.ts';
 
+import { jqxDropDownListComponent, jqxDropDownListModule } from 'jqwidgets-ng/jqxdropdownlist';
+import { jqxInputComponent, jqxInputModule } from 'jqwidgets-ng/jqxinput';
+import { jqxWindowComponent, jqxWindowModule } from 'jqwidgets-ng/jqxwindow';
 import { generatedata } from '../assets/generatedata';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
 
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule, jqxButtonModule, jqxWindowModule, jqxDropDownListModule, jqxInputModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -24,20 +27,20 @@ export class AppComponent implements AfterViewInit {
 
     dropDownSource: string[] = ['First Name', 'Last Name', 'Product', 'Quantity', 'Price'];
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     getAdapter = (): any => {
         let source: any =
-            {
-                localdata: generatedata(15),
-                datatype: 'array',
-                datafields:
+        {
+            localdata: generatedata(15),
+            datatype: 'array',
+            datafields:
                 [
                     { name: 'firstname', type: 'string' },
                     { name: 'lastname', type: 'string' },
@@ -46,13 +49,13 @@ export class AppComponent implements AfterViewInit {
                     { name: 'price', type: 'number' },
                     { name: 'available', type: 'bool' }
                 ],
-                updaterow: (rowid: number, rowdata: any, commit: any): void => {
-                    // synchronize with the server - send update command
-                    // call commit with parameter true if the synchronization with the server is successful 
-                    // and with parameter false if the synchronization failed.
-                    commit(true);
-                }
-            };
+            updaterow: (rowid: number, rowdata: any, commit: any): void => {
+                // synchronize with the server - send update command
+                // call commit with parameter true if the synchronization with the server is successful 
+                // and with parameter false if the synchronization failed.
+                commit(true);
+            }
+        };
 
         let dataAdapter: any = new jqx.dataAdapter(source);
 
@@ -62,14 +65,14 @@ export class AppComponent implements AfterViewInit {
     dataAdapter = this.getAdapter();
 
     columns =
-    [
-        { text: 'First Name', columntype: 'textbox', datafield: 'firstname', width: 120 },
-        { text: 'Last Name', datafield: 'lastname', columntype: 'textbox', width: 120 },
-        { text: 'Product', datafield: 'productname', width: 170 },
-        { text: 'In Stock', datafield: 'available', columntype: 'checkbox', width: 125 },
-        { text: 'Quantity', datafield: 'quantity', width: 85, cellsalign: 'right', cellsformat: 'n2' },
-        { text: 'Price', datafield: 'price', cellsalign: 'right', cellsformat: 'c2' }
-    ];
+        [
+            { text: 'First Name', columntype: 'textbox', datafield: 'firstname', width: 120 },
+            { text: 'Last Name', datafield: 'lastname', columntype: 'textbox', width: 120 },
+            { text: 'Product', datafield: 'productname', width: 170 },
+            { text: 'In Stock', datafield: 'available', columntype: 'checkbox', width: 125 },
+            { text: 'Quantity', datafield: 'quantity', width: 85, cellsalign: 'right', cellsformat: 'n2' },
+            { text: 'Price', datafield: 'price', cellsalign: 'right', cellsformat: 'c2' }
+        ];
 
     createButtonsContainers(statusbar: any): void {
         let buttonsContainer = document.createElement('div');
@@ -100,7 +103,7 @@ export class AppComponent implements AfterViewInit {
 
     createButtons(): void {
         let addButtonOptions = {
-            theme: 'material', 
+            theme: 'material',
             width: 80, height: 25, value: 'Add',
             imgSrc: 'https://www.jqwidgets.com/angular/images/add.png',
             imgPosition: 'center', textPosition: 'center',
@@ -109,7 +112,7 @@ export class AppComponent implements AfterViewInit {
         let addButton = jqwidgets.createInstance('#addButton', 'jqxButton', addButtonOptions);
 
         let deleteButtonOptions = {
-            theme: 'material', 
+            theme: 'material',
             width: 80, height: 25, value: 'Delete',
             imgSrc: 'https://www.jqwidgets.com/angular/images/close.png',
             imgPosition: 'center', textPosition: 'center',
@@ -118,7 +121,7 @@ export class AppComponent implements AfterViewInit {
         let deleteButton = jqwidgets.createInstance('#deleteButton', 'jqxButton', deleteButtonOptions);
 
         let reloadButtonOptions = {
-            theme: 'material', 
+            theme: 'material',
             width: 80, height: 25, value: 'Reload',
             imgSrc: 'https://www.jqwidgets.com/angular/images/refresh.png',
             imgPosition: 'center', textPosition: 'center',
@@ -127,7 +130,7 @@ export class AppComponent implements AfterViewInit {
         let reloadButton = jqwidgets.createInstance('#reloadButton', 'jqxButton', reloadButtonOptions);
 
         let searchButtonOptions = {
-            theme: 'material', 
+            theme: 'material',
             width: 80, height: 25, value: 'Find',
             imgSrc: 'https://www.jqwidgets.com/angular/images/search.png',
             imgPosition: 'center', textPosition: 'center',

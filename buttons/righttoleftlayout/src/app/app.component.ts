@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild, AfterViewInit } from '@angular/core';
 
-import { jqxDropDownButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdropdownbutton.ts';
-
+import { jqxDropDownButtonComponent, jqxDropDownButtonModule } from 'jqwidgets-ng/jqxdropdownbutton';
+import { jqxCheckBoxComponent, jqxCheckBoxModule } from 'jqwidgets-ng/jqxcheckbox';
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule, jqxCheckBoxModule, jqxDropDownButtonModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 

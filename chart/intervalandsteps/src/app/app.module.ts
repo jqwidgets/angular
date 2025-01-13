@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { jqxChartComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxchart.ts';
-import { jqxCheckBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxcheckbox.ts';
-import { jqxInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxinput.ts';
-import { jqxNumberInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxnumberinput.ts';
+
+import { jqxCheckBoxComponent } from 'jqwidgets-ng/jqxcheckbox';
+import { jqxInputComponent } from 'jqwidgets-ng/jqxinput';
+import { jqxNumberInputComponent } from 'jqwidgets-ng/jqxnumberinput';
 
 @NgModule({
     declarations: [AppComponent, jqxChartComponent, jqxCheckBoxComponent, jqxInputComponent, jqxNumberInputComponent],

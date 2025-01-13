@@ -1,7 +1,10 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
 
+import { jqxRadioButtonModule, jqxRadioButtonComponent } from 'jqwidgets-ng/jqxradiobutton';
 @Component({
     selector: 'app-root',
+    imports: [jqxRadioButtonModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -13,14 +16,14 @@ export class AppComponent {
         this.count++;
         let log = this.eventsLog.nativeElement;
 
-        if (this.count  >= 2) {
+        if (this.count >= 2) {
             log.innerHTML = '';
             this.count = 0;
         }
     }
-   
+
     firstBtnOnChange(event: any): void {
-        this.clearLog(); 
+        this.clearLog();
         let log = this.eventsLog.nativeElement;
         let checked = event.args.checked;
         if (checked) {

@@ -4,11 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { jqxExpanderComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxexpander.ts';
-import { jqxListBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxlistbox.ts';
-import { jqxPanelComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxpanel.ts';
-import { jqxSplitterComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxsplitter.ts';
-import { jqxTreeComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtree.ts';
+import { jqxExpanderComponent } from 'jqwidgets-ng/jqxexpander';
+import { jqxListBoxModule,  jqxListBoxComponent } from 'jqwidgets-ng/jqxlistbox';
+import { jqxPanelComponent, jqxPanelModule } from 'jqwidgets-ng/jqxpanel';
+
+
 
 @NgModule({
     declarations: [AppComponent, jqxExpanderComponent, jqxListBoxComponent, jqxPanelComponent, jqxSplitterComponent, jqxTreeComponent],

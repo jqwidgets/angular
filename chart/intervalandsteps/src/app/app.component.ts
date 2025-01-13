@@ -1,9 +1,13 @@
 ﻿import { Component, ViewChild, AfterViewInit } from '@angular/core';
 
-import { jqxChartComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxchart.ts';
 
+import { jqxCheckBoxComponent, jqxCheckBoxModule } from 'jqwidgets-ng/jqxcheckbox';
+
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 @Component({
     selector: 'app-root',
+    imports: [jqxChartModule, jqxCheckBoxModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -22,42 +26,42 @@ export class AppComponent implements AfterViewInit {
 
     titlePadding: any = { left: 90, top: 0, right: 0, bottom: 10 };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
     xAxis: any =
-    {
-        unitInterval: 1,
-        gridLines: { step: 1 },
-        tickMarks: { step: 1 },
-        labels: { step: 2 }
-    };
+        {
+            unitInterval: 1,
+            gridLines: { step: 1 },
+            tickMarks: { step: 1 },
+            labels: { step: 2 }
+        };
 
     valueAxis: any =
-    {
-        title: { text: 'Value<br>' },
-        unitInterval: 5,
-        gridLines: { step: 1 },
-        tickMarks: { step: 1 },
-        labels: { step: 1 },
-        minValue: 0
-    };
+        {
+            title: { text: 'Value<br>' },
+            unitInterval: 5,
+            gridLines: { step: 1 },
+            tickMarks: { step: 1 },
+            labels: { step: 1 },
+            minValue: 0
+        };
 
     seriesGroups: any =
-    [
-        {
-            type: 'line',
-            series:
-            [
-                { displayText: 'value', opacity: 0.7 }
-            ]
-        }
-    ];
+        [
+            {
+                type: 'line',
+                series:
+                    [
+                        { displayText: 'value', opacity: 0.7 }
+                    ]
+            }
+        ];
 
     inputxAxisLabelsStepOnValueChange(event: any) {
         let value = event.args.value;

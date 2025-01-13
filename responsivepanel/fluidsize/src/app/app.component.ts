@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 
-import { jqxResponsivePanelComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxresponsivepanel.ts';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
+import { jqxResponsivePanelModule, jqxResponsivePanelComponent } from 'jqwidgets-ng/jqxresponsivepanel';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxResponsivePanelModule, jqxButtonModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
     encapsulation: ViewEncapsulation.None

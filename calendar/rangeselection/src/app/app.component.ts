@@ -1,15 +1,16 @@
 ﻿import { Component, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 
-import { jqxCalendarComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxcalendar.ts';
-
+import { jqxCalendarModule, jqxCalendarComponent } from 'jqwidgets-ng/jqxcalendar';
 @Component({
     selector: 'app-root',
+    imports: [jqxCalendarModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
 export class AppComponent implements AfterViewInit {
     @ViewChild('myCalendar') myCalendar: jqxCalendarComponent;
-	@ViewChild('log') log: ElementRef;
+    @ViewChild('log') log: ElementRef;
 
     value: Date = new Date(2016, 7, 7);
 
@@ -22,7 +23,7 @@ export class AppComponent implements AfterViewInit {
     }
 
     myCalendarOnChange(event: any): void {
-        let selection = event.args.range;   
+        let selection = event.args.range;
         this.log.nativeElement.innerHTML = '<div>From: ' + selection.from.toLocaleDateString() + ' <br/>To: ' + selection.to.toLocaleDateString() + '</div>';
     }
 }

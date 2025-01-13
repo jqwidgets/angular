@@ -1,10 +1,15 @@
 ﻿import { Component, ViewChild, AfterViewInit } from '@angular/core';
 
-import { jqxComboBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxcombobox.ts';
 
+
+import { jqxComboBoxModule, jqxComboBoxComponent } from 'jqwidgets-ng/jqxcombobox';
 @Component({
     selector: 'app-root',
-    templateUrl: './app.component.html'
+    imports: [jqxComboBoxModule],
+    standalone: true,
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css'],
+    encapsulation: ViewEncapsulation.None
 })
 
 export class AppComponent implements AfterViewInit {
@@ -15,13 +20,13 @@ export class AppComponent implements AfterViewInit {
     }
 
     settings: jqwidgets.ComboBoxOptions =
-    {
-        theme: 'material', 
-        source: this.generateHTML(),
-        selectedIndex: 0,
-        width: 250,
-        height: 25
-    }
+        {
+            theme: 'material',
+            source: this.generateHTML(),
+            selectedIndex: 0,
+            width: 250,
+            height: 25
+        }
 
     generateHTML() {
         let source = new Array();

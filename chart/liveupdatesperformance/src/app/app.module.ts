@@ -3,9 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { jqxButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxbuttons.ts';
-import { jqxChartComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxchart.ts';
-import { jqxDropDownListComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdropdownlist.ts';
+import { jqxButtonComponent } from 'jqwidgets-ng/jqxbuttons';
+
+import { jqxDropDownListComponent } from 'jqwidgets-ng/jqxdropdownlist';
 
 @NgModule({
     declarations: [AppComponent, jqxButtonComponent, jqxChartComponent, jqxDropDownListComponent],

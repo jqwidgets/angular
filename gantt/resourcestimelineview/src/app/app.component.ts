@@ -1,15 +1,18 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
-import { jqxGanttComponent } from 'jqwidgets-ng/jqxgantt';
 
+
+import { jqxGanttModule, jqxGanttComponent } from 'jqwidgets-ng/jqxgantt';
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html'
+	selector: 'app-root',
+	imports: [jqxGanttModule],
+	standalone: true,
+	templateUrl: './app.component.html'
 })
 
 export class AppComponent {
 	@ViewChild('gantt', { static: false }) gantt: jqxGanttComponent;
-	 
-	  source: any[] = [
+
+	source: any[] = [
 		{
 			label: 'Preparing',
 			synchronized: true,
@@ -155,7 +158,7 @@ export class AppComponent {
 			]
 		}
 	];
-	
+
 	taskColumns: any[] = [
 		{
 			label: 'Name',
@@ -177,7 +180,7 @@ export class AppComponent {
 			value: 'resources'
 		}
 	];
-	
+
 	resourceColumns: any[] = [
 		{
 			label: 'Name',
@@ -203,7 +206,7 @@ export class AppComponent {
 			size: '20%'
 		}
 	]
-	
+
 	treeMin: string = '25%';
 	resourcePanelSize: string = '30%';
 	resourceTimelineMode: string = 'histogram';

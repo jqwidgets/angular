@@ -1,17 +1,17 @@
 ﻿<div #selectionlog style="float: left; font-size: 12px; font-family: Verdana">
   <h3>Alignment</h3>
 
-  <jqxRadioButton [theme]="'material'" (onChecked)="leftBtn()">
+  <jqxRadioButton [theme]="'fluent'" (onChecked)="leftBtn()">
       Left
   </jqxRadioButton>
 
-  <jqxRadioButton [theme]="'material'" style="margin-top: 10px" (onChecked)="rightBtn()" [checked]="true">
+  <jqxRadioButton [theme]="'fluent'" style="margin-top: 10px" (onChecked)="rightBtn()" [checked]="true">
       Right
   </jqxRadioButton>
 
 </div>
 
-<jqxDateTimeInput [theme]="'material'" #myDateTimeInput 
+<jqxDateTimeInput [theme]="'fluent'" #myDateTimeInput 
     style="float: left; margin-top: 20px; margin-left: 100px;"
     [width]="150" [height]="30" [animationType]="'fade'" 
     [dropDownHorizontalAlignment]="'right'">

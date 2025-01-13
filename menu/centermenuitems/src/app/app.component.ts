@@ -1,15 +1,18 @@
 ﻿import { Component, ViewChild, AfterViewInit } from '@angular/core';
 
-import { jqxMenuComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxmenu.ts';
 
+
+import { jqxMenuModule, jqxMenuComponent } from 'jqwidgets-ng/jqxmenu';
 @Component({
     selector: 'app-root',
+    imports: [jqxMenuModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
 export class AppComponent implements AfterViewInit {
     @ViewChild('jqxMenu') jqxMenu: jqxMenuComponent;
-    
+
     ngAfterViewInit() {
         this.centerItems();
     }
@@ -23,7 +26,7 @@ export class AppComponent implements AfterViewInit {
             let currentLi = allLiElements[i];
             width += currentLi.offsetWidth + borderOffset;
         }
-        
+
         let menuWidth = this.jqxMenu.elementRef.nativeElement.firstElementChild.offsetWidth;
         let calculatedOffset = (menuWidth / 2) - (width / 2);
         firstItem.style.margin = '0 0 0 ' + (calculatedOffset).toString() + 'px';

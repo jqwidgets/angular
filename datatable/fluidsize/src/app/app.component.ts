@@ -1,7 +1,10 @@
 ﻿import { Component, ViewEncapsulation } from '@angular/core';
 
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
     encapsulation: ViewEncapsulation.None
@@ -9,37 +12,37 @@
 
 export class AppComponent {
     source: any =
-    {
-        localData: this.generateData(),
-        dataType: 'array',
-        dataFields:
-        [
-            { name: 'firstname', type: 'string' },
-            { name: 'lastname', type: 'string' },
-            { name: 'productname', type: 'string' },
-            { name: 'quantity', type: 'number' },
-            { name: 'price', type: 'number' },
-            { name: 'total', type: 'number' }
-        ]
-    };
+        {
+            localData: this.generateData(),
+            dataType: 'array',
+            dataFields:
+                [
+                    { name: 'firstname', type: 'string' },
+                    { name: 'lastname', type: 'string' },
+                    { name: 'productname', type: 'string' },
+                    { name: 'quantity', type: 'number' },
+                    { name: 'price', type: 'number' },
+                    { name: 'total', type: 'number' }
+                ]
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     columns: any[] =
-    [
-        { text: 'Name', dataField: 'firstname', width: '20%' },
-        { text: 'Last Name', dataField: 'lastname', width: '20%' },
-        { text: 'Product', editable: false, dataField: 'productname', width: '30%' },
-        { text: 'Quantity', dataField: 'quantity', width: '30%', cellsAlign: 'right', align: 'right' }
-    ];
+        [
+            { text: 'Name', dataField: 'firstname', width: '20%' },
+            { text: 'Last Name', dataField: 'lastname', width: '20%' },
+            { text: 'Product', editable: false, dataField: 'productname', width: '30%' },
+            { text: 'Quantity', dataField: 'quantity', width: '30%', cellsAlign: 'right', align: 'right' }
+        ];
 
     generateData(): any[] {
         let data = new Array();

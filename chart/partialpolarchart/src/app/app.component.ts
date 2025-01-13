@@ -1,9 +1,11 @@
 ﻿import { Component, ViewChild, OnInit } from '@angular/core';
 
-import { jqxChartComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxchart.ts';
-
+import { jqxCheckBoxComponent, jqxCheckBoxModule } from 'jqwidgets-ng/jqxcheckbox';
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 @Component({
     selector: 'app-root',
+    imports: [jqxChartModule, jqxCheckBoxModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -13,7 +15,7 @@ export class AppComponent implements OnInit {
     chartInstance;
 
     ngOnInit(): void {
-       this.chartInstance = this.myChart
+        this.chartInstance = this.myChart
     }
 
     dataset: any[] = [
@@ -29,42 +31,42 @@ export class AppComponent implements OnInit {
 
     titlePadding: any = { left: 0, top: 0, right: 0, bottom: 5 };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
     xAxis: any =
-    {
-        dataField: 'City',
-        valuesOnTicks: true,
-        labels: { autoRotate: true }
-    };
+        {
+            dataField: 'City',
+            valuesOnTicks: true,
+            labels: { autoRotate: true }
+        };
 
     valueAxis: any =
-    {
-        labels: {
-            formatSettings: { decimalPlaces: 0 },
-            autoRotate: true
-        }
-    };
+        {
+            labels: {
+                formatSettings: { decimalPlaces: 0 },
+                autoRotate: true
+            }
+        };
 
     seriesGroups: any =
-    [
-        {
-            polar: true,
-            endAngle: 270,
-            radius: 120,
-            type: 'line',
-            series: [
-                { dataField: 'SalesCountJan', displayText: 'Sales count', opacity: 0.7, radius: 2, lineWidth: 2, symbolType: 'circle' },
-                { dataField: 'SalesRevenueJan', displayText: 'Revenue', opacity: 0.7, radius: 2, lineWidth: 2, symbolType: 'square' }
-            ]
-        }
-    ];
+        [
+            {
+                polar: true,
+                endAngle: 270,
+                radius: 120,
+                type: 'line',
+                series: [
+                    { dataField: 'SalesCountJan', displayText: 'Sales count', opacity: 0.7, radius: 2, lineWidth: 2, symbolType: 'circle' },
+                    { dataField: 'SalesRevenueJan', displayText: 'Revenue', opacity: 0.7, radius: 2, lineWidth: 2, symbolType: 'square' }
+                ]
+            }
+        ];
 
     sliderStartAngle(event: any): void {
         let value = event.args.value;

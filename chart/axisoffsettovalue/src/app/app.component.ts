@@ -1,15 +1,18 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
 
-import { jqxChartComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxchart.ts';
 
+
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 @Component({
     selector: 'app-root',
+    imports: [jqxChartModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
 export class AppComponent {
     @ViewChild('myChart') myChart: jqxChartComponent;
-	  @ViewChild('eventText') eventText: ElementRef;
+    @ViewChild('eventText') eventText: ElementRef;
 
     sampleData: any[] = [
         { a: 0.1535, b: 0.5 },
@@ -26,45 +29,45 @@ export class AppComponent {
 
     titlePadding: any = { left: 0, top: 0, right: 0, bottom: 10 };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
     xAxis: any =
-    {
-        dataField: 'a',
-        logarithmicScale: true,
-        logarithmicScaleBase: 2,
-        valuesOnTicks: true
-    };
+        {
+            dataField: 'a',
+            logarithmicScale: true,
+            logarithmicScaleBase: 2,
+            valuesOnTicks: true
+        };
 
     valueAxis: any =
-    {
-        padding: { right: 0 },
-        flip: false,
-        logarithmicScale: true,
-        logarithmicScaleBase: 2,
-        title: { text: 'Value' },
-        labels: {
-            horizontalAlignment: 'right'
-        }
-    };
+        {
+            padding: { right: 0 },
+            flip: false,
+            logarithmicScale: true,
+            logarithmicScaleBase: 2,
+            title: { text: 'Value' },
+            labels: {
+                horizontalAlignment: 'right'
+            }
+        };
 
     seriesGroups: any[] =
-    [
-        {
-            type: 'line',
-            radius: 200,
-            series: [
-                { dataField: 'a', displayText: 'A', symbolType: 'square', symbolSize: 6, dashStyle: '4,4', lineWidth: 1 },
-                { dataField: 'b', displayText: 'B', symbolType: 'circle', symbolSize: 6, lineWidth: 1 }
-            ]
-        }
-    ];
+        [
+            {
+                type: 'line',
+                radius: 200,
+                series: [
+                    { dataField: 'a', displayText: 'A', symbolType: 'square', symbolSize: 6, dashStyle: '4,4', lineWidth: 1 },
+                    { dataField: 'b', displayText: 'B', symbolType: 'circle', symbolSize: 6, lineWidth: 1 }
+                ]
+            }
+        ];
 
     cursorRedDotElement: any = null;
 

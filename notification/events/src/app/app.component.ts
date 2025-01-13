@@ -1,10 +1,14 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
 
-import { jqxNotificationComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxnotification.ts';
-import { jqxPanelComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxpanel.ts';
+import { jqxPanelComponent, jqxPanelModule } from 'jqwidgets-ng/jqxpanel';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
+
+import { jqxNotificationModule, jqxNotificationComponent } from 'jqwidgets-ng/jqxnotification';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxNotificationModule, jqxPanelModule, jqxButtonModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -31,6 +35,6 @@ export class AppComponent {
     };
 
     clickCheckMail(): void {
-        this.jqxNotification.open();        
+        this.jqxNotification.open();
     };
 }

@@ -1,16 +1,19 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxNotificationComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxnotification.ts';
+import { jqxNotificationModule, jqxNotificationComponent } from 'jqwidgets-ng/jqxnotification';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxNotificationModule, jqxButtonModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
 export class AppComponent {
     @ViewChild('msgNotification') msgNotification: jqxNotificationComponent;
     @ViewChild('timeNotification') timeNotification: jqxNotificationComponent;
-    
+
     onClickOpenMessageNotification(): void {
         this.msgNotification.open();
     }

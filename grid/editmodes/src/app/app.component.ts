@@ -1,11 +1,14 @@
 ﻿import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 
-import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid.ts'
+
 
 import { generatedata } from '../assets/generatedata';
-
+import { jqxCheckBoxComponent, jqxCheckBoxModule } from 'jqwidgets-ng/jqxcheckbox';
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule, jqxCheckBoxModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
     encapsulation: ViewEncapsulation.None
@@ -15,38 +18,38 @@ export class AppComponent {
     @ViewChild('myGrid') myGrid: jqxGridComponent;
 
     source: any =
-    {
-        localdata: generatedata(200, false),
-        datatype: 'array',
-        datafields:
-        [
-            { name: 'firstname', type: 'string' },
-            { name: 'lastname', type: 'string' },
-            { name: 'productname', type: 'string' },
-            { name: 'available', type: 'bool' },
-            { name: 'quantity', type: 'number' },
-            { name: 'price', type: 'number' }
-        ]
-    };
+        {
+            localdata: generatedata(200, false),
+            datatype: 'array',
+            datafields:
+                [
+                    { name: 'firstname', type: 'string' },
+                    { name: 'lastname', type: 'string' },
+                    { name: 'productname', type: 'string' },
+                    { name: 'available', type: 'bool' },
+                    { name: 'quantity', type: 'number' },
+                    { name: 'price', type: 'number' }
+                ]
+        };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
     columns: any[] =
-    [
-        { text: 'First Name', columntype: 'textbox', datafield: 'firstname', width: 90 },
-        { text: 'Last Name', datafield: 'lastname', width: 90 },
-        { text: 'Product', datafield: 'productname' },
-        { text: 'Quantity', datafield: 'quantity', width: 70, cellsalign: 'right' },
-        { text: 'Available', datafield: 'available', columntype: 'checkbox', width: 67 }
-    ];
+        [
+            { text: 'First Name', columntype: 'textbox', datafield: 'firstname', width: 90 },
+            { text: 'Last Name', datafield: 'lastname', width: 90 },
+            { text: 'Product', datafield: 'productname' },
+            { text: 'Quantity', datafield: 'quantity', width: 70, cellsalign: 'right' },
+            { text: 'Available', datafield: 'available', columntype: 'checkbox', width: 67 }
+        ];
 
     myDropDownListOnSelect(event: any): void {
         let index = event.args.index;

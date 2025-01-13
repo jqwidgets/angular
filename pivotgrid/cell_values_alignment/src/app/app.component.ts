@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { jqxPivotGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxpivotgrid.ts';
+import { jqxPivotGridModule, jqxPivotGridComponent } from 'jqwidgets-ng/jqxpivotgrid';
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css']
+	selector: 'app-root',
+	imports: [jqxPivotGridModule],
+	standalone: true,
+	templateUrl: './app.component.html',
+	styleUrls: ['./app.component.css']
 })
 
 export class AppComponent {
@@ -12,13 +14,13 @@ export class AppComponent {
     }
 
     pivotDataSource: null;
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     createPivotDataSource(): any {
         // prepare sample data
@@ -46,15 +48,15 @@ export class AppComponent {
 
         // create a data source and data adapter
         let source =
-            {
-                localdata: data,
-                datatype: "array",
-                datafields:
+        {
+            localdata: data,
+            datatype: "array",
+            datafields:
                 [
                     { name: 'country', type: 'string' },
                     { name: 'value', type: 'number' }
                 ]
-            };
+        };
 
         let dataAdapter = new jqx.dataAdapter(source);
         dataAdapter.dataBind();

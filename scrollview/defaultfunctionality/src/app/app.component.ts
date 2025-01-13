@@ -1,9 +1,11 @@
 ﻿import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-
-import { jqxScrollViewComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxscrollview.ts';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
+import { jqxScrollViewModule, jqxScrollViewComponent } from 'jqwidgets-ng/jqxscrollview';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxScrollViewModule, jqxButtonModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
     encapsulation: ViewEncapsulation.None

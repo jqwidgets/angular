@@ -1,10 +1,10 @@
-﻿<jqxKanban [theme]="'material'" #myKanban
+﻿<jqxKanban [theme]="'fluent'" #myKanban
     [width]="getWidth()" [height]="500" [source]="dataAdapter"
     [columns]="columns" [resources]="resourcesAdapterFunc()">
 </jqxKanban>
 
 <br />
 
-<jqxButton [theme]="'material'" (onClick)="addItemBtnOnClick()">Add Item</jqxButton>
-<jqxButton [theme]="'material'" #myRemoveItemBtn (onClick)="removeItemBtnOnClick()">Remove Item</jqxButton>
-<jqxButton [theme]="'material'" #myUpdateItemBtn (onClick)="updateItemBtnOnClick()">Update Item</jqxButton>
+<jqxButton [theme]="'fluent'" (onClick)="addItemBtnOnClick()">Add Item</jqxButton>
+<jqxButton [theme]="'fluent'" #myRemoveItemBtn (onClick)="removeItemBtnOnClick()">Remove Item</jqxButton>
+<jqxButton [theme]="'fluent'" #myUpdateItemBtn (onClick)="updateItemBtnOnClick()">Update Item</jqxButton>

@@ -1,10 +1,12 @@
 ﻿import { Component, ViewChild, AfterViewInit } from '@angular/core';
 
-import { jqxDropDownListComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdropdownlist.ts';
-import { jqxPanelComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxpanel.ts';
+import { jqxDropDownListModule, jqxDropDownListComponent } from 'jqwidgets-ng/jqxdropdownlist';
+import { jqxPanelModule, jqxPanelComponent } from 'jqwidgets-ng/jqxpanel';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxPanelModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -46,7 +48,7 @@ export class AppComponent implements AfterViewInit {
         'Irish coffee',
         'Liqueur coffee'
     ];
-    
+
     listOnSelect(event: any): void {
         let args = event.args;
         let item = this.myDropDownList.getItem(args.index);

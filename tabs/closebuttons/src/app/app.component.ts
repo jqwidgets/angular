@@ -1,9 +1,11 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
 
-import { jqxTabsComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtabs.ts';
 
+import { jqxTabsModule, jqxTabsComponent } from 'jqwidgets-ng/jqxtabs';
 @Component({
     selector: 'app-root',
+    imports: [jqxTabsModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -12,14 +14,14 @@ export class AppComponent {
     @ViewChild('unorderedList') unorderedList: ElementRef;
 
     index: number = 0;
-	
-	getWidth() : any {
-		if (document.body.offsetWidth < 500) {
-			return '90%';
-		}
-		
-		return 500;
-	}
+
+    getWidth(): any {
+        if (document.body.offsetWidth < 500) {
+            return '90%';
+        }
+
+        return 500;
+    }
 
     tabclick(event: any): void {
         if (event.args.item == this.unorderedList.nativeElement.children.length - 1) {

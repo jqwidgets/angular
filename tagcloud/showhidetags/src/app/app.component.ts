@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild, AfterViewInit } from '@angular/core';
 
-import { jqxTagCloudComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtagcloud.ts';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
+import { jqxTagCloudModule, jqxTagCloudComponent } from 'jqwidgets-ng/jqxtagcloud';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxTagCloudModule, jqxButtonModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -13,15 +16,15 @@ export class AppComponent implements AfterViewInit {
     ngAfterViewInit(): void {
         this.tagCloud.hideItem(1);
     }
-	
-	getWidth() : any {
-		if (document.body.offsetWidth < 600) {
-			return '90%';
-		}
-		
-		return 600;
-	}
-	
+
+    getWidth(): any {
+        if (document.body.offsetWidth < 600) {
+            return '90%';
+        }
+
+        return 600;
+    }
+
     data: any[] = [
         { countryName: "Australia", technologyRating: 35 },
         { countryName: "United States", technologyRating: 60 },
@@ -31,14 +34,14 @@ export class AppComponent implements AfterViewInit {
         { countryName: "Japan", technologyRating: 80 }
     ];
     source: any =
-    {
-        localdata: this.data,
-        datatype: "array",
-        datafields: [
-            { name: 'countryName' },
-            { name: 'technologyRating' }
-        ]
-    };
+        {
+            localdata: this.data,
+            datatype: "array",
+            datafields: [
+                { name: 'countryName' },
+                { name: 'technologyRating' }
+            ]
+        };
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
     hideItemClick(): void {

@@ -1,9 +1,10 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
 
-import { jqxButtonGroupComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxbuttongroup.ts';
-
+import { jqxButtonGroupModule, jqxButtonGroupComponent } from 'jqwidgets-ng/jqxbuttongroup';
 @Component({
     selector: 'app-root',
+    imports: [jqxButtonGroupModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 

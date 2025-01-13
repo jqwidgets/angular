@@ -1,12 +1,14 @@
 ﻿import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { Http } from '@angular/http';
 
-import { jqxExpanderComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxexpander.ts';
-
+import { jqxExpanderModule, jqxExpanderComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxExpanderModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
+
 
 export class AppComponent implements AfterViewInit {
     @ViewChild('myExpander') myExpander; jqxExpanderComponent;

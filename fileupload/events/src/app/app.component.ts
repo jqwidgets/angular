@@ -1,9 +1,11 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxPanelComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxpanel.ts';
-
+import { jqxPanelModule, jqxPanelComponent } from 'jqwidgets-ng/jqxpanel';
+import { jqxFileUploadModule, jqxFileUploadComponent } from 'jqwidgets-ng/jqxfileupload';
 @Component({
     selector: 'app-root',
+    imports: [jqxPanelModule, jqxFileUploadModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 

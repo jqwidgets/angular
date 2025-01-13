@@ -1,4 +1,4 @@
-﻿<jqxTabs [theme]="'material'" #jqxTabs
+﻿<jqxTabs [theme]="'fluent'" #jqxTabs
          [width]="getWidth()" [height]="230" [keyboardNavigation]="false">
   <ul>
     <li style="margin-left: 30px;">Personal info</li>
@@ -21,16 +21,16 @@
       </div>
     </div>
     <div id="checkBoxWrapper">
-      <jqxCheckBox [theme]="'material'" #acceptCheckBox [width]="250" (onChange)="acceptCheckBoxChange($event)">
+      <jqxCheckBox [theme]="'fluent'" #acceptCheckBox [width]="250" (onChange)="acceptCheckBoxChange($event)">
         I accept the terms and conditions
       </jqxCheckBox>
     </div>
     <div id="sectionButtonsWrapper">
-      <jqxButton [theme]="'material'" [width]="50" #nextButtonInfo class="nextButton">Next</jqxButton>
+      <jqxButton [theme]="'fluent'" [width]="50" #nextButtonInfo class="nextButton">Next</jqxButton>
     </div>
   </div>
   <div class="section">
-    <jqxListBox [theme]="'material'" #products
+    <jqxListBox [theme]="'fluent'" #products
                 (onChange)="productsChange($event)"
                 (onUnselect)="productsUnselect($event)"
                 [width]="490"
@@ -41,8 +41,8 @@
     <div class="hint" id="hintBasket">
     </div>
     <div id="basketButtonsWrapper">
-      <jqxButton [theme]="'material'" [width]="50" #backButtonBasket class="backButton">Back</jqxButton>
-      <jqxButton [theme]="'material'" [width]="50" #nextButtonBasket class="nextButton">Next</jqxButton>
+      <jqxButton [theme]="'fluent'" [width]="50" #backButtonBasket class="backButton">Back</jqxButton>
+      <jqxButton [theme]="'fluent'" [width]="50" #nextButtonBasket class="nextButton">Next</jqxButton>
     </div>
   </div>
   <div class="section">
@@ -52,7 +52,7 @@
       </div>
     </div>
     <div id="selectedProductsButtonsWrapper">
-      <jqxButton [theme]="'material'" [width]="50" #backButtonReview class="backButton">Back</jqxButton>
+      <jqxButton [theme]="'fluent'" [width]="50" #backButtonReview class="backButton">Back</jqxButton>
     </div>
   </div>
 </jqxTabs>

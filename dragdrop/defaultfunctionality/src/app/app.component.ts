@@ -1,9 +1,11 @@
 ﻿import { Component, ViewChild, AfterViewInit, ViewEncapsulation } from '@angular/core';
 
-import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid.ts'
 
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
     encapsulation: ViewEncapsulation.None
@@ -123,7 +125,7 @@ export class AppComponent implements AfterViewInit {
                  </div>
                  <img src="https://www.jqwidgets.com/angular/images/t-shirts/${product.pic}" alt=${name} class="jqx-rc-b" />`
 
-            catalog.appendChild(element) 
+            catalog.appendChild(element)
 
             let widget: jqwidgets.jqxDragDrop = jqwidgets.createInstance(`.${counter}DragDrop`, 'jqxDragDrop', { dropTarget: $('#cart'), revert: true });
 
@@ -145,7 +147,7 @@ export class AppComponent implements AfterViewInit {
             widget.addEventHandler('dropTargetLeave', (event: any) => {
                 event.args.target[0].style.border = '2px solid #aaa';
                 this.onCart = false;
-                widget.dropAction ='default';
+                widget.dropAction = 'default';
             });
             widget.addEventHandler('dragEnd', (event: any) => {
                 let cartElement = document.getElementById('cart');
@@ -179,7 +181,7 @@ export class AppComponent implements AfterViewInit {
                 price: product.price,
                 index: id,
                 remove: '<div style="text-align: center; cursor: pointer; width: 53px;"' +
-                'id="draggable-demo-row-' + id + '">X</div>'
+                    'id="draggable-demo-row-' + id + '">X</div>'
             };
             let temp = this.cartItems;
             temp.push(item)

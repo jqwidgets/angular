@@ -3,15 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { jqxButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxbuttons.ts';
-import { jqxDropDownListComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdropdownlist.ts';
-import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid.ts';
-import { jqxInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxinput.ts';
-import { jqxPanelComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxpanel.ts';
+import { jqxButtonComponent } from 'jqwidgets-ng/jqxbuttons';
+import { jqxDropDownListComponent } from 'jqwidgets-ng/jqxdropdownlist';
+import { jqxTreeGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtreegrid.ts';
+import { jqxInputComponent } from 'jqwidgets-ng/jqxinput';
+import { jqxPanelComponent, jqxPanelModule } from 'jqwidgets-ng/jqxpanel';
 import { jqxTreeGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtreegrid.ts';
 
 @NgModule({
-    declarations: [AppComponent, jqxButtonComponent, jqxDropDownListComponent, jqxGridComponent, jqxInputComponent, jqxPanelComponent, jqxTreeGridComponent],
+    declarations: [AppComponent, jqxButtonComponent, jqxDropDownListComponent, jqxTreeGridComponent, jqxInputComponent, jqxPanelComponent, jqxTreeGridComponent],
     imports: [BrowserModule, FormsModule],
     providers: [],
     bootstrap: [AppComponent]

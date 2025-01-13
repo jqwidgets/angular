@@ -1,7 +1,10 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 @Component({
     selector: 'app-root',
+    imports: [jqxChartModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -12,41 +15,41 @@ export class AppComponent {
 
     titlePadding: any = { left: 0, top: 0, right: 0, bottom: 10 };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
     xAxis: any =
-    {
-        valuesOnTicks: false,
-        gridLines: { visible: false }
-    };
+        {
+            valuesOnTicks: false,
+            gridLines: { visible: false }
+        };
 
     valueAxis: any =
-    {
-        logarithmicScale: true,
-        logarithmicScaleBase: 2,
-        unitInterval: 1,
-        flip: false,
-        title: { text: 'Value' },
-        labels: {
-            formatSettings: { decimalPlaces: 3 },
-            horizontalAlignment: 'right'
-        },
-        gridLines: { visible: false }
-    };
+        {
+            logarithmicScale: true,
+            logarithmicScaleBase: 2,
+            unitInterval: 1,
+            flip: false,
+            title: { text: 'Value' },
+            labels: {
+                formatSettings: { decimalPlaces: 3 },
+                horizontalAlignment: 'right'
+            },
+            gridLines: { visible: false }
+        };
 
     seriesGroups: any[] =
-    [
-        {
-            type: 'splinerangearea',
-            series: [
-                { dataFieldFrom: 'a', dataFieldTo: 'b', displayText: 'from A to B', opacity: 0.8, lineWidth: 1 }
-            ]
-        }
-    ];
+        [
+            {
+                type: 'splinerangearea',
+                series: [
+                    { dataFieldFrom: 'a', dataFieldTo: 'b', displayText: 'from A to B', opacity: 0.8, lineWidth: 1 }
+                ]
+            }
+        ];
 }

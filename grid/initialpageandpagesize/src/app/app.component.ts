@@ -1,10 +1,13 @@
 ﻿import { Component, ViewChild, ElementRef, ViewEncapsulation } from '@angular/core';
 
-import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid.ts'
-import { jqxPanelComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxpanel.ts';
 
+import { jqxPanelComponent, jqxPanelModule } from 'jqwidgets-ng/jqxpanel';
+
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
     encapsulation: ViewEncapsulation.None
@@ -15,47 +18,47 @@ export class AppComponent {
     @ViewChild('myPanel') myPanel: jqxPanelComponent;
     @ViewChild('pagingInfoLog') pagingInfoLog: ElementRef;
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     source: any =
-    {
-        datatype: 'xml',
-        datafields: [
-            { name: 'ShippedDate', map: 'm\\:properties>d\\:ShippedDate', type: 'date' },
-            { name: 'Freight', map: 'm\\:properties>d\\:Freight', type: 'float' },
-            { name: 'ShipName', map: 'm\\:properties>d\\:ShipName' },
-            { name: 'ShipAddress', map: 'm\\:properties>d\\:ShipAddress' },
-            { name: 'ShipCity', map: 'm\\:properties>d\\:ShipCity' },
-            { name: 'ShipCountry', map: 'm\\:properties>d\\:ShipCountry' }
-        ],
-        root: 'entry',
-        record: 'content',
-        id: 'm\\:properties>d\\:OrderID',
-        url: '../assets/orders.txt',
-        pagenum: 3,
-        pagesize: 20,
-        pager: (pagenum: any, pagesize: any, oldpagenum: any): void => {
-            // callback called when a page or page size is changed.
-        }
-    };
+        {
+            datatype: 'xml',
+            datafields: [
+                { name: 'ShippedDate', map: 'm\\:properties>d\\:ShippedDate', type: 'date' },
+                { name: 'Freight', map: 'm\\:properties>d\\:Freight', type: 'float' },
+                { name: 'ShipName', map: 'm\\:properties>d\\:ShipName' },
+                { name: 'ShipAddress', map: 'm\\:properties>d\\:ShipAddress' },
+                { name: 'ShipCity', map: 'm\\:properties>d\\:ShipCity' },
+                { name: 'ShipCountry', map: 'm\\:properties>d\\:ShipCountry' }
+            ],
+            root: 'entry',
+            record: 'content',
+            id: 'm\\:properties>d\\:OrderID',
+            url: '../assets/orders.txt',
+            pagenum: 3,
+            pagesize: 20,
+            pager: (pagenum: any, pagesize: any, oldpagenum: any): void => {
+                // callback called when a page or page size is changed.
+            }
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
     columns: any[] =
-    [
-        { text: 'Ship Name', datafield: 'ShipName', width: 250 },
-        { text: 'Shipped Date', datafield: 'ShippedDate', width: 230, cellsformat: 'D' },
-        { text: 'Freight', datafield: 'Freight', width: 130, cellsformat: 'F2', cellsalign: 'right' },
-        { text: 'Ship Address', datafield: 'ShipAddress', width: 350 },
-        { text: 'Ship City', datafield: 'ShipCity', width: 100 },
-        { text: 'Ship Country', datafield: 'ShipCountry', width: 101 }
-    ];
+        [
+            { text: 'Ship Name', datafield: 'ShipName', width: 250 },
+            { text: 'Shipped Date', datafield: 'ShippedDate', width: 230, cellsformat: 'D' },
+            { text: 'Freight', datafield: 'Freight', width: 130, cellsformat: 'F2', cellsalign: 'right' },
+            { text: 'Ship Address', datafield: 'ShipAddress', width: 350 },
+            { text: 'Ship City', datafield: 'ShipCity', width: 100 },
+            { text: 'Ship Country', datafield: 'ShipCountry', width: 101 }
+        ];
 
     myGridOnPageChanged(event: any): void {
         if (document.getElementsByClassName('logged').length >= 5) {

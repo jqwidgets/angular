@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxTreeGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtree.ts';
 
+
+import { jqxTreeGridModule, jqxTreeGridComponent } from 'jqwidgets-ng/jqxtreegrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxTreeGridModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -11,31 +14,31 @@ export class AppComponent {
     @ViewChild('TreeGrid') treeGrid: jqxTreeGridComponent;
     // prepare the data
     source: any =
-    {
-        dataType: "tab",
-        dataFields: [
-            { name: "Id", type: "number" },
-            { name: "Name", type: "string" },
-            { name: "ParentID", type: "number" },
-            { name: "Population", type: "number" }
-        ],
-        hierarchy:
         {
-            keyDataField: { name: 'Id' },
-            parentDataField: { name: 'ParentID' }
-        },
-        id: 'Id',
-        url: '../assets/locations.txt'
-    };
+            dataType: "tab",
+            dataFields: [
+                { name: "Id", type: "number" },
+                { name: "Name", type: "string" },
+                { name: "ParentID", type: "number" },
+                { name: "Population", type: "number" }
+            ],
+            hierarchy:
+            {
+                keyDataField: { name: 'Id' },
+                parentDataField: { name: 'ParentID' }
+            },
+            id: 'Id',
+            url: '../assets/locations.txt'
+        };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
     columns: any[] = [

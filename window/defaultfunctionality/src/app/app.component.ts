@@ -1,16 +1,20 @@
 ﻿import { Component, ViewChild, AfterViewInit, OnInit, ElementRef } from '@angular/core';
-
-import { jqxWindowComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxwindow.ts';
+import { jqxWindowModule, jqxWindowComponent } from 'jqwidgets-ng/jqxwindow';
+import { jqxCheckBoxComponent, jqxCheckBoxModule } from 'jqwidgets-ng/jqxcheckbox';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
+import { jqxTabsComponent, jqxTabsModule } from 'jqwidgets-ng/jqxtabs';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxWindowModule, jqxTabsModule, jqxButtonModule, jqxCheckBoxModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
 export class AppComponent {
     @ViewChild('windowReference') window: jqxWindowComponent;
     @ViewChild('jqxWidget') jqxWidget: ElementRef;
-    
+
     ngAfterViewInit(): void {
         let offsetLeft = this.jqxWidget.nativeElement.offsetLeft;
         let offsetTop = this.jqxWidget.nativeElement.offsetTop;

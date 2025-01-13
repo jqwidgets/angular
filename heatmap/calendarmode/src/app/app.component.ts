@@ -1,15 +1,18 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxHeatMapModule, jqxHeatMapComponent } from 'jqwidgets-ng/jqxheatmap';
 @Component({
     selector: 'app-root',
+    imports: [jqxHeatMapModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css']
 })
 
 export class AppComponent {
     xAxis: object = {
-        minimum: new Date(2018, 6, 23),
-        maximum: new Date(2019, 7, 5),
+        minimum: new Date(2024, 6, 23),
+        maximum: new Date(2025, 7, 5),
         labelFormat: 'short'
     };
     yAxis: object = {

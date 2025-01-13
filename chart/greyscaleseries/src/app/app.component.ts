@@ -1,9 +1,13 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxChartComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxchart.ts';
 
+import { jqxCheckBoxComponent, jqxCheckBoxModule } from 'jqwidgets-ng/jqxcheckbox';
+
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 @Component({
     selector: 'app-root',
+    imports: [jqxChartModule, jqxCheckBoxModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -24,59 +28,59 @@ export class AppComponent {
 
     titlePadding: any = { left: 90, top: 0, right: 0, bottom: 10 };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
-    xAxis: any =
-    {
-        dataField: 'Day',
-        unitInterval: 1,
-        tickMarks: {
-            visible: true,
-            interval: 1,
-            color: '#CACACA'
-        },
-        gridLines: {
-            visible: false,
-            interval: 1,
-            color: '#CACACA'
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
         }
-    };
+
+        return 850;
+    }
+
+    xAxis: any =
+        {
+            dataField: 'Day',
+            unitInterval: 1,
+            tickMarks: {
+                visible: true,
+                interval: 1,
+                color: '#CACACA'
+            },
+            gridLines: {
+                visible: false,
+                interval: 1,
+                color: '#CACACA'
+            }
+        };
 
     valueAxis: any =
-    {
-        minValue: 0,
-        maxValue: 100,
-        unitInterval: 10,
-        title: { text: 'Time in minutes' },
-        tickMarks: { color: '#CACACA' },
-        gridLines: { color: '#CACACA' }
-    };
+        {
+            minValue: 0,
+            maxValue: 100,
+            unitInterval: 10,
+            title: { text: 'Time in minutes' },
+            tickMarks: { color: '#CACACA' },
+            gridLines: { color: '#CACACA' }
+        };
 
     seriesGroups: any[] =
-    [
-        {
-            type: 'splinearea',
-            series: [
-                { greyScale: true, dataField: 'Goal', displayText: 'Personal Goal', opacity: 0.7 }
-            ]
-        },
-        {
-            type: 'stackedcolumn',
-            columnsGapPercent: 50,
-            seriesGapPercent: 5,
-            series: [
-                { greyScale: true, dataField: 'Running', displayText: 'Running' },
-                { greyScale: true, dataField: 'Swimming', displayText: 'Swimming' },
-                { greyScale: false, dataField: 'Cycling', displayText: 'Cycling' }
-            ]
-        }
-    ];
+        [
+            {
+                type: 'splinearea',
+                series: [
+                    { greyScale: true, dataField: 'Goal', displayText: 'Personal Goal', opacity: 0.7 }
+                ]
+            },
+            {
+                type: 'stackedcolumn',
+                columnsGapPercent: 50,
+                seriesGapPercent: 5,
+                series: [
+                    { greyScale: true, dataField: 'Running', displayText: 'Running' },
+                    { greyScale: true, dataField: 'Swimming', displayText: 'Swimming' },
+                    { greyScale: false, dataField: 'Cycling', displayText: 'Cycling' }
+                ]
+            }
+        ];
 
     RunningOnChange(event: any) {
         this.myChart.seriesGroups()[1].series[0].greyScale = !event.args.checked;

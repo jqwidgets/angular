@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxChartComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxchart.ts';
 
+
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 @Component({
     selector: 'app-root',
+    imports: [jqxChartModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -24,44 +27,44 @@ export class AppComponent {
 
     titlePadding: any = { left: 90, top: 0, right: 0, bottom: 10 };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
     xAxis: any =
-    {
-        dataField: 'Day',
-        unitInterval: 1
-    };
+        {
+            dataField: 'Day',
+            unitInterval: 1
+        };
 
     valueAxis: any =
-    {
-        minValue: 0,
-        maxValue: 100,
-        unitInterval: 10,
-        title: { text: 'Time in minutes' },
-        labels: {
-            horizontalAlignment: 'right'
-        }
-    };
+        {
+            minValue: 0,
+            maxValue: 100,
+            unitInterval: 10,
+            title: { text: 'Time in minutes' },
+            labels: {
+                horizontalAlignment: 'right'
+            }
+        };
 
     seriesGroups: any[] =
-    [
-        {
-            type: 'stackedcolumn',
-            columnsGapPercent: 50,
-            seriesGapPercent: 5,
-            series: [
-                { dataField: 'Running', displayText: 'Running' },
-                { dataField: 'Swimming', displayText: 'Swimming' },
-                { dataField: 'Cycling', displayText: 'Cycling' }
-            ]
-        }
-    ];
+        [
+            {
+                type: 'stackedcolumn',
+                columnsGapPercent: 50,
+                seriesGapPercent: 5,
+                series: [
+                    { dataField: 'Running', displayText: 'Running' },
+                    { dataField: 'Swimming', displayText: 'Swimming' },
+                    { dataField: 'Cycling', displayText: 'Cycling' }
+                ]
+            }
+        ];
 
     flipValueAxisOnChange(event: any): void {
         this.myChart.valueAxis().flip = event.args.checked;

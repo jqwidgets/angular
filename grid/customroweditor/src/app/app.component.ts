@@ -1,7 +1,10 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -12,33 +15,33 @@ export class AppComponent {
         { 'Name': 'Capital', 'Berlin': 'true', 'Boston': 'false', 'London': 'true' }
     ];
 
-    getWidth() : any {
+    getWidth(): any {
         if (document.body.offsetWidth < 850) {
             return '90%';
         }
-        
+
         return 850;
     }
 
     source: any =
-    {
-        localdata: this.data,
-        datatype: 'array',
-        updaterow: (rowid, rowdata, commit) => {
-            // synchronize with the server - send update command
-            // call commit with parameter true if the synchronization with the server is successful 
-            // and with parameter false if the synchronization failder.
-            commit(true);
-        },
-        datafields:
-        [
-            { name: 'Name', type: 'string' },
-            { name: 'Berlin', type: 'string' },
-            { name: 'Boston', type: 'string' },
-            { name: 'London', type: 'string' }
-        ]
+        {
+            localdata: this.data,
+            datatype: 'array',
+            updaterow: (rowid, rowdata, commit) => {
+                // synchronize with the server - send update command
+                // call commit with parameter true if the synchronization with the server is successful 
+                // and with parameter false if the synchronization failder.
+                commit(true);
+            },
+            datafields:
+                [
+                    { name: 'Name', type: 'string' },
+                    { name: 'Berlin', type: 'string' },
+                    { name: 'Boston', type: 'string' },
+                    { name: 'London', type: 'string' }
+                ]
 
-    };
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
@@ -56,11 +59,11 @@ export class AppComponent {
             element.style.cssText = 'position: absolute; top: 50%; left: 50%; margin-top: -7px; margin-left: -10px;';
             editor.append(element);
 
-            const options = { 
-              width: 18, height: 18, theme: 'material',
-              animationShowDelay: 0, animationHideDelay: 0
+            const options = {
+                width: 18, height: 18, theme: 'material',
+                animationShowDelay: 0, animationHideDelay: 0
             };
-            
+
             jqwidgets.createInstance(`.capitalCheckBox`, 'jqxCheckBox', options);
         }
     }
@@ -88,19 +91,19 @@ export class AppComponent {
     }
 
     columns: any[] =
-    [
-        { text: 'Name', pinned: true, editable: false, datafield: 'Name', width: 150 },
-        {
-            text: 'Boston', columntype: 'custom', datafield: 'Boston', width: 150,
-            createeditor: this.createGridEditor, initeditor: this.initGridEditor, geteditorvalue: this.gridEditorValue
-        },
-        {
-            text: 'Berlin', columntype: 'custom', datafield: 'Berlin', width: 150,
-            createeditor: this.createGridEditor, initeditor: this.initGridEditor, geteditorvalue: this.gridEditorValue
-        },
-        {
-            text: 'London', columntype: 'custom', datafield: 'London',
-            createeditor: this.createGridEditor, initeditor: this.initGridEditor, geteditorvalue: this.gridEditorValue
-        }
-    ];
+        [
+            { text: 'Name', pinned: true, editable: false, datafield: 'Name', width: 150 },
+            {
+                text: 'Boston', columntype: 'custom', datafield: 'Boston', width: 150,
+                createeditor: this.createGridEditor, initeditor: this.initGridEditor, geteditorvalue: this.gridEditorValue
+            },
+            {
+                text: 'Berlin', columntype: 'custom', datafield: 'Berlin', width: 150,
+                createeditor: this.createGridEditor, initeditor: this.initGridEditor, geteditorvalue: this.gridEditorValue
+            },
+            {
+                text: 'London', columntype: 'custom', datafield: 'London',
+                createeditor: this.createGridEditor, initeditor: this.initGridEditor, geteditorvalue: this.gridEditorValue
+            }
+        ];
 }

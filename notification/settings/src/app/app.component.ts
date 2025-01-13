@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
-
-import { jqxNotificationComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxnotification.ts';
+import { jqxNotificationModule, jqxNotificationComponent } from 'jqwidgets-ng/jqxnotification';
+import { jqxCheckBoxComponent, jqxCheckBoxModule } from 'jqwidgets-ng/jqxcheckbox';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxNotificationModule, jqxCheckBoxModule, jqxButtonModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 

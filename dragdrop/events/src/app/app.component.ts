@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild, AfterViewInit, ViewEncapsulation } from '@angular/core';
 
-import { jqxPanelComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxpanel.ts';
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
+import { jqxPanelModule, jqxPanelComponent } from 'jqwidgets-ng/jqxpanel';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
     encapsulation: ViewEncapsulation.None

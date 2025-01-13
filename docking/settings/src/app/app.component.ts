@@ -1,10 +1,13 @@
 ﻿import { Component, ViewChild, AfterViewInit } from '@angular/core';
 
-import { jqxDockingComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdocking.ts';
-import { jqxCheckBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxcheckbox.ts';
+import { jqxCheckBoxComponent, jqxCheckBoxModule } from 'jqwidgets-ng/jqxcheckbox';
+import { jqxDockingModule, jqxDockingComponent } from 'jqwidgets-ng/jqxdocking';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxDockingModule, jqxButtonModule, jqxCheckBoxModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -13,13 +16,13 @@ export class AppComponent implements AfterViewInit {
     @ViewChild('collapseButtonsCheckbox') collapseButtonsCheckbox: jqxCheckBoxComponent;
     @ViewChild('closeButtonsCheckbox') closeButtonsCheckbox: jqxCheckBoxComponent;
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 800) {
-			return '90%';
-		}
-		
-		return 800;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 800) {
+            return '90%';
+        }
+
+        return 800;
+    }
 
     ngAfterViewInit(): void {
         this.myDocking.setWindowPosition('window0', 100, 100);

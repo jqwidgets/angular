@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
 
-import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid.ts'
 
+
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -12,18 +15,18 @@ export class AppComponent {
     @ViewChild('eventLog') eventLog: ElementRef;
 
     employeesSource: any =
-    {
-        datatype: 'xml',
-        datafields: [
-            { name: 'FirstName', type: 'string' },
-            { name: 'LastName', type: 'string' }
-        ],
-        root: 'Employees',
-        record: 'Employee',
-        id: 'EmployeeID',
-        url: '../assets/employees.txt',
-        async: false
-    };
+        {
+            datatype: 'xml',
+            datafields: [
+                { name: 'FirstName', type: 'string' },
+                { name: 'LastName', type: 'string' }
+            ],
+            root: 'Employees',
+            record: 'Employee',
+            id: 'EmployeeID',
+            url: '../assets/employees.txt',
+            async: false
+        };
 
     employeesAdapter: any = new jqx.dataAdapter(this.employeesSource, {
         autoBind: true,
@@ -40,52 +43,52 @@ export class AppComponent {
         }
     });
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     ordersSource: any =
-    {
-        datatype: 'xml',
-        datafields: [
-            // name - determines the field's name.
-            // value - the field's value in the data source.
-            // values - specifies the field's values.
-            // values.source - specifies the foreign source. The expected value is an array.
-            // values.value - specifies the field's name in the foreign source. 
-            // values.name - specifies the field's value in the foreign source. 
-            // When the ordersAdapter is loaded, each record will have a field called 'EmployeeName'. The 'EmployeeName' for each record comes from the employeesAdapter where the record's 'EmployeeID' from orders.txt matches to the 'EmployeeID' from employees.txt. 
-            { name: 'EmployeeName', value: 'EmployeeID', values: { source: this.employeesAdapter.records, value: 'EmployeeID', name: 'EmployeeName' } },
-            { name: 'EmployeeID', map: 'm\\:properties>d\\:EmployeeID' },
-            { name: 'ShippedDate', map: 'm\\:properties>d\\:ShippedDate', type: 'date' },
-            { name: 'Freight', map: 'm\\:properties>d\\:Freight', type: 'float' },
-            { name: 'ShipName', map: 'm\\:properties>d\\:ShipName' },
-            { name: 'ShipAddress', map: 'm\\:properties>d\\:ShipAddress' },
-            { name: 'ShipCity', map: 'm\\:properties>d\\:ShipCity' },
-            { name: 'ShipCountry', map: 'm\\:properties>d\\:ShipCountry' }
-        ],
-        root: 'entry',
-        record: 'content',
-        id: 'm\\:properties>d\\:OrderID',
-        url: '../assets/orders.txt',
-        pager: (pagenum: any, pagesize: any, oldpagenum: any): void => {
-            // callback called when a page or page size is changed.
-        }
-    };
+        {
+            datatype: 'xml',
+            datafields: [
+                // name - determines the field's name.
+                // value - the field's value in the data source.
+                // values - specifies the field's values.
+                // values.source - specifies the foreign source. The expected value is an array.
+                // values.value - specifies the field's name in the foreign source. 
+                // values.name - specifies the field's value in the foreign source. 
+                // When the ordersAdapter is loaded, each record will have a field called 'EmployeeName'. The 'EmployeeName' for each record comes from the employeesAdapter where the record's 'EmployeeID' from orders.txt matches to the 'EmployeeID' from employees.txt. 
+                { name: 'EmployeeName', value: 'EmployeeID', values: { source: this.employeesAdapter.records, value: 'EmployeeID', name: 'EmployeeName' } },
+                { name: 'EmployeeID', map: 'm\\:properties>d\\:EmployeeID' },
+                { name: 'ShippedDate', map: 'm\\:properties>d\\:ShippedDate', type: 'date' },
+                { name: 'Freight', map: 'm\\:properties>d\\:Freight', type: 'float' },
+                { name: 'ShipName', map: 'm\\:properties>d\\:ShipName' },
+                { name: 'ShipAddress', map: 'm\\:properties>d\\:ShipAddress' },
+                { name: 'ShipCity', map: 'm\\:properties>d\\:ShipCity' },
+                { name: 'ShipCountry', map: 'm\\:properties>d\\:ShipCountry' }
+            ],
+            root: 'entry',
+            record: 'content',
+            id: 'm\\:properties>d\\:OrderID',
+            url: '../assets/orders.txt',
+            pager: (pagenum: any, pagesize: any, oldpagenum: any): void => {
+                // callback called when a page or page size is changed.
+            }
+        };
 
     ordersAdapter: any = new jqx.dataAdapter(this.ordersSource);
 
     columns: any[] =
-    [
-        { text: 'Employee Name', datafield: 'EmployeeID', displayfield: 'EmployeeName', columntype: 'dropdownlist', width: 150 },
-        { text: 'Ship City', datafield: 'ShipCity', width: 150 },
-        { text: 'Ship Country', datafield: 'ShipCountry', width: 150 },
-        { text: 'Ship Name', datafield: 'ShipName' }
-    ];
+        [
+            { text: 'Employee Name', datafield: 'EmployeeID', displayfield: 'EmployeeName', columntype: 'dropdownlist', width: 150 },
+            { text: 'Ship City', datafield: 'ShipCity', width: 150 },
+            { text: 'Ship Country', datafield: 'ShipCountry', width: 150 },
+            { text: 'Ship Name', datafield: 'ShipName' }
+        ];
 
     myGridOnCellSelect(event: any): void {
         let column = this.myGrid.getcolumn(event.args.datafield);

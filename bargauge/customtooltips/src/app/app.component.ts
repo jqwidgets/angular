@@ -1,11 +1,16 @@
 ﻿import { Component, ViewEncapsulation } from '@angular/core';
 
+import { jqxBarGaugeModule, jqxBarGaugeComponent } from 'jqwidgets-ng/jqxbargauge';
+import { jqxSliderModule, jqxSliderComponent } from 'jqwidgets-ng/jqxslider';
+
 @Component({
     selector: 'app-root',
-    templateUrl: './app.component.html',
+    imports: [jqxSliderModule, jqxBarGaugeModule],
+    standalone: true,
     styleUrls: ['./app.component.css'],
-    encapsulation: ViewEncapsulation.None
+    templateUrl: './app.component.html'
 })
+
 
 export class AppComponent {
     players: number[] = [25, 46, 6, 55, 14, 22, 57, 40, 87, 20];

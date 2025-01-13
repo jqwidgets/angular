@@ -1,9 +1,10 @@
 ﻿import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 
-import { jqxDropDownListComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdropdownlist.ts';
-
+import { jqxDropDownListModule, jqxDropDownListComponent } from 'jqwidgets-ng/jqxdropdownlist';
 @Component({
     selector: 'app-root',
+    imports: [jqxDropDownListModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 

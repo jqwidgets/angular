@@ -1,11 +1,11 @@
-﻿<jqxGrid [theme]="'material'" #myGrid
+﻿<jqxGrid [theme]="'fluent'" #myGrid
     [width]="getWidth()" [source]="dataAdapter" [columns]="columns"
     [filterable]="true" [selectionmode]="'multiplecellsextended'" [showfilterrow]="true">
 </jqxGrid>
 
 <br />
 
-<jqxButton [theme]="'material'" (onClick)="clearFiltering()"
+<jqxButton [theme]="'fluent'" (onClick)="clearFiltering()"
     [width]="120" [height]="30">
     Remove Filter
 </jqxButton>

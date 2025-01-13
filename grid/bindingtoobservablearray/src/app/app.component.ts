@@ -2,8 +2,13 @@
 
 import { generatedata } from '../assets/generatedata';
 
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
+
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule, jqxButtonModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -18,40 +23,40 @@ export class AppComponent implements AfterViewInit {
         this.updateLog(this.observableArray);
     });
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     source: any =
-    {
-        localdata: this.observableArray,
-        datatype: 'obserableArray',
-        datafields:
-        [
-            { name: 'firstname', type: 'string' },
-            { name: 'lastname', type: 'string' },
-            { name: 'productname', type: 'string' },
-            { name: 'quantity', type: 'number' },
-            { name: 'price', type: 'number' },
-            { name: 'total', type: 'number' }
-        ]
-    };
+        {
+            localdata: this.observableArray,
+            datatype: 'obserableArray',
+            datafields:
+                [
+                    { name: 'firstname', type: 'string' },
+                    { name: 'lastname', type: 'string' },
+                    { name: 'productname', type: 'string' },
+                    { name: 'quantity', type: 'number' },
+                    { name: 'price', type: 'number' },
+                    { name: 'total', type: 'number' }
+                ]
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
     columns: any[] =
-    [
-        { text: 'Name', datafield: 'firstname', width: 120 },
-        { text: 'Last Name', datafield: 'lastname', width: 120 },
-        { text: 'Product', datafield: 'productname', width: 180 },
-        { text: 'Quantity', datafield: 'quantity', width: 80, cellsalign: 'right' },
-        { text: 'Unit Price', datafield: 'price', width: 90, cellsalign: 'right', cellsformat: 'c2' },
-        { text: 'Total', datafield: 'total', cellsalign: 'right', cellsformat: 'c2' }
-    ];
+        [
+            { text: 'Name', datafield: 'firstname', width: 120 },
+            { text: 'Last Name', datafield: 'lastname', width: 120 },
+            { text: 'Product', datafield: 'productname', width: 180 },
+            { text: 'Quantity', datafield: 'quantity', width: 80, cellsalign: 'right' },
+            { text: 'Unit Price', datafield: 'price', width: 90, cellsalign: 'right', cellsformat: 'c2' },
+            { text: 'Total', datafield: 'total', cellsalign: 'right', cellsformat: 'c2' }
+        ];
 
     updateLog(observableArray: any): void {
         let rows = '';
@@ -74,7 +79,7 @@ export class AppComponent implements AfterViewInit {
         if (this.observableArray.length > 0) {
             let temp = this.observableArray;
             temp.splice(0, 1);
-            this. observableArray = temp
+            this.observableArray = temp
         }
     };
 

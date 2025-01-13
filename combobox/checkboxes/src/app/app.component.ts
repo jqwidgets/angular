@@ -1,32 +1,35 @@
 ﻿import { Component, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 
-import { jqxComboBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxcombobox.ts';
-
+import { jqxComboBoxModule, jqxComboBoxComponent } from 'jqwidgets-ng/jqxcombobox';
 @Component({
     selector: 'app-root',
-    templateUrl: './app.component.html'
+    imports: [jqxComboBoxModule],
+    standalone: true,
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css'],
+    encapsulation: ViewEncapsulation.None
 })
 
 export class AppComponent implements AfterViewInit {
     @ViewChild('myComboBox') myComboBox: jqxComboBoxComponent;
-	@ViewChild('selectionlog') selectionlog: ElementRef;
-	@ViewChild('checkedItemsLog') checkedItemsLog: ElementRef;
+    @ViewChild('selectionlog') selectionlog: ElementRef;
+    @ViewChild('checkedItemsLog') checkedItemsLog: ElementRef;
 
-    ngAfterViewInit(): void { 
+    ngAfterViewInit(): void {
         this.myComboBox.checkIndex(0)
     }
 
     source: any =
-    {
-        datatype: 'json',
-        datafields: [
-            { name: 'CompanyName' },
-            { name: 'ContactName' }
-        ],
-        id: 'id',
-        url: '../assets/customers.txt',
-        async: false
-    };
+        {
+            datatype: 'json',
+            datafields: [
+                { name: 'CompanyName' },
+                { name: 'ContactName' }
+            ],
+            id: 'id',
+            url: '../assets/customers.txt',
+            async: false
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 

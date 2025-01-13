@@ -1,16 +1,17 @@
 ﻿import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 
-import { jqxRibbonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxribbon.ts';
-import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid.ts';
-import { jqxButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxbuttons.ts';
-import { jqxTooltipComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtooltip.ts';
-import { jqxDropDownButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdropdownbutton.ts';
-import { jqxColorPickerComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxcolorpicker.ts';
-import { jqxDropDownListComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdropdownlist.ts';
-import { jqxToggleButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtogglebutton.ts';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
+import { jqxTooltipComponent, jqxTooltipModule } from 'jqwidgets-ng/jqxtooltip';
+import { jqxDropDownButtonComponent, jqxDropDownButtonModule } from 'jqwidgets-ng/jqxdropdownbutton';
+import { jqxColorPickerComponent, jqxColorPickerModule } from 'jqwidgets-ng/jqxcolorpicker';
+import { jqxDropDownListComponent, jqxDropDownListmodule } from 'jqwidgets-ng/jqxdropdownlist';
+import { jqxToggleButtonComponent, jqxToggleButtonModule } from 'jqwidgets-ng/jqxtogglebutton';
 
+import { jqxRibbonModule, jqxRibbonComponent } from 'jqwidgets-ng/jqxribbon';
 @Component({
     selector: 'app-root',
+    imports: [jqxRibbonModule, jqxButtonModule, jqxTooltipModule, jqxDropDownButtonModule, jqxColorPickerModule, jqxToggleButtonModule, jqxDropDownListmodule],
+    standalone: true,
     styleUrls: ['./app.component.css'],
     templateUrl: './app.component.html',
     encapsulation: ViewEncapsulation.None
@@ -26,22 +27,22 @@ export class AppComponent {
     @ViewChild('superscript') superScriptToggleButton: jqxToggleButtonComponent;
     @ViewChild('subscript') subscriptToggleButton: jqxToggleButtonComponent;
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 800) {
-			return '90%';
-		}
-		
-		return 800;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 800) {
+            return '90%';
+        }
+
+        return 800;
+    }
+
     ngAfterViewInit(): void {
-		this.buttonsStyling();
-		this.ribbon.elementRef.nativeElement.firstElementChild.children[1].style.padding = '35px 0px 0px';
-		this.ribbon.disableAt(0);
-		this.fileItemButton.setContent('<span style="position: relative; line-height: 26px; margin-left:10px;">File</span>');
-		this.fontColorButton.setContent('<span style="position: relative; display:inline; top: 2px"><div class="icon FontDialogImage"></div><span id="fontColorPreview" style="display: block; position:absolute;  height: 3px; width: 16px; background:#000"></span></span><span style="position:relative; display: inline; top:3px">Font Color</span>');
-		this.bucketColorButton.setContent('<span style="position: relative; display:inline"><div class="icon paintcan"></div><span id="bucketColorPreview" style="display: block; position:absolute;  height: 3px; width: 16px; background:#000"></span></span><span style="position:relative; display: inline; top:3px"></span>');
-		this.highlightColorButton.setContent('<span style="position: relative; display:inline; top: 2px"><div class="icon pencil"></div><span id="highlightColorPreview" style="display: block; position:absolute;  height: 3px; width: 16px; background:#F00"></span></span><span style="position:relative; display: inline; top:3px">Highlight Color</span>');
+        this.buttonsStyling();
+        this.ribbon.elementRef.nativeElement.firstElementChild.children[1].style.padding = '35px 0px 0px';
+        this.ribbon.disableAt(0);
+        this.fileItemButton.setContent('<span style="position: relative; line-height: 26px; margin-left:10px;">File</span>');
+        this.fontColorButton.setContent('<span style="position: relative; display:inline; top: 2px"><div class="icon FontDialogImage"></div><span id="fontColorPreview" style="display: block; position:absolute;  height: 3px; width: 16px; background:#000"></span></span><span style="position:relative; display: inline; top:3px">Font Color</span>');
+        this.bucketColorButton.setContent('<span style="position: relative; display:inline"><div class="icon paintcan"></div><span id="bucketColorPreview" style="display: block; position:absolute;  height: 3px; width: 16px; background:#000"></span></span><span style="position:relative; display: inline; top:3px"></span>');
+        this.highlightColorButton.setContent('<span style="position: relative; display:inline; top: 2px"><div class="icon pencil"></div><span id="highlightColorPreview" style="display: block; position:absolute;  height: 3px; width: 16px; background:#F00"></span></span><span style="position:relative; display: inline; top:3px">Highlight Color</span>');
     }
 
     buttonsStyling(): void {
@@ -106,11 +107,11 @@ export class AppComponent {
     };
 
     fontListSource: string[] =
-    [
-        "<span style='font-family: Courier New;'>Courier New</span>",
-        "<span style='font-family: Times New Roman;'>Times New Roman</span>",
-        "<span style='font-family: Arial;'>Arial</span>"
-    ];
+        [
+            "<span style='font-family: Courier New;'>Courier New</span>",
+            "<span style='font-family: Times New Roman;'>Times New Roman</span>",
+            "<span style='font-family: Arial;'>Arial</span>"
+        ];
 
     fontSizeListSource: number[] = [8, 9, 10, 11, 12, 14, 18, 20, 22, 24];
     fontSizeListRenderer: any = (index, label, value) => {
@@ -123,12 +124,12 @@ export class AppComponent {
     };
 
     pasteData: any[] =
-    [
-        { label: 'Paste', imageClass: 'icon page_paste' },
-        { label: 'Paste Special', imageClass: 'icon paste_plain' },
-        { label: 'Paste text', imageClass: 'icon paste_word' },
-        { label: 'Paste link', imageClass: 'icon PasteImage' }
-    ];
+        [
+            { label: 'Paste', imageClass: 'icon page_paste' },
+            { label: 'Paste Special', imageClass: 'icon paste_plain' },
+            { label: 'Paste text', imageClass: 'icon paste_word' },
+            { label: 'Paste link', imageClass: 'icon PasteImage' }
+        ];
 
     pasteRenderer: any = (index: number, label, value) => {
         let labelEl = '<span style="font-size: 10px">' + label + '</span>';
@@ -153,31 +154,31 @@ export class AppComponent {
             if (i == 0) {
                 let cssclass = 'jqx-widget-header';
                 columns[columns.length] =
-                    {
-                        pinned: true,
-                        exportable: false,
-                        text: "",
-                        columntype: 'number',
-                        cellclassname: cssclass,
-                        cellsrenderer: numberrenderer
-                    };
+                {
+                    pinned: true,
+                    exportable: false,
+                    text: "",
+                    columntype: 'number',
+                    cellclassname: cssclass,
+                    cellsrenderer: numberrenderer
+                };
             }
             datafields[datafields.length] = { name: text };
             columns[columns.length] = { text: text, datafield: text, width: 60, align: 'center' };
         };
         let source =
-            {
-                unboundmode: true,
-                totalrecords: 100,
-                datafields: datafields,
-            };
+        {
+            unboundmode: true,
+            totalrecords: 100,
+            datafields: datafields,
+        };
         let dataAdapter = new jqx.dataAdapter(source);
-        let jqxGridSettings: jqwidgets.GridOptions =
-            {
-                source: dataAdapter,
-                columns: columns
-            };
+        let jqxRibbonSettings: jqwidgets.GridOptions =
+        {
+            source: dataAdapter,
+            columns: columns
+        };
 
-        return jqxGridSettings;
+        return jqxRibbonSettings;
     };
 }

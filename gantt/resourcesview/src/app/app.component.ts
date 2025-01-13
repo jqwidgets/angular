@@ -1,15 +1,18 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
-import { jqxGanttComponent } from 'jqwidgets-ng/jqxgantt';
 
+
+import { jqxGanttModule, jqxGanttComponent } from 'jqwidgets-ng/jqxgantt';
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html'
+	selector: 'app-root',
+	imports: [jqxGanttModule],
+	standalone: true,
+	templateUrl: './app.component.html'
 })
 
 export class AppComponent {
 	@ViewChild('gantt', { static: false }) gantt!: jqxGanttComponent;
-	 
-	  source: any[] = [
+
+	source: any[] = [
 		{
 			label: 'Office Configuration',
 			synchronized: true,
@@ -192,7 +195,7 @@ export class AppComponent {
 			]
 		}
 	];
-	
+
 	taskColumns: any[] = [
 		{
 			label: 'Task Name',
@@ -212,14 +215,14 @@ export class AppComponent {
 				const gantt = this.gantt;
 				const resources: any[] = gantt.getResources();
 				const tasks: any[] = gantt.getTasks();
-				
+
 				if (!resources) {
 					return;
 				}
-				
+
 				console.log(tasks);
 				const getResource = (d) => resources.find((res) => res.id.toString() === d.toString());
-				
+
 				if (!item || item.disableResources) {
 					return '';
 				}
@@ -247,7 +250,7 @@ export class AppComponent {
 			value: 'duration'
 		}
 	];
-	
+
 	resourceColumns: any[] = [
 		{
 			label: 'Name',
@@ -273,19 +276,19 @@ export class AppComponent {
 			size: '20%'
 		}
 	]
-	
-    durationUnit: string = 'day';
-	hideResourcePanel:  Boolean = true;
+
+	durationUnit: string = 'day';
+	hideResourcePanel: Boolean = true;
 	groupByResources: Boolean = true;
-	
+
 	treeMin: string = '25%';
 	resourcePanelSize: string = '30%';
 	view: string = 'week';
 	timelineHeaderFormatFunction: any = (date: Date, type: string, isHeaderDetailsContainer: Boolean) => {
-	    const gantt = this.gantt;
+		const gantt = this.gantt;
 		if (type === 'week') {
 			const startDayOfWeek: Date = new Date(date),
-			endDateOfWeek: Date = new Date(date);
+				endDateOfWeek: Date = new Date(date);
 			endDateOfWeek.setDate(date.getDate() + 6);
 			return startDayOfWeek.toLocaleDateString('en', { day: 'numeric', month: 'short', year: 'numeric' }) + ' - ' +
 				endDateOfWeek.toLocaleDateString('en', { day: 'numeric', month: 'short', year: 'numeric' });

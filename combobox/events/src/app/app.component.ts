@@ -1,15 +1,17 @@
 ﻿import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 
-import { jqxComboBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxcombobox.ts';
-import { jqxPanelComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxpanel.ts';
+import { jqxComboBoxModule, jqxComboBoxComponent } from 'jqwidgets-ng/jqxcombobox';
+import { jqxPanelModule, jqxPanelComponent } from 'jqwidgets-ng/jqxpanel';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxComboBoxModule, jqxPanelModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
     encapsulation: ViewEncapsulation.None
-
 })
+
 
 export class AppComponent {
     @ViewChild('myComboBox') myComboBox: jqxComboBoxComponent;

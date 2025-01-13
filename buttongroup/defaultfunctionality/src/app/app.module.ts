@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { jqxButtonGroupComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxbuttongroup.ts';
-import { jqxRadioButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxradiobutton.ts';
+import { jqxRadioButtonComponent } from 'jqwidgets-ng/jqxradiobutton';
 
 @NgModule({
     declarations: [AppComponent, jqxButtonGroupComponent, jqxRadioButtonComponent],

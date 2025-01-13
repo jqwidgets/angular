@@ -1,10 +1,13 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
-import { jqxGanttComponent } from 'jqwidgets-ng/jqxgantt';
+
 import 'jqwidgets-ng/jqxdropdownlist';
 
+import { jqxGanttModule, jqxGanttComponent } from 'jqwidgets-ng/jqxgantt';
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html'
+	selector: 'app-root',
+	imports: [jqxGanttModule],
+	standalone: true,
+	templateUrl: './app.component.html'
 })
 
 export class AppComponent {
@@ -39,7 +42,7 @@ export class AppComponent {
 					{ label: 'Medium', value: 1 },
 					{ label: 'High', value: 2 }]
 				});
-				window['JQXLite'](dropDownList, {selectedIndex: value});
+				window['JQXLite'](dropDownList, { selectedIndex: value });
 
 				container.appendChild(labelElement);
 				container.appendChild(dropDownList);

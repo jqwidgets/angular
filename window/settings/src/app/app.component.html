@@ -1,40 +1,40 @@
 ﻿<div>
-  <jqxButton [theme]="'material'" #showWindowButton
+  <jqxButton [theme]="'fluent'" #showWindowButton
              style="float: left;"
              (onClick)="showWindowButtonClick()"
              [width]="80">
     Open
   </jqxButton>
 
-  <jqxButton [theme]="'material'" #hideWindowButton
+  <jqxButton [theme]="'fluent'" #hideWindowButton
              style="float: left; margin-left: 3px;"
              (onClick)="hideWindowButtonClick()"
              [width]="80">
     Close
   </jqxButton>
 
-  <jqxButton [theme]="'material'" #pinWindowButton
+  <jqxButton [theme]="'fluent'" #pinWindowButton
              style="float: left; margin-left: 3px;"
              (onClick)="pinWindowButtonClick()"
              [width]="80">
     Pin
   </jqxButton>
   
-  <jqxButton [theme]="'material'" #unpinWindowButton
+  <jqxButton [theme]="'fluent'" #unpinWindowButton
              style="float: left; margin-left: 3px;"
              (onClick)="unpinWindowButtonClick()"
              [width]="80">
     Unpin
   </jqxButton>
   
-  <jqxButton [theme]="'material'" #collapseWindowButton
+  <jqxButton [theme]="'fluent'" #collapseWindowButton
              style="float: left; margin-left: 3px;"
              (onClick)="collapseWindowButtonClick()"
              [width]="80">
     Collapse
   </jqxButton>
 
-  <jqxButton [theme]="'material'" #expandWindowButton
+  <jqxButton [theme]="'fluent'" #expandWindowButton
              style="float: left; margin-left: 3px;"
              (onClick)="expandWindowButtonClick()"
              [width]="80">
@@ -42,7 +42,7 @@
   </jqxButton>
 </div>
 
-<jqxWindow [theme]="'material'" #customWindow
+<jqxWindow [theme]="'fluent'" #customWindow
            [width]="400"
            [height]="150"
            [cancelButton]="'.cancelButton'" [resizable]="false"
@@ -62,12 +62,12 @@
              type='text' style="margin-left: 5px; height: 17px; width: 175px; border: 1px solid #aaa;"/>
 
       <div style="float: right;">
-          <jqxButton [theme]="'material'" #searchTextButton
+          <jqxButton [theme]="'fluent'" #searchTextButton
                      style="margin-bottom: 5px;"
                      [width]="80" [disabled]="true">
             Find Next
           </jqxButton>
-          <jqxButton [theme]="'material'" #cancelButton
+          <jqxButton [theme]="'fluent'" #cancelButton
                      style="display: block; margin-top: 5px;"
                      [width]="80">
             Cancel
@@ -75,7 +75,7 @@
       </div>
       <br />
       <br />
-      <jqxCheckBox [theme]="'material'" #checkBox [width]="150">Match case</jqxCheckBox>
+      <jqxCheckBox [theme]="'fluent'" #checkBox [width]="150">Match case</jqxCheckBox>
     </div>
 
       </div>

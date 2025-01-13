@@ -1,4 +1,4 @@
-﻿<jqxGrid [theme]="'material'" #myGrid
+﻿<jqxGrid [theme]="'fluent'" #myGrid
     (onPagechanged)="myGridOnPageChanged($event)" (onPagesizechanged)="myGridOnPageSizeChanged($event)"
     [width]="getWidth()" [source]="dataAdapter" [columns]="columns"
     [sortable]="true" [pageable]="true" [autoheight]="true"
@@ -8,7 +8,7 @@
 <div style="margin-top: 30px">
     <div style=" float: left">
         Event Log:
-        <jqxPanel [theme]="'material'" #myPanel [width]="300" [height]="180"></jqxPanel>
+        <jqxPanel [theme]="'fluent'" #myPanel [width]="300" [height]="180"></jqxPanel>
     </div>
     <div style=" float: left">
         Paging Details:

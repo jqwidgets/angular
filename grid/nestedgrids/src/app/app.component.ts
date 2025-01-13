@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid.ts'
 
+
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -11,46 +14,46 @@ export class AppComponent {
     @ViewChild('myGrid') myGrid: jqxGridComponent;
 
     source: any =
-    {
-        datafields: [
-            { name: 'FirstName' },
-            { name: 'LastName' },
-            { name: 'Title' },
-            { name: 'Address' },
-            { name: 'City' }
-        ],
-        root: 'Employees',
-        record: 'Employee',
-        id: 'EmployeeID',
-        datatype: 'xml',
-        url: '../assets/employees.txt'
-    };
+        {
+            datafields: [
+                { name: 'FirstName' },
+                { name: 'LastName' },
+                { name: 'Title' },
+                { name: 'Address' },
+                { name: 'City' }
+            ],
+            root: 'Employees',
+            record: 'Employee',
+            id: 'EmployeeID',
+            datatype: 'xml',
+            url: '../assets/employees.txt'
+        };
 
     employeesAdapter: any = new jqx.dataAdapter(this.source);
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     ordersSource: any =
-    {
-        datafields: [
-            { name: 'EmployeeID', type: 'string' },
-            { name: 'ShipName', type: 'string' },
-            { name: 'ShipAddress', type: 'string' },
-            { name: 'ShipCity', type: 'string' },
-            { name: 'ShipCountry', type: 'string' },
-            { name: 'ShippedDate', type: 'date' }
-        ],
-        root: 'Orders',
-        record: 'Order',
-        datatype: 'xml',
-        url: '../assets/orderdetails.txt'
-    };
+        {
+            datafields: [
+                { name: 'EmployeeID', type: 'string' },
+                { name: 'ShipName', type: 'string' },
+                { name: 'ShipAddress', type: 'string' },
+                { name: 'ShipCity', type: 'string' },
+                { name: 'ShipCountry', type: 'string' },
+                { name: 'ShippedDate', type: 'date' }
+            ],
+            root: 'Orders',
+            record: 'Order',
+            datatype: 'xml',
+            url: '../assets/orderdetails.txt'
+        };
 
     ordersDataAdapter = new jqx.dataAdapter(this.ordersSource, { autoBind: true });
 
@@ -90,10 +93,10 @@ export class AppComponent {
         if (nestedGridContainer != null) {
 
             let settings = {
-                theme: 'material', 
+                theme: 'material',
                 width: 780,
                 height: 200,
-                source: nestedGridAdapter, 
+                source: nestedGridAdapter,
                 columns: [
                     { text: 'Ship Name', datafield: 'ShipName', width: 200 },
                     { text: 'Ship Address', datafield: 'ShipAddress', width: 200 },
@@ -127,12 +130,12 @@ export class AppComponent {
     };
 
     columns: any[] =
-    [
-        { text: 'Photo', width: 50, cellsrenderer: this.photoRenderer },
-        { text: 'First Name', datafield: 'FirstName', width: 100, cellsrenderer: this.renderer },
-        { text: 'Last Name', datafield: 'LastName', width: 100, cellsrenderer: this.renderer },
-        { text: 'Title', datafield: 'Title', width: 180, cellsrenderer: this.renderer },
-        { text: 'Address', datafield: 'Address', width: 300, cellsrenderer: this.renderer },
-        { text: 'City', datafield: 'City', width: 170, cellsrenderer: this.renderer }
-    ];
+        [
+            { text: 'Photo', width: 50, cellsrenderer: this.photoRenderer },
+            { text: 'First Name', datafield: 'FirstName', width: 100, cellsrenderer: this.renderer },
+            { text: 'Last Name', datafield: 'LastName', width: 100, cellsrenderer: this.renderer },
+            { text: 'Title', datafield: 'Title', width: 180, cellsrenderer: this.renderer },
+            { text: 'Address', datafield: 'Address', width: 300, cellsrenderer: this.renderer },
+            { text: 'City', datafield: 'City', width: 170, cellsrenderer: this.renderer }
+        ];
 }

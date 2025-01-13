@@ -1,14 +1,18 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid.ts'
-import { jqxInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxinput.ts';
-import { jqxNumberInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxnumberinput.ts';
-import { jqxWindowComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxwindow.ts';
 
+import { jqxInputComponent, jqxInputModule } from 'jqwidgets-ng/jqxinput';
+import { jqxNumberInputComponent, jqxNumberInputModule } from 'jqwidgets-ng/jqxnumberinput';
+import { jqxWindowComponent, jqxWindowModule } from 'jqwidgets-ng/jqxwindow';
 import { generatedata } from '../assets/generatedata';
+
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule, jqxButtonModule, jqxWindowModule, jqxNumberInputModule, jqxInputModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -24,27 +28,27 @@ export class AppComponent {
     editrow: number = -1;
     data = generatedata(200, false);
     source =
-    {
-        localdata: this.data,
-        datatype: 'array',
-        datafields:
-        [
-            { name: 'firstname', type: 'string' },
-            { name: 'lastname', type: 'string' },
-            { name: 'productname', type: 'string' },
-            { name: 'quantity', type: 'number' },
-            { name: 'price', type: 'number' }
-        ]
-    };
+        {
+            localdata: this.data,
+            datatype: 'array',
+            datafields:
+                [
+                    { name: 'firstname', type: 'string' },
+                    { name: 'lastname', type: 'string' },
+                    { name: 'productname', type: 'string' },
+                    { name: 'quantity', type: 'number' },
+                    { name: 'price', type: 'number' }
+                ]
+        };
     dataAdapter = new jqx.dataAdapter(this.source);
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     columns = [
         { text: 'First Name', datafield: 'firstname', width: 200 },
@@ -76,13 +80,13 @@ export class AppComponent {
     saveBtn(): void {
         if (this.editrow >= 0) {
             let row =
-                {
-                    firstname: this.firstname.val(),
-                    lastname: this.lastname.val(),
-                    productname: this.product.val(),
-                    quantity: parseInt(this.quantity.decimal()),
-                    price: parseFloat(this.price.decimal())
-                };
+            {
+                firstname: this.firstname.val(),
+                lastname: this.lastname.val(),
+                productname: this.product.val(),
+                quantity: parseInt(this.quantity.decimal()),
+                price: parseFloat(this.price.decimal())
+            };
             let rowID = this.myGrid.getrowid(this.editrow);
             this.myGrid.updaterow(rowID, row);
             this.myWindow.hide();

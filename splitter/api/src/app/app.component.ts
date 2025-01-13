@@ -1,9 +1,14 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxSplitterComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxsplitter.ts';
+
+
+import { jqxSplitterModule, jqxSplitterComponent } from 'jqwidgets-ng/jqxsplitter';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxSplitterModule, jqxButtonModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -11,13 +16,13 @@ export class AppComponent {
     @ViewChild('jqxSplitter') mainSplitter: jqxSplitterComponent;
 
     panels: any[] = [{ size: 250 }];
-   	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	} 
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
     orientationButtonClick(): void {
         let currentOrientation = this.mainSplitter.orientation();
         if (currentOrientation === 'vertical') {

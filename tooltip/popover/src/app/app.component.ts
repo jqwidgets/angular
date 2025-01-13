@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 
-import { jqxTooltipComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtooltip.ts';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
+import { jqxTooltipModule, jqxTooltipComponent } from 'jqwidgets-ng/jqxtooltip';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxTooltipModule, jqxButtonModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styles: [`
         jqxTooltip div {

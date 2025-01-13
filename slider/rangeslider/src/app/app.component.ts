@@ -1,10 +1,13 @@
 ﻿import { Component, ViewChild, ViewEncapsulation, AfterViewInit } from '@angular/core';
 
-import { jqxSliderComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxslider.ts';
-import { jqxButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxbuttons.ts';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
+
+import { jqxSliderModule, jqxSliderComponent } from 'jqwidgets-ng/jqxslider';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxSliderModule, jqxButtonModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['app.component.css'],
     encapsulation: ViewEncapsulation.None
@@ -20,7 +23,7 @@ export class AppComponent implements AfterViewInit {
     ngAfterViewInit() {
         this.shop().init(this.priceSlider, this.displaySlider, this.ramSlider, this.hddSlider, this.resetButton);
     }
-    
+
     laptops = {
         'l-1': { ram: 2, price: 510, display: 15.6, hdd: 320, model: 'Toshiba Satellite C660', marked: false },
         'l-2': { ram: 6, price: 594, display: 15.6, hdd: 500, model: 'TOSHIBA Satellite L675', marked: false },
@@ -110,7 +113,7 @@ export class AppComponent implements AfterViewInit {
                 failed = false;
             }
         };
-        
+
         let unmarkItem = (laptop: string) => {
             document.getElementById(laptop).style.opacity = '1';
             this.laptops[laptop].marked = false;
@@ -152,7 +155,7 @@ export class AppComponent implements AfterViewInit {
             this.collectFilters[option].max = value.rangeEnd;
             return this.collectFilters;
         };
-        
+
         return {
             init: (priceSlider, displaySlider, ramSlider, hddSlider, resetButton) => {
                 drawTable();

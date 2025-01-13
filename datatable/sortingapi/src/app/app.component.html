@@ -1,4 +1,4 @@
-﻿<jqxDataTable [theme]="'material'" #myDataTable style="float: left"
+﻿<jqxDataTable [theme]="'fluent'" #myDataTable style="float: left"
     [width]="getWidth()" [source]="dataAdapter" [columns]="columns"
     [altRows]="true" [pageable]="true" [sortable]="true">
 </jqxDataTable>
@@ -16,7 +16,7 @@
         <td align="right">Column:</td>
         <td align="left">
 
-          <jqxDropDownList [theme]="'material'" #columnName
+          <jqxDropDownList [theme]="'fluent'" #columnName
               [width]="100" [selectedIndex]="0" [autoDropDownHeight]="true"
               [source]="['Name','Last Name','Product','Quantity','Unit Price','Total']">
           </jqxDropDownList>
@@ -27,7 +27,7 @@
         <td align="right">Sort Order:</td>
         <td align="left">
 
-          <jqxDropDownList [theme]="'material'" #sortOrder
+          <jqxDropDownList [theme]="'fluent'" #sortOrder
               [width]="100" [selectedIndex]="0" [autoDropDownHeight]="true"
               [source]="['Ascending','Descending']">
           </jqxDropDownList>
@@ -38,8 +38,8 @@
         <td align="right"></td>
         <td align="left">
 
-          <jqxButton [theme]="'material'" style="float: left" (onClick)="sortBtnOnClick()" [width]="50">Sort</jqxButton>
-          <jqxButton [theme]="'material'" style="float: left; margin-left: 5px" (onClick)="clearBtnOnClick()" [width]="50">Clear</jqxButton>
+          <jqxButton [theme]="'fluent'" style="float: left" (onClick)="sortBtnOnClick()" [width]="50">Sort</jqxButton>
+          <jqxButton [theme]="'fluent'" style="float: left; margin-left: 5px" (onClick)="clearBtnOnClick()" [width]="50">Clear</jqxButton>
 
         </td>
       </tr>

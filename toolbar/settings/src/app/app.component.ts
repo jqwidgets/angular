@@ -1,18 +1,22 @@
 ﻿import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 
-import { jqxToolBarComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtoolbar.ts';
-import { jqxDropDownListComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdropdownlist.ts';
-import { jqxNumberInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxnumberinput.ts';
+import { jqxDropDownListComponent, jqxDropDownListModule } from 'jqwidgets-ng/jqxdropdownlist';
+import { jqxNumberInputComponent, jqxNumberInputModule } from 'jqwidgets-ng/jqxnumberinput';
+
+import { jqxToolbarModule, jqxToolbarComponent } from 'jqwidgets-ng/jqxtoolbar';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxToolbarModule, jqxButtonModule, jqxNumberInputModule, jqxDropDownListModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
     encapsulation: ViewEncapsulation.None
 })
 
-export class AppComponent  {
-    @ViewChild('myToolBar') myToolBar: jqxToolBarComponent; 
+export class AppComponent {
+    @ViewChild('myToolBar') myToolBar: jqxToolBarComponent;
     @ViewChild('myDropDownList') myDropDownList: jqxDropDownListComponent;
     @ViewChild('myNumberInput') myNumberInput: jqxNumberInputComponent;
 
@@ -57,7 +61,8 @@ export class AppComponent  {
                 break;
             case 4:
                 tool.jqxDropDownList({
-                    width: 130, source: ['<span style="font-family: Courier New;">Courier New</span>', '<span style="font-family: Times New Roman;">Times New Roman</span>', '<span style="font-family: Verdana;">Verdana</span>'], selectedIndex: 1 });
+                    width: 130, source: ['<span style="font-family: Courier New;">Courier New</span>', '<span style="font-family: Times New Roman;">Times New Roman</span>', '<span style="font-family: Verdana;">Verdana</span>'], selectedIndex: 1
+                });
                 break;
             case 5:
                 tool.jqxComboBox({ width: 50, source: [8, 9, 10, 11, 12, 14, 16, 18, 20], selectedIndex: 3 });

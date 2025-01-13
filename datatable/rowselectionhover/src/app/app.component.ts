@@ -1,11 +1,16 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
-import { jqxDataTableComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdatatable.ts';
-import { jqxInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxinput.ts';
+
+import { jqxInputComponent, jqxInputModule } from 'jqwidgets-ng/jqxinput';
 
 import { generatedata } from '../assets/generatedata';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
+
+import { jqxDataTableModule, jqxDataTableComponent } from 'jqwidgets-ng/jqxdatatable';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxDataTableModule, jqxButtonModule, jqxInputModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -15,18 +20,18 @@ export class AppComponent {
     @ViewChild('selectedRows') selectedRows: ElementRef;
 
     source: any =
-    {
-        localData: generatedata(15, false),
-        datatype: "array",
-        dataFields:
-        [
-            { name: 'firstname', type: 'string' },
-            { name: 'lastname', type: 'string' },
-            { name: 'productname', type: 'string' },
-            { name: 'quantity', type: 'number' },
-            { name: 'price', type: 'number' }
-        ]
-    };
+        {
+            localData: generatedata(15, false),
+            datatype: "array",
+            dataFields:
+                [
+                    { name: 'firstname', type: 'string' },
+                    { name: 'lastname', type: 'string' },
+                    { name: 'productname', type: 'string' },
+                    { name: 'quantity', type: 'number' },
+                    { name: 'price', type: 'number' }
+                ]
+        };
 
     getWidth(): any {
         if (document.body.offsetWidth < 850) {
@@ -39,13 +44,13 @@ export class AppComponent {
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
     columns: any[] =
-    [
-        { text: 'First Name', dataField: 'firstname', width: 200 },
-        { text: 'Last Name', dataField: 'lastname', width: 200 },
-        { text: 'Product', dataField: 'productname', width: 180 },
-        { text: 'Unit Price', dataField: 'price', width: 90, align: 'right', cellsAlign: 'right', cellsFormat: 'c2' },
-        { text: 'Quantity', dataField: 'quantity', align: 'right', cellsAlign: 'right' }
-    ];
+        [
+            { text: 'First Name', dataField: 'firstname', width: 200 },
+            { text: 'Last Name', dataField: 'lastname', width: 200 },
+            { text: 'Product', dataField: 'productname', width: 180 },
+            { text: 'Unit Price', dataField: 'price', width: 90, align: 'right', cellsAlign: 'right', cellsFormat: 'c2' },
+            { text: 'Quantity', dataField: 'quantity', align: 'right', cellsAlign: 'right' }
+        ];
 
     selectionInfo() {
         // gets selected row indexes. The method returns an Array of indexes.

@@ -1,7 +1,10 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule],
+    standalone: true,
     templateUrl: './app.component.html',
 })
 
@@ -16,45 +19,45 @@ export class AppComponent {
         { Day: 'Sunday', Keith: 60, Erica: 45, George: 90 }
     ];
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
     padding: any = { left: 5, top: 5, right: 5, bottom: 5 };
 
     titlePadding: any = { left: 90, top: 0, right: 0, bottom: 10 };
 
     xAxis: any =
-    {
-        dataField: 'Day',
-        showGridLines: true
-    };
+        {
+            dataField: 'Day',
+            showGridLines: true
+        };
 
     seriesGroups: any[] =
-    [
-        {
-            type: 'column',
-            columnsGapPercent: 50,
-            seriesGapPercent: 0,
-            valueAxis:
+        [
             {
-                unitInterval: 10,
-                minValue: 0,
-                maxValue: 100,
-                displayValueAxis: true,
-                description: 'Time in minutes',
-                axisSize: 'auto',
-                tickMarksColor: '#888888'
-            },
-            series: [
-                { dataField: 'Keith', displayText: 'Keith' },
-                { dataField: 'Erica', displayText: 'Erica' },
-                { dataField: 'George', displayText: 'George' }
-            ]
-        }
-    ];
+                type: 'column',
+                columnsGapPercent: 50,
+                seriesGapPercent: 0,
+                valueAxis:
+                {
+                    unitInterval: 10,
+                    minValue: 0,
+                    maxValue: 100,
+                    displayValueAxis: true,
+                    description: 'Time in minutes',
+                    axisSize: 'auto',
+                    tickMarksColor: '#888888'
+                },
+                series: [
+                    { dataField: 'Keith', displayText: 'Keith' },
+                    { dataField: 'Erica', displayText: 'Erica' },
+                    { dataField: 'George', displayText: 'George' }
+                ]
+            }
+        ];
 }

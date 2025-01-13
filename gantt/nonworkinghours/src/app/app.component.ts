@@ -1,16 +1,19 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
-import { jqxGanttComponent } from 'jqwidgets-ng/jqxgantt';
 
+
+import { jqxGanttModule, jqxGanttComponent } from 'jqwidgets-ng/jqxgantt';
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html'
+	selector: 'app-root',
+	imports: [jqxGanttModule],
+	standalone: true,
+	templateUrl: './app.component.html'
 })
 
 export class AppComponent {
 	@ViewChild('gantt', { static: false }) gantt: jqxGanttComponent;
-	
+
 	nonworkingHours: any[] = [22, 23, 0, 1, 2, 3, 4, 5, 6];
-	source: any[] =   [{
+	source: any[] = [{
 		label: 'Project 1',
 		dateStart: '2023-02-18T12:30:00',
 		dateEnd: '2023-02-20T3:59:00',

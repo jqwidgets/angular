@@ -1,9 +1,12 @@
 ﻿import { Component } from '@angular/core';
 
-import { jqxChartComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxchart.ts';
 
+
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 @Component({
     selector: 'app-root',
+    imports: [jqxChartModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -52,48 +55,48 @@ export class AppComponent {
 
     titlePadding: any = { left: 90, top: 0, right: 0, bottom: 10 };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
     xAxis: any =
-    {
-        dataField: 'Day',
-        gridLines: { visible: true }
-    };
+        {
+            dataField: 'Day',
+            gridLines: { visible: true }
+        };
 
     valueAxis: any =
-    {
-        visible: true,
-        title: { text: 'Time in minutes' }
-    };
+        {
+            visible: true,
+            title: { text: 'Time in minutes' }
+        };
 
     seriesGroups: any[] =
-    [
-        {
-            type: 'stackedline',
-            source: this.Keith,
-            series: [
-                { dataField: 'Minutes', displayText: 'Keith' }
-            ]
-        },
-        {
-            type: 'stackedline',
-            source: this.Erica,
-            series: [
-                { dataField: 'Minutes', displayText: 'Erica' }
-            ]
-        },
-        {
-            type: 'stackedline',
-            source: this.George,
-            series: [
-                { dataField: 'Minutes', displayText: 'George' }
-            ]
-        }
-    ];
+        [
+            {
+                type: 'stackedline',
+                source: this.Keith,
+                series: [
+                    { dataField: 'Minutes', displayText: 'Keith' }
+                ]
+            },
+            {
+                type: 'stackedline',
+                source: this.Erica,
+                series: [
+                    { dataField: 'Minutes', displayText: 'Erica' }
+                ]
+            },
+            {
+                type: 'stackedline',
+                source: this.George,
+                series: [
+                    { dataField: 'Minutes', displayText: 'George' }
+                ]
+            }
+        ];
 }

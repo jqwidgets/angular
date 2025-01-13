@@ -1,9 +1,12 @@
 ﻿import { Component } from '@angular/core';
 
-import { jqxTreeComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtree.ts';
 
+
+import { jqxTreeModule, jqxTreeComponent } from 'jqwidgets-ng/jqxtree';
 @Component({
     selector: 'app-root',
+    imports: [jqxTreeModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 

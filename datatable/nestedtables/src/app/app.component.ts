@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxDataTableComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdatatable.ts';
 
+
+import { jqxDataTableModule, jqxDataTableComponent } from 'jqwidgets-ng/jqxdatatable';
 @Component({
     selector: 'app-root',
+    imports: [jqxDataTableModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -13,54 +16,54 @@ export class AppComponent {
     count: number = 0;
     nestedTables = [];
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     source: any =
-    {
-        dataFields: [
-            { name: 'FirstName', type: 'string' },
-            { name: 'LastName', type: 'string' },
-            { name: 'Title', type: 'string' },
-            { name: 'Address', type: 'string' },
-            { name: 'City', type: 'string' }
-        ],
-        root: 'Employees',
-        record: 'Employee',
-        id: 'EmployeeID',
-        dataType: 'xml',
-        url: '../assets/employees.txt'
-    };
+        {
+            dataFields: [
+                { name: 'FirstName', type: 'string' },
+                { name: 'LastName', type: 'string' },
+                { name: 'Title', type: 'string' },
+                { name: 'Address', type: 'string' },
+                { name: 'City', type: 'string' }
+            ],
+            root: 'Employees',
+            record: 'Employee',
+            id: 'EmployeeID',
+            dataType: 'xml',
+            url: '../assets/employees.txt'
+        };
 
     ordersSource: any =
-    {
-        dataFields: [
-            { name: 'EmployeeID', type: 'string' },
-            { name: 'ShipName', type: 'string' },
-            { name: 'ShipAddress', type: 'string' },
-            { name: 'ShipCity', type: 'string' },
-            { name: 'ShipCountry', type: 'string' },
-            { name: 'ShippedDate', type: 'date' }
-        ],
-        root: 'Orders',
-        record: 'Order',
-        dataType: 'xml',
-        url: '../assets/orderdetails.txt'
-    };
+        {
+            dataFields: [
+                { name: 'EmployeeID', type: 'string' },
+                { name: 'ShipName', type: 'string' },
+                { name: 'ShipAddress', type: 'string' },
+                { name: 'ShipCity', type: 'string' },
+                { name: 'ShipCountry', type: 'string' },
+                { name: 'ShippedDate', type: 'date' }
+            ],
+            root: 'Orders',
+            record: 'Order',
+            dataType: 'xml',
+            url: '../assets/orderdetails.txt'
+        };
 
     ordersDataAdapter: any = new jqx.dataAdapter(this.ordersSource, { autoBind: true });
 
     columns: any[] =
-    [
-        { text: 'First Name', dataField: 'FirstName', width: 250 },
-        { text: 'Last Name', dataField: 'LastName', width: 250 },
-        { text: 'Title', dataField: 'Title' }
-    ];
+        [
+            { text: 'First Name', dataField: 'FirstName', width: 250 },
+            { text: 'Last Name', dataField: 'LastName', width: 250 },
+            { text: 'Title', dataField: 'Title' }
+        ];
 
     initRowDetails = (id: any, row: number, element: any, rowinfo: any): void => {
         let container = document.createElement('div');
@@ -107,10 +110,10 @@ export class AppComponent {
             ];
 
             let options =
-                {
-                    width: 820, height: 180, columns: columns, theme: 'material', 
-                    pageable: true, source: nestedDataTableAdapter
-                };
+            {
+                width: 820, height: 180, columns: columns, theme: 'material',
+                pageable: true, source: nestedDataTableAdapter
+            };
 
             jqwidgets.createInstance(`#${containerID}`, 'jqxDataTable', options);
 

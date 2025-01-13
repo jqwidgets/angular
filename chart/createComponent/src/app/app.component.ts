@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild, AfterViewInit } from '@angular/core';
 
-import { jqxChartComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxchart.ts';
 
+
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule],
+    standalone: true,
     templateUrl: './app.component.html',
 })
 
@@ -17,24 +20,24 @@ export class AppComponent implements AfterViewInit {
     months: string[] = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
     source: any =
-    {
-        datatype: "csv",
-        datafields: [
-            { name: 'Date' },
-            { name: 'S&P 500' },
-            { name: 'NASDAQ' }
-        ],
-        url: '../assets/nasdaq_vs_sp500.txt'
-    };
+        {
+            datatype: "csv",
+            datafields: [
+                { name: 'Date' },
+                { name: 'S&P 500' },
+                { name: 'NASDAQ' }
+            ],
+            url: '../assets/nasdaq_vs_sp500.txt'
+        };
     dataAdapter: any = new jqx.dataAdapter(this.source, { async: false, autoBind: true, loadError: function (xhr, status, error) { alert('Error loading "' + this.source.url + '" : ' + error); } });
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     settings: any = {
         title: 'U.S. Stock Market Index Performance',
@@ -80,15 +83,15 @@ export class AppComponent implements AfterViewInit {
         },
         colorScheme: 'scheme04',
         seriesGroups:
-        [
-            {
-                type: 'line',
-                series: [
-                    { dataField: 'S&P 500', displayText: 'S&P 500' },
-                    { dataField: 'NASDAQ', displayText: 'NASDAQ' }
-                ]
-            }
-        ]
+            [
+                {
+                    type: 'line',
+                    series: [
+                        { dataField: 'S&P 500', displayText: 'S&P 500' },
+                        { dataField: 'NASDAQ', displayText: 'NASDAQ' }
+                    ]
+                }
+            ]
     }
 
 }

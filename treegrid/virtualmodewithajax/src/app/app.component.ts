@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxTreeGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtree.ts';
 
+
+import { jqxTreeGridModule, jqxTreeGridComponent } from 'jqwidgets-ng/jqxtreegrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxTreeGridModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -11,39 +14,39 @@ export class AppComponent {
     @ViewChild('TreeGrid') treeGrid: jqxTreeGridComponent;
 
     source: any =
-    {
-        dataType: 'json',
-        dataFields: [
-            { name: 'EmployeeID', type: 'number' },
-            { name: 'ReportsTo', type: 'number' },
-            { name: 'FirstName', type: 'string' },
-            { name: 'LastName', type: 'string' },
-            { name: 'Country', type: 'string' },
-            { name: 'City', type: 'string' },
-            { name: 'Address', type: 'string' },
-            { name: 'Title', type: 'string' },
-            { name: 'HireDate', type: 'date' },
-            { name: 'BirthDate', type: 'date' }
-        ],
-        timeout: 10000,
-        hierarchy:
         {
-            keyDataField: { name: 'EmployeeID' },
-            parentDataField: { name: 'ReportsTo' }
-        },
-        id: 'EmployeeID',
-        root: 'value',
-        url: 'https://services.odata.org/V3/Northwind/Northwind.svc/Employees?$format=json&$callback=?'
-    };
-    
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+            dataType: 'json',
+            dataFields: [
+                { name: 'EmployeeID', type: 'number' },
+                { name: 'ReportsTo', type: 'number' },
+                { name: 'FirstName', type: 'string' },
+                { name: 'LastName', type: 'string' },
+                { name: 'Country', type: 'string' },
+                { name: 'City', type: 'string' },
+                { name: 'Address', type: 'string' },
+                { name: 'Title', type: 'string' },
+                { name: 'HireDate', type: 'date' },
+                { name: 'BirthDate', type: 'date' }
+            ],
+            timeout: 10000,
+            hierarchy:
+            {
+                keyDataField: { name: 'EmployeeID' },
+                parentDataField: { name: 'ReportsTo' }
+            },
+            id: 'EmployeeID',
+            root: 'value',
+            url: 'https://services.odata.org/V3/Northwind/Northwind.svc/Employees?$format=json&$callback=?'
+        };
+
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
     virtualModeCreateRecords = (expandedRecord, done): void => {
         let dataAdapter = new jqx.dataAdapter(this.source,
             {

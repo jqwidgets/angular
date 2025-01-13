@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
 
-import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid.ts'
 
+
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -11,13 +14,13 @@ export class AppComponent {
     @ViewChild('myGrid') myGrid: jqxGridComponent;
     @ViewChild('eventLog') eventLog: ElementRef;
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     countries: any[] = [
         { value: 'AF', label: 'Afghanistan' },
@@ -106,73 +109,73 @@ export class AppComponent {
     ];
 
     countriesSource: any =
-    {
-        datatype: 'array',
-        datafields: [
-            { name: 'label', type: 'string' },
-            { name: 'value', type: 'string' }
-        ],
-        localdata: this.countries
-    };
+        {
+            datatype: 'array',
+            datafields: [
+                { name: 'label', type: 'string' },
+                { name: 'value', type: 'string' }
+            ],
+            localdata: this.countries
+        };
 
     countriesAdapter = new jqx.dataAdapter(this.countriesSource, { autoBind: true });
 
     source: any =
-    {
-        datatype: 'array',
-        localdata:
-        [
-            { countryCode: 'UK' },
-            { countryCode: 'US' },
-            { countryCode: 'DE' },
-            { countryCode: 'FR' },
-            { countryCode: 'UA' },
-            { countryCode: 'CH' },
-            { countryCode: 'ES' },
-            { countryCode: 'TR' },
-            { countryCode: 'PL' },
-            { countryCode: 'NO' },
-            { countryCode: 'CZ' },
-            { countryCode: 'RU' },
-            { countryCode: 'BG' },
-            { countryCode: 'MX' },
-            { countryCode: 'DK' },
-            { countryCode: 'SE' },
-            { countryCode: 'ZA' },
-            { countryCode: 'CN' },
-            { countryCode: 'HU' },
-            { countryCode: 'RO' },
-            { countryCode: 'JP' },
-            { countryCode: 'PA' },
-            { countryCode: 'MC' },
-            { countryCode: 'IN' },
-            { countryCode: 'HK' }
-        ],
-        datafields: [
-            // name - determines the field's name.
-            // value - the field's value in the data source.
-            // values - specifies the field's values.
-            // values.source - specifies the foreign source. The expected value is an array.
-            // values.value - specifies the field's value in the foreign source. 
-            // values.name - specifies the field's name in the foreign source. 
-            // When the adapter is loaded, each record will have a field called 'Country'. The 'Country' for each record comes from the countriesAdapter where the record's 'countryCode' from gridAdapter matches to the 'value' from countriesAdapter. 
-            { name: 'Country', type: 'string', value: 'countryCode', values: { source: this.countriesAdapter.records, value: 'value', name: 'label' } },
-            { name: 'countryCode', type: 'string' }
-        ]
-    };
+        {
+            datatype: 'array',
+            localdata:
+                [
+                    { countryCode: 'UK' },
+                    { countryCode: 'US' },
+                    { countryCode: 'DE' },
+                    { countryCode: 'FR' },
+                    { countryCode: 'UA' },
+                    { countryCode: 'CH' },
+                    { countryCode: 'ES' },
+                    { countryCode: 'TR' },
+                    { countryCode: 'PL' },
+                    { countryCode: 'NO' },
+                    { countryCode: 'CZ' },
+                    { countryCode: 'RU' },
+                    { countryCode: 'BG' },
+                    { countryCode: 'MX' },
+                    { countryCode: 'DK' },
+                    { countryCode: 'SE' },
+                    { countryCode: 'ZA' },
+                    { countryCode: 'CN' },
+                    { countryCode: 'HU' },
+                    { countryCode: 'RO' },
+                    { countryCode: 'JP' },
+                    { countryCode: 'PA' },
+                    { countryCode: 'MC' },
+                    { countryCode: 'IN' },
+                    { countryCode: 'HK' }
+                ],
+            datafields: [
+                // name - determines the field's name.
+                // value - the field's value in the data source.
+                // values - specifies the field's values.
+                // values.source - specifies the foreign source. The expected value is an array.
+                // values.value - specifies the field's value in the foreign source. 
+                // values.name - specifies the field's name in the foreign source. 
+                // When the adapter is loaded, each record will have a field called 'Country'. The 'Country' for each record comes from the countriesAdapter where the record's 'countryCode' from gridAdapter matches to the 'value' from countriesAdapter. 
+                { name: 'Country', type: 'string', value: 'countryCode', values: { source: this.countriesAdapter.records, value: 'value', name: 'label' } },
+                { name: 'countryCode', type: 'string' }
+            ]
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
     columns: any[] =
-    [
-        {
-            text: 'Country', filtertype: 'list',
-            filteritems: new jqx.dataAdapter(this.countriesSource), datafield: 'countryCode', displayfield: 'Country',
-            createfilterwidget: (column: any, htmlElement: any, editor: any): void => {
-                editor.jqxDropDownList({ theme: 'material', displayMember: 'label', valueMember: 'value' });
+        [
+            {
+                text: 'Country', filtertype: 'list',
+                filteritems: new jqx.dataAdapter(this.countriesSource), datafield: 'countryCode', displayfield: 'Country',
+                createfilterwidget: (column: any, htmlElement: any, editor: any): void => {
+                    editor.jqxDropDownList({ theme: 'material', displayMember: 'label', valueMember: 'value' });
+                }
             }
-        }
-    ];
+        ];
 
     myGridOnFilter(): void {
         // get filter information.

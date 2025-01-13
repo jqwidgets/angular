@@ -1,15 +1,18 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
-import { jqxGanttComponent } from 'jqwidgets-ng/jqxgantt';
 
+
+import { jqxGanttModule, jqxGanttComponent } from 'jqwidgets-ng/jqxgantt';
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html'
+	selector: 'app-root',
+	imports: [jqxGanttModule],
+	standalone: true,
+	templateUrl: './app.component.html'
 })
 
 export class AppComponent {
 	@ViewChild('gantt', { static: false }) gantt: jqxGanttComponent;
-	 
-    taskColumns: any[] = [
+
+	taskColumns: any[] = [
 		{
 			label: 'Tasks',
 			value: 'label',
@@ -22,7 +25,7 @@ export class AppComponent {
 			formatFunction: (date) => parseInt(date)
 		}
 	]
-	
+
 	resourceColumns: any[] = [
 		{
 			label: 'Tasks',
@@ -40,8 +43,8 @@ export class AppComponent {
 			value: 'progress'
 		}
 	];
-	
-	source: any[] =  [
+
+	source: any[] = [
 		{
 			label: 'Project A',
 			dateStart: '2023-01-10',

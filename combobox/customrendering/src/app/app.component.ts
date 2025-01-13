@@ -1,18 +1,23 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxComboBoxModule, jqxComboBoxComponent } from 'jqwidgets-ng/jqxcombobox';
 @Component({
     selector: 'app-root',
-    templateUrl: './app.component.html'
+    imports: [jqxComboBoxModule],
+    standalone: true,
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css'],
+    encapsulation: ViewEncapsulation.None
 })
 
 export class AppComponent {
     data: any[] = this.generateData();
 
     source =
-    {
-        localdata: this.data,
-        datatype: 'array'
-    };
+        {
+            localdata: this.data,
+            datatype: 'array'
+        };
 
     dataAdapter = new jqx.dataAdapter(this.source);
 

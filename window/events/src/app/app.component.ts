@@ -1,10 +1,12 @@
 ﻿import { Component, ViewChild, AfterViewInit } from '@angular/core';
-
-import { jqxWindowComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxwindow.ts';
-import { jqxPanelComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxpanel.ts';
+import { jqxPanelComponent, jqxPanelModule } from 'jqwidgets-ng/jqxpanel';
+import { jqxWindowModule, jqxWindowComponent } from 'jqwidgets-ng/jqxwindow';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxWindowModule, jqxButtonModule, jqxPanelModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 

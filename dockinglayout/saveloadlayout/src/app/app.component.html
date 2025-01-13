@@ -1,4 +1,4 @@
-﻿<jqxDockingLayout [theme]="'material'" #myDockingLayout [width]="getWidth()" [height]='600' [layout]='layout'>
+﻿<jqxDockingLayout [theme]="'fluent'" #myDockingLayout [width]="getWidth()" [height]='600' [layout]='layout'>
     <!--The panel content divs can have a flat structure-->
     <!--autoHideGroup-->
     <div data-container="ToolboxPanel">
@@ -74,12 +74,12 @@
 </jqxDockingLayout>
 
 <div style="margin-top: 25px">
-    <jqxButton [theme]="'material'" style="float: left; margin-right: 10px"
+    <jqxButton [theme]="'fluent'" style="float: left; margin-right: 10px"
         (onClick)="saveBtnOnClick()" [width]="90">
         Save Layout
     </jqxButton>
 
-    <jqxButton [theme]="'material'" #loadLayoutButton style="float: left"
+    <jqxButton [theme]="'fluent'" #loadLayoutButton style="float: left"
         (onClick)="loadBtnOnClick()" [width]="90" [disabled]='true'>
         Load Layout
     </jqxButton>

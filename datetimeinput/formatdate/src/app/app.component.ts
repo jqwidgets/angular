@@ -1,9 +1,11 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxDateTimeInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdatetimeinput.ts';
 
+import { jqxDateTimeInputModule, jqxDateTimeInputComponent } from 'jqwidgets-ng/jqxdatetimeinput';
 @Component({
     selector: 'app-root',
+    imports: [jqxDateTimeInputModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -11,10 +13,10 @@ export class AppComponent {
     @ViewChild('myDateTimeInput') myDateTimeInput; jqxDateTimeInputComponent;
 
     availableFormats: string[] =
-    [
-        'short date pattern', 'long date pattern', 'short time pattern', 'long time pattern', 'long date, short time pattern',
-        'long date, long time pattern', 'month/day pattern', 'month/year pattern', 'custom'
-    ];
+        [
+            'short date pattern', 'long date pattern', 'short time pattern', 'long time pattern', 'long date, short time pattern',
+            'long date, long time pattern', 'month/day pattern', 'month/year pattern', 'custom'
+        ];
 
     listOnSelect(event: any): void {
         let index: number = event.args.index;

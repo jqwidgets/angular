@@ -1,45 +1,48 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
 export class AppComponent {
     source: any =
-    {
-        localdata: this.generateData(),
-        datafields:
-        [
-            { name: 'id', type: 'number' },
-            { name: 'firstname', type: 'string' },
-            { name: 'lastname', type: 'string' },
-            { name: 'productname', type: 'string' },
-            { name: 'quantity', type: 'number' },
-            { name: 'price', type: 'number' },
-            { name: 'total', type: 'number' }
-        ],
-        datatype: 'array'
-    };
+        {
+            localdata: this.generateData(),
+            datafields:
+                [
+                    { name: 'id', type: 'number' },
+                    { name: 'firstname', type: 'string' },
+                    { name: 'lastname', type: 'string' },
+                    { name: 'productname', type: 'string' },
+                    { name: 'quantity', type: 'number' },
+                    { name: 'price', type: 'number' },
+                    { name: 'total', type: 'number' }
+                ],
+            datatype: 'array'
+        };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     columns: any[] =
-    [
-        { text: 'Id', datafield: 'id', width: 50 },
-        { text: 'First Name', datafield: 'firstname', width: 130 },
-        { text: 'Last Name', datafield: 'lastname', width: 130 },
-        { text: 'Product', datafield: 'productname', width: 180 },
-        { text: 'Quantity', datafield: 'quantity', width: 80, cellsalign: 'right' },
-        { text: 'Unit Price', datafield: 'price', width: 80, cellsalign: 'right', cellsformat: 'c2' },
-        { text: 'Total', datafield: 'total', cellsalign: 'right', cellsformat: 'c2' }
-    ];
+        [
+            { text: 'Id', datafield: 'id', width: 50 },
+            { text: 'First Name', datafield: 'firstname', width: 130 },
+            { text: 'Last Name', datafield: 'lastname', width: 130 },
+            { text: 'Product', datafield: 'productname', width: 180 },
+            { text: 'Quantity', datafield: 'quantity', width: 80, cellsalign: 'right' },
+            { text: 'Unit Price', datafield: 'price', width: 80, cellsalign: 'right', cellsformat: 'c2' },
+            { text: 'Total', datafield: 'total', cellsalign: 'right', cellsformat: 'c2' }
+        ];
 
     generateData(): any[] {
         let data = new Array();

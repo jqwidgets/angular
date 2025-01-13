@@ -1,69 +1,72 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxTreeGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtree.ts';
-import { jqxDropDownListComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdropdownlist.ts';
+
+import { jqxDropDownListComponent } from 'jqwidgets-ng/jqxdropdownlist';
 
 import { generateordersdata } from '../assets/generatedata';
 
+import { jqxTreeGridModule, jqxTreeGridComponent } from 'jqwidgets-ng/jqxtreegrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxTreeGridModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
 export class AppComponent {
     @ViewChild('myTreeGrid') myTreeGrid: jqxTreeGridComponent;
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
 
-     source: any =
+    source: any =
         {
-           dataType: 'array',
-           dataFields: [
-               { name: 'name', type: 'string' },
-               { name: 'quantity', type: 'number' },
-               { name: 'id', type: 'number' },
-               { name: 'parentid', type: 'number' },
-               { name: 'price', type: 'number' },
-               { name: 'date', type: 'date' },
-               { name: 'customer', type: 'string' }
-           ],
-           hierarchy:
-           {
-               keyDataField: { name: 'id' },
-               parentDataField: { name: 'parentid' }
-           },
-           id: 'id',
-           localData: generateordersdata(200)
+            dataType: 'array',
+            dataFields: [
+                { name: 'name', type: 'string' },
+                { name: 'quantity', type: 'number' },
+                { name: 'id', type: 'number' },
+                { name: 'parentid', type: 'number' },
+                { name: 'price', type: 'number' },
+                { name: 'date', type: 'date' },
+                { name: 'customer', type: 'string' }
+            ],
+            hierarchy:
+            {
+                keyDataField: { name: 'id' },
+                parentDataField: { name: 'parentid' }
+            },
+            id: 'id',
+            localData: generateordersdata(200)
         };
 
-     dataAdapter: any = new jqx.dataAdapter(this.source);
+    dataAdapter: any = new jqx.dataAdapter(this.source);
 
-     columns: any[] =
-     [
-         { text: 'Order Name', dataField: 'name', align: 'center', width: 200 },
-         { text: 'Customer', dataField: 'customer', align: 'center', width: 200 },
-         { text: 'Price', dataField: 'price', cellsFormat: 'c2', align: 'center', cellsAlign: 'right', width: 100 },
-         { text: 'Order Date', dataField: 'date', align: 'right', cellsFormat: 'd', cellsAlign: 'right' }
-     ];
+    columns: any[] =
+        [
+            { text: 'Order Name', dataField: 'name', align: 'center', width: 200 },
+            { text: 'Customer', dataField: 'customer', align: 'center', width: 200 },
+            { text: 'Price', dataField: 'price', cellsFormat: 'c2', align: 'center', cellsAlign: 'right', width: 100 },
+            { text: 'Order Date', dataField: 'date', align: 'right', cellsFormat: 'd', cellsAlign: 'right' }
+        ];
 
-     columnGroups: any[] = [{ text: 'JST Corp.', name: 'JSTCorp', align: 'center' }];
+    columnGroups: any[] = [{ text: 'JST Corp.', name: 'JSTCorp', align: 'center' }];
 
-     ready = (): void => {
-         this.myTreeGrid.expandRow(2);
-     };
+    ready = (): void => {
+        this.myTreeGrid.expandRow(2);
+    };
 
-     dateSource: string[] = ['Short Date', 'Long Date', 'Long date, Short Time', 'Long date, Long Time', 'Month/Year', 'Month/Day', 'Custom'];
+    dateSource: string[] = ['Short Date', 'Long Date', 'Long date, Short Time', 'Long date, Long Time', 'Month/Year', 'Month/Day', 'Custom'];
 
-     priceSource: string[] = ['n', 'f1', 'f2', 'f3', 'c1', 'c2', 'c3', 'p', 'p2', 'p3'];
+    priceSource: string[] = ['n', 'f1', 'f2', 'f3', 'c1', 'c2', 'c3', 'p', 'p2', 'p3'];
 
-     dateListOnChange(event: any): void {
+    dateListOnChange(event: any): void {
         let index = event.args.index;
         switch (index) {
             case 0:
@@ -88,9 +91,9 @@ export class AppComponent {
                 this.myTreeGrid.setColumnProperty('date', 'cellsFormat', 'yyyy-MM-dd HH:mm:ss');
                 break;
         }
-     };
+    };
 
-     priceListOnChange(event: any): void {
+    priceListOnChange(event: any): void {
         let index = event.args.index;
         switch (index) {
             case 0:
@@ -124,5 +127,5 @@ export class AppComponent {
                 this.myTreeGrid.setColumnProperty('price', 'cellsFormat', 'p3');
                 break;
         }
-     };
+    };
 }

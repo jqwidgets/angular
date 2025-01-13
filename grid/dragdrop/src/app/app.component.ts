@@ -1,11 +1,14 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid.ts'
+
 
 import { generatedata } from '../assets/generatedata';
 
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -14,52 +17,52 @@ export class AppComponent {
     @ViewChild('myGrid2') myGrid2: jqxGridComponent;
 
     source: any =
-    {
-        localdata: generatedata(100, false),
-        datafields:
-        [
-            { name: 'firstname', type: 'string' },
-            { name: 'lastname', type: 'string' },
-            { name: 'productname', type: 'string' }
-        ],
-        datatype: 'array'
-    };
+        {
+            localdata: generatedata(100, false),
+            datafields:
+                [
+                    { name: 'firstname', type: 'string' },
+                    { name: 'lastname', type: 'string' },
+                    { name: 'productname', type: 'string' }
+                ],
+            datatype: 'array'
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     columns: any[] =
-    [
-        { text: 'First Name', dataField: 'firstname', width: 300 },
-        { text: 'Last Name', dataField: 'lastname', width: 300 },
-        { text: 'Product', dataField: 'productname' }
-    ];
+        [
+            { text: 'First Name', dataField: 'firstname', width: 300 },
+            { text: 'Last Name', dataField: 'lastname', width: 300 },
+            { text: 'Product', dataField: 'productname' }
+        ];
 
     source2: any =
-    {
-        totalrecords: 10,
-        unboundmode: true,
-        datafields:
-        [
-            { name: 'firstname' },
-            { name: 'lastname' },
-            { name: 'productname' }
-        ]
-    };
+        {
+            totalrecords: 10,
+            unboundmode: true,
+            datafields:
+                [
+                    { name: 'firstname' },
+                    { name: 'lastname' },
+                    { name: 'productname' }
+                ]
+        };
 
     columns2: any[] =
-    [
-        { text: 'First Name', dataField: 'firstname', width: 300 },
-        { text: 'Last Name', dataField: 'lastname', width: 300 },
-        { text: 'Product', dataField: 'productname' }
-    ];
+        [
+            { text: 'First Name', dataField: 'firstname', width: 300 },
+            { text: 'Last Name', dataField: 'lastname', width: 300 },
+            { text: 'Product', dataField: 'productname' }
+        ];
 
     rendered = (type: any): void => {
         // Initialize the DragDrop plug-in. Set it's drop target to the second Grid.
@@ -113,5 +116,5 @@ export class AppComponent {
                 }
             });
         }
-    };   
+    };
 }

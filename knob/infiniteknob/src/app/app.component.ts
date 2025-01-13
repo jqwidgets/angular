@@ -2,8 +2,11 @@
 
 import { jqxKnobComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxknob.ts';
 
+import { jqxKnobModule, jqxKnobComponent } from 'jqwidgets-ng/jqxknob';
 @Component({
     selector: 'app-root',
+    imports: [jqxKnobModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -11,75 +14,75 @@ export class AppComponent {
     @ViewChild('myKnob') myKnob: jqxKnobComponent;
 
     style: any =
-    {
-        stroke: '#dfe3e9',
-        strokeWidth: 3,
-        fill: {
-            color: '#fefefe', gradientType: 'linear',
-            gradientStops: [[0, 1], [50, 0.9], [100, 1]]
-        }
-    };
+        {
+            stroke: '#dfe3e9',
+            strokeWidth: 3,
+            fill: {
+                color: '#fefefe', gradientType: 'linear',
+                gradientStops: [[0, 1], [50, 0.9], [100, 1]]
+            }
+        };
 
     marks: any =
-    {
-        colorRemaining: '#333',
-        colorProgress: '#333',
-        type: 'line',
-        offset: '71%',
-        thickness: 1,
-        size: '6%',
-        majorSize: '9%',
-        majorInterval: 10,
-        minorInterval: 2
-    };
+        {
+            colorRemaining: '#333',
+            colorProgress: '#333',
+            type: 'line',
+            offset: '71%',
+            thickness: 1,
+            size: '6%',
+            majorSize: '9%',
+            majorInterval: 10,
+            minorInterval: 2
+        };
 
     labels: any =
-    {
-        offset: '88%',
-        step: 10
-    };
+        {
+            offset: '88%',
+            step: 10
+        };
 
     progressBar: any =
-    {
-        style: { fill: { color: '#00a644', gradientType: 'linear', gradientStops: [[0, 1], [50, 0.9], [100, 1]] }, stroke: '#00a644' },
-        background: { fill: { color: '#ff8b1e', gradientType: 'linear', gradientStops: [[0, 1], [50, 0.9], [100, 1]] }, stroke: '#ff8b1e' },
-        size: '9%',
-        offset: '60%'
-    };
+        {
+            style: { fill: { color: '#00a644', gradientType: 'linear', gradientStops: [[0, 1], [50, 0.9], [100, 1]] }, stroke: '#00a644' },
+            background: { fill: { color: '#ff8b1e', gradientType: 'linear', gradientStops: [[0, 1], [50, 0.9], [100, 1]] }, stroke: '#ff8b1e' },
+            size: '9%',
+            offset: '60%'
+        };
 
     pointer: any =
-    {
-        type: 'circle',
-        style: { fill: '#ef6100', stroke: '#ef6100' },
-        size: '5%',
-        offset: '38%',
-        thickness: 20
-    };
+        {
+            type: 'circle',
+            style: { fill: '#ef6100', stroke: '#ef6100' },
+            size: '5%',
+            offset: '38%',
+            thickness: 20
+        };
 
     spinner: any =
-    {
-        style: { fill: { color: '#00a4e1', gradientType: 'linear', gradientStops: [[0, 1], [50, 0.9], [100, 1]] }, stroke: '#00a4e1' },
-        innerRadius: '45%', // specifies the inner Radius of the dial
-        outerRadius: '60%', // specifies the outer Radius of the dial
-        marks: {
-            colorRemaining: '#fff',
-            colorProgress: '#fff',
-            type: 'line',
-            offset: '46%',
-            thickness: 2,
-            size: '14%',
-            majorSize: '14%',
-            majorInterval: 10,
-            minorInterval: 10
-        }
-    };
+        {
+            style: { fill: { color: '#00a4e1', gradientType: 'linear', gradientStops: [[0, 1], [50, 0.9], [100, 1]] }, stroke: '#00a4e1' },
+            innerRadius: '45%', // specifies the inner Radius of the dial
+            outerRadius: '60%', // specifies the outer Radius of the dial
+            marks: {
+                colorRemaining: '#fff',
+                colorProgress: '#fff',
+                type: 'line',
+                offset: '46%',
+                thickness: 2,
+                size: '14%',
+                majorSize: '14%',
+                majorInterval: 10,
+                minorInterval: 10
+            }
+        };
 
     dial: any =
-    {
-        style: { fill: { color: '#dfe3e9', gradientType: 'linearHorizontal', gradientStops: [[0, 0.9], [50, 1], [100, 1]] }, stroke: '#dfe3e9' },
-        innerRadius: '0%', // specifies the inner Radius of the dial
-        outerRadius: '45%'
-    };
+        {
+            style: { fill: { color: '#dfe3e9', gradientType: 'linearHorizontal', gradientStops: [[0, 0.9], [50, 1], [100, 1]] }, stroke: '#dfe3e9' },
+            innerRadius: '0%', // specifies the inner Radius of the dial
+            outerRadius: '45%'
+        };
 
 
     lastValue: number;

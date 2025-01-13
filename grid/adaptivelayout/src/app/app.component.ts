@@ -1,7 +1,12 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
+import { jqxRadioButtonModule } from 'jqwidgets-ng/jqxradiobutton';
+
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule, jqxRadioButtonModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 

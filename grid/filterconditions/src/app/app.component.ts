@@ -1,12 +1,15 @@
 ﻿import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 
-import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid.ts'
-import { jqxPanelComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxpanel.ts';
 
+import { jqxPanelComponent, jqxPanelModule } from 'jqwidgets-ng/jqxpanel';
+import { jqxCheckBoxComponent, jqxCheckBoxModule } from 'jqwidgets-ng/jqxcheckbox';
 import { generatedata } from '../assets/generatedata';
 
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule, jqxCheckBoxModule, jqxPanelModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
     encapsulation: ViewEncapsulation.None
@@ -17,37 +20,37 @@ export class AppComponent {
     @ViewChild('myPanel') myPanel: jqxPanelComponent;
 
     source: any =
-    {
-        localdata: generatedata(500, false),
-        datafields:
-        [
-            { name: 'firstname', type: 'string' },
-            { name: 'lastname', type: 'string' },
-            { name: 'productname', type: 'string' },
-            { name: 'date', type: 'date' },
-            { name: 'quantity', type: 'number' }
-        ],
-        datatype: 'array'
-    };
+        {
+            localdata: generatedata(500, false),
+            datafields:
+                [
+                    { name: 'firstname', type: 'string' },
+                    { name: 'lastname', type: 'string' },
+                    { name: 'productname', type: 'string' },
+                    { name: 'date', type: 'date' },
+                    { name: 'quantity', type: 'number' }
+                ],
+            datatype: 'array'
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     columns: any[] =
-    [
-        { text: 'First Name', datafield: 'firstname', width: 200 },
-        { text: 'Last Name', datafield: 'lastname', width: 200 },
-        { text: 'Product', datafield: 'productname', width: 180 },
-        { text: 'Order Date', datafield: 'date', width: 160, cellsformat: 'dd-MMMM-yyyy' },
-        { text: 'Quantity', datafield: 'quantity', cellsalign: 'right' }
-    ];
+        [
+            { text: 'First Name', datafield: 'firstname', width: 200 },
+            { text: 'Last Name', datafield: 'lastname', width: 200 },
+            { text: 'Product', datafield: 'productname', width: 180 },
+            { text: 'Order Date', datafield: 'date', width: 160, cellsformat: 'dd-MMMM-yyyy' },
+            { text: 'Quantity', datafield: 'quantity', cellsalign: 'right' }
+        ];
 
     addfilter = (): void => {
         let filtergroup = new jqx.filter();

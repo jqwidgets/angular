@@ -1,34 +1,37 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
 export class AppComponent {
     source: any =
-    {
-        datatype: 'xml',
-        datafields: [
-            { name: 'title', type: 'string' },
-            { name: 'link', type: 'string' },
-            { name: 'pubDate', type: 'date' },
-            { name: 'creator', map: 'dc\\:creator', type: 'string' },
-        ],
-        root: 'channel',
-        record: 'item',
-        url: '../assets/feed.txt'
-    };
+        {
+            datatype: 'xml',
+            datafields: [
+                { name: 'title', type: 'string' },
+                { name: 'link', type: 'string' },
+                { name: 'pubDate', type: 'date' },
+                { name: 'creator', map: 'dc\\:creator', type: 'string' },
+            ],
+            root: 'channel',
+            record: 'item',
+            url: '../assets/feed.txt'
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     linkrenderer = (row: number, column: any, value: any): any => {
         if (value.indexOf('#') != -1) {
@@ -40,10 +43,10 @@ export class AppComponent {
     }
 
     columns: any[] =
-    [
-        { text: 'Link', datafield: 'link', width: 550, cellsrenderer: this.linkrenderer },
-        { text: 'Title', datafield: 'title', width: 200 },
-        { text: 'Publish Date', datafield: 'pubDate', width: 250, cellsformat: 'D' },
-        { text: 'Creator', datafield: 'creator', width: 200 }
-    ];
+        [
+            { text: 'Link', datafield: 'link', width: 550, cellsrenderer: this.linkrenderer },
+            { text: 'Title', datafield: 'title', width: 200 },
+            { text: 'Publish Date', datafield: 'pubDate', width: 250, cellsformat: 'D' },
+            { text: 'Creator', datafield: 'creator', width: 200 }
+        ];
 }

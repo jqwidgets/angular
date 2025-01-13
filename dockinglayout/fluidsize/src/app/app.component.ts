@@ -1,22 +1,26 @@
 ﻿import { Component, ViewEncapsulation } from '@angular/core';
 
+
+import { jqxDockingLayoutModule, jqxDockingLayoutComponent } from 'jqwidgets-ng/jqdockinglayout';
 @Component({
     selector: 'app-root',
+    imports: [jqxDockingLayoutModule],
+    standalone: true,
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css'],
-    encapsulation: ViewEncapsulation.None
+    styleUrls: ['./app.component.css']
 })
+
 
 export class AppComponent {
     layout: any[] = this.generateLayout();
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 800) {
-			return '90%';
-		}
-		
-		return 800;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 800) {
+            return '90%';
+        }
+
+        return 800;
+    }
 
     generateLayout(): any[] {
         let layout = [{

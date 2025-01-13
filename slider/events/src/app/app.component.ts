@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 
-import { jqxPanelComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxpanel.ts';
+import { jqxPanelComponent, jqxPanelModule } from 'jqwidgets-ng/jqxpanel';
 
+import { jqxSliderModule, jqxSliderComponent } from 'jqwidgets-ng/jqxslider';
 @Component({
     selector: 'app-root',
+    imports: [jqxSliderModule, jqxPanelModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['app.component.css'],
     encapsulation: ViewEncapsulation.None
@@ -21,5 +24,5 @@ export class AppComponent {
 
     change(event: any): void {
         this.displayEvent(event);
-    }; 
+    };
 }

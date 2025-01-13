@@ -1,9 +1,11 @@
-﻿import { Component, ViewChild} from '@angular/core';
+﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxSchedulerComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxscheduler.ts';
 
+import { jqxSchedulerModule, jqxSchedulerComponent } from 'jqwidgets-ng/jqxscheduler';
 @Component({
     selector: 'app-root',
+    imports: [jqxSchedulerModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -11,40 +13,40 @@ export class AppComponent {
     @ViewChild('myScheduler') myScheduler: jqxSchedulerComponent;
 
     source: any =
-    {
-        dataType: 'ics',
-        url: '../assets/icalendar.txt'
-    };
+        {
+            dataType: 'ics',
+            url: '../assets/icalendar.txt'
+        };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     adapter: any = new jqx.dataAdapter(this.source);
 
     appointmentDataFields: any =
-    {
-        from: 'DTSTART',
-        to: 'DTEND',
-        id: 'UID',
-        description: 'DESCRIPTION',
-        location: 'LOCATION',
-        subject: 'SUMMARY',
-        recurrencePattern: 'RRULE',
-        recurrenceException: 'EXDATE',
-        status: 'STATUS'
-    };
+        {
+            from: 'DTSTART',
+            to: 'DTEND',
+            id: 'UID',
+            description: 'DESCRIPTION',
+            location: 'LOCATION',
+            subject: 'SUMMARY',
+            recurrencePattern: 'RRULE',
+            recurrenceException: 'EXDATE',
+            status: 'STATUS'
+        };
 
     views: string[] =
-    [
-        'dayView',
-        'weekView',
-        'monthView'
-    ];
+        [
+            'dayView',
+            'weekView',
+            'monthView'
+        ];
 
     date: any = new jqx.date(2016, 11, 23);
 

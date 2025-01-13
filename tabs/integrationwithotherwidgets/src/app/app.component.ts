@@ -1,34 +1,37 @@
 ﻿import { Component, ViewChild, AfterViewInit } from '@angular/core';
 
+import { jqxTabsModule, jqxTabsComponent } from 'jqwidgets-ng/jqxtabs';
 @Component({
     selector: 'app-root',
+    imports: [jqxTabsModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
 export class AppComponent {
- 	getWidth() : any {
-		if (document.body.offsetWidth < 600) {
-			return '90%';
-		}
-		
-		return 600;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 600) {
+            return '90%';
+        }
+
+        return 600;
+    }
+
     initGrid = () => {
         let source =
-            {
-                datatype: 'csv',
-                datafields: [
-                    { name: 'Date' },
-                    { name: 'S&P 500' },
-                    { name: 'NASDAQ' }
-                ],
-                url: '../assets/nasdaq_vs_sp500.txt'
-            };
+        {
+            datatype: 'csv',
+            datafields: [
+                { name: 'Date' },
+                { name: 'S&P 500' },
+                { name: 'NASDAQ' }
+            ],
+            url: '../assets/nasdaq_vs_sp500.txt'
+        };
         let dataAdapter = new jqx.dataAdapter(source, { async: false, loadError: (xhr, status, error) => { alert('Error loading "' + source.url + '" : ' + error); } });
         //let myChart: jqwidgets.jqxChart = jqwidgets.createInstance('#jqxChart', 'jqxChart', settings);
-        let myGrid: jqwidgets.jqxGrid = jqwidgets.createInstance('#jqxGrid', 'jqxGrid', {
-            theme: 'material', 
+        let myGrid: jqwidgets.jqxTabs = jqwidgets.createInstance('#jqxTabs', 'jqxTabs', {
+            theme: 'material',
             width: '100%',
             height: '84%',
             source: dataAdapter,
@@ -43,15 +46,15 @@ export class AppComponent {
     initChart = () => {
         // prepare the data
         let source =
-            {
-                datatype: 'csv',
-                datafields: [
-                    { name: 'Date' },
-                    { name: 'S&P 500' },
-                    { name: 'NASDAQ' }
-                ],
-                url: '../assets/nasdaq_vs_sp500.txt'
-            };
+        {
+            datatype: 'csv',
+            datafields: [
+                { name: 'Date' },
+                { name: 'S&P 500' },
+                { name: 'NASDAQ' }
+            ],
+            url: '../assets/nasdaq_vs_sp500.txt'
+        };
         let dataAdapter = new jqx.dataAdapter(source, { async: false, autoBind: true, loadError: (xhr, status, error) => { alert('Error loading "' + source.url + '" : ' + error); } });
         let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
         // prepare jqxChart settings
@@ -85,22 +88,22 @@ export class AppComponent {
             },
             colorScheme: 'scheme04',
             seriesGroups:
-            [
-                {
-                    type: 'line',
-                    valueAxis:
+                [
                     {
-                        displayValueAxis: true,
-                        description: 'Daily Closing Price',
-                        axisSize: 'auto',
-                        tickMarksColor: '#888888'
-                    },
-                    series: [
-                        { dataField: 'S&P 500', displayText: 'S&P 500' },
-                        { dataField: 'NASDAQ', displayText: 'NASDAQ' }
-                    ]
-                }
-            ]
+                        type: 'line',
+                        valueAxis:
+                        {
+                            displayValueAxis: true,
+                            description: 'Daily Closing Price',
+                            axisSize: 'auto',
+                            tickMarksColor: '#888888'
+                        },
+                        series: [
+                            { dataField: 'S&P 500', displayText: 'S&P 500' },
+                            { dataField: 'NASDAQ', displayText: 'NASDAQ' }
+                        ]
+                    }
+                ]
         };
         // setup the chart
         let myChart: jqwidgets.jqxChart = jqwidgets.createInstance('#jqxChart', 'jqxChart', settings);

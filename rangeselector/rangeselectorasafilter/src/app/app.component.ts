@@ -1,23 +1,23 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxRangeSelectorComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxrangeselector.ts';
-import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid.ts';
-
+import { jqxRangeSelectorModule, jqxRangeSelectorComponent } from 'jqwidgets-ng/jqxrangeselector';
 @Component({
     selector: 'app-root',
+    imports: [jqxRangeSelectorModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
 export class AppComponent {
     @ViewChild('rangeSelector') myRangeSelector: jqxRangeSelectorComponent;
-    @ViewChild('jqxGrid') myGrid: jqxGridComponent;
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    @ViewChild('jqxRangeSelector') myGrid: jqxRangeSelectorComponent;
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
     applyFilter = (from, to): void => {
         this.myGrid.clearfilters();
         let filtertype = 'datefilter';
@@ -37,16 +37,16 @@ export class AppComponent {
 
     url = "../assets/discoveries.txt";
     source =
-    {
-        datatype: "json",
-        datafields: [
-            { name: "discovery", type: "string" },
-            { name: "scientist", type: "string" },
-            { name: "year", type: "date" }
-        ],
-        id: "id",
-        url: this.url
-    };
+        {
+            datatype: "json",
+            datafields: [
+                { name: "discovery", type: "string" },
+                { name: "scientist", type: "string" },
+                { name: "year", type: "date" }
+            ],
+            id: "id",
+            url: this.url
+        };
     dataAdapter = new jqx.dataAdapter(this.source);
 
     columns: any[] = [

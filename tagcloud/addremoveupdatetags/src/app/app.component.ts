@@ -1,34 +1,37 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxTagCloudComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtagcloud.ts';
-
 import { generatedata } from '../assets/generatedata';
+
+import { jqxTagCloudModule, jqxTagCloudComponent } from 'jqwidgets-ng/jqxtagcloud';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxTagCloudModule, jqxButtonModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
-export class AppComponent  {
+export class AppComponent {
     @ViewChild('tagCloud') tagCloud: jqxTagCloudComponent;
-   
-    getWidth() : any {
-		if (document.body.offsetWidth < 600) {
-			return '90%';
-		}
-		
-		return 600;
-	}
-	
+
+    getWidth(): any {
+        if (document.body.offsetWidth < 600) {
+            return '90%';
+        }
+
+        return 600;
+    }
+
     source: any =
-    {
-        datatype: 'array',
-        localdata: generatedata(50, false),
-        datafields: [
-            { name: 'productname' },
-            { name: 'price' }
-        ]
-    };
+        {
+            datatype: 'array',
+            localdata: generatedata(50, false),
+            datafields: [
+                { name: 'productname' },
+                { name: 'price' }
+            ]
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 

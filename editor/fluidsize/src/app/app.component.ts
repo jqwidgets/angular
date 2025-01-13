@@ -1,10 +1,11 @@
 ﻿import { Component, ViewEncapsulation } from '@angular/core';
 
+import { jqxEditorModule, jqxEditorComponent } from 'jqwidgets-ng/jqxeditor';
 @Component({
     selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css'],
-    encapsulation: ViewEncapsulation.None
+    imports: [jqxEditorModule],
+    standalone: true,
+    templateUrl: './app.component.html'
 })
 
 export class AppComponent {

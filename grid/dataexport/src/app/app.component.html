@@ -1,28 +1,28 @@
 ﻿<div style="font-size: 13px; font-family: Verdana; float: left">
 
-    <jqxGrid [theme]="'material'" #myGrid
+    <jqxGrid [theme]="'fluent'" #myGrid
         [width]="getWidth()" [source]="dataAdapter" [columns]="columns"
         [sortable]="true" [altrows]="true" [selectionmode]="'multiplecellsadvanced'">
     </jqxGrid>
 
     <div style="margin-top: 20px">
       <div style="float: left">
-        <jqxButton [theme]="'material'" (onClick)="excelBtnOnClick()">Export to Excel</jqxButton>
+        <jqxButton [theme]="'fluent'" (onClick)="excelBtnOnClick()">Export to Excel</jqxButton>
         <br /><br />
-        <jqxButton [theme]="'material'" (onClick)="xmlBtnOnClick()">Export to XML</jqxButton>
+        <jqxButton [theme]="'fluent'" (onClick)="xmlBtnOnClick()">Export to XML</jqxButton>
       </div>
       <div style="float: left; margin-left: 10px">
-        <jqxButton [theme]="'material'" (onClick)="csvBtnOnClick()">Export to CSV</jqxButton>
+        <jqxButton [theme]="'fluent'" (onClick)="csvBtnOnClick()">Export to CSV</jqxButton>
         <br /><br />
-        <jqxButton [theme]="'material'" (onClick)="tsvBtnOnClick()">Export to TSV</jqxButton>
+        <jqxButton [theme]="'fluent'" (onClick)="tsvBtnOnClick()">Export to TSV</jqxButton>
       </div>
       <div style="float: left; margin-left: 10px">
-        <jqxButton [theme]="'material'" (onClick)="htmlBtnOnClick()">Export to HTML</jqxButton>
+        <jqxButton [theme]="'fluent'" (onClick)="htmlBtnOnClick()">Export to HTML</jqxButton>
         <br /><br />
-        <jqxButton [theme]="'material'" (onClick)="jsonBtnOnClick()">Export to JSON</jqxButton>
+        <jqxButton [theme]="'fluent'" (onClick)="jsonBtnOnClick()">Export to JSON</jqxButton>
       </div>
       <div style="float: left; margin-left: 10px">
-        <jqxButton [theme]="'material'" (onClick)="pdfBtnOnClick()">Export to PDF</jqxButton>
+        <jqxButton [theme]="'fluent'" (onClick)="pdfBtnOnClick()">Export to PDF</jqxButton>
       </div>
     </div>
 

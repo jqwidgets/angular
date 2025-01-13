@@ -1,7 +1,10 @@
 ﻿import { Component, AfterViewInit } from '@angular/core';
 
+import { jqxToolbarModule, jqxToolbarComponent } from 'jqwidgets-ng/jqxtoolbar';
 @Component({
     selector: 'app-root',
+    imports: [jqxToolbarModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 

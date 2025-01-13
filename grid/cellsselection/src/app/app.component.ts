@@ -1,13 +1,17 @@
 ﻿import { Component, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 
-import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid.ts'
-import { jqxDropDownListComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdropdownlist.ts';
-import { jqxInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxinput.ts';
+import { jqxDropDownListComponent, jqxDropDownListModule } from 'jqwidgets-ng/jqxdropdownlist';
+import { jqxInputComponent, jqxInputModule } from 'jqwidgets-ng/jqxinput';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
 
 import { generatedata } from '../assets/generatedata';
 
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
+
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule, jqxDropDownListModule, jqxInputModule, jqxButtonModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -23,41 +27,41 @@ export class AppComponent implements AfterViewInit {
         this.myGrid.selectcell(2, 'lastname');
     }
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     source: any =
-    {
-        localdata: generatedata(200, false),
-        datafields:
-        [
-            { name: 'id', type: 'number' },
-            { name: 'firstname', type: 'string' },
-            { name: 'lastname', type: 'string' },
-            { name: 'productname', type: 'string' },
-            { name: 'available', type: 'bool' },
-            { name: 'quantity', type: 'number' },
-            { name: 'price', type: 'number' },
-            { name: 'total', type: 'number' }
-        ],
-        datatype: 'array'
-    };
+        {
+            localdata: generatedata(200, false),
+            datafields:
+                [
+                    { name: 'id', type: 'number' },
+                    { name: 'firstname', type: 'string' },
+                    { name: 'lastname', type: 'string' },
+                    { name: 'productname', type: 'string' },
+                    { name: 'available', type: 'bool' },
+                    { name: 'quantity', type: 'number' },
+                    { name: 'price', type: 'number' },
+                    { name: 'total', type: 'number' }
+                ],
+            datatype: 'array'
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
     columns: any[] =
-    [
-        { text: 'First Name', datafield: 'firstname', width: 200 },
-        { text: 'Last Name', datafield: 'lastname', width: 200 },
-        { text: 'Product', datafield: 'productname', width: 180 },
-        { text: 'Quantity', datafield: 'quantity', width: 80, cellsalign: 'right' },
-        { text: 'Unit Price', datafield: 'price', cellsalign: 'right', cellsformat: 'c2' }
-    ];
+        [
+            { text: 'First Name', datafield: 'firstname', width: 200 },
+            { text: 'Last Name', datafield: 'lastname', width: 200 },
+            { text: 'Product', datafield: 'productname', width: 180 },
+            { text: 'Quantity', datafield: 'quantity', width: 80, cellsalign: 'right' },
+            { text: 'Unit Price', datafield: 'price', cellsalign: 'right', cellsformat: 'c2' }
+        ];
 
     dropDownSource1: string[] = ['none', 'single cell', 'multiple cells', 'multiple cells extended', 'multiple cells advanced'];
 

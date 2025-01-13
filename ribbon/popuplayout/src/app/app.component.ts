@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild, ViewEncapsulation, AfterViewInit } from '@angular/core';
 
-import { jqxRibbonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxribbon.ts';
 
+
+import { jqxRibbonModule, jqxRibbonComponent } from 'jqwidgets-ng/jqxribbon';
 @Component({
     selector: 'app-root',
+    imports: [jqxRibbonModule],
+    standalone: true,
     styleUrls: ['./app.component.css'],
     templateUrl: './app.component.html',
     encapsulation: ViewEncapsulation.None

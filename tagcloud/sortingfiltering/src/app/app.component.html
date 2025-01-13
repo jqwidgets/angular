@@ -13,36 +13,36 @@
 </jqxTagCloud>
 
     Sort by:
-<jqxDropDownList [theme]="'material'" #sortByListBox
+<jqxDropDownList [theme]="'fluent'" #sortByListBox
                  (onSelect)="sortByListBoxSelect($event)"
                  [selectedIndex]="0" [width]="width" [height]="height"
                  [source]="['none', 'label', 'value']" [autoDropDownHeight]="true"></jqxDropDownList>
 
     Sort Direction:
-<jqxDropDownList [theme]="'material'" #sortDirectionListBox
+<jqxDropDownList [theme]="'fluent'" #sortDirectionListBox
                  (onSelect)="sortDirectionListBoxSelect($event)"
                  [selectedIndex]="0" [width]="width" [height]="height"
                  [source]="['ascending', 'descending']" [autoDropDownHeight]="true"></jqxDropDownList>
 
     Minimal Weight(value) Allowed:
-<jqxDropDownList [theme]="'material'" #minValueListBox
+<jqxDropDownList [theme]="'fluent'" #minValueListBox
                  (onSelect)="minValueListBoxSelect($event)"
                  [selectedIndex]="0" [width]="width" [height]="height"
                  [source]="['0', '5', '15', '25']" [autoDropDownHeight]="true"></jqxDropDownList>
 
     Max number of tags:
-<jqxDropDownList [theme]="'material'" #maxTagsListBox
+<jqxDropDownList [theme]="'fluent'" #maxTagsListBox
                  (onSelect)="maxTagsListBoxSelect($event)"
                  [selectedIndex]="0" [width]="width" [height]="height"
                  [source]="['0', '10', '15', '20']" [autoDropDownHeight]="true"></jqxDropDownList>
 
-<jqxCheckBox [theme]="'material'" #displayTagValueCheckbox style="margin-top: 5px"
+<jqxCheckBox [theme]="'fluent'" #displayTagValueCheckbox style="margin-top: 5px"
              (onChange)="displayTagValueCheckboxChange($event)"
              [width]="120" [height]="25">
   Display Tag Value
 </jqxCheckBox>
 
-<jqxCheckBox [theme]="'material'" #takeTopWeightedItems
+<jqxCheckBox [theme]="'fluent'" #takeTopWeightedItems
              (onChange)="takeTopWeightedItemsChange($event)"
              [width]="120" [height]="25">
   takeTopWeightedItems

@@ -1,14 +1,18 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxPasswordInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxpasswordinput.ts';
-import { jqxExpanderComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxexpander.ts';
-import { jqxInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxinput.ts';
-import { jqxValidatorComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxvalidator.ts';
-import { jqxDropDownListComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdropdownlist.ts';
-import { jqxDateTimeInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdatetimeinput.ts';
+import { jqxExpanderComponent, jqxExpanderModule } from 'jqwidgets-ng/jqxexpander';
+import { jqxInputComponent, jqxInputModule } from 'jqwidgets-ng/jqxinput';
+import { jqxValidatorComponent, jqxValidatorModule } from 'jqwidgets-ng/jqxvalidator';
+import { jqxDropDownListComponent, jqxDropDownListModule } from 'jqwidgets-ng/jqxdropdownlist';
+import { jqxDateTimeInputComponent, jqxDateTimeInputModule } from 'jqwidgets-ng/jqxdatetimeinput';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
+
+import { jqxPasswordInputModule, jqxPasswordInputComponent } from 'jqwidgets-ng/jqxpasswordinput';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxPasswordInputModule, jqxButtonModule, jqxExpanderModule, jqxInputModule, jqxDropDownListModule, jqxValidatorModule, jqxDateTimeInputModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css']
 })

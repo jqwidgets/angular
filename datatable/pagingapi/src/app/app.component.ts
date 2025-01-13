@@ -1,13 +1,17 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxDataTableComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdatatable.ts';
-import { jqxInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxinput.ts';
-import { jqxPanelComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxpanel.ts';
+
+import { jqxInputComponent, jqxInputModule } from 'jqwidgets-ng/jqxinput';
+import { jqxPanelComponent, jqxPanelModule } from 'jqwidgets-ng/jqxpanel';
 
 import { generatedata } from '../assets/generatedata';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
 
+import { jqxDataTableModule, jqxDataTableComponent } from 'jqwidgets-ng/jqxdatatable';
 @Component({
     selector: 'app-root',
+    imports: [jqxDataTableModule, jqxButtonModule, jqxPanelModule, jqxInputModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -16,40 +20,40 @@ export class AppComponent {
     @ViewChild('myInput') myInput: jqxInputComponent;
     @ViewChild('myPanel') myPanel: jqxPanelComponent;
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     source: any =
-    {
-        localData: generatedata(200, false),
-        dataType: 'array',
-        datafields:
-        [
-            { name: 'firstname', type: 'string' },
-            { name: 'lastname', type: 'string' },
-            { name: 'productname', type: 'string' },
-            { name: 'quantity', type: 'number' },
-            { name: 'price', type: 'number' },
-            { name: 'total', type: 'number' }
-        ]
-    };
+        {
+            localData: generatedata(200, false),
+            dataType: 'array',
+            datafields:
+                [
+                    { name: 'firstname', type: 'string' },
+                    { name: 'lastname', type: 'string' },
+                    { name: 'productname', type: 'string' },
+                    { name: 'quantity', type: 'number' },
+                    { name: 'price', type: 'number' },
+                    { name: 'total', type: 'number' }
+                ]
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
     columns: any[] =
-    [
-        { text: 'Name', dataField: 'firstname', width: 200 },
-        { text: 'Last Name', dataField: 'lastname', width: 200 },
-        { text: 'Product', editable: false, dataField: 'productname', width: 180 },
-        { text: 'Quantity', dataField: 'quantity', width: 80, cellsalign: 'right' },
-        { text: 'Unit Price', dataField: 'price', width: 80, cellsalign: 'right', cellsFormat: 'c2' },
-        { text: 'Total', dataField: 'total', width: 80, cellsalign: 'right', cellsFormat: 'c2' }
-    ];
+        [
+            { text: 'Name', dataField: 'firstname', width: 200 },
+            { text: 'Last Name', dataField: 'lastname', width: 200 },
+            { text: 'Product', editable: false, dataField: 'productname', width: 180 },
+            { text: 'Quantity', dataField: 'quantity', width: 80, cellsalign: 'right' },
+            { text: 'Unit Price', dataField: 'price', width: 80, cellsalign: 'right', cellsFormat: 'c2' },
+            { text: 'Total', dataField: 'total', width: 80, cellsalign: 'right', cellsFormat: 'c2' }
+        ];
 
     pagerModeListOnSelect(event: any): void {
         if (event.args.index == 0) {

@@ -1,11 +1,14 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxChartComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxchart.ts';
-import { jqxDropDownListComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdropdownlist.ts';
+
+import { jqxDropDownListComponent } from 'jqwidgets-ng/jqxdropdownlist';
 
 
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 @Component({
     selector: 'app-root',
+    imports: [jqxChartModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -28,42 +31,42 @@ export class AppComponent {
 
     titlePadding: any = { left: 90, top: 0, right: 0, bottom: 10 };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
     xAxis: any =
-    {
-        dataField: 'City',
-        valuesOnTicks: false
-    };
+        {
+            dataField: 'City',
+            valuesOnTicks: false
+        };
 
     valueAxis: any =
-    {
-        unitInterval: 50000,
-        minValue: 50000,
-        maxValue: 350000,
-        title: { text: 'Sales ($)<br>' },
-        labels: {
-            formatSettings: { prefix: '$', thousandsSeparator: ',' },
-            horizontalAlignment: 'right'
-        }
-    };
+        {
+            unitInterval: 50000,
+            minValue: 50000,
+            maxValue: 350000,
+            title: { text: 'Sales ($)<br>' },
+            labels: {
+                formatSettings: { prefix: '$', thousandsSeparator: ',' },
+                horizontalAlignment: 'right'
+            }
+        };
 
     seriesGroups: any[] =
-    [
-        {
-            type: 'bubble',
-            series: [
-                { dataField: 'SalesQ1', radiusDataField: 'YoYGrowthQ1', minRadius: 10, maxRadius: 30, displayText: 'Sales in Q1' },
-                { dataField: 'SalesQ2', radiusDataField: 'YoYGrowthQ2', minRadius: 10, maxRadius: 30, displayText: 'Sales in Q2' }
-            ]
-        }
-    ];
+        [
+            {
+                type: 'bubble',
+                series: [
+                    { dataField: 'SalesQ1', radiusDataField: 'YoYGrowthQ1', minRadius: 10, maxRadius: 30, displayText: 'Sales in Q1' },
+                    { dataField: 'SalesQ2', radiusDataField: 'YoYGrowthQ2', minRadius: 10, maxRadius: 30, displayText: 'Sales in Q2' }
+                ]
+            }
+        ];
 
     symbolsList: string[] = ['circle', 'diamond', 'square', 'triangle_up', 'triangle_down', 'triangle_left', 'triangle_right'];
 

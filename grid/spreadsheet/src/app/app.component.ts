@@ -1,9 +1,13 @@
 ﻿import { Component, ViewChild, OnInit } from '@angular/core';
 
-import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid.ts'
+
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule, jqxButtonModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -18,19 +22,19 @@ export class AppComponent implements OnInit {
     datafields: any[] = [];
 
     source: any =
-    {
-        unboundmode: true,
-        totalrecords: 100,
-        datafields: this.datafields
-    }
+        {
+            unboundmode: true,
+            totalrecords: 100,
+            datafields: this.datafields
+        }
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 

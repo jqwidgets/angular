@@ -7,21 +7,21 @@
 
 <div style="float: left; margin-right: 5px; margin-top: 10px;">
     minFontSize:
-    <jqxInput [theme]="'material'" #myInput1
+    <jqxInput [theme]="'fluent'" #myInput1
         [width]="200" [height]="25" [value]="12" [placeHolder]="'MinFontSize'">
     </jqxInput>
 </div>
 
 <div style="float: left; margin-right: 5px; margin-top: 10px;">
     maxFontSize:
-    <jqxInput [theme]="'material'" #myInput2
+    <jqxInput [theme]="'fluent'" #myInput2
         [width]="200" [height]="25" [value]="20" [placeHolder]="'maxFontSize'">
     </jqxInput>
 </div>
 
 <div style="float: left; margin-right: 5px; margin-top: 30px; margin-bottom: 20px;">
     fontSizeUnit:
-    <jqxInput [theme]="'material'" #myInput3
+    <jqxInput [theme]="'fluent'" #myInput3
         [width]="200" [height]="25" [minLength]="1" [value]="'px'"
         [source]="['em','px','%']" [placeHolder]="'em/px/%'">
     </jqxInput>
@@ -29,4 +29,4 @@
 
 <div style="clear: both; margin-bottom: 5px;"></div>
 
-<jqxButton [theme]="'material'" (onClick)="setFontSizeBtnOnClick()">Set Font</jqxButton>
+<jqxButton [theme]="'fluent'" (onClick)="setFontSizeBtnOnClick()">Set Font</jqxButton>

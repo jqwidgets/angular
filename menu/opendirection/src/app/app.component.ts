@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild, AfterViewInit } from '@angular/core';
 
-import { jqxMenuComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxmenu.ts';
 
+
+import { jqxMenuModule, jqxMenuComponent } from 'jqwidgets-ng/jqxmenu';
 @Component({
     selector: 'app-root',
+    imports: [jqxMenuModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 

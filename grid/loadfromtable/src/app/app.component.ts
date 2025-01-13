@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
 
-import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid.ts'
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule, jqxButtonModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -15,7 +18,7 @@ export class AppComponent {
         let table = this.myTable.nativeElement;
         let columns = table.children[0].getElementsByTagName('th');
         let rows = table.children[1].getElementsByTagName('tr');
-        
+
         let data = [];
 
         for (let i = 0; i < rows.length; i++) {
@@ -34,20 +37,20 @@ export class AppComponent {
         return data;
     }
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     loadBtn(): void {
         let source =
-            {
-                localdata: this.generateData(),
-                datatype: 'array',
-                datafields:
+        {
+            localdata: this.generateData(),
+            datatype: 'array',
+            datafields:
                 [
                     { name: 'First Name', type: 'string' },
                     { name: 'Last Name', type: 'string' },
@@ -57,12 +60,12 @@ export class AppComponent {
                     { name: 'Quantity', type: 'number' },
                     { name: 'Price', type: 'number' }
                 ]
-            };
+        };
 
         let dataAdapter = new jqx.dataAdapter(source);
 
         let settings = {
-            theme: 'material', 
+            theme: 'material',
             width: 850,
             source: dataAdapter,
             columnsresize: true,

@@ -1,4 +1,4 @@
-﻿<jqxGrid [theme]="'material'" #myGrid (onFilter)="onFilter()"
+﻿<jqxGrid [theme]="'fluent'" #myGrid (onFilter)="onFilter()"
     [width]="getWidth()" [source]="dataAdapter" [columns]="columns" [filterable]="true"
     [sortable]="true" [ready]="ready" [autoshowfiltericon]="true">
 </jqxGrid>
@@ -6,16 +6,16 @@
 <div style="margin-top: 30px;">
   <div style="width: 200px; float: left; margin-right: 10px;">
 
-    <jqxButton [theme]="'material'" (onClick)="clearFiltering()" [width]="120">
+    <jqxButton [theme]="'fluent'" (onClick)="clearFiltering()" [width]="120">
         Remove Filter
     </jqxButton>
 
-    <jqxCheckBox [theme]="'material'" (onChange)="onFilterBackground($event)"
+    <jqxCheckBox [theme]="'fluent'" (onChange)="onFilterBackground($event)"
         [checked]="true" [height]="25">
         Filter Background
     </jqxCheckBox>
 
-    <jqxCheckBox [theme]="'material'" (onChange)="onFilterIcon($event)"
+    <jqxCheckBox [theme]="'fluent'" (onChange)="onFilterIcon($event)"
         [checked]="false" [height]="25">
         Show All Filter Icons
     </jqxCheckBox>
@@ -24,7 +24,7 @@
   <div style="float: left;">
       Event Log:
 
-      <jqxPanel [theme]="'material'" #myPanel [width]="300" [height]="80"></jqxPanel>
+      <jqxPanel [theme]="'fluent'" #myPanel [width]="300" [height]="80"></jqxPanel>
 
   </div>
 </div>

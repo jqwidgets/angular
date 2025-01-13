@@ -1,11 +1,13 @@
 ﻿import { Component, ViewEncapsulation } from '@angular/core';
 
+import { jqxExpanderModule, jqxExpanderComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css'],
-    encapsulation: ViewEncapsulation.None
+    imports: [jqxExpanderModule],
+    standalone: true,
+    templateUrl: './app.component.html'
 })
+
 
 export class AppComponent {
 

@@ -1,26 +1,29 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxTreeGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtree.ts';
+
 
 import { generateordersdata } from '../assets/generatedata';
 
+import { jqxTreeGridModule, jqxTreeGridComponent } from 'jqwidgets-ng/jqxtreegrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxTreeGridModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
 export class AppComponent {
     @ViewChild('myTreeGrid') myTreeGrid: jqxTreeGridComponent;
-	
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
 
-     source: any =
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
+    source: any =
         {
             dataType: 'array',
             dataFields: [
@@ -39,26 +42,26 @@ export class AppComponent {
             },
             id: 'id',
             localData: generateordersdata(200)
-    };
+        };
 
-     dataAdapter: any = new jqx.dataAdapter(this.source);
+    dataAdapter: any = new jqx.dataAdapter(this.source);
 
-     columns: any[] =
-     [
-        { text: 'Order Name', dataField: 'name', align: 'center', width: 200 },
-        { text: 'Customer', dataField: 'customer', align: 'center', width: 200 },
-        { text: 'Price', dataField: 'price', cellsFormat: 'c2', align: 'center', cellsAlign: 'right', width: 80 },
-        {
-            text: 'Order Date', dataField: 'date', align: 'center', cellsFormat: 'dd-MMMM-yyyy hh:mm', cellsRenderer: (rowKey, column, cellValue, rowData, cellText) => {
-                if (rowData.level === 0) {
-                    return this.dataAdapter.formatDate(cellValue, 'dd-MMMM-yyyy');
+    columns: any[] =
+        [
+            { text: 'Order Name', dataField: 'name', align: 'center', width: 200 },
+            { text: 'Customer', dataField: 'customer', align: 'center', width: 200 },
+            { text: 'Price', dataField: 'price', cellsFormat: 'c2', align: 'center', cellsAlign: 'right', width: 80 },
+            {
+                text: 'Order Date', dataField: 'date', align: 'center', cellsFormat: 'dd-MMMM-yyyy hh:mm', cellsRenderer: (rowKey, column, cellValue, rowData, cellText) => {
+                    if (rowData.level === 0) {
+                        return this.dataAdapter.formatDate(cellValue, 'dd-MMMM-yyyy');
+                    }
+                    return cellText;
                 }
-                return cellText;
             }
-        }
-     ];
+        ];
 
-     ready = (): void => {
-         this.myTreeGrid.expandRow(2);
-     };
+    ready = (): void => {
+        this.myTreeGrid.expandRow(2);
+    };
 }

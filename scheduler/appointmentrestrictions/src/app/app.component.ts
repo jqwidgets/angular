@@ -1,23 +1,25 @@
 ﻿import { Component, ViewChild, AfterViewInit } from '@angular/core';
-
-import { jqxSchedulerComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxscheduler.ts';
+import { jqxSchedulerModule, jqxSchedulerComponent } from 'jqwidgets-ng/jqxscheduler';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxSchedulerModule, jqxButtonModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
 export class AppComponent implements AfterViewInit {
     @ViewChild('scheduler') myScheduler: jqxSchedulerComponent;
-    
-	getWidth() : any {
-		if (document.body.offsetWidth < 800) {
-			return '90%';
-		}
-		
-		return 800;
-	}
-	
+
+    getWidth(): any {
+        if (document.body.offsetWidth < 800) {
+            return '90%';
+        }
+
+        return 800;
+    }
+
     ngAfterViewInit() {
         this.myScheduler.ensureAppointmentVisible('id1');
         this.myScheduler.beginAppointmentsUpdate();
@@ -100,46 +102,46 @@ export class AppComponent implements AfterViewInit {
     date: any = new jqx.date(2018, 11, 23);
 
     source: any =
-    {
-        dataType: 'array',
-        dataFields: [
-            { name: 'id', type: 'string' },
-            { name: 'description', type: 'string' },
-            { name: 'location', type: 'string' },
-            { name: 'subject', type: 'string' },
-            { name: 'calendar', type: 'string' },
-            { name: 'start', type: 'date' },
-            { name: 'end', type: 'date' }
-        ],
-        id: 'id',
-        localData: this.generateAppointments()
-    };
+        {
+            dataType: 'array',
+            dataFields: [
+                { name: 'id', type: 'string' },
+                { name: 'description', type: 'string' },
+                { name: 'location', type: 'string' },
+                { name: 'subject', type: 'string' },
+                { name: 'calendar', type: 'string' },
+                { name: 'start', type: 'date' },
+                { name: 'end', type: 'date' }
+            ],
+            id: 'id',
+            localData: this.generateAppointments()
+        };
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
     resources: any =
-    {
-        colorScheme: 'scheme05',
-        dataField: 'calendar',
-        source: new jqx.dataAdapter(this.source)
-    };
+        {
+            colorScheme: 'scheme05',
+            dataField: 'calendar',
+            source: new jqx.dataAdapter(this.source)
+        };
 
     appointmentDataFields: any =
-    {
-        from: 'start',
-        to: 'end',
-        id: 'id',
-        description: 'description',
-        location: 'place',
-        subject: 'subject',
-        resourceId: 'calendar'
-    };
+        {
+            from: 'start',
+            to: 'end',
+            id: 'id',
+            description: 'description',
+            location: 'place',
+            subject: 'subject',
+            resourceId: 'calendar'
+        };
 
     views: string[] =
-    [
-        'dayView',
-        'weekView',
-        'monthView'
-    ];
+        [
+            'dayView',
+            'weekView',
+            'monthView'
+        ];
 
     click(): void {
         this.myScheduler.beginAppointmentsUpdate();

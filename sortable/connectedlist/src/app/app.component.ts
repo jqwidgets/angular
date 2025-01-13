@@ -1,9 +1,11 @@
-﻿import { Component, OnInit,  AfterViewInit, ViewChild, ViewEncapsulation } from '@angular/core';
+﻿import { Component, OnInit, AfterViewInit, ViewChild, ViewEncapsulation } from '@angular/core';
 
-import { jqxSortableComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxsortable.ts';
+import { jqxSortableModule, jqxSortableComponent } from 'jqwidgets-ng/jqxsortable';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxSortableModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
     encapsulation: ViewEncapsulation.None
@@ -13,7 +15,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     @ViewChild('mySortable1') mySortable1: jqxSortableComponent;
     @ViewChild('mySortable2') mySortable2: jqxSortableComponent;
 
-    ngOnInit(): void {     
+    ngOnInit(): void {
         const firstNames = ['Nancy', 'Andrew', 'Janet', 'Margaret', 'Steven', 'Michael', 'Robert', 'Laura', 'Anne'];
 
         const lastNames = ['Davolio', 'Fuller', 'Leverling', 'Peacock', 'Buchanan', 'Suyama', 'King', 'Callahan', 'Dodsworth'];

@@ -1,7 +1,10 @@
 ﻿import { Component, OnInit } from '@angular/core';
 
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 @Component({
     selector: 'app-root',
+    imports: [jqxChartModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -15,55 +18,55 @@ export class AppComponent implements OnInit {
     padding: any = { left: 10, top: 5, right: 10, bottom: 5 };
 
     titlePadding: any = { left: 90, top: 0, right: 0, bottom: 10 };
-	
-    xAxis: any =
-    {
-        type: 'basic',
-        dataField: 'year',
-        displayText: 'Year',
-        labels: { angle: 0 }
-    };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
-    valueAxis: any =
-    {
-        title: { text: 'Population<br>' },
-        unitInterval: 1000000,
-        labels:
+    xAxis: any =
         {
-            formatFunction: (value: any): string => {
-                return value / 1000000 + ' M';
-            }
+            type: 'basic',
+            dataField: 'year',
+            displayText: 'Year',
+            labels: { angle: 0 }
+        };
+
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
         }
-    };
+
+        return 850;
+    }
+
+    valueAxis: any =
+        {
+            title: { text: 'Population<br>' },
+            unitInterval: 1000000,
+            labels:
+            {
+                formatFunction: (value: any): string => {
+                    return value / 1000000 + ' M';
+                }
+            }
+        };
 
     seriesGroups: any[] =
-    [
-        {
-            type: 'waterfall',
-            series:
-            [
-                {
-                    dataField: 'population',
-                    summary: 'summary',
-                    displayText: 'Population change',
-                    colorFunction: (value: any, itemIndex: any, serie: any, group: any): string => {
-                        if (itemIndex === (this.data.length - 1)) {
-                            return '#3F3A3B'; // total
+        [
+            {
+                type: 'waterfall',
+                series:
+                    [
+                        {
+                            dataField: 'population',
+                            summary: 'summary',
+                            displayText: 'Population change',
+                            colorFunction: (value: any, itemIndex: any, serie: any, group: any): string => {
+                                if (itemIndex === (this.data.length - 1)) {
+                                    return '#3F3A3B'; // total
+                                }
+                                return (value < 0) ? '#D30E2F' /* red */ : '#24A037' /*green*/;
+                            }
                         }
-                        return (value < 0) ? '#D30E2F' /* red */ : '#24A037' /*green*/;
-                    }
-                }
-            ]
-        }
-    ];
+                    ]
+            }
+        ];
 
     generateData(): any[] {
         let data: any[] = [

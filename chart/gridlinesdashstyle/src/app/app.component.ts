@@ -1,7 +1,10 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 @Component({
     selector: 'app-root',
+    imports: [jqxChartModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -19,57 +22,57 @@ export class AppComponent {
     titlePadding: any = { left: 10, top: 0, right: 0, bottom: 10 };
 
     xAxis: any =
-    {
-        dataField: 'Country',
-        gridLines: {
-            visible: true,
-            dashStyle: '2,2',
-            color: 'grey'
-        },
-        tickMarks: {
-            dashStyle: '2,2',
-            color: 'grey'
-        }
-    };
-
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
-    seriesGroups: any[] =
-    [
         {
-            type: 'column',
-            orientation: 'horizontal',
-            columnsGapPercent: 50,
-            valueAxis:
-            {
+            dataField: 'Country',
+            gridLines: {
                 visible: true,
-                minValue: -5,
-                maxValue: 10,
-                unitInterval: 1,
-                labels: {
-                    formatSettings: { sufix: '%' }
-                },
-                gridLines: {
-                    dashStyle: '2,2',
-                    color: 'grey'
-                },
-                tickMarks:
-                {
-                    dashStyle: '2,2',
-                    color: 'grey'
-                }
+                dashStyle: '2,2',
+                color: 'grey'
             },
-            toolTipFormatSettings: { sufix: '%' },
-            series: [
-                { dataField: 'Inflation2012', displayText: 'Inflation 2012' },
-                { dataField: 'Inflation2011', displayText: 'Inflation 2011' }
-            ]
+            tickMarks: {
+                dashStyle: '2,2',
+                color: 'grey'
+            }
+        };
+
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
         }
-    ];
+
+        return 850;
+    }
+
+    seriesGroups: any[] =
+        [
+            {
+                type: 'column',
+                orientation: 'horizontal',
+                columnsGapPercent: 50,
+                valueAxis:
+                {
+                    visible: true,
+                    minValue: -5,
+                    maxValue: 10,
+                    unitInterval: 1,
+                    labels: {
+                        formatSettings: { sufix: '%' }
+                    },
+                    gridLines: {
+                        dashStyle: '2,2',
+                        color: 'grey'
+                    },
+                    tickMarks:
+                    {
+                        dashStyle: '2,2',
+                        color: 'grey'
+                    }
+                },
+                toolTipFormatSettings: { sufix: '%' },
+                series: [
+                    { dataField: 'Inflation2012', displayText: 'Inflation 2012' },
+                    { dataField: 'Inflation2011', displayText: 'Inflation 2011' }
+                ]
+            }
+        ];
 }

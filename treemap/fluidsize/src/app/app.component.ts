@@ -1,7 +1,10 @@
 ﻿import { Component, ViewEncapsulation } from '@angular/core';
 
+import { jqxTreeMapModule, jqxTreeMapComponent } from 'jqwidgets-ng/jqxtreemap';
 @Component({
     selector: 'app-root',
+    imports: [jqxTreeMapModule],
+    standalone: true,
     styleUrls: ['./app.component.css'],
     templateUrl: './app.component.html',
     encapsulation: ViewEncapsulation.None

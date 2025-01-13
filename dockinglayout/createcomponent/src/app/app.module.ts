@@ -7,7 +7,7 @@ import { jqxChartComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxcha
 import { jqxLayoutComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxlayout.ts';
 import { jqxDockingLayoutComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdockinglayout.ts';
 import { jqxMenuComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxmenu.ts';
-import { jqxTreeComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtree.ts';
+
 
 @NgModule({
     declarations: [AppComponent, jqxChartComponent, jqxLayoutComponent, jqxDockingLayoutComponent, jqxMenuComponent, jqxTreeComponent],

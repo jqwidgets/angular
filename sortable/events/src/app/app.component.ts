@@ -1,10 +1,12 @@
 ﻿import { Component, ViewChild, ViewEncapsulation, ElementRef, AfterViewInit } from '@angular/core';
 
-import { jqxSortableComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxsortable.ts';
-import { jqxPanelComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxpanel.ts';
+import { jqxPanelComponent, jqxPanelModule } from 'jqwidgets-ng/jqxpanel';
 
+import { jqxSortableModule, jqxSortableComponent } from 'jqwidgets-ng/jqxsortable';
 @Component({
     selector: 'app-root',
+    imports: [jqxSortableModule, jqxPanelModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['app.component.css'],
     encapsulation: ViewEncapsulation.None
@@ -63,15 +65,15 @@ export class AppComponent implements AfterViewInit {
         this.eventLog(event);
     };
 
-    remove (event: any): void {
+    remove(event: any): void {
         this.eventLog(event);
     };
 
-    start (event: any): void {
+    start(event: any): void {
         this.eventLog(event);
     };
 
-    stop (event: any): void {
+    stop(event: any): void {
         this.eventLog(event);
     };
 

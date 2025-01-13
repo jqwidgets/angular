@@ -1,7 +1,12 @@
 ﻿import { Component, ViewChild, AfterViewInit, ViewEncapsulation, ElementRef } from '@angular/core';
 
+import { jqxPopoverModule, jqxPopoverComponent } from 'jqwidgets-ng/jqxpopover';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
+
 @Component({
     selector: 'app-root',
+    imports: [jqxPopoverModule, jqxButtonModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
     encapsulation: ViewEncapsulation.None
@@ -9,13 +14,13 @@
 
 export class AppComponent implements AfterViewInit {
     @ViewChild('employees') employees: ElementRef;
-    
+
     ngAfterViewInit() {
         let data = new Array();
         let firstNames = ['Nancy', 'Andrew', 'Janet', 'Margaret', 'Steven', 'Michael', 'Robert', 'Laura', 'Anne'];
         let lastNames = ['Davolio', 'Fuller', 'Leverling', 'Peacock', 'Buchanan', 'Suyama', 'King', 'Callahan', 'Dodsworth'];
         let titles = ['Sales Representative', 'Vice President, Sales', 'Sales Representative', 'Sales Representative', 'Sales Manager', 'Sales Representative', 'Sales Representative', 'Inside Sales Coordinator', 'Sales Representative'];
-        
+
         for (let i = 0; i < firstNames.length; i++) {
             let row = {};
             row['firstname'] = firstNames[i];

@@ -1,11 +1,13 @@
 ﻿
 import { Component, ViewChild, AfterViewInit } from '@angular/core';
 
-import { jqxSchedulerComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxscheduler.ts';
-import { jqxButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxbuttons.ts';
+import { jqxButtonComponent } from 'jqwidgets-ng/jqxbuttons';
 
+import { jqxSchedulerModule, jqxSchedulerComponent } from 'jqwidgets-ng/jqxscheduler';
 @Component({
     selector: 'app-root',
+    imports: [jqxSchedulerModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -16,14 +18,14 @@ export class AppComponent implements AfterViewInit {
         this.myScheduler.ensureAppointmentVisible('id1');
     }
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
     generateAppointments() {
         let appointments = new Array();
         let appointment1 = {
@@ -32,8 +34,8 @@ export class AppComponent implements AfterViewInit {
             location: '',
             subject: 'Fashion Expo',
             calendar: 'East Coast Events',
-            start: new Date(2018, 10, 15, 9, 0, 0),
-            end: new Date(2018, 10, 18, 16, 0, 0)
+            start: new Date(2025, 10, 15, 9, 0, 0),
+            end: new Date(2025, 10, 18, 16, 0, 0)
         }
         let appointment2 = {
             id: 'id2',
@@ -41,8 +43,8 @@ export class AppComponent implements AfterViewInit {
             location: '',
             subject: 'Cloud Data Expo',
             calendar: 'Middle West Events',
-            start: new Date(2018, 10, 20, 10, 0, 0),
-            end: new Date(2018, 10, 22, 15, 0, 0)
+            start: new Date(2025, 10, 20, 10, 0, 0),
+            end: new Date(2025, 10, 22, 15, 0, 0)
         }
         let appointment3 = {
             id: 'id3',
@@ -50,8 +52,8 @@ export class AppComponent implements AfterViewInit {
             location: '',
             subject: 'Digital Media Conference',
             calendar: 'West Coast Events',
-            start: new Date(2018, 10, 23, 11, 0, 0),
-            end: new Date(2018, 10, 28, 13, 0, 0)
+            start: new Date(2025, 10, 23, 11, 0, 0),
+            end: new Date(2025, 10, 28, 13, 0, 0)
         }
         let appointment4 = {
             id: 'id4',
@@ -59,8 +61,8 @@ export class AppComponent implements AfterViewInit {
             location: '',
             subject: 'Modern Software Development Conference',
             calendar: 'West Coast Events',
-            start: new Date(2018, 10, 10, 16, 0, 0),
-            end: new Date(2018, 10, 12, 18, 0, 0)
+            start: new Date(2025, 10, 10, 16, 0, 0),
+            end: new Date(2025, 10, 12, 18, 0, 0)
         }
         let appointment5 = {
             id: 'id5',
@@ -68,8 +70,8 @@ export class AppComponent implements AfterViewInit {
             location: '',
             subject: 'Marketing Future Expo',
             calendar: 'Middle West Events',
-            start: new Date(2018, 10, 5, 15, 0, 0),
-            end: new Date(2018, 10, 6, 17, 0, 0)
+            start: new Date(2025, 10, 5, 15, 0, 0),
+            end: new Date(2025, 10, 6, 17, 0, 0)
         }
         let appointment6 = {
             id: 'id6',
@@ -77,8 +79,8 @@ export class AppComponent implements AfterViewInit {
             location: '',
             subject: 'Future Computing',
             calendar: 'East Coast Events',
-            start: new Date(2018, 10, 13, 14, 0, 0),
-            end: new Date(2018, 10, 20, 16, 0, 0)
+            start: new Date(2025, 10, 13, 14, 0, 0),
+            end: new Date(2025, 10, 20, 16, 0, 0)
         }
         appointments.push(appointment1);
         appointments.push(appointment2);
@@ -90,52 +92,52 @@ export class AppComponent implements AfterViewInit {
         return appointments;
     };
 
-    date: any = new jqx.date(2018, 11, 23);
+    date: any = new jqx.date(2025, 11, 23);
 
     source: any =
-    {
-        dataType: 'array',
-        dataFields: [
-            { name: 'id', type: 'string' },
-            { name: 'description', type: 'string' },
-            { name: 'location', type: 'string' },
-            { name: 'subject', type: 'string' },
-            { name: 'calendar', type: 'string' },
-            { name: 'start', type: 'date' },
-            { name: 'end', type: 'date' }
-        ],
-        id: 'id',
-        localData: this.generateAppointments()
-    };
+        {
+            dataType: 'array',
+            dataFields: [
+                { name: 'id', type: 'string' },
+                { name: 'description', type: 'string' },
+                { name: 'location', type: 'string' },
+                { name: 'subject', type: 'string' },
+                { name: 'calendar', type: 'string' },
+                { name: 'start', type: 'date' },
+                { name: 'end', type: 'date' }
+            ],
+            id: 'id',
+            localData: this.generateAppointments()
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
     printButton: any = null;
 
     resources: any =
-    {
-        colorScheme: 'scheme01',
-        dataField: 'calendar',
-        source: new jqx.dataAdapter(this.source)
-    };
+        {
+            colorScheme: 'scheme01',
+            dataField: 'calendar',
+            source: new jqx.dataAdapter(this.source)
+        };
 
     appointmentDataFields: any =
-    {
-        from: 'start',
-        to: 'end',
-        id: 'id',
-        description: 'description',
-        location: 'place',
-        subject: 'subject',
-        resourceId: 'calendar'
-    };
+        {
+            from: 'start',
+            to: 'end',
+            id: 'id',
+            description: 'description',
+            location: 'place',
+            subject: 'subject',
+            resourceId: 'calendar'
+        };
 
     views: any[] =
-    [
-        'dayView',
-        'weekView',
-        'monthView'
-    ];
+        [
+            'dayView',
+            'weekView',
+            'monthView'
+        ];
 
     // called when the dialog is craeted.
     editDialogCreate = (dialog, fields, editAppointment) => {
@@ -162,7 +164,7 @@ export class AppComponent implements AfterViewInit {
         fields.buttons[0].appendChild(buttonElement);
 
         let printButton: jqwidgets.jqxButton = jqwidgets.createInstance('#PrintButton', 'jqxButton', {
-            theme: 'material', 
+            theme: 'material',
             width: 50,
             height: 25
         });
@@ -229,7 +231,7 @@ export class AppComponent implements AfterViewInit {
             }
             newWindow.print();
         });
-        
+
     };
 
     /**

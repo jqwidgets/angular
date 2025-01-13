@@ -1,10 +1,11 @@
 ﻿
 import { Component } from '@angular/core';
 
-import { jqxBulletChartComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxbulletchart.ts';
-
+import { jqxBulletChartModule, jqxBulletChartComponent } from 'jqwidgets-ng/jqxbulletchart';
 @Component({
     selector: 'app-root',
+    imports: [jqxBulletChartModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -38,13 +39,13 @@ export class AppComponent {
     }
 
     ranges: any[] =
-    [
-        { startValue: 0, endValue: 60, color: '#191970' },
-        { startValue: 60, endValue: 70, color: '#191970' },
-        { startValue: 70, endValue: 80, color: '#191970' },
-        { startValue: 80, endValue: 90, color: '#191970' },
-        { startValue: 90, endValue: 100, color: '#191970' }
-    ];
+        [
+            { startValue: 0, endValue: 60, color: '#191970' },
+            { startValue: 60, endValue: 70, color: '#191970' },
+            { startValue: 70, endValue: 80, color: '#191970' },
+            { startValue: 80, endValue: 90, color: '#191970' },
+            { startValue: 90, endValue: 100, color: '#191970' }
+        ];
 
     pointer: any = { value: 83, label: 'Grade', size: '25%', color: '#1E90FF' };
 

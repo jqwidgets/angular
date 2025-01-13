@@ -1,14 +1,14 @@
-﻿<jqxRangeSelector [theme]="'material'" #rangeSelectorReference
+﻿<jqxRangeSelector [theme]="'fluent'" #rangeSelectorReference
                   [width]="'80%'" [height]="100" [min]="0" [max]="100"
                   [range]="{ from: 10, to: 50 }" [majorTicksInterval]="10" [minorTicksInterval]="1">
   <div id="rangeSelectorContent"></div>
 </jqxRangeSelector>
 
 <div id="Div1" style="margin-left:30px; margin-top: 50px;">
-  <jqxButton [theme]="'material'" #setButton (onClick)="onClickSet()">
+  <jqxButton [theme]="'fluent'" #setButton (onClick)="onClickSet()">
     Set range
   </jqxButton>
-  <jqxButton [theme]="'material'" #getButton (onClick)="onClickGet()">
+  <jqxButton [theme]="'fluent'" #getButton (onClick)="onClickGet()">
     Get range
   </jqxButton>
 </div>

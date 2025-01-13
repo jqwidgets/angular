@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 
-import { jqxTreeGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtree.ts';
 
+
+import { jqxTreeGridModule, jqxTreeGridComponent } from 'jqwidgets-ng/jqxtreegrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxTreeGridModule],
+    standalone: true,
     styleUrls: ['./app.component.css'],
     templateUrl: './app.component.html',
     encapsulation: ViewEncapsulation.None
@@ -12,31 +15,31 @@ import { jqxTreeGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqx
 export class AppComponent {
     @ViewChild('TreeGrid') treeGrid: jqxTreeGridComponent
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     source: any =
-    {
-        dataType: 'tab',
-        dataFields: [
-            { name: 'Id', type: 'number' },
-            { name: 'Name', type: 'string' },
-            { name: 'ParentID', type: 'number' },
-            { name: 'Population', type: 'number' }
-        ],
-        hierarchy:
         {
-            keyDataField: { name: 'Id' },
-            parentDataField: { name: 'ParentID' }
-        },
-        id: 'Id',
-        url: '../assets/locations.txt'
-    };
+            dataType: 'tab',
+            dataFields: [
+                { name: 'Id', type: 'number' },
+                { name: 'Name', type: 'string' },
+                { name: 'ParentID', type: 'number' },
+                { name: 'Population', type: 'number' }
+            ],
+            hierarchy:
+            {
+                keyDataField: { name: 'Id' },
+                parentDataField: { name: 'ParentID' }
+            },
+            id: 'Id',
+            url: '../assets/locations.txt'
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 

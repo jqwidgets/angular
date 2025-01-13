@@ -1,6 +1,6 @@
 ﻿<div id='jqxWidget' style="font-size: 13px; font-family: Verdana; float: left;">
   <div style='margin-top: 3px;'>
-    <jqxNumberInput [theme]="'material'" #numericInput
+    <jqxNumberInput [theme]="'fluent'" #numericInput
                     [spinButtons]="true"
                     [symbol]="'$'"
                     [min]="0"
@@ -11,7 +11,7 @@
   <div>
     <div style="float: left;">
       <div style="width: 170px; margin-top: 20px;">
-        <jqxCheckBox [theme]="'material'" #spinbuttons (onChange)="change($event)" [checked]="true">
+        <jqxCheckBox [theme]="'fluent'" #spinbuttons (onChange)="change($event)" [checked]="true">
           Show Spin Buttons
         </jqxCheckBox>        
       </div>
@@ -19,12 +19,12 @@
         Symbol Position
       </div>
       <div style="margin-top: 5px;">
-        <jqxRadioButton [theme]="'material'" #leftbutton (onChecked)="checkedLeftbutton($event)" [checked]="true">
+        <jqxRadioButton [theme]="'fluent'" #leftbutton (onChecked)="checkedLeftbutton($event)" [checked]="true">
           Left
         </jqxRadioButton>
       </div>
       <div style="margin-top: 5px;">
-        <jqxRadioButton [theme]="'material'" #rightbutton (onChecked)="checkedRightbutton($event)">
+        <jqxRadioButton [theme]="'fluent'" #rightbutton (onChecked)="checkedRightbutton($event)">
           Right
         </jqxRadioButton>
 
@@ -34,7 +34,7 @@
       <div style="margin-top: 20px; margin-bottom:10px;">
         Symbol
       </div>
-      <jqxDropDownList [theme]="'material'" #symboltype
+      <jqxDropDownList [theme]="'fluent'" #symboltype
                        (onSelect)="symboltypeSelect($event)"
                        [source]="symboltypes"
                        [autoDropDownHeight]="true"
@@ -45,7 +45,7 @@
       <div style="margin-top: 10px; margin-bottom: 10px;">
         Decimal Digits
       </div>
-      <jqxDropDownList [theme]="'material'" #decimaldigits
+      <jqxDropDownList [theme]="'fluent'" #decimaldigits
                        (onSelect)="decimaldigitsSelect($event)"
                        [source]="decimaldigitsNumbers"
                        [autoDropDownHeight]="true"
@@ -56,7 +56,7 @@
       <div style="margin-top: 10px; margin-bottom: 10px;">
         Digits
       </div>
-      <jqxDropDownList [theme]="'material'" #digits
+      <jqxDropDownList [theme]="'fluent'" #digits
                        (onSelect)="digitsSelect($event)"
                        [source]="digitsNumbers"
                        [autoDropDownHeight]="true"

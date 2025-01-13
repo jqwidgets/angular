@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { jqxExpanderComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxexpander.ts';
+import { jqxExpanderComponent } from 'jqwidgets-ng/jqxexpander';
 
 @NgModule({
     declarations: [AppComponent, jqxExpanderComponent],

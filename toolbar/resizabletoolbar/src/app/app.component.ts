@@ -1,7 +1,10 @@
 ﻿import { Component, ViewEncapsulation } from '@angular/core';
 
+import { jqxToolbarModule, jqxToolbarComponent } from 'jqwidgets-ng/jqxtoolbar';
 @Component({
     selector: 'app-root',
+    imports: [jqxToolbarModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
     encapsulation: ViewEncapsulation.None
@@ -11,13 +14,13 @@ export class AppComponent {
     tools: string = 'button button button | toggleButton | dropdownlist combobox | input';
 
     theme: string = '';
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     initTools = (type: string, index: number, tool: any, menuToolIninitialization: any): void => {
         let icon = document.createElement('div');

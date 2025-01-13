@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxTreeGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtree.ts';
 
+
+import { jqxTreeGridModule, jqxTreeGridComponent } from 'jqwidgets-ng/jqxtreegrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxTreeGridModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -11,38 +14,38 @@ export class AppComponent {
     @ViewChild('TreeGrid') treeGrid: jqxTreeGridComponent;
 
     source: any =
-    {
-        dataType: "xml",
-        dataFields: [
-            { name: 'EmployeeID', type: 'number' },
-            { name: 'ReportsTo', type: 'number' },
-            { name: 'FirstName', type: 'string' },
-            { name: 'LastName', type: 'string' },
-            { name: 'City', type: 'string' },
-            { name: 'Address', type: 'string' },
-            { name: 'Title', type: 'string' },
-            { name: 'HireDate', type: 'date' },
-            { name: 'BirthDate', type: 'date' }
-        ],
-        hierarchy:
         {
-            keyDataField: { name: 'EmployeeID' },
-            parentDataField: { name: 'ReportsTo' }
-        },
-        id: 'EmployeeID',
-        root: 'Employees',
-        record: 'Employee',
-        url: '../assets/employees.txt'
-    };
-	
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+            dataType: "xml",
+            dataFields: [
+                { name: 'EmployeeID', type: 'number' },
+                { name: 'ReportsTo', type: 'number' },
+                { name: 'FirstName', type: 'string' },
+                { name: 'LastName', type: 'string' },
+                { name: 'City', type: 'string' },
+                { name: 'Address', type: 'string' },
+                { name: 'Title', type: 'string' },
+                { name: 'HireDate', type: 'date' },
+                { name: 'BirthDate', type: 'date' }
+            ],
+            hierarchy:
+            {
+                keyDataField: { name: 'EmployeeID' },
+                parentDataField: { name: 'ReportsTo' }
+            },
+            id: 'EmployeeID',
+            root: 'Employees',
+            record: 'Employee',
+            url: '../assets/employees.txt'
+        };
+
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
@@ -58,5 +61,5 @@ export class AppComponent {
 
     ready(): void {
         this.treeGrid.expandRow(2);
-    } 
+    }
 }

@@ -1,11 +1,16 @@
 ﻿import { Component, ViewChild, AfterViewInit } from '@angular/core';
 
-import { jqxGaugeComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgauge.ts';
-import { jqxSliderComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxslider.ts';
+import { jqxSliderComponent, jqxSliderModule } from 'jqwidgets-ng/jqxslider';
 
+import { jqxLinearGaugeModule, jqxLinearGaugeComponent } from 'jqwidgets-ng/jqxlineargauge';
+import { jqxGaugeModule, jqxGaugeComponent } from 'jqwidgets-ng/jqxgauge';
 @Component({
     selector: 'app-root',
-    templateUrl: './app.component.html'
+    imports: [jqxLinearGaugeModule, jqxSliderModule, jqxGaugeModule],
+    standalone: true,
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css'],
+    encapsulation: ViewEncapsulation.None
 })
 
 export class AppComponent {
@@ -29,11 +34,11 @@ export class AppComponent {
     pointer: any = { style: { fill: '#2e79bb' }, width: 5 };
 
     ranges: any[] =
-    [
-        { startValue: 0, endValue: 130, style: { fill: '#4cb848', stroke: '#4cb848' }, startDistance: 0, endDistance: 0 },
-        { startValue: 130, endValue: 180, style: { fill: '#fad00b', stroke: '#fad00b' }, startDistance: 0, endDistance: 0 },
-        { startValue: 180, endValue: 220, style: { fill: '#e53d37', stroke: '#e53d37' }, startDistance: 0, endDistance: 0 }
-    ];
+        [
+            { startValue: 0, endValue: 130, style: { fill: '#4cb848', stroke: '#4cb848' }, startDistance: 0, endDistance: 0 },
+            { startValue: 130, endValue: 180, style: { fill: '#fad00b', stroke: '#fad00b' }, startDistance: 0, endDistance: 0 },
+            { startValue: 180, endValue: 220, style: { fill: '#e53d37', stroke: '#e53d37' }, startDistance: 0, endDistance: 0 }
+        ];
 
     mySliderOnChange(): void {
         let val = this.mySlider.value();

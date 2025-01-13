@@ -1,15 +1,18 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
 
-import { jqxMenuComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxmenu.ts';
 
+
+import { jqxMenuModule, jqxMenuComponent } from 'jqwidgets-ng/jqxmenu';
 @Component({
     selector: 'app-root',
+    imports: [jqxMenuModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
 export class AppComponent {
     @ViewChild('eventLog') eventLog: ElementRef;
-    
+
     data = [
         {
             'id': '12',
@@ -87,17 +90,17 @@ export class AppComponent {
 
     // prepare the data
     source =
-    {
-        datatype: 'json',
-        datafields: [
-            { name: 'id' },
-            { name: 'parentid' },
-            { name: 'text' },
-            { name: 'subMenuWidth' }
-        ],
-        id: 'id',
-        localdata: this.data
-    };
+        {
+            datatype: 'json',
+            datafields: [
+                { name: 'id' },
+                { name: 'parentid' },
+                { name: 'text' },
+                { name: 'subMenuWidth' }
+            ],
+            id: 'id',
+            localdata: this.data
+        };
 
     getAdapter(source: any): any {
         // create data adapter and perform data

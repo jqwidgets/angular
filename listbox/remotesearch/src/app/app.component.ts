@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
 
-import { jqxListBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxlistbox.ts';
 
+
+import { jqxListBoxModule, jqxListBoxComponent } from 'jqwidgets-ng/jqxlistbox';
 @Component({
     selector: 'app-root',
+    imports: [jqxListBoxModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -31,11 +34,11 @@ export class AppComponent {
     };
 
     dataAdapter: any = new jqx.dataAdapter(this.source, {
-            formatData: (data: any): any => {
-                data.name_startsWith = this.searchField.nativeElement.value;
-                return data;
-            }
+        formatData: (data: any): any => {
+            data.name_startsWith = this.searchField.nativeElement.value;
+            return data;
         }
+    }
     );
 
     renderer: any = (index, label, value) => {
@@ -57,6 +60,6 @@ export class AppComponent {
 
         this.me.timer = setTimeout(_ => {
             this.dataAdapter.dataBind();
-        }, 300);        
+        }, 300);
     };
 }

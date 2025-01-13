@@ -2,8 +2,11 @@
 
 import { jqxTextAreaComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtextarea.ts';
 
+import { jqxTextAreaModule, jqxTextAreaComponent } from 'jqwidgets-ng/jqxtextarea';
 @Component({
     selector: 'app-root',
+    imports: [jqxTextAreaModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 

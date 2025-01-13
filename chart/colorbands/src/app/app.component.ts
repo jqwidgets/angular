@@ -1,7 +1,10 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule],
+    standalone: true,
     templateUrl: './app.component.html',
 })
 
@@ -17,24 +20,24 @@ export class AppComponent {
 
     titlePadding: any = { left: 90, top: 0, right: 0, bottom: 10 };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
-    xAxis: any =
-    {
-        dataField: 'Person',
-        unitInterval: 1,
-        tickMarks: {
-            visible: true,
-            interval: 1,
-            color: '#BCBCBC'
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
         }
-    };
+
+        return 850;
+    }
+
+    xAxis: any =
+        {
+            dataField: 'Person',
+            unitInterval: 1,
+            tickMarks: {
+                visible: true,
+                interval: 1,
+                color: '#BCBCBC'
+            }
+        };
 
     toolTipCustomFormatFn = (value: any, itemIndex: any, serie: any, group: any, categoryValue: any, categoryAxis: any): string => {
         var dataItem = this.data[itemIndex];
@@ -44,31 +47,31 @@ export class AppComponent {
     };
 
     seriesGroups: any[] =
-    [
-        {
-            orientation: 'horizontal',
-            type: 'rangecolumn',
-            columnsGapPercent: 100,
-            toolTipFormatFunction: this.toolTipCustomFormatFn,
-            valueAxis:
+        [
             {
-                flip: true,
-                minValue: 1,
-                maxValue: 30,
-                unitInterval: 1,
-                title: { text: 'Day' },
-                tickMarks: { color: '#BCBCBC' }
-            },
-            series: [
-                { dataFieldFrom: 'M1_From', dataFieldTo: 'M1_To', displayText: 'Sprint 1', opacity: 1 },
-                { dataFieldFrom: 'M2_From', dataFieldTo: 'M2_To', displayText: 'Sprint 2', opacity: 1 }
-            ],
-            bands:
-            [
-                { minValue: 13, maxValue: 16, color: '#00FF00', opacity: 0.15 },
-                { minValue: 24, maxValue: 27, color: '#0000FF', opacity: 0.20 },
-                { minValue: 29, maxValue: 29, color: '#FF0000', opacity: 0.5, lineWidth: 3 }
-            ]
-        }
-    ];
+                orientation: 'horizontal',
+                type: 'rangecolumn',
+                columnsGapPercent: 100,
+                toolTipFormatFunction: this.toolTipCustomFormatFn,
+                valueAxis:
+                {
+                    flip: true,
+                    minValue: 1,
+                    maxValue: 30,
+                    unitInterval: 1,
+                    title: { text: 'Day' },
+                    tickMarks: { color: '#BCBCBC' }
+                },
+                series: [
+                    { dataFieldFrom: 'M1_From', dataFieldTo: 'M1_To', displayText: 'Sprint 1', opacity: 1 },
+                    { dataFieldFrom: 'M2_From', dataFieldTo: 'M2_To', displayText: 'Sprint 2', opacity: 1 }
+                ],
+                bands:
+                    [
+                        { minValue: 13, maxValue: 16, color: '#00FF00', opacity: 0.15 },
+                        { minValue: 24, maxValue: 27, color: '#0000FF', opacity: 0.20 },
+                        { minValue: 29, maxValue: 29, color: '#FF0000', opacity: 0.5, lineWidth: 3 }
+                    ]
+            }
+        ];
 }

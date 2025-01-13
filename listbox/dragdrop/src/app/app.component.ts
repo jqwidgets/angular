@@ -1,9 +1,12 @@
-﻿import { Component, ViewChild, ElementRef} from '@angular/core';
+﻿import { Component, ViewChild, ElementRef } from '@angular/core';
 
 import { jqxTextAreaComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtextarea.ts';
 
+import { jqxListBoxModule, jqxListBoxComponent } from 'jqwidgets-ng/jqxlistbox';
 @Component({
     selector: 'app-root',
+    imports: [jqxListBoxModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -23,7 +26,7 @@ export class AppComponent {
             let ev = event.args.originalEvent;
             let x = ev.pageX;
             let y = ev.pageY;
-            
+
             if (event.args.originalEvent && event.args.originalEvent.originalEvent && event.args.originalEvent.originalEvent.touches) {
                 let touch = event.args.originalEvent.originalEvent.changedTouches[0];
                 x = touch.pageX;
@@ -35,7 +38,7 @@ export class AppComponent {
             let height = textareaElement.offsetHeight;
             let right = parseInt(textareaElement.offsetLeft) + width;
             let bottom = parseInt(textareaElement.offsetTop) + height;
-            
+
             if (x >= parseInt(textareaElement.offsetLeft) && x <= right) {
                 if (y >= parseInt(textareaElement.offsetTop) && y <= bottom) {
                     this.myTextArea.val(event.args.label);
@@ -45,40 +48,40 @@ export class AppComponent {
     }
 
     source1: string[] =
-    [
-        'Affogato',
-        'Americano',
-        'Bicerin',
-        'Breve',
-        'Café Bombón',
-        'Café au lait',
-        'Caffé Corretto',
-        'Café Crema',
-        'Caffé Latte',
-        'Caffé macchiato',
-        'Café mélange',
-        'Coffee milk',
-        'Cafe mocha'
-    ];
+        [
+            'Affogato',
+            'Americano',
+            'Bicerin',
+            'Breve',
+            'Café Bombón',
+            'Café au lait',
+            'Caffé Corretto',
+            'Café Crema',
+            'Caffé Latte',
+            'Caffé macchiato',
+            'Café mélange',
+            'Coffee milk',
+            'Cafe mocha'
+        ];
 
     source2: string[] =
-    [
-        'Cappuccino',
-        'Carajillo',
-        'Cortado',
-        'Cuban espresso',
-        'Espresso',
-        'Eiskaffee',
-        'The Flat White',
-        'Frappuccino',
-        'Galao',
-        'Greek frappé coffee',
-        'Iced Coffee﻿',
-        'Indian filter coffee',
-        'Instant coffee',
-        'Irish coffee',
-        'Liqueur coffee'
-    ];
+        [
+            'Cappuccino',
+            'Carajillo',
+            'Cortado',
+            'Cuban espresso',
+            'Espresso',
+            'Eiskaffee',
+            'The Flat White',
+            'Frappuccino',
+            'Galao',
+            'Greek frappé coffee',
+            'Iced Coffee﻿',
+            'Indian filter coffee',
+            'Instant coffee',
+            'Irish coffee',
+            'Liqueur coffee'
+        ];
 
     // Callbacks
     dragStart = (item: any): boolean => {

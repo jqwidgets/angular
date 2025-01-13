@@ -3,9 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { jqxCheckBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxcheckbox.ts';
-import { jqxDropDownListComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdropdownlist.ts';
-import { jqxTagCloudComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtagcloud.ts';
+import { jqxCheckBoxComponent } from 'jqwidgets-ng/jqxcheckbox';
+import { jqxDropDownListComponent } from 'jqwidgets-ng/jqxdropdownlist';
+
 
 @NgModule({
     declarations: [AppComponent, jqxCheckBoxComponent, jqxDropDownListComponent, jqxTagCloudComponent],

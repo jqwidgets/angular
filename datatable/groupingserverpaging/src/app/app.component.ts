@@ -1,33 +1,36 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxDataTableModule, jqxDataTableComponent } from 'jqwidgets-ng/jqxdatatable';
 @Component({
     selector: 'app-root',
+    imports: [jqxDataTableModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
 export class AppComponent {
     source: any =
-    {
-        dataType: 'json',
-        dataFields: [
-            { name: 'ShipCountry', type: 'string' },
-            { name: 'ShipCity', type: 'string' },
-            { name: 'ShipAddress', type: 'string' },
-            { name: 'ShipName', type: 'string' },
-            { name: 'Freight', type: 'number' },
-            { name: 'ShippedDate', type: 'date' }
-        ],
-        root: 'value',
-        url: 'https://services.odata.org/V3/Northwind/Northwind.svc/Orders?$format=json&$callback=?'
-    };
+        {
+            dataType: 'json',
+            dataFields: [
+                { name: 'ShipCountry', type: 'string' },
+                { name: 'ShipCity', type: 'string' },
+                { name: 'ShipAddress', type: 'string' },
+                { name: 'ShipName', type: 'string' },
+                { name: 'Freight', type: 'number' },
+                { name: 'ShippedDate', type: 'date' }
+            ],
+            root: 'value',
+            url: 'https://services.odata.org/V3/Northwind/Northwind.svc/Orders?$format=json&$callback=?'
+        };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     dataAdapter: any = new jqx.dataAdapter(this.source,
         {
@@ -54,12 +57,12 @@ export class AppComponent {
     );
 
     columns: any[] =
-    [
-        { text: 'Ship Name', dataField: 'ShipName', width: 250 },
-        { text: 'Ship Country', hidden: true, dataField: 'ShipCountry', width: 250 },
-        { text: 'Ship City', dataField: 'ShipCity', width: 150 },
-        { text: 'Ship Address', dataField: 'ShipAddress' }
-    ];
+        [
+            { text: 'Ship Name', dataField: 'ShipName', width: 250 },
+            { text: 'Ship Country', hidden: true, dataField: 'ShipCountry', width: 250 },
+            { text: 'Ship City', dataField: 'ShipCity', width: 150 },
+            { text: 'Ship Address', dataField: 'ShipAddress' }
+        ];
 
     groupsRenderer = (value: string | number, rowData: any, level: any): string => {
         return 'Ship Country: ' + value;

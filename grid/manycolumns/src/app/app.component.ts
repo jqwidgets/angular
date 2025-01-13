@@ -1,7 +1,10 @@
 ﻿import { Component, OnInit } from '@angular/core';
 
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -15,19 +18,19 @@ export class AppComponent implements OnInit {
     }
 
     source: any =
-    {
-        localdata: this.data,
-        datatype: 'array',
-        datafields: this.datafields
-    }
+        {
+            localdata: this.data,
+            datatype: 'array',
+            datafields: this.datafields
+        }
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 

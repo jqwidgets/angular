@@ -3,16 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { jqxCheckBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxcheckbox.ts';
+import { jqxCheckBoxComponent } from 'jqwidgets-ng/jqxcheckbox';
 import { jqxColorPickerComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxcolorpicker.ts';
-import { jqxDropDownListComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdropdownlist.ts';
-import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid.ts';
-import { jqxInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxinput.ts';
-import { jqxSliderComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxslider.ts';
+import { jqxDropDownListComponent } from 'jqwidgets-ng/jqxdropdownlist';
+import { jqxTreeGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtreegrid.ts';
+import { jqxInputComponent } from 'jqwidgets-ng/jqxinput';
+import { jqxSliderComponent } from 'jqwidgets-ng/jqxslider';
 import { jqxTreeGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtreegrid.ts';
 
 @NgModule({
-    declarations: [AppComponent, jqxCheckBoxComponent, jqxColorPickerComponent, jqxDropDownListComponent, jqxGridComponent, jqxInputComponent, jqxSliderComponent, jqxTreeGridComponent],
+    declarations: [AppComponent, jqxCheckBoxComponent, jqxColorPickerComponent, jqxDropDownListComponent, jqxTreeGridComponent, jqxInputComponent, jqxSliderComponent, jqxTreeGridComponent],
     imports: [BrowserModule, FormsModule],
     providers: [],
     bootstrap: [AppComponent]

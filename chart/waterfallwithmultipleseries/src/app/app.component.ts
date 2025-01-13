@@ -1,7 +1,10 @@
 ﻿import { Component, OnInit } from '@angular/core';
 
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 @Component({
     selector: 'app-root',
+    imports: [jqxChartModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -17,70 +20,70 @@ export class AppComponent implements OnInit {
     titlePadding: any = { left: 90, top: 0, right: 0, bottom: 10 };
 
     xAxis: any =
-    {
-        type: 'basic',
-        dataField: 'year',
-        displayText: 'Year',
-        labels: { angle: 0 }
-    };
-
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
-    valueAxis: any =
-    {
-        title: { text: 'Employment rate<br>' },
-        labels:
         {
-            formatSettings:
-            {
-                decimalPlaces: 1,
-                sufix: '%'
-            }
+            type: 'basic',
+            dataField: 'year',
+            displayText: 'Year',
+            labels: { angle: 0 }
+        };
+
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
         }
-    };
+
+        return 850;
+    }
+
+    valueAxis: any =
+        {
+            title: { text: 'Employment rate<br>' },
+            labels:
+            {
+                formatSettings:
+                {
+                    decimalPlaces: 1,
+                    sufix: '%'
+                }
+            }
+        };
 
     seriesGroups: any[] =
-    [
-        {
-            type: 'waterfall',
-            toolTipFormatFunction: (value: any, itemIndex: any, serie: any, group: any, categoryValue: any, categoryAxis: any): string => {
-                var dataItem = this.data[itemIndex];
-                var val = Math.round(value * 100) / 100;
-                return '<DIV style="text-align:left"><b>' +
-                    ((itemIndex == this.data.length - 1) ? 'Summary:' : 'Year: ' + dataItem.year) + '</b>' +
-                    '<br />' + serie.displayText + ' ' + ((itemIndex != 0 && itemIndex != this.data.length - 1) ? 'change: ' : 'rate: ') + val + ' %' +
-                    '</DIV>';
-            },
-            series: [
-                {
-                    dataField: 'male',
-                    summary: 'summary',
-                    displayText: 'Male employment',
-                    colorFunction: (value: any, itemIndex: any, serie: any, group: any): string => {
-                        if (itemIndex == this.data.length - 1)
-                            return '#3F3A3B'; // total
-                        return (value < 0) ? '#C30E1F' /* red */ : '#117406' /*green*/;
-                    }
+        [
+            {
+                type: 'waterfall',
+                toolTipFormatFunction: (value: any, itemIndex: any, serie: any, group: any, categoryValue: any, categoryAxis: any): string => {
+                    var dataItem = this.data[itemIndex];
+                    var val = Math.round(value * 100) / 100;
+                    return '<DIV style="text-align:left"><b>' +
+                        ((itemIndex == this.data.length - 1) ? 'Summary:' : 'Year: ' + dataItem.year) + '</b>' +
+                        '<br />' + serie.displayText + ' ' + ((itemIndex != 0 && itemIndex != this.data.length - 1) ? 'change: ' : 'rate: ') + val + ' %' +
+                        '</DIV>';
                 },
-                {
-                    dataField: 'female',
-                    summary: 'summary',
-                    displayText: 'Female employment',
-                    colorFunction: (value: any, itemIndex: any, serie: any, group: any): string => {
-                        if (itemIndex == this.data.length - 1)
-                            return '#4F4A4B'; // total
-                        return (value < 0) ? '#D30E2F' /* red */ : '#24A037' /*green*/;
+                series: [
+                    {
+                        dataField: 'male',
+                        summary: 'summary',
+                        displayText: 'Male employment',
+                        colorFunction: (value: any, itemIndex: any, serie: any, group: any): string => {
+                            if (itemIndex == this.data.length - 1)
+                                return '#3F3A3B'; // total
+                            return (value < 0) ? '#C30E1F' /* red */ : '#117406' /*green*/;
+                        }
+                    },
+                    {
+                        dataField: 'female',
+                        summary: 'summary',
+                        displayText: 'Female employment',
+                        colorFunction: (value: any, itemIndex: any, serie: any, group: any): string => {
+                            if (itemIndex == this.data.length - 1)
+                                return '#4F4A4B'; // total
+                            return (value < 0) ? '#D30E2F' /* red */ : '#24A037' /*green*/;
+                        }
                     }
-                }
-            ]
-        }
-    ];
+                ]
+            }
+        ];
 
     generateData(): any[] {
         let data: any[] = [

@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { jqxDropDownListComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdropdownlist.ts';
-import { jqxRadioButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxradiobutton.ts';
+import { jqxDropDownListComponent } from 'jqwidgets-ng/jqxdropdownlist';
+import { jqxRadioButtonComponent } from 'jqwidgets-ng/jqxradiobutton';
 
 @NgModule({
     declarations: [AppComponent, jqxDropDownListComponent, jqxRadioButtonComponent],

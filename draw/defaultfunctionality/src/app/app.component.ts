@@ -1,9 +1,13 @@
 ﻿import { Component, ViewChild, AfterViewInit, ViewEncapsulation } from '@angular/core';
 
-import { jqxDrawComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdraw.ts';
+
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
+import { jqxDrawComponent } from 'jqwidgets-ng/jqxdraw';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
     encapsulation: ViewEncapsulation.None
@@ -12,13 +16,13 @@ import { jqxDrawComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdraw
 export class AppComponent implements AfterViewInit {
     @ViewChild('myDraw') myDraw: jqxDrawComponent;
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 800) {
-			return '90%';
-		}
-		
-		return 800;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 800) {
+            return '90%';
+        }
+
+        return 800;
+    }
 
     ngAfterViewInit(): void {
         let size = this.myDraw.getSize();

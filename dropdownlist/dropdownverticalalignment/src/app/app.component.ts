@@ -1,9 +1,10 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxDropDownListComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdropdownlist.ts';
-
+import { jqxDropDownListModule, jqxDropDownListComponent } from 'jqwidgets-ng/jqxdropdownlist';
 @Component({
     selector: 'app-root',
+    imports: [jqxDropDownListModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -23,14 +24,14 @@ export class AppComponent {
     };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
-    
+
     bottomAlignBtnOnChecked(): void {
         this.myDropDownList.dropDownVerticalAlignment('bottom');
     };
 
     // stops initial overwrite
     topAlignBtnOnChecked(): void {
-        if(this.flag)
+        if (this.flag)
             this.myDropDownList.dropDownVerticalAlignment('top');
         this.flag = true;
     };

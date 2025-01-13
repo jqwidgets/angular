@@ -1,10 +1,13 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxChartComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxchart.ts';
-import { jqxDropDownListComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdropdownlist.ts';
 
+import { jqxDropDownListComponent } from 'jqwidgets-ng/jqxdropdownlist';
+
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 @Component({
     selector: 'app-root',
+    imports: [jqxChartModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -22,14 +25,14 @@ export class AppComponent {
         { Day: 'Sunday', Keith: 60, Erica: 45, George: 90, Monica: 70, Maria: 50 }
     ];
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
     schemes: any[] = [
         { name: 'scheme01', colors: ['#307DD7', '#AA4643', '#89A54E', '#71588F', '#4198AF'] },
         { name: 'scheme02', colors: ['#7FD13B', '#EA157A', '#FEB80A', '#00ADDC', '#738AC8'] },
@@ -66,36 +69,36 @@ export class AppComponent {
     titlePadding: any = { left: 90, top: 0, right: 0, bottom: 10 };
 
     xAxis: any =
-    {
-        dataField: 'Day',
-        showGridLines: true
-    };
+        {
+            dataField: 'Day',
+            showGridLines: true
+        };
 
     seriesGroups: any[] =
-    [
-        {
-            type: 'column',
-            columnsGapPercent: 50,
-            seriesGapPercent: 0,
-            valueAxis:
+        [
             {
-                unitInterval: 10,
-                minValue: 0,
-                maxValue: 100,
-                displayValueAxis: true,
-                description: 'Time in minutes',
-                axisSize: 'auto',
-                tickMarksColor: '#888888'
-            },
-            series: [
-                { dataField: 'Keith', displayText: 'Keith' },
-                { dataField: 'Erica', displayText: 'Erica' },
-                { dataField: 'George', displayText: 'George' },
-                { dataField: 'Monica', displayText: 'Monica' },
-                { dataField: 'Maria', displayText: 'Maria' }
-            ]
-        }
-    ];
+                type: 'column',
+                columnsGapPercent: 50,
+                seriesGapPercent: 0,
+                valueAxis:
+                {
+                    unitInterval: 10,
+                    minValue: 0,
+                    maxValue: 100,
+                    displayValueAxis: true,
+                    description: 'Time in minutes',
+                    axisSize: 'auto',
+                    tickMarksColor: '#888888'
+                },
+                series: [
+                    { dataField: 'Keith', displayText: 'Keith' },
+                    { dataField: 'Erica', displayText: 'Erica' },
+                    { dataField: 'George', displayText: 'George' },
+                    { dataField: 'Monica', displayText: 'Monica' },
+                    { dataField: 'Maria', displayText: 'Maria' }
+                ]
+            }
+        ];
 
 
     itemTemplate = (index: number): string => {

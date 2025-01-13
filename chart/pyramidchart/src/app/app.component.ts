@@ -1,7 +1,10 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 @Component({
     selector: 'app-root',
+    imports: [jqxChartModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -18,45 +21,45 @@ export class AppComponent {
 
     titlePadding: any = { left: 90, top: 0, right: 0, bottom: 10 };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
-    xAxis: any =
-    {
-        dataField: 'Index',
-        tickMarks: {
-            visible: true,
-            interval: 1
-        },
-        gridLines: {
-            visible: true,
-            interval: 1
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
         }
-    };
+
+        return 850;
+    }
+
+    xAxis: any =
+        {
+            dataField: 'Index',
+            tickMarks: {
+                visible: true,
+                interval: 1
+            },
+            gridLines: {
+                visible: true,
+                interval: 1
+            }
+        };
 
     valueAxis: any =
-    {
-        labels: { horizontalAlignment: 'right' }
-    };
+        {
+            labels: { horizontalAlignment: 'right' }
+        };
 
     seriesGroups: any[] =
-    [
-        {
-            type: 'column',
-            columnsGapPercent: 20,
-            seriesGapPercent: 20,
-            columnsTopWidthPercent: 0,
-            columnsBottomWidthPercent: 100,
-            series: [
-                { dataField: 'SerieA', displayText: 'Serie A' },
-                { dataField: 'SerieB', displayText: 'Serie B' },
-                { dataField: 'SerieC', displayText: 'Serie C' }
-            ]
-        }
-    ];
+        [
+            {
+                type: 'column',
+                columnsGapPercent: 20,
+                seriesGapPercent: 20,
+                columnsTopWidthPercent: 0,
+                columnsBottomWidthPercent: 100,
+                series: [
+                    { dataField: 'SerieA', displayText: 'Serie A' },
+                    { dataField: 'SerieB', displayText: 'Serie B' },
+                    { dataField: 'SerieC', displayText: 'Serie C' }
+                ]
+            }
+        ];
 }

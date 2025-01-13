@@ -1,9 +1,10 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxCalendarComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxcalendar.ts';
-
+import { jqxCalendarModule, jqxCalendarComponent } from 'jqwidgets-ng/jqxcalendar';
 @Component({
     selector: 'app-root',
+    imports: [jqxCalendarModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -11,10 +12,10 @@ export class AppComponent {
     @ViewChild('myCalendar') myCalendar: jqxCalendarComponent;
 
     availableCultures: string[] =
-    [   
-        'Czech (Czech Republic)', 'German (Germany)', 'English (Canada)', 'English (United States)', 'French (France)',
-        'Italian (Italy)', 'Japanese (Japan)', 'Hebrew (Israel)', 'Russian (Russia)', 'Croatian (Croatia)', 'Sanskrit (India)'
-    ];
+        [
+            'Czech (Czech Republic)', 'German (Germany)', 'English (Canada)', 'English (United States)', 'French (France)',
+            'Italian (Italy)', 'Japanese (Japan)', 'Hebrew (Israel)', 'Russian (Russia)', 'Croatian (Croatia)', 'Sanskrit (India)'
+        ];
 
     myDropDownListOnSelect(event: any): void {
         let index = event.args.index;

@@ -1,13 +1,16 @@
 ﻿import { Component, ViewEncapsulation } from '@angular/core';
 
+import { jqxToolbarModule, jqxToolbarComponent } from 'jqwidgets-ng/jqxtoolbar';
 @Component({
     selector: 'app-root',
+    imports: [jqxToolbarModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
     encapsulation: ViewEncapsulation.None
 })
 
-export class AppComponent  {
+export class AppComponent {
     tools: string = 'toggleButton toggleButton toggleButton | toggleButton | dropdownlist combobox | input';
 
     theme: string = ''

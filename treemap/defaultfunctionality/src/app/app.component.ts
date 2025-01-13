@@ -1,7 +1,10 @@
 ﻿import { Component, ViewEncapsulation } from '@angular/core';
 
+import { jqxTreeMapModule, jqxTreeMapComponent } from 'jqwidgets-ng/jqxtreemap';
 @Component({
     selector: 'app-root',
+    imports: [jqxTreeMapModule],
+    standalone: true,
     styleUrls: ['./app.component.css'],
     templateUrl: './app.component.html',
     encapsulation: ViewEncapsulation.None
@@ -9,31 +12,31 @@
 
 export class AppComponent {
     renderCallbacks: any =
-    {
-        '*': (elementObject: any, value: any): void => {
-            if (value.data === undefined) {
-                let element = elementObject[0];
-                element.style.backgroundColor = '#fff';
-                element.style.border = '1px solid #555';
+        {
+            '*': (elementObject: any, value: any): void => {
+                if (value.data === undefined) {
+                    let element = elementObject[0];
+                    element.style.backgroundColor = '#fff';
+                    element.style.border = '1px solid #555';
+                }
+                else {
+                    elementObject.jqxTooltip({
+                        content: '<div><div style="font-weight: bold; max-width: 200px; font-family: verdana; font-size: 13px;">' + value.data.title + '</div><div style="width: 200px; font-family: verdana; font-size: 12px;">' + value.data.description + '</div></div>',
+                        position: 'mouse',
+                        autoHideDelay: 6000
+                    });
+                }
             }
-            else {
-                elementObject.jqxTooltip({
-                    content: '<div><div style="font-weight: bold; max-width: 200px; font-family: verdana; font-size: 13px;">' + value.data.title + '</div><div style="width: 200px; font-family: verdana; font-size: 12px;">' + value.data.description + '</div></div>',
-                    position: 'mouse',
-                    autoHideDelay: 6000
-                });
-            }
-        }
-    };
+        };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
     data: any[] = this.generateData();
 
     generateData(): any[] {

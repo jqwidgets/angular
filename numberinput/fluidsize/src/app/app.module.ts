@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { jqxInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxinput.ts';
-import { jqxNumberInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxnumberinput.ts';
+import { jqxInputComponent } from 'jqwidgets-ng/jqxinput';
+import { jqxNumberInputComponent } from 'jqwidgets-ng/jqxnumberinput';
 
 @NgModule({
     declarations: [AppComponent, jqxInputComponent, jqxNumberInputComponent],

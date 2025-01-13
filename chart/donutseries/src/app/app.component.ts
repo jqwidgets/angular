@@ -1,40 +1,43 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 @Component({
     selector: 'app-root',
+    imports: [jqxChartModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
 export class AppComponent {
     data_source_mobile: any =
-    {
-        datatype: 'csv',
-        datafields: [
-            { name: 'Browser' },
-            { name: 'Share' }
-        ],
-        url: '../assets/mobile_browsers_share_dec2011.txt'
-    };
+        {
+            datatype: 'csv',
+            datafields: [
+                { name: 'Browser' },
+                { name: 'Share' }
+            ],
+            url: '../assets/mobile_browsers_share_dec2011.txt'
+        };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
     dataAdapter_mobile: any = new jqx.dataAdapter(this.data_source_mobile, { async: false, autoBind: true, loadError: (xhr: any, status: any, error: any) => { alert('Error loading "' + this.data_source_mobile.url + '" : ' + error); } });
 
     data_source_desktop: any =
-    {
-        datatype: 'csv',
-        datafields: [
-            { name: 'Browser' },
-            { name: 'Share' }
-        ],
-        url: '../assets/desktop_browsers_share_dec2011.txt'
-    };
+        {
+            datatype: 'csv',
+            datafields: [
+                { name: 'Browser' },
+                { name: 'Share' }
+            ],
+            url: '../assets/desktop_browsers_share_dec2011.txt'
+        };
 
     dataAdapter_desktop: any = new jqx.dataAdapter(this.data_source_desktop, { async: false, autoBind: true, loadError: (xhr: any, status: any, error: any) => { alert('Error loading "' + this.data_source_desktop.url + '" : ' + error); } });
 
@@ -45,51 +48,51 @@ export class AppComponent {
     titlePadding: any = { left: 0, top: 0, right: 0, bottom: 10 };
 
     seriesGroups: any[] =
-    [
-        {
-            type: 'donut',
-            offsetX: 250,
-            source: this.dataAdapter_mobile,
-            xAxis:
+        [
             {
-                formatSettings: { prefix: 'Mobile ' }
-            },
-            series:
-            [
+                type: 'donut',
+                offsetX: 250,
+                source: this.dataAdapter_mobile,
+                xAxis:
                 {
-                    dataField: 'Share',
-                    displayText: 'Browser',
-                    labelRadius: 120,
-                    initialAngle: 10,
-                    radius: 130,
-                    innerRadius: 90,
-                    centerOffset: 0,
-                    formatSettings: { sufix: '%', decimalPlaces: 1 }
-                }
-            ]
-        },
-        {
-            type: 'donut',
-            offsetX: 250,
-            source: this.dataAdapter_desktop,
-            colorScheme: 'scheme02',
-            xAxis:
+                    formatSettings: { prefix: 'Mobile ' }
+                },
+                series:
+                    [
+                        {
+                            dataField: 'Share',
+                            displayText: 'Browser',
+                            labelRadius: 120,
+                            initialAngle: 10,
+                            radius: 130,
+                            innerRadius: 90,
+                            centerOffset: 0,
+                            formatSettings: { sufix: '%', decimalPlaces: 1 }
+                        }
+                    ]
+            },
             {
-                formatSettings: { prefix: 'Desktop ' }
-            },
-            series:
-            [
+                type: 'donut',
+                offsetX: 250,
+                source: this.dataAdapter_desktop,
+                colorScheme: 'scheme02',
+                xAxis:
                 {
-                    dataField: 'Share',
-                    displayText: 'Browser',
-                    labelRadius: 120,
-                    initialAngle: 10,
-                    radius: 70,
-                    innerRadius: 30,
-                    centerOffset: 0,
-                    formatSettings: { sufix: '%', decimalPlaces: 1 }
-                }
-            ]
-        }
-    ];
+                    formatSettings: { prefix: 'Desktop ' }
+                },
+                series:
+                    [
+                        {
+                            dataField: 'Share',
+                            displayText: 'Browser',
+                            labelRadius: 120,
+                            initialAngle: 10,
+                            radius: 70,
+                            innerRadius: 30,
+                            centerOffset: 0,
+                            formatSettings: { sufix: '%', decimalPlaces: 1 }
+                        }
+                    ]
+            }
+        ];
 }

@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { jqxSliderComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxslider.ts';
+import { jqxSliderComponent } from 'jqwidgets-ng/jqxslider';
 
 @NgModule({
     declarations: [AppComponent, jqxSliderComponent],

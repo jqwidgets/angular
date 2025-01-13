@@ -1,11 +1,12 @@
 ﻿import { Component, ViewChild, AfterViewInit } from '@angular/core';
+import { jqxSliderComponent, jqxSliderModule } from 'jqwidgets-ng/jqxslider';
+import { jqxCheckBoxComponent, jqxCheckBoxModule } from 'jqwidgets-ng/jqxcheckbox';
 
-import { jqxChartComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxchart.ts';
-import { jqxSliderComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxslider.ts';
-import { jqxCheckBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxcheckbox.ts';
-
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 @Component({
     selector: 'app-root',
+    imports: [jqxChartModule, jqxSliderModule, jqxCheckBoxModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -22,13 +23,13 @@ export class AppComponent implements AfterViewInit {
         this.chartInstance = this.myChart.getInstance();
     }
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     sampleData: any[] = [
         { Position: 0, Serie1: 30, Serie2: 5, Serie3: 25, Serie4: 30, Serie5: 10, Serie6: 5 },
@@ -45,85 +46,85 @@ export class AppComponent implements AfterViewInit {
     titlePadding: any = { left: 90, top: 0, right: 0, bottom: 10 };
 
     xAxis: any =
-    {
-        dataField: 'Position',
-        tickMarks: {
-            visible: true,
-            interval: 1,
-            color: '#BCBCBC'
-        },
-        gridLines: {
-            visible: true,
-            interval: 1,
-            color: '#BCBCBC'
-        },
-        flip: false,
-        valuesOnTicks: false
-    };
+        {
+            dataField: 'Position',
+            tickMarks: {
+                visible: true,
+                interval: 1,
+                color: '#BCBCBC'
+            },
+            gridLines: {
+                visible: true,
+                interval: 1,
+                color: '#BCBCBC'
+            },
+            flip: false,
+            valuesOnTicks: false
+        };
 
     valueAxis: any =
-    {
-        unitInterval: 10,
-        title: { text: 'Value' },
-        tickMarks: { color: '#BCBCBC' },
-        gridLines: { color: '#BCBCBC' },
-        labels: {
-            horizontalAlignment: 'right'
-        },
-    };
+        {
+            unitInterval: 10,
+            title: { text: 'Value' },
+            tickMarks: { color: '#BCBCBC' },
+            gridLines: { color: '#BCBCBC' },
+            labels: {
+                horizontalAlignment: 'right'
+            },
+        };
 
     seriesGroups: any[] =
-    [
-        {
-            type: 'column',
-            columnsGapPercent: 25,
-            seriesGapPercent: 10,
-            columnsMaxWidth: 40,
-            columnsMinWidth: 1,
-            series: [
-                { dataField: 'Serie1', displayText: 'Serie1' },
-                { dataField: 'Serie2', displayText: 'Serie2' },
-                { dataField: 'Serie3', displayText: 'Serie3' }
-            ]
-        }
-    ];
+        [
+            {
+                type: 'column',
+                columnsGapPercent: 25,
+                seriesGapPercent: 10,
+                columnsMaxWidth: 40,
+                columnsMinWidth: 1,
+                series: [
+                    { dataField: 'Serie1', displayText: 'Serie1' },
+                    { dataField: 'Serie2', displayText: 'Serie2' },
+                    { dataField: 'Serie3', displayText: 'Serie3' }
+                ]
+            }
+        ];
 
     updateSeriesGroupsVisibility(): void {
         this.chartInstance.seriesGroups = [];
 
         if (this.btnEnableSeriesGroup1.checked()) {
             this.chartInstance.seriesGroups[0] =
-                {
-                    type: 'column',
-                    columnsGapPercent: 25,
-                    seriesGapPercent: 10,
-                    columnsMaxWidth: 40,
-                    columnsMinWidth: 1,
-                    series: [
-                        { dataField: 'Serie1', displayText: 'Serie1' },
-                        { dataField: 'Serie2', displayText: 'Serie2' },
-                        { dataField: 'Serie3', displayText: 'Serie3' }
-                    ]
-                };
+            {
+                type: 'column',
+                columnsGapPercent: 25,
+                seriesGapPercent: 10,
+                columnsMaxWidth: 40,
+                columnsMinWidth: 1,
+                series: [
+                    { dataField: 'Serie1', displayText: 'Serie1' },
+                    { dataField: 'Serie2', displayText: 'Serie2' },
+                    { dataField: 'Serie3', displayText: 'Serie3' }
+                ]
+            };
         }
 
         if (this.btnEnableSeriesGroup2.checked()) {
             let index = this.chartInstance.seriesGroups.length > 0 ? 1 : 0;
 
             this.chartInstance.seriesGroups[index] =
-                {
-                    type: 'column',
-                    greyScale: true,
-                    columnsGapPercent: 25,
-                    seriesGapPercent: 10,
-                    columnsMaxWidth: 40,
-                    columnsMinWidth: 1,
-                    series: [
-                        { dataField: 'Serie4', displayText: 'Serie4' },
-                        { dataField: 'Serie5', displayText: 'Serie5' },
-                        { dataField: 'Serie6', displayText: 'Serie6' }
-                    ]
-                };
+            {
+                type: 'column',
+                greyScale: true,
+                columnsGapPercent: 25,
+                seriesGapPercent: 10,
+                columnsMaxWidth: 40,
+                columnsMinWidth: 1,
+                series: [
+                    { dataField: 'Serie4', displayText: 'Serie4' },
+                    { dataField: 'Serie5', displayText: 'Serie5' },
+                    { dataField: 'Serie6', displayText: 'Serie6' }
+                ]
+            };
         }
         this.updateSeriesGroupsStacking();
     }

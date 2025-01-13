@@ -1,7 +1,16 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxTreeMapModule, jqxTreeMapComponent } from 'jqwidgets-ng/jqxtreemap';
+
+import { jqxBarGaugeComponent, jqxBarGaugeModule } from 'jqwidgets-ng/jqxbargauge';
+import { jqxGaugeComponent, jqxGaugeModule } from 'jqwidgets-ng/jqxgauge';
+import { jqxListBoxComponent, jqxListBoxModule } from 'jqwidgets-ng/jqxlistbox';
+
+
 @Component({
     selector: 'app-root',
+    imports: [jqxTreeMapModule, jqxBarGaugeModule, jqxGaugeModule, jqxListBoxModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -38,24 +47,24 @@ export class AppComponent {
     }];
 
     renderCallbacks: any =
-    {
-        '*': (element, data) => {
-            element.css({
-                color: '#ffffff'
-            });
-            element.html('<span style="font-size: 11px;" class="jqx-treemap-label">' + data.label + ', ' + data.value + '%</span>');
-            return true;
-        }
-    };
+        {
+            '*': (element, data) => {
+                element.css({
+                    color: '#ffffff'
+                });
+                element.html('<span style="font-size: 11px;" class="jqx-treemap-label">' + data.label + ', ' + data.value + '%</span>');
+                return true;
+            }
+        };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
     colorRanges: any[] = [
         { min: 1254040000, max: 1454040000, color: '#de290b' },
         { min: 1054040000, max: 1254039999, color: '#de440c' },

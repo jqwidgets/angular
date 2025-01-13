@@ -1,9 +1,10 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxEditorComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxeditor.ts';
-
+import { jqxEditorModule, jqxEditorComponent } from 'jqwidgets-ng/jqxeditor';
 @Component({
     selector: 'app-root',
+    imports: [jqxEditorModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -12,13 +13,13 @@ export class AppComponent {
 
     tools: string = 'bold italic underline | format font size | left center right | print';
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     createCommand = (name: string): any => {
         switch (name) {

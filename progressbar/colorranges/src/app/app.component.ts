@@ -1,9 +1,11 @@
 ﻿import { Component, ViewChild, AfterViewInit } from '@angular/core';
 
-import { jqxProgressBarComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxprogressbar.ts';
+import { jqxProgressBarModule, jqxProgressBarComponent } from 'jqwidgets-ng/jqxprogressbar';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxProgressBarModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 

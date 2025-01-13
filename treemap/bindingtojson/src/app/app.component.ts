@@ -1,7 +1,10 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxTreeMapModule, jqxTreeMapComponent } from 'jqwidgets-ng/jqxtreemap';
 @Component({
     selector: 'app-root',
+    imports: [jqxTreeMapModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -74,27 +77,27 @@ export class AppComponent {
         }
     ];
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
 
     source =
-    {
-        datatype: "json",
-        datafields: [
-            { name: 'id' },
-            { name: 'parentid' },
-            { name: 'text' },
-            { name: 'value' }
-        ],
-        id: 'id',
-        localdata: this.data
-    };
+        {
+            datatype: "json",
+            datafields: [
+                { name: 'id' },
+                { name: 'parentid' },
+                { name: 'text' },
+                { name: 'value' }
+            ],
+            id: 'id',
+            localdata: this.data
+        };
     // create data adapter.
     dataAdapter = new jqx.dataAdapter(this.source, { autoBind: true });
     // perform Data Binding.
@@ -106,22 +109,22 @@ export class AppComponent {
     // specifies the mapping between the 'text' and 'label' fields.  
     records: any = this.dataAdapter.getRecordsHierarchy('id', 'parentid', 'items', [{ name: 'text', map: 'label' }]);
     renderCallbacks: any =
-    {
-        '*': (element, data) => {
-            if (!data.parent) {
-                element.css({
-                    backgroundColor: '#fff',
-                    border: '1px solid #aaa'
-                });
+        {
+            '*': (element, data) => {
+                if (!data.parent) {
+                    element.css({
+                        backgroundColor: '#fff',
+                        border: '1px solid #aaa'
+                    });
+                }
+                else {
+                    let nThreshold = 105;
+                    let bgDelta = (data.rgb.r * 0.299) + (data.rgb.g * 0.587) + (data.rgb.b * 0.114);
+                    let foreColor = (255 - bgDelta < nThreshold) ? 'Black' : 'White';
+                    element.css({
+                        color: foreColor
+                    });
+                }
             }
-            else {
-                let nThreshold = 105;
-                let bgDelta = (data.rgb.r * 0.299) + (data.rgb.g * 0.587) + (data.rgb.b * 0.114);
-                let foreColor = (255 - bgDelta < nThreshold) ? 'Black' : 'White';
-                element.css({
-                    color: foreColor
-                });
-            }
-        }
-    };
+        };
 }

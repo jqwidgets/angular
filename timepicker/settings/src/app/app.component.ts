@@ -2,8 +2,11 @@
 
 import { jqxTimePickerComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtimepicker.ts';
 
+import { jqxTimePickerModule, jqxTimePickerComponent } from 'jqwidgets-ng/jqxtimepicker';
 @Component({
     selector: 'app-root',
+    imports: [jqxTimePickerModule],
+    standalone: true,
     styleUrls: ['./app.component.css'],
     templateUrl: './app.component.html',
     encapsulation: ViewEncapsulation.None
@@ -147,10 +150,10 @@ export class AppComponent implements AfterViewInit {
             case "sethours":
                 this.timepicker.setHours(20);
                 break
-                case "setminutes":
+            case "setminutes":
                 this.timepicker.setMinutes(12);
                 break;
-                case "now":
+            case "now":
                 this.timepicker.value(new Date());
                 break;
             default:

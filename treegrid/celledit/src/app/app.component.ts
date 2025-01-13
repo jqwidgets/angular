@@ -1,23 +1,26 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
 
-import { jqxTreeGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtree.ts';
 
+
+import { jqxTreeGridModule, jqxTreeGridComponent } from 'jqwidgets-ng/jqxtreegrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxTreeGridModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
 export class AppComponent {
     @ViewChild('myLog') myLog: ElementRef;
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
     employees: any[] = [
         {
             'EmployeeID': 2, 'FirstName': 'Andrew', 'LastName': 'Fuller', 'Country': 'USA', 'Title': 'Vice President, Sales', 'HireDate': '1992-08-14 00:00:00', 'BirthDate': '1952-02-19 00:00:00', 'City': 'Tacoma', 'Address': '908 W. Capital Way', 'expanded': 'true',
@@ -39,44 +42,44 @@ export class AppComponent {
     ];
 
     source: any =
-      {
-          dataType: 'json',
-          dataFields: [
-              { name: 'EmployeeID', type: 'number' },
-              { name: 'FirstName', type: 'string' },
-              { name: 'LastName', type: 'string' },
-              { name: 'Country', type: 'string' },
-              { name: 'City', type: 'string' },
-              { name: 'Address', type: 'string' },
-              { name: 'Title', type: 'string' },
-              { name: 'HireDate', type: 'date' },
-              { name: 'children', type: 'array' },
-              { name: 'expanded', type: 'bool' },
-              { name: 'BirthDate', type: 'date' }
-          ],
-          hierarchy:
-          {
-              root: 'children'
-          },
-          id: 'EmployeeID',
-          localData: this.employees
-      };
+        {
+            dataType: 'json',
+            dataFields: [
+                { name: 'EmployeeID', type: 'number' },
+                { name: 'FirstName', type: 'string' },
+                { name: 'LastName', type: 'string' },
+                { name: 'Country', type: 'string' },
+                { name: 'City', type: 'string' },
+                { name: 'Address', type: 'string' },
+                { name: 'Title', type: 'string' },
+                { name: 'HireDate', type: 'date' },
+                { name: 'children', type: 'array' },
+                { name: 'expanded', type: 'bool' },
+                { name: 'BirthDate', type: 'date' }
+            ],
+            hierarchy:
+            {
+                root: 'children'
+            },
+            id: 'EmployeeID',
+            localData: this.employees
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
     columns: any[] =
-     [
-        { text: 'FirstName', dataField: 'FirstName', width: 200 },
-        { text: 'LastName', dataField: 'LastName', width: 200 },
-        { text: 'City', dataField: 'City', width: 200 },
-        { text: 'Country', dataField: 'Country' }
-     ];
+        [
+            { text: 'FirstName', dataField: 'FirstName', width: 200 },
+            { text: 'LastName', dataField: 'LastName', width: 200 },
+            { text: 'City', dataField: 'City', width: 200 },
+            { text: 'Country', dataField: 'Country' }
+        ];
 
     editSettings: any =
-    {
-        saveOnPageChange: true, saveOnBlur: true, saveOnSelectionChange: true,
-        cancelOnEsc: true, saveOnEnter: true, editSingleCell: true, editOnDoubleClick: true, editOnF2: true
-    };
+        {
+            saveOnPageChange: true, saveOnBlur: true, saveOnSelectionChange: true,
+            cancelOnEsc: true, saveOnEnter: true, editSingleCell: true, editOnDoubleClick: true, editOnF2: true
+        };
 
     treeGridOnCellBeginEdit(event: any): void {
         let args = event.args;

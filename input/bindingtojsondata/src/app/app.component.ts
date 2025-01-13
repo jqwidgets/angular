@@ -1,9 +1,11 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
 
-import { jqxInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxinput.ts';
 
+import { jqxInputModule, jqxInputComponent } from 'jqwidgets-ng/jqxinput';
 @Component({
     selector: 'app-root',
+    imports: [jqxInputModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -12,14 +14,14 @@ export class AppComponent {
     @ViewChild('selectionLog') selectionLog: ElementRef;
 
     source: any =
-    {
-        datatype: 'json',
-        datafields: [
-            { name: 'CompanyName' },
-            { name: 'ContactName' }
-        ],
-        url: '../assets/customers.txt'
-    };
+        {
+            datatype: 'json',
+            datafields: [
+                { name: 'CompanyName' },
+                { name: 'ContactName' }
+            ],
+            url: '../assets/customers.txt'
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 

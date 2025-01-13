@@ -1,41 +1,44 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxComboBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxcombobox.ts';
-
+import { jqxComboBoxModule, jqxComboBoxComponent } from 'jqwidgets-ng/jqxcombobox';
 @Component({
     selector: 'app-root',
-    templateUrl: './app.component.html'
+    imports: [jqxComboBoxModule],
+    standalone: true,
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css'],
+    encapsulation: ViewEncapsulation.None
 })
 
 export class AppComponent {
     @ViewChild('ordersComboBox') ordersComboBox: jqxComboBoxComponent;
 
     customersSource: any =
-    {
-        dataType: 'json',
-        dataFields: [
-            { name: 'CompanyName' },
-            { name: 'CustomerID' }
-        ],
-        url: '../assets/customers.txt'
-    };
+        {
+            dataType: 'json',
+            dataFields: [
+                { name: 'CompanyName' },
+                { name: 'CustomerID' }
+            ],
+            url: '../assets/customers.txt'
+        };
 
     customersAdapter: any = new jqx.dataAdapter(this.customersSource);
 
     ordersSource: any =
-    {
-        dataType: 'json',
-        dataFields: [
-            { name: 'CustomerID' },
-            { name: 'OrderID' },
-            { name: 'ShipCity' },
-            { name: 'OrderDate' },
-            { name: 'ShipName' },
-            { name: 'ShipCountry' },
-            { name: 'ShipAddress' }
-        ],
-        url: '../assets/orders.txt'
-    };
+        {
+            dataType: 'json',
+            dataFields: [
+                { name: 'CustomerID' },
+                { name: 'OrderID' },
+                { name: 'ShipCity' },
+                { name: 'OrderDate' },
+                { name: 'ShipName' },
+                { name: 'ShipCountry' },
+                { name: 'ShipAddress' }
+            ],
+            url: '../assets/orders.txt'
+        };
 
     ordersAdapter: any = new jqx.dataAdapter(this.ordersSource);
 
@@ -65,19 +68,19 @@ export class AppComponent {
             if (index !== -1) {
                 let record = this.ordersAdapter.records[index];
                 let detailsSource =
-                    {
-                        dataType: 'json',
-                        dataFields: [
-                            { name: 'CustomerID' },
-                            { name: 'OrderID' },
-                            { name: 'ShipCity' },
-                            { name: 'OrderDate' },
-                            { name: 'ShipName' },
-                            { name: 'ShipCountry' },
-                            { name: 'ShipAddress' }
-                        ],
-                        localData: record
-                    };
+                {
+                    dataType: 'json',
+                    dataFields: [
+                        { name: 'CustomerID' },
+                        { name: 'OrderID' },
+                        { name: 'ShipCity' },
+                        { name: 'OrderDate' },
+                        { name: 'ShipName' },
+                        { name: 'ShipCountry' },
+                        { name: 'ShipAddress' }
+                    ],
+                    localData: record
+                };
                 let detailsAdapter = new jqx.dataAdapter(detailsSource);
 
                 let options = {

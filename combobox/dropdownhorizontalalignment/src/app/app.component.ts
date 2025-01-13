@@ -1,26 +1,29 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxComboBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxcombobox.ts';
-
+import { jqxComboBoxModule, jqxComboBoxComponent } from 'jqwidgets-ng/jqxcombobox';
 @Component({
     selector: 'app-root',
-    templateUrl: './app.component.html'
+    imports: [jqxComboBoxModule],
+    standalone: true,
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css'],
+    encapsulation: ViewEncapsulation.None
 })
 
 export class AppComponent {
     @ViewChild('myComboBox') myComboBox: jqxComboBoxComponent;
 
     source: any =
-    {
-        datatype: 'json',
-        datafields: [
-            { name: 'CompanyName' },
-            { name: 'ContactName' }
-        ],
-        id: 'id',
-        url: '../assets/customers.txt',
-        async: false
-    };
+        {
+            datatype: 'json',
+            datafields: [
+                { name: 'CompanyName' },
+                { name: 'ContactName' }
+            ],
+            id: 'id',
+            url: '../assets/customers.txt',
+            async: false
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 

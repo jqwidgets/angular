@@ -1,14 +1,17 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxDockingLayoutComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdocking.ts';
-import { jqxButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxbuttons.ts'
 
+import { jqxDockingLayoutModule, jqxDockingLayoutComponent } from 'jqwidgets-ng/jqdockinglayout';
+import { jqxButtonModule, jqxButtonComponent } from 'jqwidgets-ng/jqxbuttons';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxDockingLayoutModule, jqxButtonModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css']
 })
+
 
 export class AppComponent {
     @ViewChild('myDockingLayout') myDockingLayout: jqxDockingLayoutComponent;
@@ -18,13 +21,13 @@ export class AppComponent {
 
     layout: any[] = this.generateLayout();
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 800) {
-			return '90%';
-		}
-		
-		return 800;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 800) {
+            return '90%';
+        }
+
+        return 800;
+    }
 
     generateLayout(): any[] {
         let layout = [

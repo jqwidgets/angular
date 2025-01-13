@@ -1,10 +1,12 @@
 ﻿import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 
-import { jqxTabsComponent }  from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtabs.ts';
-import { jqxPanelComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxpanel.ts';
+import { jqxPanelComponent, jqxPanelModule } from 'jqwidgets-ng/jqxpanel';
 
+import { jqxTabsModule, jqxTabsComponent } from 'jqwidgets-ng/jqxtabs';
 @Component({
     selector: 'app-root',
+    imports: [jqxTabsModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
     encapsulation: ViewEncapsulation.None
@@ -14,14 +16,14 @@ export class AppComponent {
     @ViewChild('myTabs') myTabs: jqxTabsComponent;
     @ViewChild('myPanel') myPanel: jqxPanelComponent;
 
- 	getWidth() : any {
-		if (document.body.offsetWidth < 600) {
-			return '90%';
-		}
-		
-		return 600;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 600) {
+            return '90%';
+        }
+
+        return 600;
+    }
+
     capitaliseFirstLetter(string: string): string {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
@@ -47,7 +49,7 @@ export class AppComponent {
 
     // Create event
     myTabsOnCreated(event: any): void {
-        setTimeout(_ => this.displayEvent(event));        
+        setTimeout(_ => this.displayEvent(event));
     };
 
     // Selected event

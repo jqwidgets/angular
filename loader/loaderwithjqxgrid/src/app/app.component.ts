@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxLoaderComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxloader.ts';
 
+
+import { jqxLoaderModule, jqxLoaderComponent } from 'jqwidgets-ng/jqxloader';
 @Component({
     selector: 'app-root',
+    imports: [jqxLoaderModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -11,16 +14,16 @@ export class AppComponent {
     @ViewChild('jqxLoader') jqxLoader: jqxLoaderComponent;
 
     source =
-    {
-        datatype: "jsonp",
-        datafields: [
-            { name: 'countryName', type: 'string' },
-            { name: 'name', type: 'string' },
-            { name: 'population', type: 'float' },
-            { name: 'continentCode', type: 'string' }
-        ],
-        url: "https://secure.geonames.org/searchJSON"
-    };
+        {
+            datatype: "jsonp",
+            datafields: [
+                { name: 'countryName', type: 'string' },
+                { name: 'name', type: 'string' },
+                { name: 'population', type: 'float' },
+                { name: 'continentCode', type: 'string' }
+            ],
+            url: "https://secure.geonames.org/searchJSON"
+        };
 
     dataAdapter = new jqx.dataAdapter(this.source, {
         downloadComplete: function (data, status, xhr) { },

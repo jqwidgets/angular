@@ -1,4 +1,4 @@
-﻿<jqxTreeGrid [theme]="'material'" #myTreeGrid
+﻿<jqxTreeGrid [theme]="'fluent'" #myTreeGrid
     [width]="getWidth()" [height]="350" [source]="dataAdapter" [columns]="columns" 
     [altRows]="true" [columnsResize]="true" [columnGroups]="columnGroups" [ready]="ready">
 </jqxTreeGrid>
@@ -6,14 +6,14 @@
 <div style="font-size: 13px; font-family: Verdana; width: 600px; margin-top: 10px">
   <div style="float: left; width: 300px">
     <h4>Shipped Date</h4>
-    <jqxDropDownList [theme]="'material'" (onChange)="dateListOnChange($event)"
+    <jqxDropDownList [theme]="'fluent'" (onChange)="dateListOnChange($event)"
         [selectedIndex]="0" [autoDropDownHeight]="true"
         [source]="dateSource" [height]="25">
     </jqxDropDownList>
   </div>
   <div style="float: left; width: 300px">
     <h4>Price</h4>
-    <jqxDropDownList [theme]="'material'" (onChange)="priceListOnChange($event)"
+    <jqxDropDownList [theme]="'fluent'" (onChange)="priceListOnChange($event)"
         [selectedIndex]="5" [autoDropDownHeight]="true"
         [source]="priceSource" [height]="25">
     </jqxDropDownList>

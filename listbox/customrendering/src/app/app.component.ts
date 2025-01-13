@@ -1,9 +1,12 @@
-﻿import { Component, ViewChild, ElementRef, AfterViewInit, ViewEncapsulation} from '@angular/core';
+﻿import { Component, ViewChild, ElementRef, AfterViewInit, ViewEncapsulation } from '@angular/core';
 
-import { jqxListBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxlistbox.ts';
 
+
+import { jqxListBoxModule, jqxListBoxComponent } from 'jqwidgets-ng/jqxlistbox';
 @Component({
     selector: 'app-root',
+    imports: [jqxListBoxModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
     encapsulation: ViewEncapsulation.None
@@ -16,15 +19,15 @@ export class AppComponent implements AfterViewInit {
     ngAfterViewInit() {
         this.updatePanel(0);
     }
-	
-	getWidth() : any {
-		if (document.body.offsetWidth < 600) {
-			return '90%';
-		}
-		
-		return 600;
-	}
-	
+
+    getWidth(): any {
+        if (document.body.offsetWidth < 600) {
+            return '90%';
+        }
+
+        return 600;
+    }
+
     updatePanel(index): void {
         let container = document.createElement('div');
         container.style.margin = '5px';
@@ -111,10 +114,10 @@ export class AppComponent implements AfterViewInit {
     };
 
     source: any =
-    {
-        localdata: this.getData(),
-        datatype: "array"
-    };
+        {
+            localdata: this.getData(),
+            datatype: "array"
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 

@@ -1,18 +1,20 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxBarGaugeComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxbargauge.ts';
-import { jqxSliderComponent }   from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxslider.ts';
+import { jqxBarGaugeModule, jqxBarGaugeComponent } from 'jqwidgets-ng/jqxbargauge';
+import { jqxSliderModule, jqxSliderComponent } from 'jqwidgets-ng/jqxslider';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxSliderModule, jqxBarGaugeModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
 export class AppComponent {
-    @ViewChild('myBarGauge')  myBarGauge: jqxBarGaugeComponent;
-    @ViewChild('redSlider')   redSlider: jqxSliderComponent;
+    @ViewChild('myBarGauge') myBarGauge: jqxBarGaugeComponent;
+    @ViewChild('redSlider') redSlider: jqxSliderComponent;
     @ViewChild('greenSlider') greenSlider: jqxSliderComponent;
-    @ViewChild('blueSlider')  blueSlider: jqxSliderComponent;
+    @ViewChild('blueSlider') blueSlider: jqxSliderComponent;
 
     customColorScheme: any = {
         name: 'rgb',

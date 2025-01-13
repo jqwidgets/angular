@@ -1,8 +1,8 @@
-﻿<jqxGrid [theme]="'material'" #myGrid
+﻿<jqxGrid [theme]="'fluent'" #myGrid
     [width]="getWidth()" [height]="300" [source]="dataAdapter" [columns]="columns">
 </jqxGrid>
 
 <div style="margin-top: 10px">
-  <jqxButton [theme]="'material'" (onClick)="refreshBtnOnClick()">Refresh Data</jqxButton>
-  <jqxButton [theme]="'material'" (onClick)="clearBtnOnClick()">Clear</jqxButton>
+  <jqxButton [theme]="'fluent'" (onClick)="refreshBtnOnClick()">Refresh Data</jqxButton>
+  <jqxButton [theme]="'fluent'" (onClick)="clearBtnOnClick()">Clear</jqxButton>
 </div>

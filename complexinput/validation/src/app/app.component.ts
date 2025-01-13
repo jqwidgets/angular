@@ -1,9 +1,13 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxComplexInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxcomplexinput.ts';
-
+import { jqxPanelModule, jqxPanelComponent } from 'jqwidgets-ng/jqxpanel';
+import { jqxComplexInputModule, jqxComplexInputComponent } from 'jqwidgets-ng/jqxcomplexinput';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
+ 
 @Component({
     selector: 'app-root',
+    imports: [jqxComplexInputModule, jqxButtonModule, jqxPanelModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 

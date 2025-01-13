@@ -1,6 +1,6 @@
 ﻿<div style="font-size: 13px; font-family: Verdana; float: left; width: 100%;">
 
-    <jqxGrid [theme]="'material'" #myGrid
+    <jqxGrid [theme]="'fluent'" #myGrid
         [width]="getWidth()" [source]="dataAdapter" [columns]="columns"
         [pageable]="true" [sortable]="true" [altrows]="true" [filterable]="true" 
         [columnsreorder]="true" [autoloadstate]="true" [autosavestate]="true" 
@@ -10,9 +10,9 @@
 
     <div style="margin-top: 30px; float: left">
 
-        <jqxButton [theme]="'material'" (onClick)="saveStatebtn()">Save State</jqxButton>
+        <jqxButton [theme]="'fluent'" (onClick)="saveStatebtn()">Save State</jqxButton>
 
-        <jqxButton [theme]="'material'" (onClick)="loadStateBtn()">Load State</jqxButton>
+        <jqxButton [theme]="'fluent'" (onClick)="loadStateBtn()">Load State</jqxButton>
 
     </div>
 

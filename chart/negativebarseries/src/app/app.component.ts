@@ -1,7 +1,10 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 @Component({
     selector: 'app-root',
+    imports: [jqxChartModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -20,38 +23,38 @@ export class AppComponent {
     titlePadding: any = { left: 90, top: 0, right: 0, bottom: 10 };
 
     xAxis: any =
-    {
-        dataField: 'Country'
-    };
+        {
+            dataField: 'Country'
+        };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
     valueAxis: any =
-    {
-        title: { visible: false },
-        unitInterval: 1,
-        minValue: -5,
-        maxValue: 10,
-        labels: { formatSettings: { sufix: '%' } }
-    };
+        {
+            title: { visible: false },
+            unitInterval: 1,
+            minValue: -5,
+            maxValue: 10,
+            labels: { formatSettings: { sufix: '%' } }
+        };
 
     seriesGroups: any[] =
-    [
-        {
-            type: 'column',
-            orientation: 'horizontal',
-            columnsGapPercent: 50,
-            toolTipFormatSettings: { sufix: '%' },
-            series: [
-                { dataField: 'Inflation2012', displayText: 'Inflation 2012' },
-                { dataField: 'Inflation2011', displayText: 'Inflation 2011' }
-            ]
-        }
-    ];
+        [
+            {
+                type: 'column',
+                orientation: 'horizontal',
+                columnsGapPercent: 50,
+                toolTipFormatSettings: { sufix: '%' },
+                series: [
+                    { dataField: 'Inflation2012', displayText: 'Inflation 2012' },
+                    { dataField: 'Inflation2011', displayText: 'Inflation 2011' }
+                ]
+            }
+        ];
 }

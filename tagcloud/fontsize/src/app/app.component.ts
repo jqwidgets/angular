@@ -1,10 +1,13 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxTagCloudComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtagcloud.ts'; 
-import { jqxInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxinput.ts';
+import { jqxInputComponent, jqxInputModule } from 'jqwidgets-ng/jqxinput';
+import { jqxTagCloudModule, jqxTagCloudComponent } from 'jqwidgets-ng/jqxtagcloud';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxTagCloudModule, jqxInputModule, jqxButtonModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -14,47 +17,47 @@ export class AppComponent {
     @ViewChild('myInput2') myInput2: jqxInputComponent;
     @ViewChild('myInput3') myInput3: jqxInputComponent;
 
- 	getWidth() : any {
-		if (document.body.offsetWidth < 600) {
-			return '90%';
-		}
-		
-		return 600;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 600) {
+            return '90%';
+        }
+
+        return 600;
+    }
+
     unemploymentRate: any[] =
-    [
-        { 'country': 'Namibia', 'rate': 37.6 },
-        { 'country': 'Macedonia, FYR', 'rate': 32.0 },
-        { 'country': 'Latvia', 'rate': 18.7 },
-        { 'country': 'Lithuania', 'rate': 17.8 },
-        { 'country': 'Estonia', 'rate': 16.9 },
-        { 'country': 'Serbia', 'rate': 16.6 },
-        { 'country': 'Georgia', 'rate': 16.5 },
-        { 'country': 'Yemen, Rep.', 'rate': 14.6 },
-        { 'country': 'Slovak Republic', 'rate': 14.4 },
-        { 'country': 'Dominican Republic', 'rate': 14.2 },
-        { 'country': 'Tunisia', 'rate': 14.2 },
-        { 'country': 'Armenia', 'rate': 28.6 },
-        { 'country': 'Bosnia and Herzegovina', 'rate': 27.2 },
-        { 'country': 'Lesotho', 'rate': 25.3 },
-        { 'country': 'South Africa', 'rate': 24.7 },
-        { 'country': 'Spain', 'rate': 20.1 },
-        { 'country': 'Albania', 'rate': 13.8 },
-        { 'country': 'Ireland', 'rate': 13.6 },
-        { 'country': 'Jordan', 'rate': 12.9 },
-        { 'country': 'Greece', 'rate': 12.5 }
-    ];
+        [
+            { 'country': 'Namibia', 'rate': 37.6 },
+            { 'country': 'Macedonia, FYR', 'rate': 32.0 },
+            { 'country': 'Latvia', 'rate': 18.7 },
+            { 'country': 'Lithuania', 'rate': 17.8 },
+            { 'country': 'Estonia', 'rate': 16.9 },
+            { 'country': 'Serbia', 'rate': 16.6 },
+            { 'country': 'Georgia', 'rate': 16.5 },
+            { 'country': 'Yemen, Rep.', 'rate': 14.6 },
+            { 'country': 'Slovak Republic', 'rate': 14.4 },
+            { 'country': 'Dominican Republic', 'rate': 14.2 },
+            { 'country': 'Tunisia', 'rate': 14.2 },
+            { 'country': 'Armenia', 'rate': 28.6 },
+            { 'country': 'Bosnia and Herzegovina', 'rate': 27.2 },
+            { 'country': 'Lesotho', 'rate': 25.3 },
+            { 'country': 'South Africa', 'rate': 24.7 },
+            { 'country': 'Spain', 'rate': 20.1 },
+            { 'country': 'Albania', 'rate': 13.8 },
+            { 'country': 'Ireland', 'rate': 13.6 },
+            { 'country': 'Jordan', 'rate': 12.9 },
+            { 'country': 'Greece', 'rate': 12.5 }
+        ];
 
     source: any =
-    {
-        datatype: 'array',
-        localdata: this.unemploymentRate,
-        datafields: [
-            { name: 'country' },
-            { name: 'rate' }
-        ]
-    };
+        {
+            datatype: 'array',
+            localdata: this.unemploymentRate,
+            datafields: [
+                { name: 'country' },
+                { name: 'rate' }
+            ]
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 

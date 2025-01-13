@@ -1,12 +1,14 @@
 ﻿import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 
-import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid.ts'
-import { jqxPanelComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxpanel.ts';
-
+import { jqxPanelComponent, jqxPanelModule } from 'jqwidgets-ng/jqxpanel';
 import { generatedata } from '../assets/generatedata';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule, jqxPanelModule, jqxButtonModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
     encapsulation: ViewEncapsulation.None
@@ -17,52 +19,52 @@ export class AppComponent {
     @ViewChild('myPanel') myPanel: jqxPanelComponent;
 
     source: any =
-    {
-        localdata: generatedata(500, false),
-        datafields:
-        [
-            { name: 'firstname', type: 'string' },
-            { name: 'lastname', type: 'string' },
-            { name: 'productname', type: 'string' },
-            { name: 'date', type: 'date' },
-            { name: 'quantity', type: 'number' },
-            { name: 'price', type: 'number' }
-        ],
-        datatype: 'array'
-    };
+        {
+            localdata: generatedata(500, false),
+            datafields:
+                [
+                    { name: 'firstname', type: 'string' },
+                    { name: 'lastname', type: 'string' },
+                    { name: 'productname', type: 'string' },
+                    { name: 'date', type: 'date' },
+                    { name: 'quantity', type: 'number' },
+                    { name: 'price', type: 'number' }
+                ],
+            datatype: 'array'
+        };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
     columns: any[] =
-    [
-        {
-            text: 'First Name', datafield: 'firstname', width: 160,
-            filtertype: 'custom',
-            createfilterpanel: (datafield: string, filterPanel: any): void => {
-                this.buildFilterPanel(filterPanel, datafield);
-            }
-        },
-        {
-            text: 'Last Name', datafield: 'lastname',
-            filtertype: 'custom',
-            createfilterpanel: (datafield: string, filterPanel: any): void => {
-                this.buildFilterPanel(filterPanel, datafield);
+        [
+            {
+                text: 'First Name', datafield: 'firstname', width: 160,
+                filtertype: 'custom',
+                createfilterpanel: (datafield: string, filterPanel: any): void => {
+                    this.buildFilterPanel(filterPanel, datafield);
+                }
             },
-            width: 160
-        },
-        { text: 'Product', datafield: 'productname', filtertype: 'checkedlist', width: 170 },
-        { text: 'Order Date', datafield: 'date', filtertype: 'date', width: 160, cellsformat: 'dd-MMMM-yyyy' },
-        { text: 'Quantity', datafield: 'quantity', width: 80, cellsalign: 'right' },
-        { text: 'Unit Price', datafield: 'price', cellsalign: 'right', cellsformat: 'c2' }
-    ];
+            {
+                text: 'Last Name', datafield: 'lastname',
+                filtertype: 'custom',
+                createfilterpanel: (datafield: string, filterPanel: any): void => {
+                    this.buildFilterPanel(filterPanel, datafield);
+                },
+                width: 160
+            },
+            { text: 'Product', datafield: 'productname', filtertype: 'checkedlist', width: 170 },
+            { text: 'Order Date', datafield: 'date', filtertype: 'date', width: 160, cellsformat: 'dd-MMMM-yyyy' },
+            { text: 'Quantity', datafield: 'quantity', width: 80, cellsalign: 'right' },
+            { text: 'Unit Price', datafield: 'price', cellsalign: 'right', cellsformat: 'c2' }
+        ];
 
     columnmenuopening = (menu: any, datafield: any, height: any): void => {
         let column: any = this.myGrid.getcolumn(datafield);
@@ -107,11 +109,11 @@ export class AppComponent {
         let filterClearButton = jqwidgets.createInstance('#filterClearButtonContainer', 'jqxButton', filterClearButtonOptions);
 
         let dataSource =
-            {
-                localdata: this.dataAdapter.records,
-                datatype: 'array',
-                async: false
-            }
+        {
+            localdata: this.dataAdapter.records,
+            datatype: 'array',
+            async: false
+        }
         let dataadapter = new jqx.dataAdapter(dataSource,
             {
                 autoBind: false,
@@ -124,7 +126,7 @@ export class AppComponent {
         let column = this.myGrid.getcolumn(datafield);
 
         let inputOptions = {
-            theme: 'material', 
+            theme: 'material',
             width: 175, height: 20, source: dataadapter,
             displayMember: 'datafield', popupZIndex: 99999,
             placeHolder: `Enter ${column.text}`

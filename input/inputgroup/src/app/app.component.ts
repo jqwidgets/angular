@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxinput.ts';
 
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
+import { jqxInputModule, jqxInputComponent } from 'jqwidgets-ng/jqxinput';
 @Component({
     selector: 'app-root',
+    imports: [jqxInputModule, jqxButtonModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 

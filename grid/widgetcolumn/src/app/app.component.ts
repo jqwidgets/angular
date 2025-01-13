@@ -1,68 +1,71 @@
 ﻿import { Component } from '@angular/core';
 
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
 export class AppComponent {
     source: any =
-    {
-        localdata: this.generateData(),
-        datatype: 'array'
-    }
+        {
+            localdata: this.generateData(),
+            datatype: 'array'
+        }
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     counter: number = 1;
     columns: any[] =
-    [
-        {
-            text: 'Picture', datafield: 'firstname', width: 100,
-            createwidget: (row: number, column: any, value: string, htmlElement: HTMLElement): void => {
+        [
+            {
+                text: 'Picture', datafield: 'firstname', width: 100,
+                createwidget: (row: number, column: any, value: string, htmlElement: HTMLElement): void => {
 
-                const container = document.createElement('div');
-                const id = `myButton${this.counter}`;
-                container.id = id;
-                container.style.border = 'none';
-                htmlElement.appendChild(container);
+                    const container = document.createElement('div');
+                    const id = `myButton${this.counter}`;
+                    container.id = id;
+                    container.style.border = 'none';
+                    htmlElement.appendChild(container);
 
-                const imgurl = 'https://www.jqwidgets.com/angular/images/' + value.toLowerCase() + '.png';
+                    const imgurl = 'https://www.jqwidgets.com/angular/images/' + value.toLowerCase() + '.png';
 
-                const options = {
-                    theme: 'material', 
-                    width: '100%', height: 90, template: 'success',
-                    imgSrc: imgurl, imgWidth: 40, imgHeight: 50, value: value,
-                    imgPosition: 'center', textPosition: 'center', textImageRelation: 'imageAboveText'
-                };
+                    const options = {
+                        theme: 'material',
+                        width: '100%', height: 90, template: 'success',
+                        imgSrc: imgurl, imgWidth: 40, imgHeight: 50, value: value,
+                        imgPosition: 'center', textPosition: 'center', textImageRelation: 'imageAboveText'
+                    };
 
-                const myButton = jqwidgets.createInstance(`#${id}`, 'jqxButton', options);
+                    const myButton = jqwidgets.createInstance(`#${id}`, 'jqxButton', options);
 
-                myButton.addEventHandler('click', function (): void {
-                    const currentButtonValue = this.children[1].innerHTML;
-                    alert(currentButtonValue);
-                });
+                    myButton.addEventHandler('click', function (): void {
+                        const currentButtonValue = this.children[1].innerHTML;
+                        alert(currentButtonValue);
+                    });
 
-                this.counter++;
+                    this.counter++;
+                },
+                initwidget: (row: number, column: any, value: any, htmlElement: HTMLElement): void => {
+                    const imgurl = 'https://www.jqwidgets.com/angular/images/' + value.toLowerCase() + '.png';
+                    (<HTMLImageElement>htmlElement.children[1].children[0]).src = imgurl;
+                    htmlElement.children[1].children[1].innerHTML = value;
+                }
             },
-            initwidget: (row: number, column: any, value: any, htmlElement: HTMLElement): void => {
-                const imgurl = 'https://www.jqwidgets.com/angular/images/' + value.toLowerCase() + '.png';
-                (<HTMLImageElement>htmlElement.children[1].children[0]).src = imgurl;
-                htmlElement.children[1].children[1].innerHTML = value;
-            }
-        },
-        { text: 'Name', datafield: 'name', width: 200 },
-        { text: 'Title', datafield: 'title', width: 200 },
-        { text: 'Country', datafield: 'country' }
-    ];
+            { text: 'Name', datafield: 'name', width: 200 },
+            { text: 'Title', datafield: 'title', width: 200 },
+            { text: 'Country', datafield: 'country' }
+        ];
 
     generateData(): any[] {
         let data = new Array();

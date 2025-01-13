@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild, AfterViewInit, OnInit } from '@angular/core';
 
-import { jqxChartComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxchart.ts';
 
+
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 @Component({
     selector: 'app-root',
+    imports: [jqxChartModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -14,14 +17,14 @@ export class AppComponent implements AfterViewInit, OnInit {
         this.generateChartData();
     }
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
     ngAfterViewInit(): void {
         let data = this.myChart.source();
         let timer = setInterval(() => {
@@ -43,44 +46,44 @@ export class AppComponent implements AfterViewInit, OnInit {
     titlePadding: any = { left: 0, top: 0, right: 0, bottom: 10 };
 
     xAxis: any =
-    {
-        dataField: 'timestamp',
-        type: 'date',
-        baseUnit: 'second',
-        unitInterval: 5,
-        formatFunction: (value: any) => {
-            return jqx.dataFormat.formatdate(value, 'hh:mm:ss', 'en-us');
-        },
-        gridLines: { step: 2 },
-        valuesOnTicks: true,
-        labels: { angle: -45, offset: { x: -17, y: 0 } }
-    };
+        {
+            dataField: 'timestamp',
+            type: 'date',
+            baseUnit: 'second',
+            unitInterval: 5,
+            formatFunction: (value: any) => {
+                return jqx.dataFormat.formatdate(value, 'hh:mm:ss', 'en-us');
+            },
+            gridLines: { step: 2 },
+            valuesOnTicks: true,
+            labels: { angle: -45, offset: { x: -17, y: 0 } }
+        };
 
     valueAxis: any =
-    {
-        minValue: 0,
-        maxValue: 1000,
-        title: { text: 'Index Value' },
-        labels: { horizontalAlignment: 'right' }
-    };
+        {
+            minValue: 0,
+            maxValue: 1000,
+            title: { text: 'Index Value' },
+            labels: { horizontalAlignment: 'right' }
+        };
 
     seriesGroups: any[] =
-    [
-        {
-            type: 'line',
-            columnsGapPercent: 50,
-            alignEndPointsWithIntervals: true,
-            valueAxis:
+        [
             {
-                minValue: 0,
-                maxValue: 1000,
-                title: { text: 'Index Value' }
-            },
-            series: [
-                { dataField: 'value', displayText: 'value', opacity: 1, lineWidth: 2, symbolType: 'circle', fillColorSymbolSelected: 'white', symbolSize: 4 }
-            ]
-        }
-    ];
+                type: 'line',
+                columnsGapPercent: 50,
+                alignEndPointsWithIntervals: true,
+                valueAxis:
+                {
+                    minValue: 0,
+                    maxValue: 1000,
+                    title: { text: 'Index Value' }
+                },
+                series: [
+                    { dataField: 'value', displayText: 'value', opacity: 1, lineWidth: 2, symbolType: 'circle', fillColorSymbolSelected: 'white', symbolSize: 4 }
+                ]
+            }
+        ];
 
     colorsSchemesList: string[] = ['scheme01', 'scheme02', 'scheme03', 'scheme04', 'scheme05', 'scheme06', 'scheme07', 'scheme08'];
 

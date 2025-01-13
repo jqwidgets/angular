@@ -1,11 +1,14 @@
 ﻿import { Component, ViewChild, AfterViewInit, ViewEncapsulation, ElementRef } from '@angular/core';
 
-import { jqxTabsComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtabs.ts';
-import { jqxListBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxlistbox.ts';
-import { jqxCheckBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxcheckbox.ts';
+import { jqxListBoxModule,  jqxListBoxComponent } from 'jqwidgets-ng/jqxlistbox';
+import { jqxCheckBoxComponent, jqxCheckBoxModule } from 'jqwidgets-ng/jqxcheckbox';
+import { jqxButtonModule,  jqxButtonComponent } from 'jqwidgets-ng/jqxbuttons';
 
+import { jqxTabsModule, jqxTabsComponent } from 'jqwidgets-ng/jqxtabs';
 @Component({
     selector: 'app-root',
+    imports: [jqxTabsModule, jqxButtonModule, jqxListBoxModule, jqxCheckBoxModule],
+    standalone: true,
     styleUrls: ['./app.component.css'],
     templateUrl: './app.component.html',
     encapsulation: ViewEncapsulation.None
@@ -18,15 +21,15 @@ export class AppComponent implements AfterViewInit {
     @ViewChild('usernameInput') usernameInput: ElementRef;
     @ViewChild('passwordInput') passwordInput: ElementRef;
     @ViewChild('orderContainer') orderContainer: ElementRef;
-   
-    getWidth() : any {
-		if (document.body.offsetWidth < 500) {
-			return '90%';
-		}
-		
-		return 500;
-	}
-	
+
+    getWidth(): any {
+        if (document.body.offsetWidth < 500) {
+            return '90%';
+        }
+
+        return 500;
+    }
+
     ngAfterViewInit() {
         this.validate(true);
         this._addHandlers();

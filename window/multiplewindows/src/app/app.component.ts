@@ -1,13 +1,18 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
 
+import { jqxWindowModule, jqxWindowComponent } from 'jqwidgets-ng/jqxwindow';
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
+
 @Component({
     selector: 'app-root',
+    imports: [jqxWindowModule, jqxButtonModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
 export class AppComponent {
     @ViewChild('mainDemoContainer') mainDemoContainer: ElementRef;
-    
+
     showWindowButtonClick(): void {
         let windows = document.getElementsByClassName('jqx-window'),
             count = windows.length;
@@ -38,5 +43,5 @@ export class AppComponent {
         widgetContainer.appendChild(newWindow);
 
         jqwidgets.createInstance('#' + currentWindowID, 'jqxWindow', { theme: 'material', height: 150, width: 300 });
-    }    
+    }
 }

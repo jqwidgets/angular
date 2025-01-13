@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
 
-import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid.ts'
 
+
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxGridModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -98,61 +101,61 @@ export class AppComponent {
     ];
 
     countriesSource: any =
-    {
-        datatype: 'array',
-        datafields: [
-            { name: 'label', type: 'string' },
-            { name: 'value', type: 'string' }
-        ],
-        localdata: this.countries
-    };
+        {
+            datatype: 'array',
+            datafields: [
+                { name: 'label', type: 'string' },
+                { name: 'value', type: 'string' }
+            ],
+            localdata: this.countries
+        };
 
     countriesAdapter: any = new jqx.dataAdapter(this.countriesSource, { autoBind: true });
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
 
     source: any =
-    {
-        datatype: 'array',
-        localdata:
-        [
-            { countryCode: 'UK' },
-            { countryCode: 'US' },
-            { countryCode: 'DE' },
-            { countryCode: 'FR' },
-            { countryCode: 'IN' },
-            { countryCode: 'HK' }
-        ],
-        datafields: [
-            // name - determines the field's name.
-            // value - the field's value in the data source.
-            // values - specifies the field's values.
-            // values.source - specifies the foreign source. The expected value is an array.
-            // values.value - specifies the field's value in the foreign source. 
-            // values.name - specifies the field's name in the foreign source. 
-            // When the adapter is loaded, each record will have a field called 'Country'. The 'Country' for each record comes from the countriesAdapter where the record's 'countryCode' from gridAdapter matches to the 'value' from countriesAdapter. 
-            { name: 'Country', value: 'countryCode', values: { source: this.countriesAdapter.records, value: 'value', name: 'label' } },
-            { name: 'countryCode', type: 'string' }
-        ]
-    };
+        {
+            datatype: 'array',
+            localdata:
+                [
+                    { countryCode: 'UK' },
+                    { countryCode: 'US' },
+                    { countryCode: 'DE' },
+                    { countryCode: 'FR' },
+                    { countryCode: 'IN' },
+                    { countryCode: 'HK' }
+                ],
+            datafields: [
+                // name - determines the field's name.
+                // value - the field's value in the data source.
+                // values - specifies the field's values.
+                // values.source - specifies the foreign source. The expected value is an array.
+                // values.value - specifies the field's value in the foreign source. 
+                // values.name - specifies the field's name in the foreign source. 
+                // When the adapter is loaded, each record will have a field called 'Country'. The 'Country' for each record comes from the countriesAdapter where the record's 'countryCode' from gridAdapter matches to the 'value' from countriesAdapter. 
+                { name: 'Country', value: 'countryCode', values: { source: this.countriesAdapter.records, value: 'value', name: 'label' } },
+                { name: 'countryCode', type: 'string' }
+            ]
+        };
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
     columns: any[] =
-    [
-        {
-            text: 'Country', datafield: 'countryCode', displayfield: 'Country', columntype: 'combobox',
-            createeditor: (row: number, value: any, editor: any): void => {
-                editor.jqxComboBox({ theme: 'material', source: this.countriesAdapter, displayMember: 'label', valueMember: 'value' });
+        [
+            {
+                text: 'Country', datafield: 'countryCode', displayfield: 'Country', columntype: 'combobox',
+                createeditor: (row: number, value: any, editor: any): void => {
+                    editor.jqxComboBox({ theme: 'material', source: this.countriesAdapter, displayMember: 'label', valueMember: 'value' });
+                }
             }
-        }
-    ];
+        ];
 
     myGridOnCellSelect(event: any): void {
         let column = this.myGrid.getcolumn(event.args.datafield);

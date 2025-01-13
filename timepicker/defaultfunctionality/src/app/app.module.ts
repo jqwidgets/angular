@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { jqxTimePickerComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtimepicker.ts';
-import { jqxButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxbuttons.ts';
+import { jqxButtonComponent } from 'jqwidgets-ng/jqxbuttons';
 import { jqxFormComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxform.ts';
 
 @NgModule({

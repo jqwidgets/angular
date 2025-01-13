@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxLoaderComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxloader.ts';
 
+
+import { jqxLoaderModule, jqxLoaderComponent } from 'jqwidgets-ng/jqxloader';
 @Component({
     selector: 'app-root',
+    imports: [jqxLoaderModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 

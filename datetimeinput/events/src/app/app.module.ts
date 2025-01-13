@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser'; 
+import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { jqxDateTimeInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdatetimeinput.ts';
-import { jqxInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxinput.ts';
-import { jqxPanelComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxpanel.ts';
+import { jqxInputComponent } from 'jqwidgets-ng/jqxinput';
+import { jqxPanelComponent, jqxPanelModule } from 'jqwidgets-ng/jqxpanel';
 
 @NgModule({
     declarations: [AppComponent, jqxDateTimeInputComponent, jqxInputComponent, jqxPanelComponent],
@@ -15,4 +14,3 @@ import { jqxPanelComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxpan
 })
 
 export class AppModule { }
-        

@@ -1,9 +1,12 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxTreeGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtree.ts';
 
+
+import { jqxTreeGridModule, jqxTreeGridComponent } from 'jqwidgets-ng/jqxtreegrid';
 @Component({
     selector: 'app-root',
+    imports: [jqxTreeGridModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -43,31 +46,31 @@ export class AppComponent {
 
         return data;
     };
-	
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
-    
+
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
+
     virtualModeCreateRecords = (expandedRecord, done): void => {
-         //expandedrecord is equal to null when the  is initially called, because there is still no record to be expanded.
-         //prepare the data
+        //expandedrecord is equal to null when the  is initially called, because there is still no record to be expanded.
+        //prepare the data
         let source =
-            {
-                datatype: 'array',
-                datafields: [
-                    { name: 'id', type: 'string' },
-                    { name: 'name', type: 'string' },
-                    { name: 'duration', type: 'number' },
-                    { name: 'task', type: 'number' }
-                ],
-                localdata: expandedRecord === null ? this.generateTasks(3000) : this.generateTasks(),
-                id: 'id'
-            };
+        {
+            datatype: 'array',
+            datafields: [
+                { name: 'id', type: 'string' },
+                { name: 'name', type: 'string' },
+                { name: 'duration', type: 'number' },
+                { name: 'task', type: 'number' }
+            ],
+            localdata: expandedRecord === null ? this.generateTasks(3000) : this.generateTasks(),
+            id: 'id'
+        };
 
         let dataAdapter = new jqx.dataAdapter(source, {
             loadComplete: () => {

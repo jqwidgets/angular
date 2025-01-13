@@ -1,12 +1,15 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
 
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 @Component({
     selector: 'app-root',
+    imports: [jqxChartModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
 export class AppComponent {
-	  @ViewChild('eventText') eventText: ElementRef;
+    @ViewChild('eventText') eventText: ElementRef;
 
     sampleData: any[] = [
         { Day: 'Monday', Keith: 30, Erica: 15, George: 25 },
@@ -22,38 +25,38 @@ export class AppComponent {
 
     titlePadding: any = { left: 90, top: 0, right: 0, bottom: 10 };
 
-	getWidth() : any {
-		if (document.body.offsetWidth < 850) {
-			return '90%';
-		}
-		
-		return 850;
-	}
-	
+    getWidth(): any {
+        if (document.body.offsetWidth < 850) {
+            return '90%';
+        }
+
+        return 850;
+    }
+
     xAxis: any =
-    {
-        dataField: 'Day',
-        type: 'basic'
-    };
+        {
+            dataField: 'Day',
+            type: 'basic'
+        };
 
     seriesGroups: any[] =
-    [
-        {
-            type: 'column',
-            valueAxis:
+        [
             {
-                minValue: 0,
-                maxValue: 100,
-                unitInterval: 10,
-                title: { text: 'Time in minutes' }
-            },
-            series: [
-                { dataField: 'Keith', displayText: 'Keith' },
-                { dataField: 'Erica', displayText: 'Erica' },
-                { dataField: 'George', displayText: 'George' }
-            ]
-        }
-    ];
+                type: 'column',
+                valueAxis:
+                {
+                    minValue: 0,
+                    maxValue: 100,
+                    unitInterval: 10,
+                    title: { text: 'Time in minutes' }
+                },
+                series: [
+                    { dataField: 'Keith', displayText: 'Keith' },
+                    { dataField: 'Erica', displayText: 'Erica' },
+                    { dataField: 'George', displayText: 'George' }
+                ]
+            }
+        ];
 
     chartEvent(event: any): any {
         let eventData;

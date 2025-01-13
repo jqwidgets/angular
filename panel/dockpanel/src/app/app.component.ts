@@ -2,8 +2,11 @@
 
 import { jqxDockPanelComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdockpanel.ts';
 
+import { jqxPanelModule, jqxPanelComponent } from 'jqwidgets-ng/jqxpanel';
 @Component({
     selector: 'app-root',
+    imports: [jqxPanelModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 

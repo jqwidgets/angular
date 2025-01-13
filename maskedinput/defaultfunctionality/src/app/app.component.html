@@ -2,14 +2,14 @@
   <div style='margin-top: 10px;'>
     Numeric
   </div>
-  <jqxMaskedInput [theme]="'material'" #numericInput
+  <jqxMaskedInput [theme]="'fluent'" #numericInput
                   [width]="250"
                   [height]="25">
   </jqxMaskedInput>
   <div style='margin-top: 10px;'>
     Zip Code
   </div>
-  <jqxMaskedInput [theme]="'material'" #zipCodeInput
+  <jqxMaskedInput [theme]="'fluent'" #zipCodeInput
                   [mask]="'#####-####'"
                   [width]="250"
                   [height]="25">
@@ -17,7 +17,7 @@
   <div style='margin-top: 10px;'>
     SSN
   </div>
-  <jqxMaskedInput [theme]="'material'" #ssnInput
+  <jqxMaskedInput [theme]="'fluent'" #ssnInput
                   [mask]="'###-##-####'"
                   [width]="250"
                   [height]="25">
@@ -25,7 +25,7 @@
   <div style='margin-top: 10px;'>
     Phone Number
   </div>
-  <jqxMaskedInput [theme]="'material'" #phoneInput
+  <jqxMaskedInput [theme]="'fluent'" #phoneInput
                   [mask]="'(###)###-####'"
                   [width]="250"
                   [height]="25">
@@ -33,7 +33,7 @@
   <div style='margin-top: 10px;'>
     IP Address (ex: 255.255.255.255)
   </div>
-  <jqxMaskedInput [theme]="'material'" #regexInput
+  <jqxMaskedInput [theme]="'fluent'" #regexInput
                   [mask]="'[0-2][0-5][0-5].[0-2][0-5][0-5].[0-2][0-5][0-5].[0-2][0-5][0-5]'"
                   [width]="250"
                   [height]="25">
@@ -41,11 +41,11 @@
   <div style='margin-top: 10px;'>
     Disabled
   </div>
-  <jqxMaskedInput [theme]="'material'" #disabledInput
+  <jqxMaskedInput [theme]="'fluent'" #disabledInput
                   [disabled]="true"
                   [width]="250"
                   [height]="25">
   </jqxMaskedInput>
 </div>
 <br />
-<jqxButton [theme]="'material'" #clearButton (onClick)="clear()">Clear Values</jqxButton>
+<jqxButton [theme]="'fluent'" #clearButton (onClick)="clear()">Clear Values</jqxButton>
