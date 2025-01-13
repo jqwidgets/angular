@@ -1,4 +1,4 @@
-﻿import { AfterViewInit, Component } from '@angular/core';
+﻿import { AfterViewInit, ViewChild, Component } from '@angular/core';
 
 import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
