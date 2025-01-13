@@ -1,5 +1,4 @@
 import { AfterViewInit, Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 
 import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
