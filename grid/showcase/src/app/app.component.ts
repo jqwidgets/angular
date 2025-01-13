@@ -241,17 +241,15 @@ export class AppComponent {
 	dataAdapter: any = new jqx.dataAdapter(this.source);
 
 	renderStatusBar: any = function (statusbar) {
-		let container = $("<div style='margin: 5px;'></div>");
+		let container = document.createElement('div');
 		let leftResult = "24 Items";
 		let nextToLeftResult = "0 Selected";
 		let rightResult = "114.4 Size";
-		let leftSpan = $(`<span style='float: left; margin-top: 5px; margin-left: 18px;'>${leftResult}</span>`);
-		let nextToLeftSpan = $(`<span style='float: left; margin-top: 5px; margin-left: 18px;'>${nextToLeftResult}</span>`);
-		let rightSpan = $(`<span style='float: right; margin-top: 5px; margin-right: 45px;'>${rightResult}</span>`);
-		container.append(leftSpan);
-		container.append(nextToLeftSpan);
-		container.append(rightSpan);
-		statusbar.append(container);
+		let leftSpan = `<span style='float: left; margin-top: 5px; margin-left: 18px;'>${leftResult}</span>`;
+		let nextToLeftSpan = `<span style='float: left; margin-top: 5px; margin-left: 18px;'>${nextToLeftResult}</span>`;
+		let rightSpan = `<span style='float: right; margin-top: 5px; margin-right: 45px;'>${rightResult}</span>`;
+		container.innerHTML = `${leftSpan}${nextToLeftSpan}${rightSpan}`
+		statusbar.appendChild(container);
 	}
 
 	columngroups: any[] =
