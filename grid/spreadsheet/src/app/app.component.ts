@@ -55,6 +55,6 @@ export class AppComponent implements OnInit {
     }
 
     myBtnOnClick(): void {
-        this.myGrid.exportdata('xls', 'jqxGrid', false);
+        this.myGrid.exportview('xlsx', 'jqxGrid');
     };
 }
