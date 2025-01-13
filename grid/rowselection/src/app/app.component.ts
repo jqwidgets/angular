@@ -1,6 +1,6 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
 
-import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbutton'
+import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons'
 import { jqxInputComponent, jqxInputModule } from 'jqwidgets-ng/jqxinput';
 
 import { generatedata } from '../assets/generatedata';
