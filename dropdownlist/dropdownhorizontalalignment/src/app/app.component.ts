@@ -1,9 +1,11 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
 import { jqxDropDownListModule, jqxDropDownListComponent } from 'jqwidgets-ng/jqxdropdownlist';
+import { jqxRadioButtonComponent, jqxRadioButtonModule } from 'jqwidgets-ng/jqxradiobutton';
+
 @Component({
     selector: 'app-root',
-    imports: [jqxDropDownListModule],
+    imports: [jqxDropDownListModule, jqxRadioButtonModule],
     standalone: true,
     templateUrl: './app.component.html'
 })

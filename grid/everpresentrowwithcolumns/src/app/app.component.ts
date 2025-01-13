@@ -3,9 +3,11 @@
 import { generatedata } from '../assets/generatedata';
 
 import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
+import { jqxRadioButtonComponent, jqxRadioButtonModule } from 'jqwidgets-ng/jqxradiobutton';
+
 @Component({
     selector: 'app-root',
-    imports: [jqxGridModule],
+    imports: [jqxGridModule, jqxRadioButtonModule],
     standalone: true,
     templateUrl: './app.component.html'
 })

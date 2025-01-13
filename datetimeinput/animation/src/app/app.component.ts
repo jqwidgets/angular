@@ -1,9 +1,11 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
 import { jqxDateTimeInputModule, jqxDateTimeInputComponent } from 'jqwidgets-ng/jqxdatetimeinput';
+import { jqxRadioButtonComponent, jqxRadioButtonModule } from 'jqwidgets-ng/jqxradiobutton';
+
 @Component({
     selector: 'app-root',
-    imports: [jqxDateTimeInputModule],
+    imports: [jqxDateTimeInputModule, jqxRadioButtonModule],
     standalone: true,
     templateUrl: './app.component.html'
 })

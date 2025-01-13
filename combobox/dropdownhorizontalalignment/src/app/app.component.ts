@@ -1,9 +1,11 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
 import { jqxComboBoxModule, jqxComboBoxComponent } from 'jqwidgets-ng/jqxcombobox';
+import { jqxRadioButtonComponent, jqxRadioButtonModule } from 'jqwidgets-ng/jqxradiobutton';
+
 @Component({
     selector: 'app-root',
-    imports: [jqxComboBoxModule],
+    imports: [jqxComboBoxModule, jqxRadioButtonModule],
     standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],

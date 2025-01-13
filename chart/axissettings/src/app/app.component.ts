@@ -4,10 +4,11 @@ import { jqxCheckBoxComponent, jqxCheckBoxModule } from 'jqwidgets-ng/jqxcheckbo
 import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
 import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 import { jqxSliderModule } from 'jqwidgets-ng/jqxslider';
+import { jqxRadioButtonComponent, jqxRadioButtonModule } from 'jqwidgets-ng/jqxradiobutton';
 
 @Component({
     selector: 'app-root',
-    imports: [jqxChartModule, jqxSliderModule, jqxButtonModule, jqxCheckBoxModule],
+    imports: [jqxChartModule, jqxSliderModule, jqxButtonModule, jqxRadioButtonModule, jqxCheckBoxModule],
     standalone: true,
     templateUrl: './app.component.html'
 })

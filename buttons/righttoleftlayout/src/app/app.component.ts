@@ -3,9 +3,11 @@
 import { jqxDropDownButtonComponent, jqxDropDownButtonModule } from 'jqwidgets-ng/jqxdropdownbutton';
 import { jqxCheckBoxComponent, jqxCheckBoxModule } from 'jqwidgets-ng/jqxcheckbox';
 import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
+import { jqxRadioButtonComponent, jqxRadioButtonModule } from 'jqwidgets-ng/jqxradiobutton';
+
 @Component({
     selector: 'app-root',
-    imports: [jqxGridModule, jqxCheckBoxModule, jqxDropDownButtonModule],
+    imports: [jqxGridModule, jqxCheckBoxModule, jqxRadioButtonModule, jqxDropDownButtonModule],
     standalone: true,
     templateUrl: './app.component.html'
 })

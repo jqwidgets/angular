@@ -2,12 +2,13 @@
 
 import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
 import { jqxInputComponent, jqxInputModule } from 'jqwidgets-ng/jqxinput';
+import { jqxRadioButtonComponent, jqxRadioButtonModule } from 'jqwidgets-ng/jqxradiobutton';
 
 import { jqxProgressBarModule, jqxProgressBarComponent } from 'jqwidgets-ng/jqxprogressbar';
 
 @Component({
     selector: 'app-root',
-    imports: [jqxProgressBarModule, jqxInputModule, jqxButtonModule],
+    imports: [jqxProgressBarModule, jqxRadioButtonModule, jqxInputModule, jqxButtonModule],
     standalone: true,
     templateUrl: './app.component.html'
 })

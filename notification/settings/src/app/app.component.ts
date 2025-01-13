@@ -2,10 +2,11 @@
 import { jqxNotificationModule, jqxNotificationComponent } from 'jqwidgets-ng/jqxnotification';
 import { jqxCheckBoxComponent, jqxCheckBoxModule } from 'jqwidgets-ng/jqxcheckbox';
 import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
+import { jqxRadioButtonComponent, jqxRadioButtonModule } from 'jqwidgets-ng/jqxradiobutton';
 
 @Component({
     selector: 'app-root',
-    imports: [jqxNotificationModule, jqxCheckBoxModule, jqxButtonModule],
+    imports: [jqxNotificationModule, jqxRadioButtonModule, jqxCheckBoxModule, jqxButtonModule],
     standalone: true,
     templateUrl: './app.component.html'
 })

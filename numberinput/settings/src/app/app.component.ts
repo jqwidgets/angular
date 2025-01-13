@@ -1,11 +1,12 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
 import { jqxCheckBoxComponent, jqxCheckBoxModule } from 'jqwidgets-ng/jqxcheckbox';
+import { jqxRadioButtonComponent, jqxRadioButtonModule } from 'jqwidgets-ng/jqxradiobutton';
 
 import { jqxNumberInputModule, jqxNumberInputComponent } from 'jqwidgets-ng/jqxnumberinput';
 @Component({
     selector: 'app-root',
-    imports: [jqxNumberInputModule, jqxCheckBoxModule],
+    imports: [jqxNumberInputModule, jqxCheckBoxModule, jqxRadioButtonModule],
     standalone: true,
     templateUrl: './app.component.html'
 })

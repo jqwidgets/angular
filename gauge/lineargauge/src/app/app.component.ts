@@ -7,10 +7,11 @@ import { jqxGaugeModule, jqxGaugeComponent } from 'jqwidgets-ng/jqxgauge';
 import { jqxCheckBoxComponent, jqxCheckBoxModule } from 'jqwidgets-ng/jqxcheckbox';
 import { jqxExpanderComponent, jqxExpanderModule } from 'jqwidgets-ng/jqxexpander';
 import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
+import { jqxRadioButtonComponent, jqxRadioButtonModule } from 'jqwidgets-ng/jqxradiobutton';
 
 @Component({
     selector: 'app-root',
-    imports: [jqxLinearGaugeModule, jqxButtonModule, jqxGaugeModule, jqxExpanderModule, jqxSliderModule, jqxCheckBoxModule],
+    imports: [jqxLinearGaugeModule, jqxRadioButtonModule, jqxButtonModule, jqxGaugeModule, jqxExpanderModule, jqxSliderModule, jqxCheckBoxModule],
     standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],

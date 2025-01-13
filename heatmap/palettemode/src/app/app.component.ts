@@ -1,11 +1,12 @@
 ﻿import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 
 
+import { jqxRadioButtonComponent, jqxRadioButtonModule } from 'jqwidgets-ng/jqxradiobutton';
 
 import { jqxHeatMapModule, jqxHeatMapComponent } from 'jqwidgets-ng/jqxheatmap';
 @Component({
     selector: 'app-root',
-    imports: [jqxHeatMapModule],
+    imports: [jqxHeatMapModule, jqxRadioButtonModule],
     standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],

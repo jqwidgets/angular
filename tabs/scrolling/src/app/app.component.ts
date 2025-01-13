@@ -1,10 +1,11 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-
+import { jqxRadioButtonComponent, jqxRadioButtonModule } from 'jqwidgets-ng/jqxradiobutton';
 import { jqxTabsModule, jqxTabsComponent } from 'jqwidgets-ng/jqxtabs';
+
 @Component({
     selector: 'app-root',
-    imports: [jqxTabsModule],
+    imports: [jqxTabsModule, jqxRadioButtonModule],
     standalone: true,
     templateUrl: './app.component.html'
 })
