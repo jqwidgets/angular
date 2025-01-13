@@ -4,10 +4,11 @@ import { jqxPanelComponent, jqxPanelModule } from 'jqwidgets-ng/jqxpanel';
 import { generatedata } from '../assets/generatedata';
 import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
 import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
+import { jqxCheckBoxComponent, jqxCheckBoxModule } from 'jqwidgets-ng/jqxcheckbox';
 
 @Component({
     selector: 'app-root',
-    imports: [jqxGridModule, jqxPanelModule, jqxButtonModule],
+    imports: [jqxGridModule, jqxPanelModule, jqxCheckBoxModule, jqxButtonModule],
     standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],

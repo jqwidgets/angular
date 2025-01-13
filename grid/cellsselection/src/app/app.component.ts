@@ -7,10 +7,11 @@ import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
 import { generatedata } from '../assets/generatedata';
 
 import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
+import { jqxCheckBoxComponent, jqxCheckBoxModule } from 'jqwidgets-ng/jqxcheckbox';
 
 @Component({
     selector: 'app-root',
-    imports: [jqxGridModule, jqxDropDownListModule, jqxInputModule, jqxButtonModule],
+    imports: [jqxGridModule, jqxDropDownListModule, jqxInputModule, jqxCheckBoxModule, jqxButtonModule],
     standalone: true,
     templateUrl: './app.component.html'
 })

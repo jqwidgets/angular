@@ -1,7 +1,5 @@
 ﻿import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 
-
-
 import { generatedata } from '../assets/generatedata';
 import { jqxCheckBoxComponent, jqxCheckBoxModule } from 'jqwidgets-ng/jqxcheckbox';
 import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
