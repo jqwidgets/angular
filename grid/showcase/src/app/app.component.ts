@@ -2,7 +2,6 @@
 
 ;
 
-import { generatedata } from './../../../sampledata/generatedata';
 
 import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
