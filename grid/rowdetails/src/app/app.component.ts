@@ -1,11 +1,9 @@
 ﻿import { Component, ViewChild } from '@angular/core';
+import { jqxTabsModule, jqxTabsComponent } from 'jqwidgets-ng/jqxtabs';
 
-
-
-import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 @Component({
     selector: 'app-root',
-    imports: [jqxGridModule],
+    imports: [jqxGridModule, jqxTabsModule],
     standalone: true,
     templateUrl: './app.component.html'
 })

@@ -1,9 +1,10 @@
 ﻿import { Component, ViewChild, AfterViewInit } from '@angular/core';
  
  import { jqxDataTableModule, jqxDataTableComponent } from 'jqwidgets-ng/jqxdatatable';
+import { jqxTabsModule, jqxTabsComponent } from 'jqwidgets-ng/jqxtabs';
 
     Component({    selector: 'app-root',
- imports: [jqxDataTabl eModule],  
+ imports: [jqxDataTableModule, jqxTabsModule],  
  standalone: true,   
   telateUrl: './app.component.html' 
         )
