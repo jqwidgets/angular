@@ -1,10 +1,12 @@
 ﻿import { Component, ViewChild, AfterViewInit } from '@angular/core';
-
-import { jqxBarGaugeComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxbargauge.ts';
-import { jqxListBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxlistbox.ts';
+import { jqxListBoxModule, jqxListBoxComponent } from 'jqwidgets-ng/jqxlistbox';
+import { jqxBarGaugeModule, jqxBarGaugeComponent } from 'jqwidgets-ng/jqxbargauge';
+import { jqxGaugeComponent, jqxGaugeModule } from 'jqwidgets-ng/jqxgauge';
 
 @Component({
     selector: 'app-root',
+    imports: [jqxListBoxModule, jqxGaugeModule, jqxBarGaugeModule],
+    standalone: true,
     templateUrl: './app.component.html'
 })
 
@@ -15,7 +17,7 @@ export class AppComponent implements AfterViewInit {
     ngAfterViewInit(): void {
         this.myListBox.checkIndex(2);
         this.myListBox.checkIndex(5);
-        this.myListBox.checkIndex(6);    
+        this.myListBox.checkIndex(6);
     }
 
     data: any[] = [{
@@ -77,7 +79,7 @@ export class AppComponent implements AfterViewInit {
         indent: 15,
         connectorWidth: 1
     };
-    
+
     getSum(array: any[]): number {
         array = array || [];
         let sum = 0;
