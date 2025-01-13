@@ -36,7 +36,7 @@ export class AppComponent {
 
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
-    cellsrenderer = (row: number, columnfield: string, value: string | number, defaulthtml: string, columnproperties: any, rowdata: any): string => {
+    cellsrenderer = (row: number, columnfield: string, value: any, defaulthtml: string, columnproperties: any, rowdata: any): string => {
         if (value < 20) {
             return '<span style="margin: 4px; float: ' + columnproperties.cellsalign + '; color: #ff0000;">' + value + '</span>';
         }
