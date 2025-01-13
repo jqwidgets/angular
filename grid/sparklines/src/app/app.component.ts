@@ -315,10 +315,14 @@ function getOrderData(count) {
 }
 
 import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
+
 @Component({
-	selector: 'app-root',
-	templateUrl: './app.component.html'
+    selector: 'app-root',
+    imports: [jqxGridModule],
+    standalone: true,
+    templateUrl: './app.component.html'
 })
+
 
 export class AppComponent {
 	source: any =
