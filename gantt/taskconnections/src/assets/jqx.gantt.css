@@ -18130,12 +18130,21 @@ jqx-gantt-chart>.jqx-container .jqx-splitter>.jqx-resize-trigger-container {
     list-style-type: none
 }
 
+
 @font-face {
-    font-family: jqx-gantt-icons;
-    src: local("./font/jqx-icons"), url(./font/jqx-icons.woff2) format("woff2"), url(./font/jqx-icons.woff) format("woff"), url(./font/jqx-icons.ttf) format("truetype"), url(./font/jqx-icons.eot) format("embedded-opentype");
-    font-weight: 400;
-    font-style: normal
+  font-family: "jqx-gantt-icons";
+  src: url("https://raw.githubusercontent.com/HTMLElements/smart-webcomponents-angular/master/source/styles/font/smart-icons.eot");
+  src: 
+	url("https://raw.githubusercontent.com/HTMLElements/smart-webcomponents-angular/master/source/styles/font/smart-icons.woff2")
+      format("woff2"),
+	url("https://raw.githubusercontent.com/HTMLElements/smart-webcomponents-angular/master/source/styles/font/smart-icons.woff")
+      format("woff"),
+    url("https://raw.githubusercontent.com/HTMLElements/smart-webcomponents-angular/master/source/styles/font/smart-icons.ttf")
+      format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
+
 
 .jqx-arrow {
     background-position: center;
