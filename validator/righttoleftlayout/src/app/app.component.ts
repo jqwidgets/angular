@@ -5,10 +5,11 @@ import { jqxDateTimeInputComponent, jqxDateTimeInputModule } from 'jqwidgets-ng/
 import { jqxCheckBoxComponent, jqxCheckBoxModule } from 'jqwidgets-ng/jqxcheckbox';
 import { jqxValidatorModule, jqxValidatorComponent } from 'jqwidgets-ng/jqxvalidator';
 import { jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
+import { jqxMaskedInputModule, jqxMaskedInputComponent } from 'jqwidgets-ng/jqxmaskedinput';
 
 @Component({
     selector: 'app-root',
-    imports: [jqxValidatorModule, jqxButtonModule, jqxDateTimeInputModule, jqxPasswordInputModule, jqxCheckBoxModule],
+    imports: [jqxValidatorModule, jqxMaskedInputModule, jqxButtonModule, jqxDateTimeInputModule, jqxPasswordInputModule, jqxCheckBoxModule],
     standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
