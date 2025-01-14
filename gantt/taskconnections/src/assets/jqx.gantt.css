@@ -18130,9 +18130,8 @@ jqx-gantt-chart>.jqx-container .jqx-splitter>.jqx-resize-trigger-container {
     list-style-type: none
 }
 
-
 @font-face {
-  font-family: "jqx-gantt-icons";
+  font-family: jqx-gantt-icons;
   src: url("https://raw.githubusercontent.com/HTMLElements/smart-webcomponents-angular/master/source/styles/font/smart-icons.eot");
   src: 
 	url("https://raw.githubusercontent.com/HTMLElements/smart-webcomponents-angular/master/source/styles/font/smart-icons.woff2")
