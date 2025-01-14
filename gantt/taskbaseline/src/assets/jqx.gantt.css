@@ -52,7 +52,7 @@
     --jqx-font-style: inherit;
     --jqx-font-family: Roboto, "Helvetica Neue", sans-serif;
     --jqx-font-family-icon: jqx-gantt-icons;
-    --jqx-font-family-icon-src: local('./font/jqx-icons'), url(./font/jqx-icons.woff2) format('woff2'), url(./font/jqx-icons.woff) format('woff'), url(./font/jqx-icons.ttf) format('truetype'), url(./font/jqx-icons.eot) format('embedded-opentype');
+    --jqx-font-family-icon-src: "";
     --jqx-border-width: 1px;
     --jqx-border-radius: 4px;
     --jqx-border-top-left-radius: var(--jqx-border-radius);
