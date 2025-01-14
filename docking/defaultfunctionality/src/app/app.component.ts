@@ -1,9 +1,14 @@
 ﻿import { Component } from '@angular/core';
 
 import { jqxDockingModule, jqxDockingComponent } from 'jqwidgets-ng/jqxdocking';
+import { jqxListboxModule } from 'jqwidgets-ng/jqxlistbox';
+import { jqxTabsModule } from 'jqwidgets-ng/jqxtabs';
+import { jqxCalendarModule } from 'jqwidgets-ng/jqxcalendar';
+import { jqxPanelModule } from 'jqwidgets-ng/jqxpanel';
+
 @Component({
     selector: 'app-root',
-    imports: [jqxDockingModule],
+    imports: [jqxDockingModule, jqxPanelModule, jqxCalendarModule, jqxTabsModule, jqxListboxModule],
     standalone: true,
     templateUrl: './app.component.html'
 })
