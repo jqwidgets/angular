@@ -2,10 +2,11 @@
 
 import { jqxDropDownButtonModule, jqxDropDownButtonComponent } from 'jqwidgets-ng/jqxdropdownbutton';
 import { jqxColorPickerModule } from 'jqwidgets-ng/jqxcolorpicker';
+import { jqxScrollViewModule } from 'jqwidgets-ng/jqxscrollview';
 
 @Component({
     selector: 'app-root',
-    imports: [jqxDropDownButtonModule, jqxColorPickerModule],
+    imports: [jqxDropDownButtonModule, jqxScrollViewModule, jqxColorPickerModule],
     standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
