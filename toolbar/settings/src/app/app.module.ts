@@ -7,7 +7,7 @@ import { jqxButtonComponent } from 'jqwidgets-ng/jqxbuttons';
 import { jqxDropDownListComponent } from 'jqwidgets-ng/jqxdropdownlist';
 import { jqxInputComponent } from 'jqwidgets-ng/jqxinput';
 import { jqxNumberInputComponent } from 'jqwidgets-ng/jqxnumberinput';
-import { jqxToolBarComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtoolbar.ts';
+import { jqxToolBarComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxToolBar.ts';
 
 @NgModule({
     declarations: [AppComponent, jqxButtonComponent, jqxDropDownListComponent, jqxInputComponent, jqxNumberInputComponent, jqxToolBarComponent],

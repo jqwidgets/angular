@@ -1,11 +1,11 @@
 ﻿import { Component, ViewChild, ElementRef } from '@angular/core';
 
-import { jqxToolBarComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtoolbar.ts';
+import { jqxToolBarComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxToolBar.ts';
 
-import { jqxToolbarModule, jqxToolbarComponent } from 'jqwidgets-ng/jqxtoolbar';
+import { jqxToolBarModule, jqxToolBarComponent } from 'jqwidgets-ng/jqxtoolbar';
 @Component({
     selector: 'app-root',
-    imports: [jqxToolbarModule],
+    imports: [jqxToolBarModule],
     standalone: true,
     templateUrl: './app.component.html'
 })

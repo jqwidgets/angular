@@ -3,12 +3,12 @@
 import { jqxDropDownListComponent, jqxDropDownListModule } from 'jqwidgets-ng/jqxdropdownlist';
 import { jqxNumberInputComponent, jqxNumberInputModule } from 'jqwidgets-ng/jqxnumberinput';
 
-import { jqxToolbarModule, jqxToolbarComponent } from 'jqwidgets-ng/jqxtoolbar';
+import { jqxToolBarModule, jqxToolBarComponent } from 'jqwidgets-ng/jqxtoolbar';
 import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
 
 @Component({
     selector: 'app-root',
-    imports: [jqxToolbarModule, jqxButtonModule, jqxNumberInputModule, jqxDropDownListModule],
+    imports: [jqxToolBarModule, jqxButtonModule, jqxNumberInputModule, jqxDropDownListModule],
     standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],

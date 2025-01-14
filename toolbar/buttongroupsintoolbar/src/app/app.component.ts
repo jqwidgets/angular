@@ -1,9 +1,9 @@
 ﻿import { Component, ViewEncapsulation } from '@angular/core';
 
-import { jqxToolbarModule, jqxToolbarComponent } from 'jqwidgets-ng/jqxtoolbar';
+import { jqxToolBarModule, jqxToolBarComponent } from 'jqwidgets-ng/jqxtoolbar';
 @Component({
     selector: 'app-root',
-    imports: [jqxToolbarModule],
+    imports: [jqxToolBarModule],
     standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
