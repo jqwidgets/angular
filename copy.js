@@ -2,7 +2,7 @@
 var fs = require("fs-extra");
 const path = require('path');
 
-var source = 'github-9jygxhve-agbrjju6/jqx.gantt.css'
+var source = 'github-9jygxhve-agbrjju6/font'
 var source2 = 'github-9jygxhve-agbrjju6/src/assets/styles.css'
 
 const dir = path.join(path.resolve(__dirname));
@@ -18,7 +18,7 @@ fs.readdirSync(dir).forEach((file, index) => {
 			const newPath = path.join(path.resolve(subDir, demo));
 			 if (newPath.indexOf('gantt') >= 0) {
 			 console.log(newPath);
-	     	 fs.copySync(source, newPath + '/src/assets/jqx.gantt.css');
+	     	 fs.copySync(source, newPath + '/src/assets/font');
 			 }
 		  }
 		});
