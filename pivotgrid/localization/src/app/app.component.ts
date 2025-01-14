@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 import { jqxPivotDesignerComponent } from 'jqwidgets-ng/jqxpivotgrid';
 import { jqxPivotGridModule, jqxPivotGridComponent } from 'jqwidgets-ng/jqxpivotgrid';
+import { jqxDataTableModule } from 'jqwidgets-ng/jqxdatatable';
+import { jqxWindowModule } from 'jqwidgets-ng/jqxwindow';
 
 @Component({
 	selector: 'app-root',
