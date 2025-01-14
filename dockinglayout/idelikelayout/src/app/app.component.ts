@@ -1,6 +1,6 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxDockingLayoutModule, jqxDockingLayoutComponent } from 'jqwidgets-ng/jqdockinglayout';
+import { jqxDockingLayoutModule, jqxDockingLayoutComponent } from 'jqwidgets-ng/jqxdockinglayout';
 import { jqxButtonModule, jqxButtonComponent } from 'jqwidgets-ng/jqxbuttons';
 
 @Component({

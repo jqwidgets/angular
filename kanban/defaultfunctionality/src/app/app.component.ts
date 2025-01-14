@@ -1,9 +1,11 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
 import { jqxKanbanModule, jqxKanbanComponent } from 'jqwidgets-ng/jqxkanban';
+import { jqxSplitterModule } from 'jqwidgets-ng/jqxsplitter';
+
 @Component({
     selector: 'app-root',
-    imports: [jqxKanbanModule],
+    imports: [jqxKanbanModule, jqxSplitterModule],
     standalone: true,
     templateUrl: './app.component.html'
 })

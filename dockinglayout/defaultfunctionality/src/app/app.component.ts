@@ -1,7 +1,7 @@
 ﻿import { Component } from '@angular/core';
 
 
-import { jqxDockingLayoutModule, jqxDockingLayoutComponent } from 'jqwidgets-ng/jqdockinglayout';
+import { jqxDockingLayoutModule, jqxDockingLayoutComponent } from 'jqwidgets-ng/jqxdockinglayout';
 @Component({
     selector: 'app-root',
     imports: [jqxDockingLayoutModule],
