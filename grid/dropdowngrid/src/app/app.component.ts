@@ -1,7 +1,7 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
 
-import { jqxDropDownButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdropdownbutton.ts';
+import { jqxDropDownButtonComponent, jqxDropDownButtonModule } from 'jqwidgets-ng/jqxdropdownbutton';
 
 import { generatedata } from '../assets/generatedata';
 
