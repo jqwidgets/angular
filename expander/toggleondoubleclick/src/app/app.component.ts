@@ -1,6 +1,6 @@
 ﻿import { Component } from '@angular/core';
 
-import { jqxExpanderModule, jqxExpanderComponent } from 'jqwidgets-ng/jqxgrid';
+import { jqxExpanderModule, jqxExpanderComponent } from 'jqwidgets-ng/jqxexpander';
 @Component({
     selector: 'app-root',
     imports: [jqxExpanderModule],
