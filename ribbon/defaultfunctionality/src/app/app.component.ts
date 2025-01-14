@@ -4,13 +4,15 @@ import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
 import { jqxTooltipComponent, jqxTooltipModule } from 'jqwidgets-ng/jqxtooltip';
 import { jqxDropDownButtonComponent, jqxDropDownButtonModule } from 'jqwidgets-ng/jqxdropdownbutton';
 import { jqxColorPickerComponent, jqxColorPickerModule } from 'jqwidgets-ng/jqxcolorpicker';
-import { jqxDropDownListComponent, jqxDropDownListmodule } from 'jqwidgets-ng/jqxdropdownlist';
+import { jqxDropDownListComponent, jqxDropDownListModule } from 'jqwidgets-ng/jqxdropdownlist';
 import { jqxToggleButtonComponent, jqxToggleButtonModule } from 'jqwidgets-ng/jqxtogglebutton';
 
 import { jqxRibbonModule, jqxRibbonComponent } from 'jqwidgets-ng/jqxribbon';
+import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
+
 @Component({
     selector: 'app-root',
-    imports: [jqxRibbonModule, jqxButtonModule, jqxTooltipModule, jqxDropDownButtonModule, jqxColorPickerModule, jqxToggleButtonModule, jqxDropDownListmodule],
+    imports: [jqxRibbonModule, jqxGridModule, jqxButtonModule, jqxTooltipModule, jqxDropDownButtonModule, jqxColorPickerModule, jqxToggleButtonModule, jqxDropDownListModule],
     standalone: true,
     styleUrls: ['./app.component.css'],
     templateUrl: './app.component.html',
