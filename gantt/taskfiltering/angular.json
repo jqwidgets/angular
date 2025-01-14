@@ -36,7 +36,8 @@
               "./node_modules/jqwidgets-ng/jqwidgets/styles/jqx.base.css",
               "./node_modules/jqwidgets-ng/jqwidgets/styles/jqx.fluent.css",
               "src/assets/fonts.css",
-              "src/assets/styles.css"
+              "src/assets/styles.css",
+              "src/assets/jqx.gantt.css",
             ],
             "tsConfig": "src/tsconfig.app.json"
           }
