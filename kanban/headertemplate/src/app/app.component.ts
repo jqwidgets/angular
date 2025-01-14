@@ -83,7 +83,6 @@ export class AppComponent {
             case 'ui-le-frog':
             case 'metrodark':
             case 'orange':
-            case 'darkblue':
             case 'highcontrast':
             case 'ui-sunny':
             case 'ui-darkness':
@@ -110,13 +109,7 @@ export class AppComponent {
 
     columnRenderer = (element: any, collapsedElement: any, column: any): void => {
         if (element[0]) {
-            let elementHeaderStatus = element[0].getElementsByClassName('jqx-kanban-column-header-status')[0];
-            let collapsedElementHeaderStatus = collapsedElement[0].getElementsByClassName('jqx-kanban-column-header-status')[0];
-
-            let columnItems = this.myKanban.getColumnItems(column.dataField).length;
-
-            elementHeaderStatus.innerHTML = ' (' + columnItems + '/' + column.maxItems + ')';
-            collapsedElementHeaderStatus.innerHTML = ' (' + columnItems + '/' + column.maxItems + ')';
+			// your code here.
         }
     };
 
