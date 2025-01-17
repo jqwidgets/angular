@@ -1,5 +1,6 @@
 ﻿import { Component, ViewChild, AfterViewInit } from '@angular/core';
 
+import { generatedata } from '../assets/generatedata';
 
 import { jqxMenuComponent, jqxMenuModule } from 'jqwidgets-ng/jqxmenu';
 import { jqxInputComponent, jqxInputModule } from 'jqwidgets-ng/jqxinput';

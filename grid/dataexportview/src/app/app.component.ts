@@ -2,6 +2,7 @@
 
 import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
+import { generatedata } from '../assets/generatedata';
 
 @Component({
     selector: 'app-root',

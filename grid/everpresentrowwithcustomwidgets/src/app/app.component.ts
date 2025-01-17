@@ -6,6 +6,8 @@ import { generatedata } from '../assets/generatedata';
 import { jqxRadioButtonComponent, jqxRadioButtonModule } from 'jqwidgets-ng/jqxradiobutton';
 
 import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
+import { generatedata } from '../assets/generatedata';
+
 @Component({
     selector: 'app-root',
     imports: [jqxGridModule, jqxRadioButtonModule],
