@@ -2,10 +2,10 @@
 
 
 
-import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 @Component({
     selector: 'app-root',
-    imports: [jqxGridModule],
+    imports: [jqxChartModule],
     standalone: true,
     templateUrl: './app.component.html',
 })

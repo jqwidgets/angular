@@ -2,7 +2,7 @@
 
 
 import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
-import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
+import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 import { jqxChartModule, jqxChartComponent } from 'jqwidgets-ng/jqxchart';
 
 @Component({
