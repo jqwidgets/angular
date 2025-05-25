@@ -1,17 +1,15 @@
-﻿import { Component } from '@angular/core';
+﻿import { Component, ViewChild } from '@angular/core';
 
 import { jqxGridModule, jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 import { jqxGaugeModule } from 'jqwidgets-ng/jqxgauge';
 import { jqxChartModule } from 'jqwidgets-ng/jqxchart';
 
-
 @Component({
-    selector: 'app-root',
-    imports: [jqxGridModule, jqxGaugeModule, jqxChartModule],
-    standalone: true,
-    templateUrl: './app.component.html'
+  selector: 'app-root',
+  imports: [jqxGridModule, jqxGaugeModule, jqxChartModule],
+  standalone: true,
+  templateUrl: './app.component.html',
 })
-
 export class AppComponent {
   @ViewChild('myGrid', { static: false }) myGrid: jqxGridComponent;
 
@@ -54,19 +52,57 @@ export class AppComponent {
       text: 'Total',
       datafield: 'total',
       cellsformat: 'c2',
-      cellsrenderer: (_row: any, _column: any, value: any, _html: any, _props: any, data: any) => {
-        return `<div style="margin: 5px;">${(data.quantity * data.price).toFixed(2)} €</div>`;
+      cellsrenderer: (
+        _row: any,
+        _column: any,
+        value: any,
+        _html: any,
+        _props: any,
+        data: any
+      ) => {
+        return `<div style="margin: 5px;">${(
+          data.quantity * data.price
+        ).toFixed(2)} €</div>`;
       },
     },
   ];
 
-  selectedRow: any = null;
+  selectedRow: any = {
+    product: '',
+    quantity: 0,
+    price: 0,
+    total: 0,
+  };
 
   gaugeRanges: any[] = [
-    { startValue: 0, endValue: 3, style: { fill: '#4bb648', stroke: '#4bb648' }, endWidth: 5, startWidth: 1 },
-    { startValue: 3, endValue: 5, style: { fill: '#fbd109', stroke: '#fbd109' }, endWidth: 10, startWidth: 5 },
-    { startValue: 5, endValue: 7, style: { fill: '#ff8000', stroke: '#ff8000' }, endWidth: 13, startWidth: 10 },
-    { startValue: 7, endValue: 10, style: { fill: '#e02629', stroke: '#e02629' }, endWidth: 16, startWidth: 13 },
+    {
+      startValue: 0,
+      endValue: 3,
+      style: { fill: '#4bb648', stroke: '#4bb648' },
+      endWidth: 5,
+      startWidth: 1,
+    },
+    {
+      startValue: 3,
+      endValue: 5,
+      style: { fill: '#fbd109', stroke: '#fbd109' },
+      endWidth: 10,
+      startWidth: 5,
+    },
+    {
+      startValue: 5,
+      endValue: 7,
+      style: { fill: '#ff8000', stroke: '#ff8000' },
+      endWidth: 13,
+      startWidth: 10,
+    },
+    {
+      startValue: 7,
+      endValue: 10,
+      style: { fill: '#e02629', stroke: '#e02629' },
+      endWidth: 16,
+      startWidth: 13,
+    },
   ];
 
   chartData: any[] = [];
@@ -100,5 +136,7 @@ export class AppComponent {
       label: `Week ${i + 1}`,
       value: +(Math.random() * 5 + 1).toFixed(2),
     }));
+
+    this.myGrid.showSidePanel(document.querySelector("#sidePanel"), 400);
   }
 }

@@ -9,12 +9,12 @@
   (onRowselect)="onRowSelect($event)"
 ></jqxGrid>
 
-<div *ngIf="selectedRow" style="margin-top: 20px">
+<div id="sidePanel" style="margin-top: 20px">
   <h3>Product Details</h3>
   <p><strong>Product:</strong> {{ selectedRow.product }}</p>
   <p><strong>Quantity:</strong> {{ selectedRow.quantity }}</p>
-  <p><strong>Price:</strong> {{ selectedRow.price | number: '1.2-2' }} €</p>
-  <p><strong>Total:</strong> {{ selectedRow.total | number: '1.2-2' }} €</p>
+  <p><strong>Price:</strong> {{ selectedRow.price }} €</p>
+  <p><strong>Total:</strong> {{ selectedRow.total   }} €</p>
 
   <jqxGauge
     [ranges]="gaugeRanges"
