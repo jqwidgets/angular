@@ -1,0 +1,38 @@
+﻿<jqxGrid
+  #myGrid
+  [width]="1000"
+  [height]="700"
+  [source]="dataAdapter"
+  [columns]="columns"
+  [columnsresize]="true"
+  [selectionmode]="'singlerow'"
+  (onRowselect)="onRowSelect($event)"
+></jqxGrid>
+
+<div *ngIf="selectedRow" style="margin-top: 20px">
+  <h3>Product Details</h3>
+  <p><strong>Product:</strong> {{ selectedRow.product }}</p>
+  <p><strong>Quantity:</strong> {{ selectedRow.quantity }}</p>
+  <p><strong>Price:</strong> {{ selectedRow.price | number: '1.2-2' }} €</p>
+  <p><strong>Total:</strong> {{ selectedRow.total | number: '1.2-2' }} €</p>
+
+  <jqxGauge
+    [ranges]="gaugeRanges"
+    [value]="selectedRow.quantity"
+    [width]="200"
+    [height]="200"
+    [max]="10"
+    [colorScheme]="'scheme05'"
+    [animationDuration]="1200"
+    style="margin-top: 10px"
+  ></jqxGauge>
+
+  <jqxChart
+    [title]="'Price Trend'"
+    [source]="chartData"
+    [xAxis]="chartXAxis"
+    [valueAxis]="chartValueAxis"
+    [seriesGroups]="chartSeriesGroups"
+    style="width: 350px; height: 300px; margin-top: 20px"
+  ></jqxChart>
+</div>
