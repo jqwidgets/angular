@@ -14,9 +14,10 @@
   <p><strong>Product:</strong> {{ selectedRow.product }}</p>
   <p><strong>Quantity:</strong> {{ selectedRow.quantity }}</p>
   <p><strong>Price:</strong> {{ selectedRow.price }} €</p>
-  <p><strong>Total:</strong> {{ selectedRow.total   }} €</p>
+  <p><strong>Total:</strong> {{ selectedRow.total }} €</p>
 
   <jqxGauge
+    id="quantityGauge"
     [ranges]="gaugeRanges"
     [value]="selectedRow.quantity"
     [width]="200"
@@ -28,6 +29,7 @@
   ></jqxGauge>
 
   <jqxChart
+    id="priceChart"
     [title]="'Price Trend'"
     [source]="chartData"
     [xAxis]="chartXAxis"
