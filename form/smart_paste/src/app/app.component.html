@@ -1,0 +1,32 @@
+Smart Paste in jqxForm<br/><br/>
+Smart Paste lets users quickly fill out forms by pasting structured data—like from spreadsheets or
+tables—directly into the form. It intelligently maps the pasted content to matching fields, saving time and
+reducing errors.
+<br/><br/>
+To enable this feature, set the following properties:<br/>
+enableSmartPaste: true<br/>
+aiKey: 'your-openai-api-key'<br/>
+aiUrl: 'https://your-server-endpoint'<br/>
+
+Smart Paste uses AI to understand and align data with form fields automatically, making form completion faster and smarter.
+
+Select the text below and paste it into the form to see how it works.
+
+Emily Jackson Skyline Media 234 Oak Street San Francisco CA
+Michael Thompson NextGen Tech 412 Maple Ave Austin TX
+Sophia Ramirez BlueSky Corp 89 Pine Blvd Seattle WA
+Daniel Williams Quantum Dynamics 15 Sunset Road Chicago IL
+Olivia Nguyen Visionary Studio 720 Birch Lane Denver CO
+James Patel Northwind Inc. 63 Walnut Ave Miami FL
+<br/><br/>
+<jqxForm #myForm 
+    [width]='420'
+    [height]="'auto'"
+    [template]='template'
+    [value]='sampleValue'
+	[enableSmartPaste]="true"
+    style="float: left"
+    (onFormDataChange)="formEventHandler($event)"
+>
+</jqxForm>
+<div #formEvents style="padding-left: 10px; width: 350px; height: 350px; float: left; overflow: auto;"></div>

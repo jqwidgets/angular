@@ -1,0 +1,39 @@
+﻿<div class="demo-description">
+	<h2>AI-Powered Natural Language Filtering in jqxGrid</h2><br />
+	This demo showcases how you can interact with jqxGrid using plain language—no complex filter dialogs or syntax
+	required. Just type what you mean, and the grid does the filtering for you.
+	<br /><br />
+	Example queries you can try:
+	<br /><br />
+	"show products where price > 2 and quantity
+	< 5" <br />
+	"filter by product where value = Cappuccino" <br />
+	"show me products with quantity more than 3 and price less than 4"
+	<br /><br />
+	The feature uses an internal parser for basic filtering, and for more advanced queries—including ambiguous or
+	complex phrases—AI assistance is available.
+	<br /><br />
+	To unlock the full capabilities of natural language interpretation, including fuzzy matching, synonym support,
+	and grammar correction, you can provide your own OpenAI API Key.
+	When enabled, OpenAI helps interpret complex sentences and turns them into actionable filters applied directly
+	to the grid.
+	<br/>
+	Note that in order the filtering to work, you need to set the aiKey and aiUrl properties of jqxGrid. 
+</div>
+<br />
+<div style="margin-top: 5px; margin-bottom: 5px;">
+	<div>
+		<input class="jqx-input" placeholder="Type a natural language filter" id="filterInput" />
+	</div>
+</div>
+
+<jqxGrid
+  #myGrid
+  [width]="1000"
+  [height]="700"
+  [source]="dataAdapter"
+  [columns]="columns"
+  [filternlpinput]="'#filterInput'"
+  [columnsresize]="true"
+  [selectionmode]="'singlerow'"
+></jqxGrid>
