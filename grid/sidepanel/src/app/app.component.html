@@ -9,12 +9,12 @@
   (onRowselect)="onRowSelect($event)"
 ></jqxGrid>
 
-<div id="sidePanel" style="margin-top: 20px">
+<div id="sidePanel" style="opacity: 0; margin-top: 20px">
   <h3>Product Details</h3>
   <p><strong>Product:</strong> {{ selectedRow.product }}</p>
   <p><strong>Quantity:</strong> {{ selectedRow.quantity }}</p>
   <p><strong>Price:</strong> {{ selectedRow.price }} €</p>
-  <p><strong>Total:</strong> {{ selectedRow.total }} €</p>
+  <p><strong>Total:</strong> {{ selectedRow.total.toFixed(2) }} €</p>
 
   <jqxGauge
     id="quantityGauge"

@@ -7,17 +7,17 @@ To enable this feature, set the following properties:<br/>
 enableSmartPaste: true<br/>
 aiKey: 'your-openai-api-key'<br/>
 aiUrl: 'https://your-server-endpoint'<br/>
-
+<br/><br/>
 Smart Paste uses AI to understand and align data with form fields automatically, making form completion faster and smarter.
-
+<br/><br/>
 Select the text below and paste it into the form to see how it works.
-
-Emily Jackson Skyline Media 234 Oak Street San Francisco CA
-Michael Thompson NextGen Tech 412 Maple Ave Austin TX
-Sophia Ramirez BlueSky Corp 89 Pine Blvd Seattle WA
-Daniel Williams Quantum Dynamics 15 Sunset Road Chicago IL
-Olivia Nguyen Visionary Studio 720 Birch Lane Denver CO
-James Patel Northwind Inc. 63 Walnut Ave Miami FL
+<br/><br/>
+Emily Jackson Skyline Media 234 Oak Street San Francisco CA<br/>
+Michael Thompson NextGen Tech 412 Maple Ave Austin TX<br/>
+Sophia Ramirez BlueSky Corp 89 Pine Blvd Seattle WA<br/>
+Daniel Williams Quantum Dynamics 15 Sunset Road Chicago IL<br/>
+Olivia Nguyen Visionary Studio 720 Birch Lane Denver CO<br/>
+James Patel Northwind Inc. 63 Walnut Ave Miami FL<br/>
 <br/><br/>
 <jqxForm #myForm 
     [width]='420'
@@ -25,7 +25,7 @@ James Patel Northwind Inc. 63 Walnut Ave Miami FL
     [template]='template'
     [value]='sampleValue'
 	[enableSmartPaste]="true"
-    style="float: left"
+     style="float: left"
     (onFormDataChange)="formEventHandler($event)"
 >
 </jqxForm>

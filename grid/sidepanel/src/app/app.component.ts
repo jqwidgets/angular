@@ -25,6 +25,18 @@ export class AppComponent {
     { product: 'Mangoes', quantity: 2, price: 2.8 },
     { product: 'Blueberries', quantity: 2, price: 3.6 },
     { product: 'Kiwi', quantity: 4, price: 1.9 },
+	{ product: 'Pineapple', quantity: 1, price: 2.5 },
+	{ product: 'Papaya', quantity: 2, price: 3.0 },
+	{ product: 'Watermelon', quantity: 1, price: 4.5 },
+	{ product: 'Cantaloupe', quantity: 2, price: 3.2 },
+	{ product: 'Plums', quantity: 5, price: 1.3 },
+	{ product: 'Apricots', quantity: 4, price: 2.0 },
+	{ product: 'Lemons', quantity: 6, price: 0.7 },
+	{ product: 'Limes', quantity: 6, price: 0.6 },
+	{ product: 'Pears', quantity: 3, price: 1.4 },
+	{ product: 'Raspberries', quantity: 2, price: 3.8 },
+	{ product: 'Coconuts', quantity: 2, price: 2.7}
+
   ];
 
   source: any = {
@@ -138,18 +150,23 @@ export class AppComponent {
       value: +(Math.random() * 5 + 1).toFixed(2),
     }));
 
+	
+	setTimeout(()=> {
       const sidePanel: HTMLElement = document.querySelector(
         '#sidePanel'
       ) as HTMLElement;
 
       this.myGrid.showSidePanel(sidePanel, 400, (panel) => {
+    	panel.firstElementChild.style.opacity =1;
         panel = JQXLite(panel);
-        panel.find("#productName").text(row.product);
+	    panel.find("#productName").text(row.product);
         panel.find("#productQty").text(row.quantity);
         panel.find("#productPrice").text(row.price.toFixed(2) + ' €');
         panel.find("#productTotal").text((row.quantity * row.price).toFixed(2) + ' €');
         // Gauge
-        panel.find("#quantityGauge").jqxGauge({
+			
+		
+		panel.find("#quantityGauge").jqxGauge({
             ranges: [{ startValue: 0, endValue: 3, style: { fill: '#4bb648', stroke: '#4bb648' }, endWidth: 5, startWidth: 1 },
             { startValue: 3, endValue: 5, style: { fill: '#fbd109', stroke: '#fbd109' }, endWidth: 10, startWidth: 5 },
             { startValue: 5, endValue: 7, style: { fill: '#ff8000', stroke: '#ff8000' }, endWidth: 13, startWidth: 10 },
@@ -163,5 +180,6 @@ export class AppComponent {
             value: row.quantity
         });
       });
+	}, 200);
   }
 }

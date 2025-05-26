@@ -1,9 +1,11 @@
 import { Component, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 
 import { jqxFormModule, jqxFormComponent } from 'jqwidgets-ng/jqxform';
+import { jqxInputModule, jqxInputComponent } from 'jqwidgets-ng/jqxinput';
+
 @Component({
   selector: 'app-root',
-  imports: [jqxFormModule],
+  imports: [jqxFormModule, jqxInputModule],
   standalone: true,
   templateUrl: 'app.component.html'
 })

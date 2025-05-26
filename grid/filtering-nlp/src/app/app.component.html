@@ -21,6 +21,21 @@
 	Note that in order the filtering to work, you need to set the aiKey and aiUrl properties of jqxGrid. 
 </div>
 <br />
+<style>
+#filterInput {
+	width: 300px;
+	height: 30px;
+	padding: 5px;
+	box-sizing: border-box;
+	border: none;
+	border-bottom: 1px solid #ccc;
+	transition: 0.2s border-color cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+#filterInput:focus {
+	outline: none;
+	border-bottom: 2px solid var(--jqx-primary);
+}
+</style>
 <div style="margin-top: 5px; margin-bottom: 5px;">
 	<div>
 		<input class="jqx-input" placeholder="Type a natural language filter" id="filterInput" />
@@ -31,6 +46,7 @@
   #myGrid
   [width]="1000"
   [height]="700"
+  [theme]="'fluent'"
   [source]="dataAdapter"
   [columns]="columns"
   [filternlpinput]="'#filterInput'"
