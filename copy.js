@@ -2,7 +2,7 @@
 var fs = require("fs-extra");
 const path = require('path');
 
-var source = 'github-9jygxhve-agbrjju6/jqx.gantt.css'
+var source = 'github-9jygxhve-agbrjju6/src/assets/generatedata.ts'
 var source2 = 'github-9jygxhve-agbrjju6/src/assets/styles.css'
 
 const dir = path.join(path.resolve(__dirname));
@@ -16,9 +16,9 @@ fs.readdirSync(dir).forEach((file, index) => {
 		fs.readdirSync(subDir).forEach((demo, index) => {
 			if (demo.toLowerCase().indexOf('readme') === -1 && demo.toLowerCase().indexOf('node_modules') === -1 && demo.toLowerCase().indexOf('package') === -1) {
 			const newPath = path.join(path.resolve(subDir, demo));
-			 if (newPath.indexOf('gantt') >= 0) {
+			 if (newPath.indexOf('grid') >= 0) {
 			 console.log(newPath);
-	     	 fs.copySync(source, newPath + '/src/assets/jqx.gantt.css');
+	     	 fs.copySync(source, newPath + '/src/assets/generatedata.ts');
 			 }
 		  }
 		});
