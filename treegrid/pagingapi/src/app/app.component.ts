@@ -4,13 +4,14 @@
 import { jqxInputComponent, jqxInputModule } from 'jqwidgets-ng/jqxinput';
 import { jqxPanelComponent, jqxPanelModule } from 'jqwidgets-ng/jqxpanel';
 import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
+import { jqxDropDownListModule, jqxDropDownListComponent } from 'jqwidgets-ng/jqxdropdownlist';
 
 import { generateordersdata } from '../assets/generatedata';
 
 import { jqxTreeGridModule, jqxTreeGridComponent } from 'jqwidgets-ng/jqxtreegrid';
 @Component({
     selector: 'app-root',
-    imports: [jqxTreeGridModule, jqxInputModule, jqxPanelModule, jqxButtonModule ],
+    imports: [jqxTreeGridModule, jqxInputModule, jqxDropDownListModule, jqxPanelModule, jqxButtonModule ],
     standalone: true,
     templateUrl: './app.component.html'
 })

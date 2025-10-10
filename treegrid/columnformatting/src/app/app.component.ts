@@ -1,14 +1,14 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
 
-import { jqxDropDownListComponent } from 'jqwidgets-ng/jqxdropdownlist';
+import { jqxDropDownListModule, jqxDropDownListComponent } from 'jqwidgets-ng/jqxdropdownlist';
 
 import { generateordersdata } from '../assets/generatedata';
 
 import { jqxTreeGridModule, jqxTreeGridComponent } from 'jqwidgets-ng/jqxtreegrid';
 @Component({
     selector: 'app-root',
-    imports: [jqxTreeGridModule],
+    imports: [jqxTreeGridModule, jqxDropDownListModule],
     standalone: true,
     templateUrl: './app.component.html'
 })

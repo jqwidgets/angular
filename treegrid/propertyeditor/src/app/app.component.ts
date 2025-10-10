@@ -1,11 +1,18 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
 
+import { jqxDropDownListModule, jqxDropDownListComponent } from 'jqwidgets-ng/jqxdropdownlist';
 
 import { jqxTreeGridModule, jqxTreeGridComponent } from 'jqwidgets-ng/jqxtreegrid';
+
+import { jqxCheckBoxModule } from 'jqwidgets-ng/jqxcheckbox';
+import { jqxColorPickerModule } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxcolorpicker.ts';
+import { jqxInputModule } from 'jqwidgets-ng/jqxinput';
+import { jqxSliderModule } from 'jqwidgets-ng/jqxslider';
+
 @Component({
     selector: 'app-root',
-    imports: [jqxTreeGridModule],
+    imports: [jqxTreeGridModule, jqxSliderModule, jqxInputModule, jqxCheckBoxModule, jqxColorPickerModule, jqxDropDownListModule],
     standalone: true,
     templateUrl: './app.component.html'
 })
