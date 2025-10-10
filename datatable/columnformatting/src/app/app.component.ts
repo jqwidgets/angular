@@ -1,11 +1,12 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
 
+import { jqxDropDownListModule, jqxDropDownListComponent } from 'jqwidgets-ng/jqxdropdownlist';
 
 import { jqxDataTableModule, jqxDataTableComponent } from 'jqwidgets-ng/jqxdatatable';
 @Component({
     selector: 'app-root',
-    imports: [jqxDataTableModule],
+    imports: [jqxDataTableModule, jqxDropDownListModule],
     standalone: true,
     templateUrl: './app.component.html'
 })
