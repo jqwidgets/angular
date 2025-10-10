@@ -6,10 +6,11 @@ import { generatedata } from '../assets/generatedata';
 import { jqxButtonComponent, jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
 
 import { jqxDataTableModule, jqxDataTableComponent } from 'jqwidgets-ng/jqxdatatable';
+import { jqxDropDownListModule, jqxDropDownListComponent } from 'jqwidgets-ng/jqxdropdownlist';
 
 @Component({
     selector: 'app-root',
-    imports: [jqxDataTableModule, jqxButtonModule, jqxInputModule],
+    imports: [jqxDataTableModule, jqxDropDownListModule, jqxButtonModule, jqxInputModule],
     standalone: true,
     templateUrl: './app.component.html'
 })
