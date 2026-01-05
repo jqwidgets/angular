@@ -2,9 +2,11 @@
 
 
 import { jqxDateTimeInputModule, jqxDateTimeInputComponent } from 'jqwidgets-ng/jqxdatetimeinput';
+import { jqxDropDownListModule } from 'jqwidgets-ng/jqxdropdownlist';
+
 @Component({
     selector: 'app-root',
-    imports: [jqxDateTimeInputModule],
+    imports: [jqxDateTimeInputModule, jqxDropDownListModule],
     standalone: true,
     templateUrl: './app.component.html'
 })
