@@ -1,12 +1,12 @@
 ﻿import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 
-import { jqxKnobComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxknob.ts';
-import { jqxNumberInputComponent } from 'jqwidgets-ng/jqxnumberinput';
+
+import { jqxNumberInputModule, jqxNumberInputComponent } from 'jqwidgets-ng/jqxnumberinput';
 
 import { jqxKnobModule, jqxKnobComponent } from 'jqwidgets-ng/jqxknob';
 @Component({
     selector: 'app-root',
-    imports: [jqxKnobModule],
+    imports: [jqxKnobModule, jqxNumberInputModule],
     standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],

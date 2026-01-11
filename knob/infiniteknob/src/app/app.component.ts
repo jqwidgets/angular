@@ -1,6 +1,5 @@
 ﻿import { Component, ViewChild } from '@angular/core';
 
-import { jqxKnobComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxknob.ts';
 
 import { jqxKnobModule, jqxKnobComponent } from 'jqwidgets-ng/jqxknob';
 @Component({
