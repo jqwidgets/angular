@@ -1,0 +1,19 @@
+<div style="display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap">
+    <jqxChat #chat [width]="420" [height]="560" [colorScheme]="'light'" [title]="'API Playground'"
+             [welcomeMessage]="'Use the buttons on the right to drive me from code.'" [sendRequest]="sendRequest"
+             (onMessageSent)="logLines.push('• message sent')"
+             (onMessageReceived)="logLines.push('• response received')"
+             (onResponseEnd)="logLines.push('• response end')"
+             (onError)="logLines.push('• error')">
+    </jqxChat>
+
+    <div style="min-width:240px">
+        <div style="display:flex;flex-direction:column;gap:8px;max-width:220px">
+            <jqxButton (onClick)="send()" [height]="32">sendMessage()</jqxButton>
+            <jqxButton (onClick)="addBot()" [height]="32">addMessage()</jqxButton>
+            <jqxButton (onClick)="count()" [height]="32">getMessages()</jqxButton>
+            <jqxButton (onClick)="clear()" [height]="32">clearConversation()</jqxButton>
+        </div>
+        <pre style="margin-top:14px;background:#0b1220;color:#cbd5e1;padding:12px;border-radius:8px;min-width:220px;min-height:140px;font-size:12px;white-space:pre-wrap">{{ logText }}</pre>
+    </div>
+</div>

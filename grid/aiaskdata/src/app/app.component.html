@@ -1,0 +1,23 @@
+<div style="display:flex;gap:8px;align-items:center;margin-bottom:10px;max-width:640px">
+    <jqxInput #q [width]="'100%'" [height]="32" [placeHolder]="'e.g. what is the average unit price?'"></jqxInput>
+    <jqxButton (onClick)="ask()" [width]="80" [height]="32">Ask</jqxButton>
+</div>
+
+<div style="margin-bottom:12px">
+    <span style="font-size:12px;color:#64748b;margin-right:6px">Try:</span>
+    <jqxButton *ngFor="let c of chips" (onClick)="askChip(c)" [height]="26" style="margin-right:6px">{{ c }}</jqxButton>
+</div>
+
+<jqxGrid #grid [width]="'100%'" [height]="320" [source]="dataAdapter" [columns]="columns"
+         [sortable]="true" [pageable]="true">
+</jqxGrid>
+
+<div *ngIf="answerText" style="margin-top:16px;padding:14px 16px;background:#f8fafc;border:1px solid #e8eaf0;border-radius:12px">
+    <div style="font-weight:700;font-size:13px;margin-bottom:6px;color:#4338ca">Answer</div>
+    <div style="font-size:14px;color:#0f172a">{{ answerText }}</div>
+    <jqxChart *ngIf="showChart" #chart [width]="'100%'" [height]="260" [source]="chartSource"
+              [categoryAxis]="categoryAxis" [seriesGroups]="seriesGroups" [showLegend]="false"
+              [padding]="padding" [colorScheme]="'scheme05'" [backgroundColor]="'transparent'"
+              style="display:block;margin-top:12px">
+    </jqxChart>
+</div>

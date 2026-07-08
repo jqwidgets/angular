@@ -1,0 +1,11 @@
+<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;max-width:660px">
+    <jqxInput #q [width]="'100%'" [height]="32" [placeHolder]="'e.g. price over 3 and quantity under 5, sort by price desc'"></jqxInput>
+    <jqxButton (onClick)="run()" [width]="80" [height]="32">Run</jqxButton>
+    <jqxButton (onClick)="reset()" [width]="80" [height]="32">Reset</jqxButton>
+</div>
+
+<div *ngIf="status" style="margin-bottom:10px;color:#475569;font-size:13px">{{ status }}</div>
+
+<jqxGrid #grid [width]="'100%'" [height]="420" [source]="dataAdapter" [columns]="columns"
+         [sortable]="true" [filterable]="true" [sortmode]="'many'" [pageable]="true">
+</jqxGrid>

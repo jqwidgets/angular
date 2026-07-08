@@ -1,0 +1,10 @@
+<p style="font:14px -apple-system,Segoe UI,Roboto,sans-serif;color:#475569;max-width:560px">
+    In <b>popup</b> mode the assistant collapses into a floating launcher button. Click the bubble in the
+    bottom-right corner to open the chat panel.
+</p>
+
+<jqxChat [width]="380" [height]="560" [colorScheme]="'light'" [mode]="'popup'" [launcherPosition]="'bottom-right'"
+         [title]="'Help Assistant'" [subtitle]="'Ask us anything'"
+         [welcomeMessage]="'Hi! How can we help you today?'"
+         [starterPrompts]="prompts" [sendRequest]="sendRequest">
+</jqxChat>

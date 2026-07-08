@@ -1,0 +1,12 @@
+<div style="margin-bottom:14px">
+    <jqxButton (onClick)="summarize()" [height]="34">Summarize selected rows</jqxButton>
+</div>
+
+<jqxGrid #grid [width]="'100%'" [height]="320" [source]="dataAdapter" [columns]="columns"
+         [sortable]="true" [pageable]="true" [selectionmode]="'checkbox'" (onBindingcomplete)="onReady()">
+</jqxGrid>
+
+<div *ngIf="summary" style="margin-top:16px;padding:14px 16px;background:#f8fafc;border:1px solid #e8eaf0;border-radius:12px">
+    <div style="font-weight:700;font-size:13px;margin-bottom:6px;color:#4338ca">Summary</div>
+    <div style="font-size:14px;color:#0f172a">{{ summary }}</div>
+</div>
